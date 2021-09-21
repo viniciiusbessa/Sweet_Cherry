@@ -1,0 +1,45 @@
+body {
+    margin: 0px;
+}
+
+* {
+    box-sizing: border-box;
+    cursor: default;
+  }
+
+
+  .container-compra-finalizada {
+      display: flex;
+      flex-direction: column;
+  }
+
+  .cabecalho-compra-finalizada {
+    display: flex;
+    flex-direction: row;
+    
+    background-color: #FF8AB5;
+    color: #140018;
+
+    padding: 0em 2em 0em 1em;
+  }
+
+  .logo-compra-finalizada {
+      display: flex;
+      flex-direction: column;
+  }
+
+  .conteudo-compra-finalizada {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      justify-content: center;
+
+      background-color: #F3F7F6;
+      color: #000;
+  }
+
+  .btn-voltar-inicio-compra-finalizada button {
+      color: #fff;
+      background-color: #2F1747;
+      padding: 0.3em 0.7em;
+  }
