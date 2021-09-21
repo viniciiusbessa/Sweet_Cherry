@@ -18,7 +18,7 @@ body {
     flex-direction: row;
     justify-content: space-around;
 
-    background-image: url('../../assets/images/fundo2.png');
+    background-image: url(../../assets/images/fundo.png);
     background-size: 100% 200px;
 
     height: 200px;
@@ -57,16 +57,125 @@ margin-top: 4em;
     display: flex;
     flex-direction: column;
 
-    margin: 5em 0em 0em 8em;
+    margin: 5em 0em 0em 10em;
+}
+
+.box-texto {
+    margin-bottom: 3em;
 }
 
 .titulo-fav {
-    font-size: 24px;
+    font-size: 30px;
     color: #140018;
 }
 
 .ds {
-font-size: 14px;
+font-size: 18px;
 color: #C4C4C4;
 
+}
+
+.box-doces1, .box-doces2 {
+   display: flex;
+   flex-direction: row; 
+
+   width: 100em;
+   justify-content: space-around;
+   align-items: center;
+
+   margin-bottom: 80px;
+}
+
+.doce {
+    background-color: #D1EAF5;
+    width: 20em;
+    height: 30em;
+
+    border-radius: 20px;
+}
+
+.img-doce img{
+    margin: 2em 0em 1em 2.5em;
+
+    width: 15em;
+    height: 12em;
+}
+
+.sobre-fav {
+    display: flex;
+    flex-direction: row;
+
+    margin-left: 40px;
+}
+
+.nm-doce {
+    font-size: 20px;
+}
+
+.icones {
+    display: flex;
+    flex-direction: row;
+
+    margin-left: 60px;
+}
+
+.icone-carrinho img{
+    width: 35px;
+    height: auto;
+
+    margin-right: 10px;
+}
+
+.preco {
+    font-size: 20px;
+    text-align: center;
+
+    margin: 30px 0px 30px 0px;
+}
+
+button {
+    background-color: #2F1747;
+
+    color: #ffffff;
+    border: 0px;
+    border-radius: 50px;
+
+    width:  100px;
+    height: 50px;
+
+    margin-left: 110px;
+}
+
+footer {
+    background-color: #FF8AB5;
+    color: white;
+
+    display: flex;
+    flex-direction: row;
+
+    justify-content: center;
+    height: 120px;
+
+    text-align: center;
+}
+
+.rodape {
+    display: flex;
+    flex-direction: row;
+
+    margin-top: 30px;
+}
+
+.sociais {
+    display: flex;
+    flex-direction: row;
+}
+
+.icon img {
+    padding-left: 12px;
+    margin-top: 10px;
+}
+
+.linha {
+    margin-top: 15px;
 }
