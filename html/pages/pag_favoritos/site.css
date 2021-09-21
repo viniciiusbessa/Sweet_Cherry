@@ -3,6 +3,71 @@
     src: url('../../assets/fonts/Pacifico-Regular.ttf');
 }
 
-.logo1 {
+body {
+    margin: 0px;
     font-family: Pacifico;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.cabecalho {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    background-color: #F6AAC6;
+
+    height: 200px;
+    border-radius: 0em 0em 10em 10em;
+}
+
+.logo {
+    margin-top: 2em;
+}
+
+.logo1, .logo2 {
+    font-size: 28px;
+}
+
+.logo2 {
+    margin-left: 30px;
+}
+
+.categorias-cabecalho, .icones-cabecalho {
+display: flex;
+flex-direction: row;
+margin-top: 4em;
+}
+
+.text {
+    padding-left:3em;
+    font-size: 18px;
+}
+
+.icones-cabecalho img {
+    padding-left: 2em;
+}
+
+
+
+.box-favoritos{
+    display: flex;
+    flex-direction: column;
+
+    margin: 5em 0em 0em 8em;
+}
+
+.titulo-fav {
+    font-size: 24px;
+    color: #140018;
+}
+
+.ds {
+font-size: 14px;
+color: #C4C4C4;
+
+
 }
