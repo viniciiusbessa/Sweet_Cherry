@@ -1,5 +1,11 @@
+@font-face {
+    font-family: Pacifico;
+    src: url('../../assets/fonts/Pacifico-Regular.ttf');
+}
+
 body {
     margin: 0px;
+    font-family: Pacifico;
 }
 
 * {
@@ -16,11 +22,17 @@ body {
   .cabecalho-compra-finalizada {
     display: flex;
     flex-direction: row;
+    justify-content: space-around;
     
-    background-color: #FF8AB5;
     color: #140018;
 
-    padding: 0em 2em 0em 1em;
+    background-color: #F3F7F6;
+    background-image: url(../../assets/images/fundo.png);
+    background-size: 100% 180px;
+
+    height: 180px;
+
+    padding: 1.5em 0em 1em 0em;
   }
 
   .logo-compra-finalizada {
@@ -28,18 +40,132 @@ body {
       flex-direction: column;
   }
 
-  .conteudo-compra-finalizada {
-      display: flex;
-      flex-direction: column;
-      text-align: center;
-      justify-content: center;
+  .logo1-compra-finalizada, .logo2-compra-finalizada {
+    font-size: 35px;
+    cursor: pointer;
+  }
 
-      background-color: #F3F7F6;
-      color: #000;
+  .logo2-compra-finalizada {
+      margin-left: 30px;
+
+      margin-top: -0.5em;
+  }
+
+  .rotas-compra-finalizada {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+
+      width: 45%;
+      margin-top: 1.3em;
+
+      font-size: 25px;
+  }
+
+  .rota-compra-finalizada {
+    cursor: pointer;
+}
+
+  .box-imgs-compra-finalizada {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+    width: 15%;
+    margin-top: 1.3em;
+  }
+
+  .box-imgs-compra-finalizada img {
+    cursor: pointer;
+  }
+
+
+
+
+  .conteudo-compra-finalizada {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+
+    background-color: #F3F7F6;
+    color: #000;
+  }
+
+  .mensagem1-compra-finalizada {
+    font-size: 35px;
+
+    margin-top: 1em;
+  }
+
+  .mensagem2-compra-finalizada {
+    font-size: 35px;
+  }
+
+  .mensagem3-compra-finalizada {
+    font-size: 35px;
+  }
+
+  .mensagem4-compra-finalizada {
+    font-size: 35px;
   }
 
   .btn-voltar-inicio-compra-finalizada button {
-      color: #fff;
-      background-color: #2F1747;
-      padding: 0.3em 0.7em;
+    color: #fff;
+    font-family: Pacifico;
+    font-size: 25px;
+
+    background-color: #2F1747;
+
+    border: none;
+    border-radius: 60px;
+
+    width: 11.3em;
+
+    padding: 0em 2.8em;
+    margin: 2em 0em 2.5em 0em;
   }
+
+  .btn-voltar-inicio-compra-finalizada button:hover {
+    background-color: #522d77;
+    transition: 1s;
+    cursor: pointer;
+  }
+
+
+
+  .rodape-compra-finalizada {
+    background-color: #FF8AB5;
+    color: white;
+
+    display: flex;
+    flex-direction: row;
+
+    justify-content: center;
+    height: 120px;
+
+    text-align: center;
+    font-size: 18px;
+
+    padding-top: 1.5em;
+  }
+
+  .sociais-compra-finalizada {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .sociais-compra-finalizada img {
+    cursor: pointer;
+  }
+
+  .icon-compra-finalizada {
+    padding-left: 12px;
+    margin-top: 10px;
+  }
+
+  
+
+  .linha {
+    margin-top: 15px;
+}
