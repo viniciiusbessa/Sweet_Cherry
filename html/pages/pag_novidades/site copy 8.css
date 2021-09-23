@@ -1,12 +1,6 @@
 body{
     margin: 0px;
     font-family: Pacifico;
-
-    background-image: url(../../assets/images/fundo-adm-2.png);
-    background-size: 43% 1900px;
-
-    background-position: left;
-    background-repeat: no-repeat;
 }
 
 @font-face {
@@ -17,12 +11,19 @@ body{
 .container_site{
     display: flex;
     flex-direction: column;
+
+    background-image: url(../../assets/images/onda.png);
+    background-size: 40% 600px;
+    background-position: left;
+    background-repeat: repeat-y;
 }
 
 .Cabecalho {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+
+    margin-bottom: 5em;
     
 }
 
@@ -70,7 +71,7 @@ margin-top: 4em;
     display:flex;
     flex-direction: row;
 
-    margin-bottom: 3em;
+    margin-bottom: 10em;
 
     text-align: center;
 
