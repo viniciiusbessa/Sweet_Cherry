@@ -19,11 +19,15 @@
 
 .cabecalho-9{
     display: flex;
-    background-color: #FF8AB5;
+    background-image: url(../../assets/images/fundo.png);
     flex-direction: row;
     justify-content: space-between;
-    padding: 0.5em 5em 0em 2em;
+    background-size: 100% 200px;
 
+    height: 200px;
+   
+    
+    
 }
 .titulo-9{
     display: flex;
