@@ -23,11 +23,7 @@
     flex-direction: row;
     justify-content: space-between;
     background-size: 100% 200px;
-
-    height: 200px;
-   
-    
-    
+    height: 200px;    
 }
 .titulo-9{
     display: flex;
