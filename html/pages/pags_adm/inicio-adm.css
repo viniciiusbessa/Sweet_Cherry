@@ -17,18 +17,19 @@ body {
 .container-adm {
     display: flex;
     flex-direction: column;
+
+    background-color: #F3F7F6;
+    background-image: url(../../assets/images/onda.png);
+    background-size: 54% 700px;
+    background-repeat: repeat-y;
+    background-position: left;
+
+    height: 100vh;
 }
 
 .cabecalho-adm {
     display: flex;
     flex-direction: row;
-
-    background-color: #F3F7F6;
-    background-image: url(../../assets/images/fundo-adm-1.png);
-    background-size: 55% 140px;
-    background-repeat: no-repeat;
-
-    height: 130px;
 }
 
 .logo-img-adm {
@@ -62,47 +63,19 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-
-    background-color: #F3F7F6;
-    background-image: url(../../assets/images/fundo-adm-2.png);
-    background-size: 55% 140px;
-    background-repeat: no-repeat;
-
-    height: 130px;
 }
 
 .texto-escolha-adm {
     font-size: 40px;
 
     margin-top: 1.5em;
-    margin-left: 2em;
-}
-
-
-.div-fundo {
-    background-color: #F3F7F6;
-    background-image: url(../../assets/images/fundo-adm-3.png);
-    background-size: 56% 140px;
-    background-repeat: no-repeat;
-
-    height: 130px;
+    margin-bottom: 2em;
 }
 
 .btns-adm {
     display: flex;
     flex-direction: row;
     justify-content: center;
-
-    background-color: #F3F7F6;
-    background-image: url(../../assets/images/fundo-adm-4.png);
-    background-size: 55.5% 142px;
-    background-repeat: no-repeat;
-
-    height: 132px;
-}
-
-.btn-add-adm {
-    margin-left: 13em;
 }
 
 .btn-add-adm button {
@@ -117,17 +90,16 @@ body {
     width: 70%;
 
     padding: 0.5em 1.5em;
-    margin-top: -2em;
 
     cursor: pointer;
 }
 
-.btn-add-adm button:hover {
-    background-color: #a4b3de;
+.btn-add-adm {
+    margin-left: 7em;
 }
 
-.btn-alt-adm {
-    margin-left: 4em;
+.btn-add-adm button:hover {
+    background-color: #a4b3de;
 }
 
 .btn-alt-adm button {
@@ -142,21 +114,14 @@ body {
     width: 70%;
 
     padding: 0.5em 2.2em;
-    margin-top: -2em;
 
     cursor: pointer;
 }
 
-.btn-alt-adm button:hover {
-    background-color: #a4b3de;
+.btn-alt-adm {
+    margin-left: 4em;
 }
 
-
-.fundo-rodape {
-    background-color: #F3F7F6;
-    background-image: url(../../assets/images/fundo-adm-5.png);
-    background-size: 54.4% 145px;
-    background-repeat: no-repeat;
-
-    height: 135px;
+.btn-alt-adm button:hover {
+    background-color: #a4b3de;
 }
