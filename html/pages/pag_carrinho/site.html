@@ -35,11 +35,13 @@
 
             <table class="tabela-produtos">
 
-                <thead>
+                <thead class="cabecalho-tabela">
+                    <tr>
                     <th>Item</th>
                     <th>Preço</th>
                     <th>Quantidade</th>
                     <th></th>
+                    </tr>
                 </thead>
 
                 <tbody>
@@ -51,7 +53,7 @@
 
                         <td>R$19,90</td>
                         <td>1</td>
-                        <td><img src="../../assets/images/lixeira.svg" alt=""></td>
+                        <td class="lixeira-carrinho"><img src="../../assets/images/lixeira.svg" alt=""></td>
                     </tr>
 
                     <tr>
@@ -62,7 +64,7 @@
 
                         <td>R$19,90</td>
                         <td>1</td>
-                        <td><img src="../../assets/images/lixeira.svg" alt=""></td>
+                        <td class="lixeira-carrinho"><img src="../../assets/images/lixeira.svg" alt=""></td>
                     </tr>
 
                     <tr>
@@ -73,17 +75,41 @@
 
                         <td>R$19,90</td>
                         <td>1</td>
-                        <td><img src="../../assets/images/lixeira.svg" alt=""></td>
+                        <td class="lixeira-carrinho"><img src="../../assets/images/lixeira.svg" alt=""></td>
+                    </tr>
+
+                    <tr>
+                        <td class="doce-carrinho">
+                            <img src="../../assets/images/bolo-carrinho.svg" alt="">
+                            <div class="nome-produto">Bolo de chocolate</div>
+                        </td>
+
+                        <td>R$19,90</td>
+                        <td>1</td>
+                        <td class="lixeira-carrinho"><img src="../../assets/images/lixeira.svg" alt=""></td>
+                    </tr>
+
+                    <tr>
+                        <td class="doce-carrinho">
+                            <img src="../../assets/images/bolo-carrinho.svg" alt="">
+                            <div class="nome-produto">Bolo de chocolate</div>
+                        </td>
+
+                        <td>R$19,90</td>
+                        <td>1</td>
+                        <td class="lixeira-carrinho"><img src="../../assets/images/lixeira.svg" alt=""></td>
                     </tr>
                 </tbody>
             </table>
         </div>
 
-        <div class="botao-total"><button>Total: R$53,90</button></div>
+        <div class="total">
+            <button class="botao-total">Total: R$53,90</button>
+        </div>
 
         <div class="botoes">
-            <button class="continuar">Continuar comprando</button>
-            <button class="confirmar">Confirmar compra</button>
+            <div class="continuar"><button>Continuar comprando</button></div>
+            <div class="confirmar"><button>Confirmar compra</button></div>
         </div>
 
         <div class="box-cartoes">
