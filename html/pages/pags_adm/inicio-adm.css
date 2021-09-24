@@ -99,7 +99,8 @@ body {
 }
 
 .btn-add-adm button:hover {
-    background-color: #a4b3de;
+    background-color: #89a4ee;
+    transition: 1s;
 }
 
 .btn-alt-adm button {
@@ -123,5 +124,6 @@ body {
 }
 
 .btn-alt-adm button:hover {
-    background-color: #a4b3de;
+    background-color: #89a4ee;
+    transition: 1s;
 }
