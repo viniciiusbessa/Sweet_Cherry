@@ -35,6 +35,8 @@
       border: none;
 
       cursor: pointer;
+
+      transition: 0.5s;
   }
 
   .titulo-adm2 {
@@ -74,9 +76,27 @@
     border: 3px solid #D1EAF5;
     border-radius: 24px;
 
-    margin: 1em 0em 0em 10em;
+    margin: 0.4em 0em 0em 15em;
+    padding: 0.3em 1em;
 
     cursor: text;
+
+    font-family: Patua;
+    color: #000;
+
+    position: absolute;
+  }
+
+  .barra-pesquisa-adm2 input::placeholder {
+    font-family: Patua;
+    color: #000;
+  }
+
+  .barra-pesquisa-adm2:focus, input:focus {
+      box-shadow: 0 0 0 0;
+      outline: 0;
+
+      border: 3px solid #78c4e4;
   }
 
   table {
