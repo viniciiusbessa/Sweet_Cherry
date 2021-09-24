@@ -99,17 +99,7 @@ margin: 0px .5em 0px .5em;
 }
 
 
-.box-doces1, .box-doces2 {
-    display: flex;
-    flex-direction: row; 
- 
-    width: 85em;
-    justify-content: space-around;
-    align-items: center;
- 
-    margin-bottom: 80px;
- }
- 
+
  .doce {
      background-color: #D1EAF5;
      width: 20em;
