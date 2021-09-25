@@ -50,11 +50,31 @@ body {
   .container-add {
       display: flex;
       flex-direction: column;
-      align-items: center;
 
       background-color: #F3F7F6;
+    
+      height: 100vh;
+      width: 100%;
+  } 
+
+  .fundo-rodape-add {
+      background: url(../../assets/images/fundo-add-adm2.png), url(../../assets/images/fundo-traco-add.png);
+      background-repeat: no-repeat;
+      background-position-x: right;
+      background-position-y: bottom;
 
       height: 100vh;
+  }
+
+  .container-fundo-add {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      width: 100%;
+
+      background: url(../../assets/images/fundo-add-adm.png), url(../../assets/images/fundo-traco-add.png);
+      background-repeat: no-repeat;
   }
 
   .titulo-add {
