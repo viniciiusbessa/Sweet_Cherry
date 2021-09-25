@@ -1,0 +1,185 @@
+@font-face {
+    font-family: Pacifico;
+    src: url('../../assets/fonts/Pacifico-Regular.ttf');
+}
+
+body {
+    margin: 0px;
+    font-family: Pacifico;
+}
+
+* {
+    box-sizing: border-box;
+    cursor: default;
+  }
+
+  input {
+      background-color: #F3F7F6;
+
+      border: 1px solid #140018;
+      border-radius: 10px;
+
+      cursor: text;
+  }
+
+  input:focus {
+      box-shadow: 0 0 0 0;
+      outline: 0;
+
+      border: 2px solid #615f61;
+  }
+
+  textarea {
+      background-color: #F3F7F6;
+
+      border: 1px solid #140018;
+      border-radius: 10px;
+
+      cursor: text;
+
+      resize: none;
+  }
+
+  textarea:focus {
+      box-shadow: 0 0 0 0;
+      outline: 0;
+
+      border: 2px solid #615f61;
+  }
+
+  .container-add {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      background-color: #F3F7F6;
+
+      height: 100vh;
+  }
+
+  .titulo-add {
+      display: flex;
+      flex-direction: column;
+
+      margin-top: 4em;
+  }
+
+  .novo-produto-add {
+      font-size: 35px;
+  }
+
+  .traco-titulo {
+    background: #F6AAC6;
+
+    width: 13.5em;
+    height: 4px;
+
+    margin: -0.5em 0em 6em 0em;
+
+    border-radius: 1em;
+  }
+
+  .conteudo-add {
+      display: flex;
+      flex-direction: row;
+
+      font-size: 20px;
+  }
+
+  .campo-nome, .campo-descricao, .campo-preco, .campo-maxima, .campo-minima {
+      margin: -0.2em 0.7em 0em 0em;
+  }
+
+  .nome-descricao-add {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+
+      margin-right: 2em;
+  }
+
+  .box-input-nome {
+      display: flex;
+      flex-direction: row;
+
+      margin-bottom: 2em;
+  }
+
+  .input-nome {
+      width: 218px;
+      height: 35px;
+  }
+
+  .box-textarea-desc {
+      display: flex;
+      flex-direction: row;
+   }
+
+   .textarea-descricao {
+      width: 218px;
+      height: 178px;
+   }
+
+  .preco-qtds-add {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+  }
+
+  .preco-qtds-add input {
+      width: 116px;
+      height: 35px;
+  }
+
+  .box-input-preco {
+      display: flex;
+      flex-direction: row;
+
+      margin-bottom: 2em;
+  }
+
+  .box-input-maxima {
+      display: flex;
+      flex-direction: row;
+
+      margin-bottom: 2em;
+  }
+
+  .box-input-minima {
+      display: flex;
+      flex-direction: row;
+  }
+
+  .box-adicionar-produto {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      margin-left: 4em;
+  }
+
+  .img-produto img {
+      width: 13em;
+      height: auto;
+  }
+
+  .btn-add-produto button {
+      background: #643692;
+
+      border-radius: 20px;
+      border: none;
+
+      color: #fff;
+      font-family: Pacifico;
+      font-size: 17px;
+
+      padding: 0.5em 1.3em;
+      margin-top: 0.8em;
+
+      cursor: pointer;
+  }
+
+  .btn-add-produto button:hover {
+      background: #8a61b3;
+      transition: 1s;
+}

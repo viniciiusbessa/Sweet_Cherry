@@ -96,6 +96,8 @@
       outline: 0;
 
       border: 3px solid #78c4e4;
+
+      transition: 0.5s;
   }
 
   .img-lupa {
