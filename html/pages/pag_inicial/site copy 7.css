@@ -1,0 +1,457 @@
+
+body{
+    margin: 0px;
+    font-family: Pacifico;
+}
+
+@font-face {
+    font-family: Pacifico;
+    src: url('../../assets/fonts/Pacifico-Regular.ttf');
+}
+
+.Container_inicial{
+    display: flex;
+    flex-direction: column;
+
+    background-image: url(../../assets/images/onda_esquerda.png);
+    background-size: 42em 3000px;
+    background-position: right;
+    background-repeat: repeat-y;
+}
+
+.Cabecalho {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    margin-bottom: 10em;
+    
+}
+
+.logo {
+    margin-top: 2em;
+}
+
+.Sweet, .Cherry {
+    font-size: 28px;
+}
+
+.Cherry{
+    margin-left: 30px;
+}
+
+.categorias_cabecalho, .icons_cabecalho {
+    display: flex;
+    flex-direction: row;
+    margin-top: 4em;
+}
+
+.text {
+    padding-left:3em;
+    font-size: 18px;
+
+    cursor: pointer;
+
+}
+
+.icons_cabecalho img {
+    padding-left: 2em;
+
+    cursor: pointer;
+}
+
+.Faixa1_inicio{
+    display: flex;
+    flex-direction: row;
+
+    justify-content: space-between;
+    margin-bottom: 15em;
+}
+
+.botao1{
+    display: flex;
+    flex-direction: row-reverse;
+
+    border-bottom-right-radius: 2em;
+    border-top-right-radius: 2em;
+
+    background-color: lightpink;
+}
+
+.botao2{
+    display: flex;
+    flex-direction: row;
+
+    border-bottom-left-radius: 2em;
+    border-top-left-radius: 2em;
+    
+    background-color: lightblue;
+}
+
+.botao1, .botao2{
+    cursor: pointer;
+
+    align-items: center;
+
+    border: none;
+    
+    width: 15em;
+    height: 5em;
+
+}
+
+
+.Faixa2_inicio{
+    display: flex;
+    flex-direction: column;
+
+}
+
+.titulo{
+    margin-left: 2em;
+    font-size: 3em;
+
+    color: #FF8AB5;
+}
+
+.box_novidades{
+    display: flex;
+    flex-direction: column;
+    margin: 1em 15em;
+
+
+    background-color: #d1eaf5;
+    border-radius: 1em;
+    border-style: solid;
+    border-color: #fff;
+    border-width: 5px;
+}
+
+.titulo_novidades{
+    text-align: center;
+    font-size: 25px;
+}
+
+.lista{
+    display: flex;
+    flex-direction: row;
+}
+
+.lista1{
+    display: flex;
+    flex-direction: column;
+
+    font-size: 25px;
+}
+
+.imagem_bolo{
+    padding: 2em;
+
+}
+
+.imagem_bolo img{
+    width: 18em;
+    height: 13em;
+
+    border: solid;
+    border-color: white;
+    border-radius: 1em;
+    border-width: 10px;
+}
+
+.Faixa3_inicio{
+    display: flex;
+    flex-direction: column;
+    transition: background 0.4s ease-in;
+}
+ 
+ .doce {
+    background-color: #D1EAF5;
+    width: 13em;
+    height: 18em;
+
+    border-radius: 20px;
+ }
+ 
+ .img-doce img{
+    margin: 1em;
+ 
+    width: 11em;
+    height: 8em;
+ }
+ 
+ .sobre {
+    display: flex;
+    flex-direction: column;
+
+    margin-left: 20px;
+ }
+ 
+ .nm-doce {
+     font-size: 18px;
+ }
+ 
+ .icones {
+     display: flex;
+     flex-direction: row;
+     justify-content: flex-end;
+     margin-right: 10px;
+ }
+ 
+ .icone-carrinho img{
+     width: 30px;
+     height: auto;
+
+ }
+
+ .icone-coracao img{
+    width: 40px;
+    height: auto;
+ }
+ 
+ .preco {
+    font-size: 20px;
+    text-align: center;
+
+ }
+ 
+
+input[type=radio] {
+    display: none;
+}
+
+.titulo{
+    align-items: flex-start;
+}
+
+.cartao{
+    position: absolute;
+    width: 8em;
+    height: 3em;
+    cursor: pointer;
+    transition: transform 0,10s ease;
+
+}
+
+.slide{
+    display: flex;
+    flex-direction: column;
+    transform-style: preserve-3d;
+    align-items: center;
+}
+
+.cartoes{
+    display: flex;
+    flex-direction: row;
+    padding-right: 14em;
+}
+
+
+
+#item-1:checked ~ .cartoes #song-3, #item-2:checked ~ .cartoes #song-1, #item-3:checked ~ .cartoes #song-2{
+    transform: translateX(-80%) scale(0.8);
+    opacity: .4;
+    z-index: 0;
+}
+
+#item-1:checked ~ .cartoes #song-2, #item-2:checked ~ .cartoes #song-3, #item-3:checked ~ .cartoes #song-1{
+    transform: translateX(80%) scale(0.8);
+    opacity: .4;
+    z-index: 0;
+}
+
+#item-1:checked ~ .cartoes #song-1, #item-2:checked ~ .cartoes #song-2, #item-3:checked ~ .cartoes #song-3{
+    transform: translateX(0) scale(1);
+    opacity: 1;
+    z-index: 1;
+}
+
+#item-1:checked ~ .cartoes #song-1 img, #item-2:checked ~ .cartoes #song-2 img, #item-3:checked ~ .cartoes #song-3 img{
+    box-shadow: 0px 0px 5px 0px rgba(81, 81, 81, 0,47);
+}
+
+.vermais{
+    display: flex;
+    justify-content: center;
+
+    margin-top: 20em;
+    margin-bottom: 2em;
+}
+
+.vermais button {
+    background-color: #2F1747;
+
+    color: #ffffff;
+    border: none;
+    border-radius: 50px;
+
+    width:  190px;
+    height: 40px;
+
+    cursor: pointer;
+
+    font-family:  Pacifico;
+    font-size: 15px;
+}
+
+.vermais button:hover {
+    background-color: #52277D;
+    transition: all 0.5s ease-in;
+}
+
+
+
+
+.box_em_alta{
+    display: flex;
+    flex-direction: row;
+    margin: 2em 20em;
+
+    height: 20em;
+    width: 45em;
+
+    background-color: #a4bcff;
+    border-radius: 30px;
+    border-style: solid;
+    border-color: #FF8AB5;
+    border-width: 5px;
+}
+
+.imagem_emAlta img{
+    height: 20em;
+    width: 18em;
+
+    border: solid;
+    border-color: #FF8AB5;
+    border-radius: 20px;
+}
+
+.box_texto{
+    text-align: center;
+    padding: 2em;
+
+    color: white;
+    font-size: 20px;
+}
+
+.box_texto button {
+    background-color: #2F1747;
+
+    color: #ffffff;
+    border: none;
+    border-radius: 50px;
+
+    width:  190px;
+    height: 40px;
+
+    cursor: pointer;
+
+    font-family:  Pacifico;
+    font-size: 15px;
+}
+
+.box_texto button:hover {
+    background-color: #52277D;
+    transition: all 0.5s ease-in;
+}
+
+.container_doces{
+    display: flex;
+    flex-direction: row;
+    margin: 5em 0em 10em 10em;
+}
+
+.doces {
+    background-color: #D1EAF5;
+    width: 20em;
+    height: 30em;
+
+    border-radius: 20px;
+
+    cursor: pointer;
+    margin: 1em;
+}
+
+.imagem-doce img{
+    margin: 2em 0em 1em 2.5em;
+
+    width: 15em;
+    height: 12em;
+}
+
+.sobre_emAlta {
+    display: flex;
+    flex-direction: row;
+
+    margin-left: 40px;
+}
+
+.nome-doce {
+    font-size: 20px;
+}
+
+.preco_emAlta {
+    font-size: 20px;
+    text-align: center;
+
+    margin: 30px 0px 30px 0px;
+}
+
+.doces button {
+    background-color: #2F1747;
+
+    color: #ffffff;
+    border: 0px;
+    border-radius: 50px;
+
+    width:  100px;
+    height: 50px;
+
+    margin-left: 110px;
+    cursor: pointer;
+}
+
+.doces button:hover {
+    background-color: #52277D;
+    transition: all 0.5s ease-in;
+}
+
+
+
+footer {
+    background-color: #FF8AB5;
+    color: white;
+
+    display: flex;
+    flex-direction: row;
+
+    justify-content: center;
+    height: 120px;
+
+    text-align: center;
+    font-size: 18px;
+}
+
+.rodape {
+    display: flex;
+    flex-direction: row;
+
+    margin-top: 30px;
+}
+
+.sociais {
+    display: flex;
+    flex-direction: row;
+
+    cursor: pointer;
+}
+
+.icon img {
+    padding-left: 12px;
+    margin-top: 10px;
+}
+
+.linha {
+    margin-top: 15px;
+}
+

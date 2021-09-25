@@ -1,12 +1,6 @@
 body{
     margin: 0px;
     font-family: Pacifico;
-
-    background-image: url(../../assets/images/fundo-adm-2.png);
-    background-size: 43% 1900px;
-
-    background-position: left;
-    background-repeat: no-repeat;
 }
 
 @font-face {
@@ -17,12 +11,19 @@ body{
 .container_site{
     display: flex;
     flex-direction: column;
+
+    background-image: url(../../assets/images/onda.png);
+    background-size: 40% 600px;
+    background-position: left;
+    background-repeat: repeat-y;
 }
 
 .Cabecalho {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+
+    margin-bottom: 5em;
     
 }
 
@@ -49,6 +50,7 @@ margin-top: 4em;
     font-size: 18px;
 
     cursor: pointer;
+
 }
 
 .icons_cabecalho img {
@@ -70,7 +72,7 @@ margin-top: 4em;
     display:flex;
     flex-direction: row;
 
-    margin-bottom: 3em;
+    margin-bottom: 10em;
 
     text-align: center;
 
@@ -82,6 +84,8 @@ margin-top: 4em;
 
    margin-left: 5em;
    margin-right: 10em;
+
+
 
 }
 
@@ -95,17 +99,7 @@ margin: 0px .5em 0px .5em;
 }
 
 
-.box-doces1, .box-doces2 {
-    display: flex;
-    flex-direction: row; 
- 
-    width: 85em;
-    justify-content: space-around;
-    align-items: center;
- 
-    margin-bottom: 80px;
- }
- 
+
  .doce {
      background-color: #D1EAF5;
      width: 20em;
