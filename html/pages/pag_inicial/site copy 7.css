@@ -54,6 +54,11 @@ body{
 
 }
 
+.text:hover {
+    text-decoration: underline;
+	color: #F6AAC6
+}
+
 .icons_cabecalho img {
     padding-left: 2em;
 
