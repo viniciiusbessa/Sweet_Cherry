@@ -8,6 +8,7 @@ body{
     src: url('../../assets/fonts/Pacifico-Regular.ttf');
 }
 
+
 .container_site{
     display: flex;
     flex-direction: column;
@@ -24,7 +25,7 @@ body{
     justify-content: space-around;
 
     margin-bottom: 5em;
-    
+    color:black;
 }
 
 .logo {
@@ -40,9 +41,9 @@ body{
 }
 
 .categorias_cabecalho, .icons_cabecalho {
-display: flex;
-flex-direction: row;
-margin-top: 4em;
+    display: flex;
+    flex-direction: row;
+    margin-top: 4em;
 }
 
 .text {
@@ -51,6 +52,11 @@ margin-top: 4em;
 
     cursor: pointer;
 
+}
+
+.text:hover {
+    text-decoration: underline;
+	color: #F6AAC6
 }
 
 .icons_cabecalho img {
@@ -90,12 +96,19 @@ margin-top: 4em;
 }
 
 .descricao {
-font-size: 30px;
-color: #381c3d;
+    font-size: 30px;
+    color: #381c3d;
 
-margin: 0px .5em 0px .5em;
+    margin: 0px .5em 0px .5em;
 
 
+}
+
+.box-doces1, .box-doces2{
+    display: flex;
+    flex-direction: row;
+
+    justify-content: center;
 }
 
 
@@ -108,6 +121,8 @@ margin: 0px .5em 0px .5em;
      border-radius: 20px;
  
      cursor: pointer;
+
+     margin: 2em;
  }
  
  .img-doce img{
