@@ -1,6 +1,6 @@
 @font-face {
     font-family: Pacifico;
-    src: url('../../assets/fonts/Pacifico-Regular.ttf');
+    src: url('../../../assets/fonts/Pacifico-Regular.ttf');
 }
 
 body {
@@ -52,13 +52,13 @@ body {
       flex-direction: column;
 
       background-color: #F3F7F6;
-    
+      
       height: 100vh;
       width: 100%;
   } 
 
   .fundo-rodape-add {
-      background: url(../../assets/images/fundo-add-adm2.png), url(../../assets/images/fundo-traco-add.png);
+      background: url(../../../assets/images/fundo-add-adm2.png), url(../../../assets/images/fundo-traco-add.png);
       background-repeat: no-repeat;
       background-position-x: right;
       background-position-y: bottom;
@@ -73,7 +73,7 @@ body {
 
       width: 100%;
 
-      background: url(../../assets/images/fundo-add-adm.png), url(../../assets/images/fundo-traco-add.png);
+      background: url(../../../assets/images/fundo-add-adm.png), url(../../../assets/images/fundo-traco-add.png);
       background-repeat: no-repeat;
   }
 
@@ -89,14 +89,14 @@ body {
   }
 
   .traco-titulo {
-      background: #F6AAC6;
+    background: #F6AAC6;
 
-      width: 17.5em;
-      height: 4px;
+    width: 13.5em;
+    height: 4px;
 
-      margin: -0.5em 0em 6em 0em;
+    margin: -0.5em 0em 6em 0em;
 
-      border-radius: 1em;
+    border-radius: 1em;
   }
 
   .conteudo-add {
@@ -219,7 +219,7 @@ body {
   }
 
   .btn-voltar button:hover {
-      border: 2.5px solid #643692;
+    border: 2.5px solid #643692;
   }
 
   .box-input-link {

@@ -1,11 +1,11 @@
 @font-face {
     font-family: Pacifico;
-    src: url("../../assets/fonts/Pacifico-Regular.ttf");
+    src: url("../../../assets/fonts/Pacifico-Regular.ttf");
   }
 
 @font-face {
     font-family: Patua;
-    src: url("../../assets/fonts/PatuaOne-Regular.ttf");
+    src: url("../../../assets/fonts/PatuaOne-Regular.ttf");
   }
 
   body {
@@ -139,7 +139,7 @@
   }
 
   .img-lupa {
-    background: url(../../assets/images/lupa-pesquisa.png);
+    background: url(../../../assets/images/lupa-pesquisa.png);
     background-size: 24px 24px;
     background-repeat: no-repeat;
     position: relative;

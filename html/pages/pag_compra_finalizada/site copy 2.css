@@ -13,6 +13,10 @@ body {
     cursor: default;
   }
 
+  a {
+    cursor: pointer;
+    text-decoration: none;
+  }
 
   .container-compra-finalizada {
       display: flex;
@@ -62,13 +66,17 @@ body {
       font-size: 25px;
   }
 
-  .rota-compra-finalizada {
-    cursor: pointer;
+  .rotas-compra-finalizada a {
+    color: #140018;
   }
 
-  .rota-compra-finalizada:hover {
+  .rotas-compra-finalizada a:hover {
     text-decoration: underline;
 	  color: #fffbfd;
+  }
+
+  .rota-compra-finalizada {
+    cursor: pointer;
   }
 
   .box-imgs-compra-finalizada {
@@ -128,6 +136,10 @@ body {
 
     padding: 0em 2.8em;
     margin: 2em 0em 2em 0em;
+  }
+
+  .btn-voltar-inicio-compra-finalizada a {
+    color: #fff;
   }
 
   .btn-voltar-inicio-compra-finalizada button:hover {
