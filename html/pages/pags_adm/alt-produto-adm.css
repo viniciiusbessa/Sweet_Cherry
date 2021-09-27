@@ -103,10 +103,10 @@ body {
       display: flex;
       flex-direction: row;
 
-      font-size: 20px;
+      font-size: 22px;
   }
 
-  .campo-nome, .campo-descricao, .campo-preco, .campo-maxima, .campo-minima {
+  .campo-nome, .campo-descricao, .campo-preco, .campo-maxima, .campo-minima, .campo-link-img {
       margin: -0.2em 0.7em 0em 0em;
   }
 
@@ -155,14 +155,14 @@ body {
       display: flex;
       flex-direction: row;
 
-      margin-bottom: 2em;
+      margin-bottom: 3.2em;
   }
 
   .box-input-maxima {
       display: flex;
       flex-direction: row;
 
-      margin-bottom: 2em;
+      margin-bottom: 3.2em;
   }
 
   .box-input-minima {
@@ -179,7 +179,7 @@ body {
   }
 
   .img-produto img {
-      width: 13em;
+      width: 12em;
       height: auto;
   }
 
@@ -210,9 +210,9 @@ body {
 
       color: #000;
       font-family: Pacifico;
-      font-size: 17px;
+      font-size: 16px;
 
-      padding: 0.3em 1em;
+      padding: 0.2em 1em;
       margin-top: 0.8em;
 
       cursor: pointer;
@@ -220,4 +220,21 @@ body {
 
   .btn-voltar button:hover {
       border: 2.5px solid #643692;
+  }
+
+  .box-input-link {
+    display: flex;
+    flex-direction: row;
+
+    padding-right: 23.7em;
+    margin-top: 1em;
+  }
+
+  .campo-link-img {
+    font-size: 22px;
+  }
+
+  .input-lin-img {
+    width: 512px;
+    height: 35px;
   }
