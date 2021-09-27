@@ -233,6 +233,7 @@ body{
      flex-direction: row;
      justify-content: flex-end;
      margin-right: 10px;
+     margin-left: 3em;
  }
  
  .icone-carrinho img{
