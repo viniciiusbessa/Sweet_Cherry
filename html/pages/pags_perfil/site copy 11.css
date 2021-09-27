@@ -13,7 +13,7 @@
       font-family: Pacifico;
   }
 
-
+ 
   .cabecalho-11{
     display: flex;
     background-image: url(../../assets/images/fundo.png);
@@ -45,6 +45,9 @@
     margin-top: 1em;
 }
 
+.backfound1 {
+    background-image: url(../../assets/images/);
+}
 .imagens-cabecalho-11{
     display: flex;
     flex-direction: rown; 
@@ -58,17 +61,42 @@
 }
 
 .conteudo-11{
+    display: flex;
     font-family: Patua;
+    flex-direction: row;
 }
 .conteudo-rosa-11{
     display: flex;
     flex-direction: column;
     text-align: left;
-    background: #F6AAC6;
+    background: rgba(246, 170, 198, 1);
     
 }
+
+.inputs-rosa-11 input{
+    border-radius: 20px;
+    border: 2px solid white;
+} 
+.input-nascimento-11 input{
+    border-radius: 20px;
+    border: 2px solid white;
+}
+.input-cpf-11 input{
+    border-radius: 20px;
+    border: 2px solid white;
+}
+.input-telefone-11 input{
+    border-radius: 20px;
+    border: 2px solid white;
+}
+
 .titulo-conteudo-rosa-11{
     font-size: 25px;
+    font-family: Pacifico;
+}
+.dados-da-conta-11{
+    font-size: 20px;
+    font-family: Pacifico;
 }
 
 .cpf-texto-11{
@@ -77,13 +105,29 @@
 .texto-telfone-11{
     color:#FBE8FF;
 }
+.sair-da-conta-titulo{
+    color:#FBE8FF;
+}
+.excluir-a-conta-titulo{
+    color:#FF1A1A;
+}
 
 .conteudo-branco-11{
     display: flex;
     flex-direction: column;
-    text-align: left;
+    text-align: center;
     background: #FFFFFF;
     
+}
+
+.caixa-do-doce-11{
+    display: flex;
+    flex-direction: column;
+    background-color: #D1EAF5;
+    margin: 1em 15em 0em 15em;
+    padding: 0.8em;
+    border-radius: 7px;
+    font-family: Pacifico;
 }
 .titulo-branco-11{
     font-size: 30px;
@@ -108,11 +152,18 @@
     border-radius: 20px;
     font-family: Pacifico;
     padding: 0.5em 2em ;
+    text-align: right;
 }
 .botao-salvar-11{
- text-align: left;
+    text-align: right;
 }
 
+.input-branco-pesquisa-11 input{
+    background: #FFFFFF;
+    border: 2px solid #D1EAF5;
+    box-sizing: border-box;
+    border-radius: 24px;
+}
 .botao-caixa-de-doce-11 button{
     background-color:#2F1747;
     color: white;
