@@ -3,8 +3,172 @@
     src: url("../../assets/fonts/Pacifico-Regular.ttf");
   }
 
-  body{
-      margin: 0px;
+  @font-face {
+    font-family: Patua;
+    src: url("../../assets/fonts/PatuaOne-Regular.ttf");
   }
 
-  
+  body{
+      margin: 0px;
+      font-family: Pacifico;
+  }
+
+
+  .cabecalho-11{
+    display: flex;
+    background-image: url(../../assets/images/fundo.png);
+    flex-direction: row;
+    justify-content: space-between;
+    background-size: 100% 200px;
+       
+}
+
+
+.titulo1-11{
+    display: flex;
+    flex-direction: column;
+    font-size: 30px;   
+}
+
+.titulo2-11{
+    margin-left: 1em;
+    margin-top: -0.5em;
+    font-size: 30px;
+}
+
+.conteudo-cabecalho-11{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 40%;
+    font-size: 25px;
+    margin-top: 1em;
+}
+
+.imagens-cabecalho-11{
+    display: flex;
+    flex-direction: rown; 
+    justify-content: space-between;
+    width: 10%;
+}
+
+
+.imagens-cabecalho-11 img{
+    margin-top: 1.5em;
+}
+
+.conteudo-11{
+    font-family: Patua;
+}
+.conteudo-rosa-11{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    background: #F6AAC6;
+    
+}
+.titulo-conteudo-rosa-11{
+    font-size: 25px;
+}
+
+.cpf-texto-11{
+    color:#FBE8FF;
+}
+.texto-telfone-11{
+    color:#FBE8FF;
+}
+
+.conteudo-branco-11{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    background: #FFFFFF;
+    
+}
+.titulo-branco-11{
+    font-size: 30px;
+}
+.dtnacimento-texto-11{
+    color: #FBE8FF;
+}
+.caixa-do-doce-11{
+    display: flex;
+    flex-direction: column;
+    background-color: #D1EAF5;
+    padding: 0.8em;
+    border-radius: 7px;
+}
+
+
+
+.botao-salvar-11 button{
+    background-color:#2F1747;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    font-family: Pacifico;
+    padding: 0.5em 2em ;
+}
+.botao-salvar-11{
+ text-align: left;
+}
+
+.botao-caixa-de-doce-11 button{
+    background-color:#2F1747;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    font-family: Pacifico;
+    padding: 0.5em 2em ;
+}
+.botao-caixa-de-doce-11{
+ text-align: center;
+}
+
+.botao-conteudo-branco-11 button{
+    background-color:#FF1A1A;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    font-family: Pacifico;
+    padding: 0.5em 2em ;
+}
+.botao-conteudo-branco-11{
+ text-align: right;
+}
+
+
+  footer {
+    background-color: #FF8AB5;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 120px;
+    text-align: center;
+    font-size: 18px;
+}
+
+
+
+  .rodape-11 {
+    display: flex;
+    flex-direction: row;
+
+    margin-top: 30px;
+}
+.sociais {
+    display: flex;
+    flex-direction: row;
+
+    cursor: pointer;
+}
+
+.icon img {
+    padding-left: 12px;
+    margin-top: 10px;
+}
+
+.linha {
+    margin-top: 15px;
+}

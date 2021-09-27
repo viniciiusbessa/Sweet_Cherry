@@ -1,0 +1,117 @@
+@font-face {
+    font-family: Pacifico;
+    src: url('/html/assets/fonts/Pacifico-Regular.ttf');
+}
+
+@font-face {
+    font-family: Patua-one;
+    src:url('/html/assets/fonts/PatuaOne-Regular.ttf');
+}
+
+@font-face {
+    font-family: Pattaya;
+    src: url('/html/assets/fonts/Pattaya-Regular.ttf');
+}
+
+body {
+    margin: 0px;
+    background-color: white;
+}
+
+.container-entrar-bem-vindo {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.cabecalho-entrar-bem-vindo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    font-size: 20px;
+    font-family: Pattaya;
+    background-image: url(/html/assets/images/fundo.png);
+    background-size: 100% 200px;
+    height: 200px;
+}
+
+.bemvindo-titulo{
+   font-size: 36px;
+   text-align: center;
+   padding-top: 60px;
+   font-family: Pattaya;
+}
+
+
+.inputs-entrarbv{
+    display: flex;
+    flex-direction: column;
+    margin: 50px 500px 0px 500px;
+}
+
+.input-email{
+    margin-bottom: 25px;
+    padding-top: 25px;
+    font-size: 20px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    text-align: center;
+    font-family: Patua-one;
+}
+
+.input-senha{
+    margin-bottom: 25px;
+    padding-top: 25px;
+    font-size: 20px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    text-align: center;
+    font-family: Pacifico;
+}
+
+input:focus {
+    box-shadow: 0 0 0 0;
+    outline: 0;
+}
+
+.botoes-entrarbv button{
+    border-radius: 30px;
+    border: none;
+    background-color: #D1EAF5;
+    font-family: Patua-one;
+    margin: 0px;
+}
+
+.botoes-entrarbv{
+    margin-left: 550px;
+}
+
+.bt-entrar{
+    width: 100px;
+    height: 30px;
+    font-size: 15px;
+}
+
+.bt-criar{
+    width: 100px;
+    height: 30px;
+    font-size: 15px;
+}
+
+.conta-adm{
+    width: 250px;
+    height: 45px;
+    font-size: 15px;
+}
+
+.botoes-um{
+    padding-bottom: 5px;
+    margin-left: 40px;
+}
+
+.botao-dois{
+    margin-top: 10px;
+    margin-left: 15px;
+}
