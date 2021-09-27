@@ -14,9 +14,15 @@
   }
 
  
+  .conteiner_site-11{
+    display: flex;
+    flex-direction: column;
+    
+  }
   .cabecalho-11{
     display: flex;
     background-image: url(../../assets/images/fundo.png);
+    background-repeat: no-repeat;
     flex-direction: row;
     justify-content: space-between;
     background-size: 100% 200px;
@@ -95,7 +101,7 @@
     font-family: Pacifico;
 }
 .dados-da-conta-11{
-    font-size: 21px;
+    font-size: 20px;
     font-family: Pacifico;
 }
 
