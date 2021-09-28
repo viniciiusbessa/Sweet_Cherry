@@ -1,7 +1,7 @@
 import Cabecalho from '../../components/cabecalho/index'
 import Rodape from '../../components/rodape/index'
 
-import ContainerCompraFinalizada from './styled'
+import { ContainerCompraFinalizada } from './styled'
 
 export default function CompraFinalizada() {
     return (

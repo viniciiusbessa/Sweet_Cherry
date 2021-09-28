@@ -60,4 +60,4 @@ const ContainerCabecalho = styled.div`
     }
 `
 
-export default { ContainerCabecalho }
+export { ContainerCabecalho }

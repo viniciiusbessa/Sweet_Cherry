@@ -61,4 +61,4 @@ const ContainerCompraFinalizada = styled.div`
       }
 `
 
-export default { ContainerCompraFinalizada }
+export { ContainerCompraFinalizada }

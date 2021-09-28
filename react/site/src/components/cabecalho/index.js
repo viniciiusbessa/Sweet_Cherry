@@ -1,5 +1,5 @@
 
-import ContainerCabecalho from './styled'
+import { ContainerCabecalho } from './styled'
 
 export default function Cabecalho() {
     return (

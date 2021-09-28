@@ -1,6 +1,6 @@
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 
-import CompraFinalizada from './pages/compra-finalizada'
+import CompraFinalizada from './pages/compra-finalizada/index'
 
 
 export default function Routes() {
