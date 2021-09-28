@@ -11,7 +11,10 @@ body {
     margin: 0px;
     font-family: Pacifico;
 
-    background-color: #F6AAC6;
+    background-image: url(../../assets/images/onda.png);
+    background-size: 40% 600px;
+    background-position: left;
+    background-repeat: repeat-y;
 }
 
 .container {
@@ -23,11 +26,6 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-
-    background-image: url(../../assets/images/fundo1.png);
-    background-size: 100% 200px;
-
-    height: 200px;
 }
 
 .logo {
@@ -59,7 +57,7 @@ body {
 
 .text:hover {
     text-decoration: underline;
-	color: #F6AAC6
+	color: black;
 }
 
 .icones-cabecalho img {
@@ -111,10 +109,24 @@ input:focus {
     outline: 0;
 }
 
-
-
 .nm-box {
     font-size: 3em;
+}
+
+.linhas {
+    margin-top: -1.7em;
+}
+
+.linhas img {
+    height: 0.5em;
+}
+
+.linha-desta, .linha-cup {
+    margin-right: 1em;
+}
+
+.linha-fas {
+    margin-left: 2em;
 }
 
 .box-doces { 
@@ -204,10 +216,6 @@ input:focus {
     height: 2.7em;
 }
 
-
-
-
-
 footer {
     background-color: #FF8AB5;
     color: #fff;
@@ -245,23 +253,3 @@ footer {
 .linha {
     margin-top: 15px;
 }
-
-
-
-
-.linhas {
-    margin-top: -1.7em;
-}
-
-.linhas img {
-    height: 0.5em;
-}
-
-.linha-desta, .linha-cup {
-    margin-right: 1em;
-}
-
-.linha-fas {
-    margin-left: 2em;
-}
-
