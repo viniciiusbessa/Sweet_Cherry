@@ -4,7 +4,7 @@ const ContainerCompraFinalizada = styled.div`
     display: flex;
     flex-direction: column;
 
-    .conteudo-compra-finalizada {
+      .conteudo-compra-finalizada {
         display: flex;
         flex-direction: column;
         text-align: center;
@@ -14,51 +14,51 @@ const ContainerCompraFinalizada = styled.div`
         color: #000;
 
         height: 75vh;
-  }
+      }
 
-  .mensagem1-compra-finalizada {
-        font-size: 35px;
+      .mensagem1-compra-finalizada {
+            font-size: 35px;
 
-        margin-top: 1em;
-  }
+            margin-top: 1em;
+      }
 
-  .mensagem2-compra-finalizada {
-        font-size: 35px;
-  }
+      .mensagem2-compra-finalizada {
+            font-size: 35px;
+      }
 
-  .mensagem3-compra-finalizada {
-        font-size: 35px;
-  }
+      .mensagem3-compra-finalizada {
+            font-size: 35px;
+      }
 
-  .mensagem4-compra-finalizada {
-        font-size: 35px;
-  }
+      .mensagem4-compra-finalizada {
+            font-size: 35px;
+      }
 
-  .btn-voltar-inicio-compra-finalizada button {
-        color: #fff;
-        font-family: Pacifico;
-        font-size: 28px;
+      .btn-voltar-inicio-compra-finalizada button {
+            color: #fff;
+            font-family: Pacifico;
+            font-size: 28px;
 
-        background-color: #2F1747;
+            background-color: #2F1747;
 
-        border: none;
-        border-radius: 60px;
+            border: none;
+            border-radius: 60px;
 
-        width: 11.3em;
+            width: 11.3em;
 
-        padding: 0em 2em;
-        margin: 2em 0em 2em 0em;
-  }
+            padding: 0em 2em;
+            margin: 2em 0em 2em 0em;
+      }
 
-  .btn-voltar-inicio-compra-finalizada a {
-        color: #fff;
-  }
+      .btn-voltar-inicio-compra-finalizada a {
+            color: #fff;
+      }
 
-  .btn-voltar-inicio-compra-finalizada button:hover {
-        background-color: #522d77;
-        transition: 1s;
-        cursor: pointer;
-  }
+      .btn-voltar-inicio-compra-finalizada button:hover {
+            background-color: #522d77;
+            transition: 1s;
+            cursor: pointer;
+      }
 `
 
 export default { ContainerCompraFinalizada }
