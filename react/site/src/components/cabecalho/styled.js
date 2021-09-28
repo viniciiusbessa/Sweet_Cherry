@@ -7,6 +7,12 @@ const ContainerCabecalho = styled.div`
     
     color: #140018;
 
+    background-color: #F3F7F6;
+    background-image: url(../../assets/images/fundo.png);
+    background-size: 100% 180px;
+
+    height: 180px;
+
     padding: 1.5em 0em 1em 0em;
 
     .logo-perfil {

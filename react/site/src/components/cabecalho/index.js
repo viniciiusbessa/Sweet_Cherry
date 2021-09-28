@@ -10,15 +10,15 @@ export default function Cabecalho() {
             </div>
 
             <div className="rotas-perfil">
-                <div className="rota-perfil1"><a href="../pag_inicial/site copy 7.html">Início</a></div>
-                <div className="rota-perfil"><a href="../pag_destaque/site copy 4.html">Categorias</a></div>
-                <div className="rota-perfil"><a href="../pag_sobre_nos/site.html">Sobre nós</a></div>
-                <div className="rota-perfil"><a href="../pag_entrar/bem-vindo/site copy 5.html">Login</a></div>
+                <div className="rota-perfil1">Início</div>
+                <div className="rota-perfil">Categorias</div>
+                <div className="rota-perfil">Sobre nós</div>
+                <div className="rota-perfil">Login</div>
             </div>
 
             <div className="box-imgs-perfil">
-                <div className="img-carrinho-perfil"><a href="../pag_carrinho/site.html"><img src="../../assets/images/carrinho.svg" alt="" /> </a></div>
-                <div className="img-favoritos-perfil"><a href="../pag_favoritos/site.html"><img src="../../assets/images/lupa-com-coracao.svg" alt="" /> </a></div>
+                <div className="img-carrinho-perfil"><img src="../../assets/images/carrinho.svg" alt="" /> </div>
+                <div className="img-favoritos-perfil"><img src="../../assets/images/lupa-com-coracao.svg" alt="" /> </div>
             </div>
         </ContainerCabecalho>
     )

@@ -1,5 +1,4 @@
 import Cabecalho from '../../components/cabecalho/index'
-import Rodape from '../../components/rodape/index'
 
 import { ContainerCompraFinalizada } from './styled'
 
@@ -13,10 +12,8 @@ export default function CompraFinalizada() {
             <div className="mensagem2-compra-finalizada">Finalizada com sucesso!</div>
             <div className="mensagem3-compra-finalizada">Enviamos um email para você </div>
             <div className="mensagem4-compra-finalizada">confirmar a sua compra</div>
-            <div className="btn-voltar-inicio-compra-finalizada"><a href="../pags_perfil/site copy 11.html"><button> Acompanhar pedido </button></a></div>  
+            <div className="btn-voltar-inicio-compra-finalizada"><button> Acompanhar pedido </button></div>  
         </div>
-
-        <Rodape />
     </ContainerCompraFinalizada>
     )
 }
