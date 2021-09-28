@@ -1,11 +1,11 @@
 @font-face {
     font-family: Pacifico;
-    src: url("../../assets/fonts/Pacifico-Regular.ttf");
+    src: url("../../../assets/fonts/Pacifico-Regular.ttf");
   }
 
 @font-face {
     font-family: Patua;
-    src: url("../../assets/fonts/PatuaOne-Regular.ttf");
+    src: url("../../../assets/fonts/PatuaOne-Regular.ttf");
   }
 
   body {
@@ -23,13 +23,13 @@
 
       background-color: #F3F7F6;
 
-      padding: 2em 13em;
+      padding: 1.5em 2em 2em 2em;
 
-      height: 120vh;
+      height: 100%;
   }
 
   button {
-      font-family: Patua;
+      font-family: Pacifico;
       color: #fff;
 
       border: none;
@@ -71,18 +71,17 @@
   }
 
   .titulo-adm2 {
-    font-size: 35px;
-    font-family: Pacifico;
+      font-size: 35px;
+      font-family: Pacifico;
 
-    text-align: center;
+      text-align: center;
   }
 
   .box-conteudo-adm2 {
       display: flex;
       flex-direction: row;
-      justify-content: space-between;
 
-      margin: 2em 0em 2em 0em;
+      margin: 3em 0em 3em 4em;
   }
 
   .btn-add-adm2 button {
@@ -93,20 +92,10 @@
     padding: 0.2em;
 
     font-size: 25px;
-    font-family: Pacifico;
-  }
-
-  .btn-add-adm2 button:hover {
-    background-color: #f773a4;
-  }
-
-  .barra-pesquisa-adm2 {
-    display: flex;
-    flex-direction: row;
   }
 
   .barra-pesquisa-adm2 input {
-    width: 520px;
+    width: 494px;
     height: 40px;
 
     background: #F3F7F6;
@@ -114,8 +103,7 @@
     border: 3px solid #D1EAF5;
     border-radius: 24px;
 
-    margin-top: 0.3em;
-    margin-right: -1.7em;
+    margin: 0.4em 0em 0em 15em;
     padding: 0.3em 1em;
 
     cursor: text;
@@ -135,17 +123,18 @@
       outline: 0;
 
       border: 3px solid #78c4e4;
+
       transition: 0.5s;
   }
 
   .img-lupa {
-    background: url(../../assets/images/lupa-pesquisa.png);
+    background: url(../../../assets/images/lupa-pesquisa.png);
     background-size: 24px 24px;
     background-repeat: no-repeat;
     position: relative;
-
-    right: 15px;
-    top: 13px;
+    
+    left: 690px;
+    bottom: 31px;
 
     width: 24px;
     height: 24px;
@@ -168,51 +157,54 @@
   th {
     border: 1px solid #140018;
 
-    text-align: left;
+    padding: 0.5em 1.5em 1em 1em;
 
-    padding: 0.5em 0em 0.5em 1em;
+    text-align: left;
   }
 
   td {
     border: 1px solid #140018;
 
-    padding: 0.5em 0em 0.5em 1em;
+    padding: 0.2em 1em 0.2em 1em;
   }
 
   .campo-btns {
       border: none;
 
-      width: 15%;
+      padding: 0.2em 0em 0.2em 1em;
+
+      width: 9%;
   }
 
   .espaco {
     border: none;
 
-    width: 15%;
+    padding: 0.2em 0em 0.2em 0em;
   }
 
-  .espaco1 {
-    border: none;
+  .descricaoTb-adm2 {
+      width: 15em;
+      height: auto;
 
-    width: 15%;
+      font-size: 13px;
   }
 
   .botao-visivel {
     border: none;
 
-    padding: 0.8em 0em 0.8em 1em;
+    padding: 0.2em 0em 0.2em 1em;
   }
 
   .botao-visivel1 {
     border: none;
 
-    padding: 0.8em 0em 0.8em 1em;
+    padding: 0.2em 0em 0.2em 0em;
   }
 
   .botao-visivel2 {
     border: none;
 
-    padding: 0.8em 0em 0.8em 1em;
+    padding: 0.2em 0em 0.2em 0em;
   }
 
   .botao-visivel button {
@@ -220,9 +212,7 @@
 
     font-size: 16px;
 
-    border-radius: 10px;
-
-    padding: 0.3em 0.4em;
+    border-radius: 5px;
   }
 
   .botao-visivel button:hover {
@@ -234,9 +224,7 @@
 
     font-size: 16px;
 
-    border-radius: 10px;
-
-    padding: 0.3em 1.5em;
+    border-radius: 5px;
   }
 
   .botao-visivel1 button:hover {
@@ -248,9 +236,7 @@
 
     font-size: 16px;
 
-    border-radius: 10px;
-
-    padding: 0.3em 0.4em;
+    border-radius: 5px;
   }
 
   .botao-visivel2 button:hover {

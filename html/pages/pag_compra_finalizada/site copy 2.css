@@ -13,6 +13,10 @@ body {
     cursor: default;
   }
 
+  a {
+    cursor: pointer;
+    text-decoration: none;
+  }
 
   .container-compra-finalizada {
       display: flex;
@@ -62,13 +66,17 @@ body {
       font-size: 25px;
   }
 
-  .rota-compra-finalizada {
-    cursor: pointer;
+  .rotas-compra-finalizada a {
+    color: #140018;
   }
 
-  .rota-compra-finalizada:hover {
+  .rotas-compra-finalizada a:hover {
     text-decoration: underline;
 	  color: #fffbfd;
+  }
+
+  .rota-compra-finalizada {
+    cursor: pointer;
   }
 
   .box-imgs-compra-finalizada {
@@ -89,6 +97,7 @@ body {
     display: flex;
     flex-direction: column;
     text-align: center;
+    align-items: center;
 
     background-color: #F3F7F6;
     color: #000;
@@ -117,7 +126,7 @@ body {
   .btn-voltar-inicio-compra-finalizada button {
     color: #fff;
     font-family: Pacifico;
-    font-size: 25px;
+    font-size: 28px;
 
     background-color: #2F1747;
 
@@ -126,8 +135,12 @@ body {
 
     width: 11.3em;
 
-    padding: 0em 2.8em;
+    padding: 0em 2em;
     margin: 2em 0em 2em 0em;
+  }
+
+  .btn-voltar-inicio-compra-finalizada a {
+    color: #fff;
   }
 
   .btn-voltar-inicio-compra-finalizada button:hover {
