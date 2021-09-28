@@ -2,6 +2,10 @@
     font-family: Pacifico;
     src: url('../../assets/fonts/Pacifico-Regular.ttf');
 }
+@font-face {
+    font-family: Pattaya;
+    src: url('../../assets/fonts/Pattaya-Regular.ttf');
+}
 
 body {
     margin: 0px;
@@ -20,7 +24,7 @@ body {
     flex-direction: row;
     justify-content: space-around;
 
-    background-image: url(../../assets/images/tela-fundo-principal.png);
+    background-image: url(../../assets/images/fundo1.png);
     background-size: 100% 200px;
 
     height: 200px;
@@ -35,7 +39,7 @@ body {
 }
 
 .logo2 {
-    margin-left: 30px;
+    margin-left: 1em;
     margin-top: -0.7em;
 }
 
@@ -48,7 +52,7 @@ body {
 
 .text {
     padding-right: 1.2em;
-    font-size: 2.5em;
+    font-size: 2em;
 
     cursor: pointer;
 }
@@ -71,6 +75,128 @@ body {
 .lupa-perfil img {
     width: 3em;
 }
+
+.conteudo {
+    display: flex;
+    flex-direction: column;
+
+    margin: 4.5em;
+}
+
+.buscar {
+    margin-bottom: 2em;
+}
+
+.buscar img{
+    width: 2.5em;
+
+    margin-bottom: -0.9em;
+    margin-left: -5em;
+}
+
+input {
+    width: 65em;
+    height: 4em;
+
+    border: 4px solid #D1EAF5;
+    border-radius: 40px;
+
+    padding: 0em 1em;
+    font-size: 1em;
+}
+
+input:focus {
+    border: 2px solid #D1EAF5;
+    box-shadow: 0 0 0 0;
+    outline: 0;
+}
+
+
+
+.nm-box {
+    font-size: 3em;
+}
+
+.box-doces { 
+    display: flex;
+    flex-direction: column;
+}
+
+.box-itens {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    margin-top: 2em;
+}
+
+.box-produto {
+    background-color: #D1EAF5;
+    width: 15em;
+    height: 24em;
+
+    padding: 1em 1.5em;
+
+    border-radius: 12px;
+
+    cursor: pointer;
+
+    margin:  2em 4em 5em 2em;
+}
+
+
+.img-doce img{
+
+    width: 100%;
+    height: 100%;
+
+    border-radius: 7px;
+}
+
+.nm-car-fav {
+    display: flex;
+    flex-direction: row;
+
+    
+    margin: 0.5em 0em;
+}
+
+.icone-produtos img {
+    width: 3em;
+
+
+}
+.nm-produto {
+    font-size: 2em;
+    margin-right: 2.4em;
+}
+
+.preco-produto {
+    text-align: center;
+    font-size: 1.5em;
+
+    margin-bottom: 0.5em;
+}
+
+.ver-mais{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ver-mais button {
+    font-family: Pattaya;
+    border-radius: 20px;
+
+    background-color: #2F1747;
+    color: #FFFFFF;
+
+    border-style: none;
+
+    width: 7em;
+    height: 2.7em;
+}
+
 
 
 
