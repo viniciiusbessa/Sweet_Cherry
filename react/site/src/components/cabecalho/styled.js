@@ -59,3 +59,5 @@ const ContainerCabecalho = styled.div`
         margin-top: 1.3em;
     }
 `
+
+export default { ContainerCabecalho }
