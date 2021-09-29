@@ -15,7 +15,7 @@ export default function Cabecalho() {
     }
 
     const sobreNos = async () => {
-        navigation.push('/sobreNós')
+        navigation.push('/sobreNos')
     }
 
     const login = async () => {

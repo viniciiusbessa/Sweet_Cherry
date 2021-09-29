@@ -53,7 +53,7 @@ const ContainerPerfil = styled.div `
             display: flex;
             flex-direction: row;
 
-            font-family: Patua;
+            font-family: Patua One;
             font-size: 17px;
 
             margin-left: 1em;
@@ -71,7 +71,7 @@ const ContainerPerfil = styled.div `
 
         input {
             color: #140018;
-            font-family: Patua;
+            font-family: Patua One;
 
             background: #FFFFFF;
             border-radius: 11px;
@@ -79,6 +79,8 @@ const ContainerPerfil = styled.div `
 
             padding: 0.5em 0.5em;
             margin: 0.4em 0em 1.5em 3em;
+
+            cursor: text;
         }
 
         input:focus {
@@ -86,33 +88,33 @@ const ContainerPerfil = styled.div `
             outline: 0;
         }
 
-        .input-email input, .input-senha input, .input-nome input, .input-endereco input {
-            height: 18px;
-            width: 180px;
+        .input-email, .input-senha, .input-nome, .input-endereco {
+            height: 32px;
+            width: 195px;
         }
 
-        .input-endereco input, .input-data input, .input-cpf input {
+        .input-endereco, .input-data, .input-cpf {
             margin-bottom: 2.5em;
         }
 
-        .input-cpf input, .input-telefone input {
+        .input-cpf, .input-telefone {
             margin-top: 1em;
         }
 
-        .input-data input {
-            height: 18px;
-            width: 130px;
+        .input-data {
+            height: 32px;
+            width: 145px;
         }
 
-        .input-cpf input, .input-telefone input {
-            height: 15px;
-            width: 160px;
+        .input-cpf, .input-telefone {
+            height: 28px;
+            width: 175px;
         }
 
         .info-obrigatorio-data, .info-obrigatorio-cpf, .info-obrigatorio-telefone {
             font-size: 14px;
             color: #FBE8FF;
-            font-family: PatuaOne;
+            font-family: Patua One;
 
             margin: 0.7em 0em 0em 3em;
         }
@@ -126,13 +128,13 @@ const ContainerPerfil = styled.div `
         }
 
         .info-obrigatorio-telefone {
-         width: 15em;
+            width: 15em;
         }
 
         .formato {
             font-size: 15px;
             color: #FBE8FF;
-            font-family: Patua;
+            font-family: Patua One;
 
             margin: 0.3em 0em 0.5em 2.8em;
         }
@@ -144,7 +146,7 @@ const ContainerPerfil = styled.div `
             margin-left: 2em;
             margin-top: 0.7em;
 
-            font-family: Patua;
+            font-family: Patua One;
             font-size: 22px;
             color: #FBE8FF;
 
@@ -172,7 +174,7 @@ const ContainerPerfil = styled.div `
 
             margin-left: 2em;
 
-            font-family: Patua;
+            font-family: Patua One;
             font-size: 22px;
             color: #FF1A1A;
         }
@@ -240,8 +242,8 @@ const ContainerPerfil = styled.div `
         }
 
         .input-pesquisa-pedido {
-            width: 340px;
-            height: 40px;
+            width: 390px;
+            height: 55px;
 
             background: #FFF;
 
@@ -253,7 +255,7 @@ const ContainerPerfil = styled.div `
 
             cursor: text;
 
-            font-family: Patua;
+            font-family: Patua One;
             font-size: 18px;
             color: #140018;
         }
@@ -267,14 +269,14 @@ const ContainerPerfil = styled.div `
         }
 
         .input-pesquisa-pedido::placeholder {
-            font-family: Patua;
+            font-family: Patua One;
             color: #140018;
             font-size: 20px;
         }
 
         .subtitulo-pedido {
             font-size: 23px;
-            font-family: Patua;
+            font-family: Patua One;
             color: #808080;
         }
 
