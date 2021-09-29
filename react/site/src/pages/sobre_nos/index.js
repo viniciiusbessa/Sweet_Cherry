@@ -6,12 +6,14 @@ import {ContainerSobreNos} from './styled'
 export default function SobreNos() {
     return (
         <ContainerSobreNos>
+            <div className="fundo-cabecalho">
             <Cabecalho/>
-                    <div class="Faixa1_sobreNos">
-                        <div class="titulo">
+            </div>
+                    <div className="Faixa1_sobreNos">
+                        <div className="titulo">
                             Sobre Nós
                         </div>
-                        <div class="texto"> 
+                        <div className="texto"> 
                             <p> A Sweet Cherry é uma nova loja de doces que realiza transações entre seus consumidores via internet, 
                                 a Sweet Cherry tem diferencial, sendo uma loja de doces 100% online, sem uma unidade física que revende 
                                 doces de marcas famosas na região do Interlagos extremo sul da capital de SP.</p>
@@ -22,11 +24,11 @@ export default function SobreNos() {
                                 o momento certo para ingressar no mercado juntando a esta nova forma de empreender.</p>
                             </div> 
                         </div>
-                        <div class="Faixa2_sobreNos">
-                            <div class="titulo">
+                        <div className="Faixa2_sobreNos">
+                            <div className="titulo">
                                 Conheça nosso espaço
                             </div>
-                            <div class="imagens">
+                            <div className="imagens">
                                 <img src="../../assets/images/espaço_sweet Cherry.png" alt=""/>
                                 <img src="../../assets/images/espaço_sweet Cherry (2).png" alt=""/>
                             </div>

@@ -4,12 +4,19 @@ const ContainerSobreNos = styled.div`
     display: flex;
     flex-direction: column;
 
-        .titulo{
-        display: flex;
-        justify-content: center;
-        font-size: 3em;
+        .fundo-cabecalho {
+            background-image: url(../../assets/images/fundo.png);
+            background-size: 100% 180px;
 
-        color: #FF8AB5;
+            height: 180px;
+        }
+
+        .titulo{
+            display: flex;
+            justify-content: center;
+            font-size: 3em;
+
+            color: #FF8AB5;
         }
 
         .texto p {
@@ -17,7 +24,23 @@ const ContainerSobreNos = styled.div`
             justify-content: center;
             text-align: center;
             font-size: 2em;
+            font-family: Pacifico;
+        }
 
+        .imagens{
+            display: flex;
+            justify-content: center;
+        }
+
+        .imagens img{
+            border-radius: 1em;
+            width: 40em;
+            height: 40em;
+
+            margin: 1em;
+            border: solid;
+            border-color: #FF8AB5;
+            border-width: 10px;
         }
 `
 
