@@ -4,12 +4,8 @@ const ContainerCabecalho = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    
     color: #140018;
- 
-    background-image: url(../../assets/images/fundo.png);
-    background-size: 100% 180px;
-
+    
     height: 180px;
 
     padding: 1.5em 0em 1em 0em;
