@@ -36,19 +36,10 @@ const ContainerCabecalho = styled.div`
         font-size: 25px;
     }
 
-    .rotas-perfil a {
-        color: #140018;
-        text-decoration: none;
-    }
-
-    .rota-perfil1 a:hover {
-        color: #fff;
+    .rota-perfil:hover {
         text-decoration: underline;
-    }
-
-    .rota-perfil a:hover {
-        color: #F6AAC6;
-        text-decoration: underline;
+        font-size: 26px;
+        cursor: pointer;
     }
 
     .box-imgs-perfil {
