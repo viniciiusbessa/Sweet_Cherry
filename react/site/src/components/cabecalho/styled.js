@@ -6,8 +6,7 @@ const ContainerCabecalho = styled.div`
     justify-content: space-around;
     
     color: #140018;
-
-    background-color: #F3F7F6;
+ 
     background-image: url(../../assets/images/fundo.png);
     background-size: 100% 180px;
 
