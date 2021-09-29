@@ -34,8 +34,8 @@ const ContainerSobreNos = styled.div`
 
         .imagens img{
             border-radius: 1em;
-            width: 40em;
-            height: 40em;
+            width: 50vw;
+            height: 60vh;
 
             margin: 1em;
             border: solid;

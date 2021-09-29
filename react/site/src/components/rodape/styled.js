@@ -9,16 +9,22 @@ const ConteinerRodape = styled.footer`
     flex-direction: row;
 
     justify-content: center;
-    height: 120px;
 
-    text-align: center;
     font-size: 18px;
 
 .rodape {
     display: flex;
     flex-direction: row;
 
+    align-items: center;
+
     margin-top: 30px;
+}
+
+
+.TrabelheConosco, .atendimento, .redes{
+    margin: 1em;
+
 }
 
 .sociais {
@@ -29,8 +35,8 @@ const ConteinerRodape = styled.footer`
 }
 
 .icon img {
-    padding-left: 12px;
-    margin-top: 10px;
+    padding-right: 12px;
+   
 }
 
 .linha {
