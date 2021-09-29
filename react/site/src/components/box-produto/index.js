@@ -4,7 +4,7 @@ export default function BoxProduto (){
     return(
         <ContainerBoxProduto>
             <div class="doces">
-                            <div class="imagem-doce"><img src="/assets/images/bolo vermelo.png" alt=""/></div>
+                    <div class="imagem-doce"><img src="/assets/images/bolo vermelo.png" alt=""/></div>
                             <div class="sobre_emAlta">
                                 <div class="nome-doce">Bolo vermelho</div>
                                 <div class="icones">
@@ -13,9 +13,9 @@ export default function BoxProduto (){
                                 </div>
                             </div>
 
-                            <div class="preco_emAlta">R$19,90</div>
-                            <button>Ver mais</button>
-                        </div>
+                    <div class="preco_emAlta">R$19,90</div>
+                    <button>Ver mais</button>
+            </div>
         </ContainerBoxProduto>
     )
 }
