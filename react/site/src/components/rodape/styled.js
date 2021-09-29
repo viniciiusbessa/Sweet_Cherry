@@ -23,7 +23,8 @@ const ConteinerRodape = styled.footer`
 
 
 .TrabelheConosco, .atendimento, .redes{
-    margin: 1em;
+    margin-top: 1em;
+    margin-right: 4em;
 
 }
 
