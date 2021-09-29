@@ -4,9 +4,8 @@ const ContainerCabecalho = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    
     color: #140018;
-
+    
     height: 180px;
 
     padding: 1.5em 0em 1em 0em;
