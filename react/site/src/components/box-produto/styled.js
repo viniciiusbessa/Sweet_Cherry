@@ -2,7 +2,7 @@ import styled from "styled-components"
 
 const ContainerBoxProduto = styled.div`
 
-background-color: #D1EAF5;
+    background-color: #D1EAF5;
      width: 20em;
      height: 30em;
  

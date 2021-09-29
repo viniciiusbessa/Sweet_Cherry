@@ -1,12 +1,16 @@
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 
-import Inicio from './pages/inicial/index'
-import Categoria from './pages/destaque/index'
-import SobreNos from './pages/sobre_nos/index'
-
 import Login from './pages/entrar/bem_vindo/index'
 import Cadastro from './pages/entrar/cadastrar/index'
 import LoginAdm from './pages/entrar/bem_vindo_adm/index'
+
+import Inicio from './pages/inicial/index'
+import Categoria from './pages/destaque/index'
+import SobreNos from './pages/sobre_nos/index'
+import Carrinho from './pages/carrinho/index'
+import Favoritos from './pages/favoritos/index'
+
+import Compra from './pages/compra/index'
 
 import CompraFinalizada from './pages/compra-finalizada/index'
 
@@ -25,9 +29,12 @@ export default function Routes() {
             <Switch>
                 <Route path="/" exact={true} component={CompraFinalizada} />
                 <Route path="/inicio" component={Inicio} />
-                <Route path="/categoria" component={Categoria} />
+                <Route path="/destaque" component={Categoria} />
                 <Route path="/sobreNos" component={SobreNos} />
                 <Route path="/login" component={Login} />
+                <Route path="/carrinho" component={Carrinho} />
+                <Route path="/favoritos" component={Favoritos} />
+                <Route path="/compra" component={Compra} />
                 <Route path="/cadastro" component={Cadastro} />
                 <Route path="/login-adm" component={LoginAdm} />
                 <Route path="/perfil" component={Perfil} />

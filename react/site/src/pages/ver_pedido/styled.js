@@ -69,10 +69,18 @@ const ContainerVerPedido = styled.div`
             border: none;
             border-radius: 20px;
             font-family: Pacifico;
-            padding: 0.5em 2em ;
+            padding: 0.5em 2em;
         }
+
+        .ver_mais-9 button:hover {
+            background: #472666;
+            cursor: pointer;
+
+            transition: 0.5s;
+        }
+
         .ver_mais-9{
-        text-align: center;
+            text-align: center;
         }
 
         .pedido-item-9{

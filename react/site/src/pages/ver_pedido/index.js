@@ -9,7 +9,7 @@ export default function Perfil() {
     const navigation = useHistory();
 
     const VerMais = async () => {
-        navigation.push('')
+        navigation.push('/compra')
     }
 
     return (

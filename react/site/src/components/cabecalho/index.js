@@ -11,7 +11,7 @@ export default function Cabecalho() {
     }
 
     const categoria = async () => {
-        navigation.push('/categoria')
+        navigation.push('/destaque')
     }
 
     const sobreNos = async () => {
@@ -23,11 +23,11 @@ export default function Cabecalho() {
     }
 
     const carrinho = async () => {
-        navigation.push('/login')
+        navigation.push('/carrinho')
     }
 
     const favoritos = async () => {
-        navigation.push('/login')
+        navigation.push('/favoritos')
     }
 
     return (
