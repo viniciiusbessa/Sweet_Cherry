@@ -28,7 +28,7 @@ const ContainerBoxProduto = styled.div`
  }
  
  .nm_doce {
-     font-size: 20px;
+     font-size: 50px;
  }
  
  .icones {
@@ -46,8 +46,9 @@ const ContainerBoxProduto = styled.div`
  }
 
  .icone-coracao img{
-    width: 40px;
+    width: 30px;
     height: auto;
+
  }
  
  .preco {

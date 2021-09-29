@@ -8,8 +8,11 @@ import Login from './pages/entrar/bem_vindo/index'
 import Cadastro from './pages/entrar/cadastrar/index'
 import LoginAdm from './pages/entrar/bem_vindo_adm/index'
 
+import Carrinho from './pages/carrinho/index'
+import Compra from './pages/compra/index'
 import CompraFinalizada from './pages/compra-finalizada/index'
 
+import Favoritos from './pages/favoritos/index'
 import Perfil from './pages/perfil/index'
 import VerPedido from './pages/ver_pedido/index'
 
@@ -27,6 +30,9 @@ export default function Routes() {
                 <Route path="/inicio" component={Inicio} />
                 <Route path="/categoria" component={Categoria} />
                 <Route path="/sobreNos" component={SobreNos} />
+                <Route path='/carrinho' component={Carrinho} />
+                <Route path="/favoritos" component={Favoritos} />
+                <Route path="/compra" component={Compra} />
                 <Route path="/login" component={Login} />
                 <Route path="/cadastro" component={Cadastro} />
                 <Route path="/login-adm" component={LoginAdm} />
