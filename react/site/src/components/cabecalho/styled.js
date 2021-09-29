@@ -50,6 +50,10 @@ const ContainerCabecalho = styled.div`
         width: 15%;
         margin-top: 1.3em;
     }
+
+    .img-carrinho-perfil img, .img-favoritos-perfil img {
+        cursor: pointer;
+    }
 `
 
 export { ContainerCabecalho }
