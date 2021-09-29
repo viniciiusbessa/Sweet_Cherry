@@ -2,7 +2,7 @@ import styled from "styled-components"
 
 const ContainerBoxProduto = styled.div`
 
-background-color: #D1EAF5;
+    background-color: #D1EAF5;
      width: 20em;
      height: 30em;
  
@@ -13,21 +13,21 @@ background-color: #D1EAF5;
      margin: 2em;
  
 
- .img-doce img{
+ .imagem-doce img{
      margin: 2em 0em 1em 2.5em;
  
      width: 15em;
      height: 12em;
  }
  
- .sobre {
+ .sobre_Produto {
      display: flex;
      flex-direction: row;
  
      margin-left: 40px;
  }
  
- .nm-doce {
+ .nm_doce {
      font-size: 20px;
  }
  
@@ -43,6 +43,11 @@ background-color: #D1EAF5;
      height: auto;
  
      margin-right: 10px;
+ }
+
+ .icone-coracao img{
+    width: 40px;
+    height: auto;
  }
  
  .preco {
