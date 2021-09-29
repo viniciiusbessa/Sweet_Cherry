@@ -38,7 +38,7 @@ export default function Cabecalho() {
             </div>
 
             <div className="rotas-perfil">
-                <div className="rota-perfil1" onClick={inicio}>Início</div>
+                <div className="rota-perfil" onClick={inicio}>Início</div>
                 <div className="rota-perfil" onClick={categoria}>Categorias</div>
                 <div className="rota-perfil" onClick={sobreNos}>Sobre nós</div>
                 <div className="rota-perfil" onClick={login}>Login</div>

@@ -3,7 +3,10 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import Inicio from './pages/inicial/index'
 import Categoria from './pages/destaque/index'
 import SobreNos from './pages/sobre_nos/index'
+
 import Login from './pages/entrar/bem_vindo/index'
+import Cadastro from './pages/entrar/cadastrar/index'
+import LoginAdm from './pages/entrar/bem_vindo_adm/index'
 
 import CompraFinalizada from './pages/compra-finalizada/index'
 
@@ -25,6 +28,8 @@ export default function Routes() {
                 <Route path="/categoria" component={Categoria} />
                 <Route path="/sobreNos" component={SobreNos} />
                 <Route path="/login" component={Login} />
+                <Route path="/cadastro" component={Cadastro} />
+                <Route path="/login-adm" component={LoginAdm} />
                 <Route path="/perfil" component={Perfil} />
                 <Route path="/ver-pedido" component={VerPedido} />
                 <Route path="/inicio-adm" component={InicioAdm} />

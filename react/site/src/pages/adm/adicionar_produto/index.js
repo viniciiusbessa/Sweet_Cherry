@@ -54,7 +54,7 @@ export default function AdicionarProduto() {
                     </div>
 
                     <div class="box-adicionar-produto">
-                        <div class="img-produto"><img src="../../../assets/images/img-add-adm.png" alt=""/></div>
+                        <div class="img-produto"><img src="../../../assets/images/img-add-adm.png" alt="" /></div>
                         <div class="btn-add-produto"><button onClick={AdmProduto}>Adicionar novo produto</button></div>
                         <div class="btn-voltar"><button onClick={AdmProduto}>Voltar</button></div>
                     </div>
