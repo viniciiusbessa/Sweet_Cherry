@@ -4,16 +4,24 @@ const ContainerCompraFinalizada = styled.div`
     display: flex;
     flex-direction: column;
 
+      .fundo-cabecalho {
+            background-color: #F3F7F6;
+            background-image: url(../../assets/images/fundo.png);
+            background-size: 100% 180px;
+
+            height: 180px;
+      }
+
       .conteudo-compra-finalizada {
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-        align-items: center;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            align-items: center;
 
-        background-color: #F3F7F6;
-        color: #000;
+            background-color: #F3F7F6;
+            color: #000;
 
-        height: 75vh;
+            height: 75vh;
       }
 
       .mensagem1-compra-finalizada {

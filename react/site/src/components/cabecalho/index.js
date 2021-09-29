@@ -1,7 +1,35 @@
 
 import { ContainerCabecalho } from './styled'
 
+import { useHistory } from 'react-router-dom'
+
 export default function Cabecalho() {
+    const navigation = useHistory();
+
+    const inicio = async () => {
+        navigation.push('/inicio')
+    }
+
+    const categoria = async () => {
+        navigation.push('/categoria')
+    }
+
+    const sobreNos = async () => {
+        navigation.push('/sobreNós')
+    }
+
+    const login = async () => {
+        navigation.push('/login')
+    }
+
+    const carrinho = async () => {
+        navigation.push('/login')
+    }
+
+    const favoritos = async () => {
+        navigation.push('/login')
+    }
+
     return (
         <ContainerCabecalho>
             <div className="logo-perfil">
@@ -10,15 +38,15 @@ export default function Cabecalho() {
             </div>
 
             <div className="rotas-perfil">
-                <div className="rota-perfil1">Início</div>
-                <div className="rota-perfil">Categorias</div>
-                <div className="rota-perfil">Sobre nós</div>
-                <div className="rota-perfil">Login</div>
+                <div className="rota-perfil1" onClick={inicio}>Início</div>
+                <div className="rota-perfil" onClick={categoria}>Categorias</div>
+                <div className="rota-perfil" onClick={sobreNos}>Sobre nós</div>
+                <div className="rota-perfil" onClick={login}>Login</div>
             </div>
 
             <div className="box-imgs-perfil">
-                <div className="img-carrinho-perfil"><img src="../../assets/images/carrinho.svg" alt="" /> </div>
-                <div className="img-favoritos-perfil"><img src="../../assets/images/lupa-com-coracao.svg" alt="" /> </div>
+                <div className="img-carrinho-perfil"><img src="../../assets/images/carrinho.svg" alt="" onClick={carrinho} /> </div>
+                <div className="img-favoritos-perfil"><img src="../../assets/images/lupa-com-coracao.svg" alt="" onClick={favoritos}  /> </div>
             </div>
         </ContainerCabecalho>
     )
