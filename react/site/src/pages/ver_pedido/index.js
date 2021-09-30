@@ -3,13 +3,15 @@ import Rodape from '../../components/rodape/index'
 
 import { ContainerVerPedido } from './styled'
 
+import BoxPedido from './cardProduct/index'
+
 import { useHistory } from 'react-router-dom'
 
 export default function VerPedido() {
     const navigation = useHistory();
 
-    const VerMais = async () => {
-        navigation.push('/compra')
+    const Perfil = async () => {
+        navigation.push('/perfil')
     }
 
     return (
@@ -18,121 +20,23 @@ export default function VerPedido() {
             <Cabecalho />
         </div>
 
-        <div class="conteudo-9">
-            <div class="item-9">Inspecionar itens</div>
-            <div class="compra-9">Compra 10/10/2021</div>
-            <div class="pedidos-9">
-                <div class="pedido-item-9">
-                    <div class="imagem_do_bolo-9"><img src="../../assets/images/bolim.png" alt="" /></div>
-                    <div class="informacoes_do_doce-9">
-                        <div class="bolo_qtd-9">
-                            <div class="nome_doce">Bolo</div>
-                            <div class="qtd_doce"> qtd:2</div>
-                        </div>
-                        <div class="imagem_carrinho-9"><img src="../../assets/images/carrinho.png" alt="" /></div>
-                        <div class="imagem_coracao-9"><img src="../../assets/images/coracao.png" alt="" /></div>
-                    </div>
-                    <div class="preco-9">R$19,00</div>
-                    <div class="ver_mais-9"><button onClick={VerMais}>Ver mais</button></div>
-                </div>
-
-                <div class="pedido-item-9">
-                    <div class="imagem_do_bolo-9"><img src="../../assets/images/bolim.png" alt="" /></div>
-                    <div class="informacoes_do_doce-9">
-                        <div class="bolo_qtd-9">
-                            <div class="nome_doce">Bolo</div>
-                            <div class="qtd_doce"> qtd:3</div>
-                        </div>
-                        <div class="imagem_carrinho-9"><img src="../../assets/images/carrinho.png" alt="" /></div>
-                      <div class="imagem_coracao-9"><img src="../../assets/images/coracao.png" alt="" /></div>
-                    </div>
-                    <div class="preco-9">R$20,00</div>
-                    <div class="ver_mais-9"><button onClick={VerMais}>Ver mais</button></div>
-                </div>
-
-                <div class="pedido-item-9">
-                    <div class="imagem_do_bolo-9"><img src="../../assets/images/bolim.png" alt="" /></div>
-                    <div class="informacoes_do_doce-9">
-                        <div class="bolo_qtd-9">
-                            <div class="nome_doce">Bolo</div>
-                            <div class="qtd_doce"> qtd:2</div>
-                        </div>
-                        <div class="imagem_carrinho-9"><img src="../../assets/images/carrinho.png" alt="" /></div>
-                      <div class="imagem_coracao-9"><img src="../../assets/images/coracao.png" alt="" /></div>
-                    </div>
-                    <div class="preco-9">R$19,00</div>
-                    <div class="ver_mais-9"><button onClick={VerMais}>Ver mais</button></div>
-                </div>
-
-                <div class="pedido-item-9">
-                    <div class="imagem_do_bolo-9"><img src="../../assets/images/bolim.png" alt="" /></div>
-                    <div class="informacoes_do_doce-9">
-                        <div class="bolo_qtd-9">
-                            <div class="nome_doce">Bolo</div>
-                            <div class="qtd_doce"> qtd:2</div>
-                        </div>
-                        <div class="imagem_carrinho-9"><img src="../../assets/images/carrinho.png" alt="" /></div>
-                      <div class="imagem_coracao-9"><img src="../../assets/images/coracao.png" alt="" /></div>
-                    </div>
-                    <div class="preco-9">R$19,00</div>
-                    <div class="ver_mais-9"><button onClick={VerMais}>Ver mais</button></div>
-                </div>
-
-                <div class="pedido-item-9">
-                    <div class="imagem_do_bolo-9"><img src="../../assets/images/bolim.png" alt="" /></div>
-                    <div class="informacoes_do_doce-9">
-                        <div class="bolo_qtd-9">
-                            <div class="nome_doce">Bolo</div>
-                            <div class="qtd_doce"> qtd:2</div>
-                        </div>
-                        <div class="imagem_carrinho-9"><img src="../../assets/images/carrinho.png" alt="" /></div>
-                      <div class="imagem_coracao-9"><img src="../../assets/images/coracao.png" alt="" /></div>
-                    </div>
-                    <div class="preco-9">R$19,00</div>
-                    <div class="ver_mais-9"><button onClick={VerMais}>Ver mais</button></div>
-                </div>
-
-                <div class="pedido-item-9">
-                    <div class="imagem_do_bolo-9"><img src="../../assets/images/bolim.png" alt="" /></div>
-                    <div class="informacoes_do_doce-9">
-                        <div class="bolo_qtd-9">
-                            <div class="nome_doce">Bolo</div>
-                            <div class="qtd_doce"> qtd:2</div>
-                        </div>
-                        <div class="imagem_carrinho-9"><img src="../../assets/images/carrinho.png" alt="" /></div>
-                      <div class="imagem_coracao-9"><img src="../../assets/images/coracao.png" alt="" /></div>
-                    </div>
-                    <div class="preco-9">R$19,00</div>
-                    <div class="ver_mais-9"><button onClick={VerMais}>Ver mais</button></div>
-                </div>
-
-                <div class="pedido-item-9">
-                    <div class="imagem_do_bolo-9"><img src="../../assets/images/bolim.png" alt="" /></div>
-                    <div class="informacoes_do_doce-9">
-                        <div class="bolo_qtd-9">
-                            <div class="nome_doce">Bolo</div>
-                            <div class="qtd_doce"> qtd:2</div>
-                        </div>
-                        <div class="imagem_carrinho-9"><img src="../../assets/images/carrinho.png" alt="" /></div>
-                      <div class="imagem_coracao-9"><img src="../../assets/images/coracao.png" alt="" /></div>
-                    </div>
-                    <div class="preco-9">R$19,00</div>
-                    <div class="ver_mais-9"><button onClick={VerMais}>Ver mais</button></div>
-                </div>
-
-                <div class="pedido-item-9">
-                    <div class="imagem_do_bolo-9"><img src="../../assets/images/bolim.png" alt="" /></div>
-                    <div class="informacoes_do_doce-9">
-                        <div class="bolo_qtd-9">
-                            <div class="nome_doce">Bolo</div>
-                            <div class="qtd_doce"> qtd:2</div>
-                        </div>
-                        <div class="imagem_carrinho-9"><img src="../../assets/images/carrinho.png" alt="" /></div>
-                      <div class="imagem_coracao-9"><img src="../../assets/images/coracao.png" alt="" /></div>
-                    </div>
-                    <div class="preco-9">R$19,00</div>
-                    <div class="ver_mais-9"><button onClick={VerMais}>Ver mais</button></div>
-                </div>
+        <div className="conteudo-9">
+            <div className="box-item-9">
+                <div className="item-9">Inspecionar itens</div>
+                <button onClick={Perfil} className="btn-voltar-perfil">Voltar para o perfil</button>
+            </div>
+            <div className="compra-9">Compra 10/10/2021</div>
+            <div className="pedidos-9">
+                <BoxPedido />
+                <BoxPedido />
+                <BoxPedido />
+                <BoxPedido />
+                <BoxPedido />
+                <BoxPedido />
+                <BoxPedido />
+                <BoxPedido />
+                <BoxPedido />
+                <BoxPedido />
             </div>
         </div>
         

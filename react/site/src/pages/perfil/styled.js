@@ -4,8 +4,8 @@ const ContainerPerfil = styled.div `
     display: flex;
     flex-direction: column;
 
-    background-image: url(../../assets/images/onda.png);
-    background-size: 36.5% 750px;
+    background-image: url(../../assets/images/ondaa.png);
+    background-size: 37% 750px;
     background-repeat: repeat-y;
     background-position: left;
 
