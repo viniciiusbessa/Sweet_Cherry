@@ -28,7 +28,7 @@ export default function BoxProduto (){
                                 <div class="nm-doce">Bolo vermelho</div>
                                 <div class="icones">
                                     <div class="icone-carrinho" onClick={carrinho}><img src="/assets/images/carrinho.svg" alt=""/></div>
-                                    <div class="icone-coracao" onClick={favoritos}><img src="/assets/images/coracao.png" alt=""/></div>
+                                    <div class="icone-coracao" onClick={favoritos}><img src="/assets/images/coracao1.svg" alt=""/></div>
                                 </div>
                             </div>
 
