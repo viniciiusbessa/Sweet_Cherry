@@ -1,6 +1,6 @@
 import Cabecalho from '../../components/cabecalho/index'
 import Rodape from '../../components/rodape/index'
-import BoxProduto from '../../components/box-produto/index'
+import BoxProduto from '../../components/cardProduct/index'
 
 import { ContainerDestaque } from './styled'
 
