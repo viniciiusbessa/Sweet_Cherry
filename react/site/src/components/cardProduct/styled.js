@@ -5,11 +5,8 @@ const ContainerBoxProduto = styled.div`
     background-color: #D1EAF5;
      width: 20em;
      height: 30em;
- 
      border-radius: 20px;
- 
      cursor: pointer;
-
      margin: 2em;
  
 
@@ -60,16 +57,15 @@ const ContainerBoxProduto = styled.div`
  
  button {
      background-color: #2F1747;
- 
      color: #ffffff;
      border: 0px;
      border-radius: 50px;
- 
      width:  100px;
      height: 50px;
- 
      margin-left: 110px;
      cursor: pointer;
+     font-family:pacifico;
+     
  }
  
  button:hover {

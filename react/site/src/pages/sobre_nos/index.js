@@ -14,8 +14,8 @@ export default function SobreNos() {
                             Sobre Nós
                         </div>
                         <div className="texto"> 
-                            <p> A Sweet Cherry é uma nova loja de doces que realiza transações entre seus consumidores via internet, 
-                                a Sweet Cherry tem diferencial, sendo uma loja de doces 100% online, sem uma unidade física que revende 
+                            <p> A Sweet Cherry é uma nova loja de doces que realiza vendas via internet, 
+                                a Sweet Cherry tem um diferencial, sendo uma loja de doces com atendimento online, com uma unidade física que revende 
                                 doces de marcas famosas na região do Interlagos extremo sul da capital de SP.</p>
 
                             <p> Sua entrega é a domicílio e o pagamento é feito diretamente pelo site, visando facilitar ao máximo para o cliente. 

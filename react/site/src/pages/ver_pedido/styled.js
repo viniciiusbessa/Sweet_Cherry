@@ -75,7 +75,6 @@ const ContainerVerPedido = styled.div`
         .ver_mais-9 button:hover {
             background: #472666;
             cursor: pointer;
-
             transition: 0.5s;
         }
 
