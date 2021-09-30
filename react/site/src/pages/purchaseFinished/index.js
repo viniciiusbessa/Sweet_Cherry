@@ -1,4 +1,4 @@
-import Cabecalho from '../../components/cabecalho/index'
+import Cabecalho from '../../components/header/index'
 
 import { ContainerCompraFinalizada } from './styled'
 

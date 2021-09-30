@@ -1,7 +1,7 @@
 import { ContainerPagamento } from './styled'
 
-import Cabecalho from '../../components/cabecalho/index'
-import Rodape from '../../components/rodape/index'
+import Cabecalho from '../../components/header/index'
+import Rodape from '../../components/footer/index'
 
 import { useHistory } from 'react-router-dom'
 

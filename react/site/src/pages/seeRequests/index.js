@@ -1,9 +1,9 @@
-import Cabecalho from '../../components/cabecalho/index'
-import Rodape from '../../components/rodape/index'
+import Cabecalho from '../../components/header/index'
+import Rodape from '../../components/footer/index'
 
 import { ContainerVerPedido } from './styled'
 
-import BoxPedido from './cardProduct/index'
+import BoxPedido from './cardProductRequests/index'
 
 import { useHistory } from 'react-router-dom'
 

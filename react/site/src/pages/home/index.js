@@ -1,6 +1,7 @@
-import Rodape from "../../components/rodape";
-import Cabecalho from "../../components/cabecalho";
-import BoxProduto from "../../components/cardProduct/index";
+import Rodape from "../../components/footer";
+import Cabecalho from "../../components/header";
+import BoxProduto from "../../components/commum/cardProduct/index";
+
 import { ContainerInicial } from "./styled";
 
 export default function inicial () {

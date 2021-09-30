@@ -1,5 +1,5 @@
-import Cabecalho from "../../components/cabecalho";
-import Rodape from "../../components/rodape";
+import Cabecalho from "../../components/header";
+import Rodape from "../../components/footer";
 
 import {ContainerSobreNos} from './styled'
 

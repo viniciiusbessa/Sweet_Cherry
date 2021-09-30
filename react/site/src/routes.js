@@ -1,26 +1,26 @@
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 
-import Login from './pages/entrar/bem_vindo/index'
-import Cadastro from './pages/entrar/cadastrar/index'
-import LoginAdm from './pages/entrar/bem_vindo_adm/index'
+import Login from './pages/login/loginUser/index'
+import Cadastro from './pages/login/registerUser/index'
+import LoginAdm from './pages/login/loginAdm/index'
 
-import Inicio from './pages/inicial/index'
-import Categoria from './pages/destaque/index'
-import SobreNos from './pages/sobre_nos/index'
-import Carrinho from './pages/carrinho/index'
+import Inicio from './pages/home/index'
+import Categoria from './pages/detachProducts/index'
+import SobreNos from './pages/aboutUs/index'
+import Carrinho from './pages/cartProducts/index'
 
-import Compra from './pages/compra/index'
-import ConfirmarPagamento from './pages/conf_pagamento/index'
-import CompraFinalizada from './pages/compra-finalizada/index'
+import Compra from './pages/purchaseProducts/index'
+import ConfirmarPagamento from './pages/configPayment/index'
+import CompraFinalizada from './pages/purchaseFinished/index'
 
-import Favoritos from './pages/favoritos/index'
-import Perfil from './pages/perfil/index'
-import VerPedido from './pages/ver_pedido/index'
+import Favoritos from './pages/favorites/index'
+import Perfil from './pages/profileUser/index'
+import VerPedido from './pages/seeRequests/index'
 
-import InicioAdm from './pages/adm/inicial_adm/index'
-import AdmProdutos from './pages/adm/administrar_produtos/index'
-import AdmPedidos from './pages/adm/administrar_pedidos/index'
-import AddProduto from './pages/adm/adicionar_produto/index'
+import InicioAdm from './pages/adm/admHome/index'
+import AdmProdutos from './pages/adm/admProducts/index'
+import AdmPedidos from './pages/adm/admRequests/index'
+import AddProduto from './pages/adm/addProduct/index'
 
 
 export default function Routes() {
