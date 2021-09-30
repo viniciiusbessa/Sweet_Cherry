@@ -10,6 +10,7 @@ import SobreNos from './pages/sobre_nos/index'
 import Carrinho from './pages/carrinho/index'
 
 import Compra from './pages/compra/index'
+import ConfirmarPagamento from './pages/conf_pagamento/index'
 import CompraFinalizada from './pages/compra-finalizada/index'
 
 import Favoritos from './pages/favoritos/index'
@@ -27,12 +28,13 @@ export default function Routes() {
         <BrowserRouter>
             <Switch>
                 <Route path="/" exact={true} component={Inicio} />
-                <Route path="/compra-finalizada" component={CompraFinalizada} />
                 <Route path="/destaque" component={Categoria} />
                 <Route path="/sobreNos" component={SobreNos} />
                 <Route path='/carrinho' component={Carrinho} />
                 <Route path="/favoritos" component={Favoritos} />
                 <Route path="/compra" component={Compra} />
+                <Route path="/conf_pagamento" component={ConfirmarPagamento} />
+                <Route path="/compra-finalizada" component={CompraFinalizada} />
                 <Route path="/login" component={Login} />
                 <Route path="/cadastro" component={Cadastro} />
                 <Route path="/login-adm" component={LoginAdm} />
