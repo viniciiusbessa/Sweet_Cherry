@@ -5,7 +5,7 @@ import { ContainerCompra } from './styled'
 
 import { useHistory } from 'react-router-dom'
 
-export default function CompraFinalizada() {
+export default function Compra() {
     const navigation = useHistory();
 
     const perfil = async () => {

@@ -6,7 +6,7 @@ export default function Login() {
     const navigation = useHistory();
 
     const inicio = async () => {
-        navigation.push('/inicio')
+        navigation.push('/')
     }
 
     const cadastro = async () => {

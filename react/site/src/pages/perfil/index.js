@@ -12,6 +12,10 @@ export default function Perfil() {
         navigation.push('/ver-pedido')
     }
 
+    const Inicio = async () => {
+        navigation.push('/')
+    }
+
     return (
     <ContainerPerfil>
         <Cabecalho />
@@ -79,7 +83,7 @@ export default function Perfil() {
                 </div>
 
                 
-                <div className="box-logout">
+                <div className="box-logout" onClick={Inicio}>
                     <div className="logout-conta-perfil">Sair da conta</div>
                     <img src="../../assets/images/log-out.svg" alt="" />
                 </div>

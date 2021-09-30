@@ -13,14 +13,22 @@ export default function InicioAdm() {
         navigation.push('/administrar-pedidos')
     }
 
+    const Inicio = async () => {
+        navigation.push('/')
+    }
+
     return (
     <ContainerAdm>
 
         <div className="cabecalho-adm">
             <div className="logo-img-adm"><img src="../../../assets/images/logo-img-adm.svg" alt="" /></div>
-            <div className="logo-adm">
-                <div className="logo1-adm">Sweet</div>
-                <div className="logo2-adm">Cherry</div>
+            <div className="box-cabecalho">
+                <div className="logo-adm">
+                    <div className="logo1-adm">Sweet</div>
+                    <div className="logo2-adm">Cherry</div>
+                </div>
+
+                <div className="btn-logout"><button onClick={Inicio}>Sair</button></div>
             </div>
         </div>
 

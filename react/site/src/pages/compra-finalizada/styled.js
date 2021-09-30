@@ -35,11 +35,13 @@ const ContainerCompraFinalizada = styled.div`
       }
 
       .mensagem3-compra-finalizada {
-            font-size: 35px;
+            font-size: 30px;
+
+            margin-top: 1em;
       }
 
       .mensagem4-compra-finalizada {
-            font-size: 35px;
+            font-size: 30px;
       }
 
       .btn-voltar-inicio-compra-finalizada button {
@@ -55,7 +57,7 @@ const ContainerCompraFinalizada = styled.div`
             width: 11.3em;
 
             padding: 0em 2em;
-            margin: 2em 0em 2em 0em;
+            margin: 1em 0em 2em 0em;
       }
 
       .btn-voltar-inicio-compra-finalizada a {

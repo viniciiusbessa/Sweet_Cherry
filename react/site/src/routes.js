@@ -26,8 +26,8 @@ export default function Routes() {
     return (
         <BrowserRouter>
             <Switch>
-                <Route path="/" exact={true} component={CompraFinalizada} />
-                <Route path="/inicio" component={Inicio} />
+                <Route path="/" exact={true} component={Inicio} />
+                <Route path="/compra-finalizada" component={CompraFinalizada} />
                 <Route path="/destaque" component={Categoria} />
                 <Route path="/sobreNos" component={SobreNos} />
                 <Route path='/carrinho' component={Carrinho} />

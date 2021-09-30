@@ -2,11 +2,15 @@ import { ContainerCadastro } from './styled'
 
 import { useHistory } from 'react-router-dom'
 
-export default function Login() {
+export default function Cadastro() {
     const navigation = useHistory();
 
     const inicio = async () => {
-        navigation.push('/inicio')
+        navigation.push('/')
+    }
+
+    const login = async () => {
+        navigation.push('/login')
     }
 
     return (
@@ -42,6 +46,7 @@ export default function Login() {
                 </div>
 
                 <div className="botoes-entrarbv">
+                    <button onClick={login} className="bt-voltar"> Voltar </button>
                     <button onClick={inicio} className="bt-criar"> Criar </button>
                 </div>
             </div>

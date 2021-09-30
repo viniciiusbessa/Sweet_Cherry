@@ -9,6 +9,10 @@ export default function LoginAdm() {
         navigation.push('/inicio-adm')
     }
 
+    const login = async () => {
+        navigation.push('/login')
+    }
+
     return (
         <ContainerLoginAdm>
             <div className="cabecalho-entrar-bem-vindo">
@@ -41,6 +45,7 @@ export default function LoginAdm() {
                 <div className="botoes-entrar-bv">
 
                     <div className="botoes-um">
+                        <button onClick={login} className="bt-voltar"> Voltar </button>
                         <button onClick={inicioAdm} className="bt-entrar"> Entrar </button>
                     </div>
                     

@@ -5,7 +5,7 @@ import { ContainerVerPedido } from './styled'
 
 import { useHistory } from 'react-router-dom'
 
-export default function Perfil() {
+export default function VerPedido() {
     const navigation = useHistory();
 
     const VerMais = async () => {

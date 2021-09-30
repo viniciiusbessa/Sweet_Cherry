@@ -26,6 +26,14 @@ const ContainerAdm = styled.div`
         width: 90px;
     }
 
+    .box-cabecalho {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        width: 100%;
+    }
+
     .logo-adm {
         display: flex;
         flex-direction: column;
@@ -41,6 +49,27 @@ const ContainerAdm = styled.div`
         margin-left: 30px;
 
         margin-top: -0.5em;
+    }
+
+    .btn-logout button {
+        background-color: #FF1A1A;
+
+        border: none;
+        border-radius: 30px;
+
+        font-family: Pacifico;
+        color: #FFF;
+        font-size: 20px;
+
+        padding: 0.5em 2em;
+        margin: 2em 2.5em 0em 0em;
+    }
+
+    .btn-logout button:hover {
+        background-color: #f04646;
+
+        cursor: pointer;
+        transition: 0.5s;
     }
 
 

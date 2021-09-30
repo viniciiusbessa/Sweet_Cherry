@@ -112,6 +112,12 @@ const ContainerCadastro = styled.div`
         outline: 0;
     }
 
+    .botoes-entrarbv {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
     .botoes-entrarbv button{
         border-radius: 30px;
         border: none;
@@ -123,6 +129,25 @@ const ContainerCadastro = styled.div`
         margin-top: 3em;
     }
 
+    .bt-voltar {
+        font-size: 17px;
+        color: #140018;
+
+        background-color: #D1EAF5;
+
+        border: none;
+        border-radius: 12px;
+
+        padding: 0.3em 2em;
+        margin-right: 1em;
+    }
+
+    .bt-voltar:hover {
+        background-color: #b5daeb;
+        cursor: pointer;
+        transition: 0.5s;
+    }
+
     .bt-criar {
         font-size: 17px;
         color: #140018;
@@ -132,7 +157,8 @@ const ContainerCadastro = styled.div`
         border: none;
         border-radius: 12px;
 
-        padding: 0.3em 3.5em;
+        padding: 0.3em 3em;
+        margin-left: 1em;
     }
 
     .bt-criar:hover {

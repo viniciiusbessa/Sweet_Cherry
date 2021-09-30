@@ -103,9 +103,10 @@ const ContainerLoginAdm = styled.div`
     }
 
 
-    .botoes-entrarbv{
-       display: flex;
-       flex-direction: column;
+    .botoes-entrarbv {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
     }
 
     .botoes-um {
@@ -120,6 +121,25 @@ const ContainerLoginAdm = styled.div`
         font-family: Patua One;
     }
 
+    .bt-voltar {
+        font-size: 17px;
+        color: #140018;
+
+        background-color: #D1EAF5;
+
+        border: none;
+        border-radius: 12px;
+
+        padding: 0.3em 2em;
+        margin-right: 1em;
+    }
+
+    .bt-voltar:hover {
+        background-color: #b5daeb;
+        cursor: pointer;
+        transition: 0.5s;
+    }
+
     .bt-entrar {
         font-size: 17px;
         color: #140018;
@@ -129,7 +149,8 @@ const ContainerLoginAdm = styled.div`
         border: none;
         border-radius: 12px;
 
-        padding: 0.3em 1.8em;
+        padding: 0.3em 2.2em;
+        margin-left: 1em;
     }
 
     .bt-entrar:hover {

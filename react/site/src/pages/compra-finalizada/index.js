@@ -20,8 +20,8 @@ export default function CompraFinalizada() {
         <div className="conteudo-compra-finalizada">
             <div className="mensagem1-compra-finalizada">Sua compra foi</div>
             <div className="mensagem2-compra-finalizada">Finalizada com sucesso!</div>
-            <div className="mensagem3-compra-finalizada">Enviamos um email para você </div>
-            <div className="mensagem4-compra-finalizada">confirmar a sua compra</div>
+            <div className="mensagem3-compra-finalizada">Confira o status do pedido </div>
+            <div className="mensagem4-compra-finalizada">clicando no botão baixo!</div>
             <div className="btn-voltar-inicio-compra-finalizada"><button onClick={perfil}> Acompanhar pedido </button></div>  
         </div>
     </ContainerCompraFinalizada>

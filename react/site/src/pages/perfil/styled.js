@@ -156,7 +156,10 @@ const ContainerPerfil = styled.div `
         .box-logout:hover {
             color: #dbd6db;
             cursor: pointer;
-            transition: 0.5s;
+        }
+
+        .logout-conta-perfil:hover {
+            cursor: pointer;
         }
 
         .box-logout img {
@@ -182,7 +185,10 @@ const ContainerPerfil = styled.div `
         .box-excluir:hover {
             color: #b82121;
             cursor: pointer;
-            transition: 0.5s;
+        }
+
+        .excluir-conta-perfil:hover {
+            cursor: pointer;
         }
 
         .box-excluir img {

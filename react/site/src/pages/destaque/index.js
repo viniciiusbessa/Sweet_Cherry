@@ -4,7 +4,7 @@ import BoxProduto from '../../components/box-produto/index'
 
 import { ContainerDestaque } from './styled'
 
-export default function Perfil() {
+export default function Destaque() {
 
     return (
     <ContainerDestaque>
