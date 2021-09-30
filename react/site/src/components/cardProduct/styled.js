@@ -12,7 +12,6 @@ const ContainerBoxProduto = styled.div`
 
  .imagem-doce img{
      margin: 2em 0em 1em 2.5em;
- 
      width: 15em;
      height: 12em;
  }
@@ -51,8 +50,8 @@ const ContainerBoxProduto = styled.div`
  .preco {
      font-size: 20px;
      text-align: center;
- 
      margin: 30px 0px 30px 0px;
+     
  }
  
  button {
@@ -64,7 +63,7 @@ const ContainerBoxProduto = styled.div`
      height: 50px;
      margin-left: 110px;
      cursor: pointer;
-     font-family:pacifico;
+     font-family: pacifico;
      
  }
  
