@@ -39,12 +39,15 @@ const ContainerBoxProduto = styled.div`
      height: auto;
  
      margin-right: 10px;
+
+     cursor: pointer;
  }
 
  .icone-coracao img{
     width: 30px;
     height: auto;
 
+    cursor: pointer;
  }
  
  .preco {
