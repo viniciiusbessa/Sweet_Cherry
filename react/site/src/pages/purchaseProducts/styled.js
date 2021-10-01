@@ -90,6 +90,7 @@ const ContainerCompra = styled.div`
     .botoes-box1{
         display: flex;
         flex-direction: row;
+        width: 30em;
 
         margin-bottom: 1em;
     }
@@ -107,7 +108,7 @@ const ContainerCompra = styled.div`
         font-family: Pacifico;
         font-size: 20px;
         
-        margin-right: 1em;
+        margin-right: 2.7em;
         padding: 1em 0.5em 1em 0.5em;
     }
 

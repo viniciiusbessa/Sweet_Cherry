@@ -55,13 +55,12 @@ export default function Compra() {
                     <div className="botoesC-1">
                         <div className="botoes-box1">
                             <input className="qtd-prod-input" type="number"/>
-
                             <button className="Add-carrinho-bt"> <img src="../../assets/images/carrinho.png" alt="" /> Add ao Carrinho </button>
                         </div>
 
                         <div className="botoes-box2">
-                                <button className="Add-favoritos-bt"> <img src="../../assets/images/coracao-favoritos-compra.svg"  alt="" /> Add aos Favoritos</button>
-                                <button onClick={confPagamento} className="Confirm-compra1"> Confirmar Compra</button>
+                            <button className="Add-favoritos-bt"> <img src="../../assets/images/coracao-favoritos-compra.svg"  alt="" /> Add aos Favoritos</button>
+                            <button onClick={confPagamento} className="Confirm-compra1"> Confirmar Compra</button>
                         </div>
 
                         <div className="botoes-box3">

@@ -16,25 +16,23 @@ const ContainerPagamento = styled.div`
     .conteudo {
         display: flex;
         flex-direction: column;
-        margin: 2em 5em;
+        margin: 4em 0em;
     }
 
     .nome-conteudo {
         font-size: 2.6em;
 
+        margin-left: 2em;
     }
 
     .conteiner-geral {
         display: flex;
         flex-direction: row;
+        justify-content: space-around;
 
         margin-top: 2.5em;
 
         font-size: 1.5em;
-    }
-
-    .conteiner-pes-etrg {
-        margin-right: 3em;
     }
 
     .nm-input {
@@ -48,8 +46,9 @@ const ContainerPagamento = styled.div`
     }
 
     .dados {
-        width: 24em;
+        width: 21em;
         height: auto;
+        
         border-radius: 7px;
         box-shadow: 0px 4px 4px 0px #00000040;
 
@@ -64,12 +63,12 @@ const ContainerPagamento = styled.div`
         border-radius: 4px;
         box-shadow: 0px 4px 4px 0px #00000040;
 
-        width: 36em;
+        width: 30em;
         height: 2.5em;
     }
 
     .entrega {
-        width: 24em;
+        width: 21em;
         height: auto;
         border-radius: 7px;
         box-shadow: 0px 4px 4px 0px #00000040;
@@ -85,7 +84,7 @@ const ContainerPagamento = styled.div`
         border-radius: 4px;
         box-shadow: 0px 4px 4px 0px #00000040;
 
-        width: 36em;
+        width: 30em;
         height: 2.5em;
     }
 
@@ -105,11 +104,10 @@ const ContainerPagamento = styled.div`
     .fr-entrega {
         display: flex;
         flex-direction: row;
-
     }
 
     .box-pg {
-        width: 24em;
+        width: 21em;
         height: auto;
         border-radius: 7px;
         box-shadow: 0px 4px 4px 0px #00000040;
@@ -124,7 +122,7 @@ const ContainerPagamento = styled.div`
         border-radius: 4px;
         box-shadow: 0px 4px 4px 0px #00000040;
 
-        width: 36em;
+        width: 30em;
         height: 2.5em;
     }
 
@@ -141,6 +139,7 @@ const ContainerPagamento = styled.div`
         display: flex;
         justify-content: space-between;
     }
+    
     .vlt-carrinho {
         border-radius: 20px;
 
@@ -197,24 +196,23 @@ const ContainerPagamento = styled.div`
         display: flex;
         flex-direction: column;
 
-        margin: 3em 0em 2em 10.5em;
+        margin: 2em 0em 0em 7em;
     }
-
 
     .box-icones {
         display: flex;
+        flex-direction: column;
         justify-content: left;
+        align-items: center;
+
         border: 5px solid #ffff;
         border-radius: 30px;
+
         width: 13em;
         height: 7.5em;
 
         margin-top: 10px;
         padding: 1em 0.5em 0em 0.5em;
-
-        display: flex;
-        flex-direction: column;
-        align-items: center;
     }
 
     .icons1 {
