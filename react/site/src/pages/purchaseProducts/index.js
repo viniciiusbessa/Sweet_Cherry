@@ -1,3 +1,5 @@
+import { useState } from 'react'
+
 import Cabecalho from '../../components/commum/header/index'
 import Rodape from '../../components/commum/footer/index'
 
@@ -10,8 +12,24 @@ import { useHistory } from 'react-router-dom'
 export default function Compra() {
     const navigation = useHistory();
 
+    const [qtd, setQtd] = useState(0);
+
+    
     const confPagamento = async () => {
         navigation.push('/conf_pagamento')
+    }
+
+    
+    function incrementar() {
+        if (qtd >= 10)
+            return;
+        setQtd(qtd+1)
+    }
+
+    function decrementar() {
+        if (qtd === 0) 
+            return;
+        setQtd(qtd-1)
     }
 
     return (
@@ -54,7 +72,21 @@ export default function Compra() {
 
                     <div className="botoesC-1">
                         <div className="botoes-box1">
-                            <input className="qtd-prod-input" type="number"/>
+
+                            <div className="box-qtd"> 
+                                <div className="menos" onClick={decrementar}>
+                                    -
+                                </div>
+                                
+                                <div className="quantidade">
+                                    {qtd}
+                                </div>
+
+                                <div className="mais" onClick={incrementar}>
+                                    +
+                                </div>
+                            </div>
+
                             <button className="Add-carrinho-bt"> <img src="../../assets/images/carrinho.png" alt="" /> Add ao Carrinho </button>
                         </div>
 
