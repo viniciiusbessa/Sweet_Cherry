@@ -5,7 +5,7 @@ const ContainerSobreNos = styled.div`
     flex-direction: column;
 
         .fundo-cabecalho {
-            background-image: url(../../assets/images/fundo.png);
+            background-image: url(../../assets/images/fundo2.png);
             background-size: 100% 180px;
 
             height: 180px;

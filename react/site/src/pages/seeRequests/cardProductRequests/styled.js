@@ -5,8 +5,8 @@ const ContainerBoxPedido = styled.div`
     flex-direction: row;
 
         .imagem_do_bolo-9 img{
-            width:150px;
-            height: 150px;
+            width: 210px;
+            height: auto;
         }
 
         .imagem_carrinho-9{
@@ -14,8 +14,8 @@ const ContainerBoxPedido = styled.div`
         }
 
         .imagem_carrinho-9 img{
-            width:30px;
-            height: 30px;
+            width: 40px;
+            height: auto;
 
             cursor: pointer;
         }
@@ -25,23 +25,28 @@ const ContainerBoxPedido = styled.div`
 
         }
         .imagem_coracao-9 img{
-            width:30px;
-            height: 30px;
+            width: 35px;
+            height: auto;
 
             cursor: pointer;
         }
 
-        .preco-9{
+        .preco-9 {
             text-align: center;
             margin-bottom: 0.5em;
+
+            font-size: 1.3em;
         }
 
         .ver_mais-9 button{
             background-color:#2F1747;
-            color: white;
+
+            color: #fff;
+            font-family: Pacifico;
+
             border: none;
             border-radius: 20px;
-            font-family: Pacifico;
+            
             padding: 0.5em 2em;
         }
 
@@ -58,15 +63,20 @@ const ContainerBoxPedido = styled.div`
         .pedido-item-9{
             display: flex;
             flex-direction: column;
+
             background-color: #D1EAF5;
-            margin: 1em 1.5em 0em 1.5em;
+
+            margin: 1em 2.5em 0em 2.5em;
             padding: 0.8em;
+
             border-radius: 7px;
         }
 
         .informacoes_do_doce-9{
             display: flex;
             flex-direction: row;
+
+            font-size: 1.5em;
         }
 
         .bolo_qtd-9{

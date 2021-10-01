@@ -5,13 +5,13 @@ const ContainerVerPedido = styled.div`
     flex-direction: column;
 
         .fundo-ver-pedido {
-            background-image: url(../../assets/images/fundo.png);
+            background-image: url(../../assets/images/fundo2.png);
             background-size: 100% 180px;
 
             height: 180px;
         }
 
-        .conteudo-9{
+        .conteudo-9 {
             display: flex;
             flex-direction: column; 
             padding: 4em 4em 0em 3em;
