@@ -1,5 +1,5 @@
-import Rodape from "../../components/footer";
-import Cabecalho from "../../components/header";
+import Rodape from "../../components/commum/footer";
+import Cabecalho from "../../components/commum/header";
 import BoxProduto from "../../components/commum/cardProduct/index";
 
 import { ContainerInicial } from "./styled";

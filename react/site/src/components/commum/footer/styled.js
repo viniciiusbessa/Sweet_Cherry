@@ -18,7 +18,7 @@ const ConteinerRodape = styled.footer`
 
     align-items: center;
 
-    margin-top: 30px;
+    margin: 30px 0px 20px 0px;
 }
 
 
