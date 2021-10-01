@@ -13,22 +13,27 @@ const ContainerDestaque = styled.div `
         display: flex;
         flex-direction: column;
 
-        margin: 4.5em;
+        padding: 4.5em;
     }
 
     .buscar {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+
         margin-bottom: 2em;
     }
 
-    .buscar img{
-        width: 2.5em;
+    .buscar img {
+        width: 2em;
+        height: 2em;
 
-        margin-bottom: -0.9em;
-        margin-left: -5em;
+        margin-top: 2.2em;
+        margin-left: -3.5em;
     }
 
     input {
-        width: 60em;
+        width: 58em;
         height: 4em;
 
         border: 3px solid #D1EAF5;
@@ -54,27 +59,8 @@ const ContainerDestaque = styled.div `
 
     .nm-box {
         font-size: 3em;
-    }
 
-    .linhas {
-        margin-top: -1.7em;
-    }
-
-    .linhas img {
-        height: 0.5em;
-    }
-
-    .linha-desta, .linha-cup {
-        margin-right: 1em;
-    }
-
-    .linha-fas {
-        margin-left: 2em;
-    }
-
-    .box-doces { 
-        display: flex;
-        flex-direction: column;
+        text-decoration: underline 5px solid #D1EAF5;
     }
 
     .box-itens {
@@ -83,41 +69,6 @@ const ContainerDestaque = styled.div `
         flex-wrap: wrap;
 
         margin-top: 2em;
-    }
-
-
-    .nm-car-fav {
-        display: flex;
-        flex-direction: row;
-
-        
-        margin: 0.5em 0em;
-    }
-
-    .preco-produto {
-        text-align: center;
-        font-size: 1.5em;
-
-        margin-bottom: 0.5em;
-    }
-
-    .ver-mais{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .ver-mais button {
-        font-family: Pattaya;
-        border-radius: 20px;
-
-        background-color: #2F1747;
-        color: #FFFFFF;
-
-        border-style: none;
-
-        width: 7em;
-        height: 2.7em;
     }
 `
 

@@ -16,6 +16,7 @@ import CompraFinalizada from './pages/purchaseFinished/index'
 import Favoritos from './pages/favorites/index'
 import Perfil from './pages/profileUser/index'
 import VerPedido from './pages/seeRequests/index'
+import Novidades from './pages/newsProducts/index'
 
 import InicioAdm from './pages/adm/admHome/index'
 import AdmProdutos from './pages/adm/admProducts/index'
@@ -33,6 +34,7 @@ export default function Routes() {
                 <Route path='/carrinho' component={Carrinho} />
                 <Route path="/favoritos" component={Favoritos} />
                 <Route path="/compra" component={Compra} />
+                <Route path="/novidades" component={Novidades} />
                 <Route path="/conf_pagamento" component={ConfirmarPagamento} />
                 <Route path="/compra-finalizada" component={CompraFinalizada} />
                 <Route path="/login" component={Login} />

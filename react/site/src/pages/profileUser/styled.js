@@ -29,17 +29,9 @@ const ContainerPerfil = styled.div `
 
         .nome-pessoa-perfil {
             font-size: 35px;
-        }
 
-        .traco-titulo1 {
-            background: #D1EAF5;
-
-            width: 11em;
-            height: 4px;
-
-            margin: -0.7em 0em 2.5em 0em;
-
-            border-radius: 1em;
+            text-decoration: underline 5px solid #D1EAF5;
+            text-align: center;
         }
 
         .dados-conta-perfil, .dados-pessoais-perfil {
@@ -227,24 +219,10 @@ const ContainerPerfil = styled.div `
             width: 100%;
         }
 
-        .box-titulo {
-            display: flex;
-            flex-direction: column;
-        }
-
         .titulo-pedido {
             font-size: 45px;
-        }
 
-        .traco-titulo {
-            background: #F6AAC6;
-
-            width: 12em;
-            height: 4px;
-
-            margin: -0.5em 0em 2.5em 0em;
-
-            border-radius: 1em;
+            text-decoration: underline 5px solid #F6AAC6;
         }
 
         .input-pesquisa-pedido {

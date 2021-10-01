@@ -22,10 +22,7 @@ export default function Perfil() {
         <div className="conteudo-perfil">
 
             <div className="info-pessoal-perfil">
-                <div className="box-titulo-pedido">
-                    <div className="nome-pessoa-perfil">Olá Fulano</div>
-                    <div className="traco-titulo1"></div>
-                </div>
+                <div className="nome-pessoa-perfil">Olá Fulano</div>
 
                 <div className="box-dados-conta-perfil">
                     <div className="dados-conta-perfil">Dados da conta</div>
@@ -98,10 +95,7 @@ export default function Perfil() {
             </div>
 
             <div className="info-pedidos">
-                <div className="box-titulo-pedido">
-                    <div className="titulo-pedido">Pedidos</div>
-                    <div className="traco-titulo"></div>
-                </div>
+                <div className="titulo-pedido">Pedidos</div>
 
                 <input className="input-pesquisa-pedido" placeholder="pesquisa" />
 
