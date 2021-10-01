@@ -2,6 +2,7 @@ import { ContainerPagamento } from './styled'
 
 import Cabecalho from '../../components/commum/header/index'
 import Rodape from '../../components/commum/footer/index'
+import { InputPayment } from '../../components/styled/inputsCPay'
 
 import { useHistory } from 'react-router-dom'
 
@@ -27,7 +28,7 @@ export default function ConfirmarPagamento() {
                             <div class="nm-input">E-mail:</div>
                             <input type="text"id="txtBusca"/>
                             <div class="nm-input">CPF:</div>
-                            <input type="text"id="txtBusca"/>
+                            <InputPayment/>
                             <div class="nm-input">Telefone:</div>
                             <input type="text"id="txtBusca"/>
                         </div>
