@@ -38,8 +38,9 @@ const ContainerCabecalho = styled.div`
 
     .rota-perfil:hover {
         text-decoration: underline;
-        color: #F6AAC6;
+        color: #000;
         font-size: 26px;
+
         cursor: pointer;
     }
 

@@ -4,10 +4,10 @@ import Footer from "../../components/commum/footer";
 import { ContainerFavoritos } from "./styled";
 
 
-export default function Content() {
+export default function Favorites() {
     return (
         <ContainerFavoritos>
-            <div className="cabecalho" style={{backgroundImage: "url()"}}>
+            <div className="cabecalho">
                 <Header/>
             </div>
             <div class="box-favoritos">

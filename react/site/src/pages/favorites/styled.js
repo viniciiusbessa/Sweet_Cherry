@@ -6,9 +6,12 @@ const ContainerFavoritos = styled.div `
     display: flex;
     flex-direction: column;
 
-    //.cabecalho {
-    //    background-image: url(require("../../../public/assets/images/background"));
-    //}
+    .cabecalho {
+        background-image: url(../../assets/images/fundo2.png);
+        background-size: 100% 180px;
+
+        height: 180px;
+    }
     
 
     .box-favoritos{

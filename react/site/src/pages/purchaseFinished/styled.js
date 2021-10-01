@@ -6,7 +6,7 @@ const ContainerCompraFinalizada = styled.div`
 
       .fundo-cabecalho {
             background-color: #F3F7F6;
-            background-image: url(../../assets/images/fundo.png);
+            background-image: url(../../assets/images/fundo2.png);
             background-size: 100% 180px;
 
             height: 180px;

@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-const ConteinerRodape = styled.footer`
+const ConteinerRodape = styled.div`
 
     background-color: #FF8AB5;
     color: white;
