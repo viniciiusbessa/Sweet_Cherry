@@ -26,11 +26,11 @@ export default function ConfirmarPagamento() {
                         <div class="dados">
                             <div class="nm-box">Dados pessoais</div>
                             <div class="nm-input">E-mail:</div>
-                            <input type="text"id="txtBusca"/>
+                            <InputPayment/>
                             <div class="nm-input">CPF:</div>
                             <InputPayment/>
                             <div class="nm-input">Telefone:</div>
-                            <input type="text"id="txtBusca"/>
+                            <InputPayment/>
                         </div>
                         <div class="entrega">
                             <div class="fr-entrega">
@@ -40,19 +40,19 @@ export default function ConfirmarPagamento() {
                                 </select>
                             </div>
                             <div class="nm-input">Endereço:</div>
-                            <input type="text"id="txtBusca"/>
+                            <InputPayment/>
                             <div class="box-nurm-comple">
                                 <div class="box-numero">
                                     <div class="nm-input">Número:</div>
-                                    <input class="input-numer" type="text"id="txtBusca"/>
+                                    <InputPayment/>
                                 </div>
                                 <div class="box-complemento">
                                     <div class="nm-input">Complemento:</div>
-                                    <input class="input-comple"type="text"id="txtBusca"/>
+                                    <InputPayment/>
                                 </div>
                             </div>
                             <div class="nm-input">Destinatário:</div>
-                            <input type="text"id="txtBusca"/>
+                            <InputPayment/>
                         </div>                          
                     </div>
 
@@ -60,7 +60,7 @@ export default function ConfirmarPagamento() {
                         <div class="box-pg">
                             <div class="nm-box">Pagamento</div>
                             <div class="nm-input">Número do cartão:</div>
-                            <input type="text"id="txtBusca"/>
+                            <InputPayment/>
                             <div class="nm-input">Parcelas:</div>
                             <select name="listaparcelas" id="" class="parcelas">
                                 <option>1x</option>
@@ -77,11 +77,11 @@ export default function ConfirmarPagamento() {
                                 <option>12x</option>
                             </select>
                             <div class="nm-input">Nome:</div>
-                            <input type="text"id="txtBusca"/>
+                            <InputPayment/>
                             <div class="nm-input">Código de segurança:</div>
-                            <input type="text"id="txtBusca"/>
+                            <InputPayment/>
                             <div class="nm-input">CPF do titular:</div>
-                            <input type="text"id="txtBusca"/>
+                            <InputPayment/>
                         </div>
                         <div class="botoes-pgmt">
                             <button class="vlt-carrinho">Voltar</button>
