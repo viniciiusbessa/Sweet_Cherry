@@ -3,15 +3,18 @@ import styled from "styled-components"
 const ContainerBoxProduto = styled.div`
 
     background-color: #D1EAF5;
-     width: 20em;
-     height: 30em;
+     width: 18em;
+     height: 28em;
      border-radius: 20px;
      cursor: pointer;
      margin: 2em;
+
+    display: flex;
+    justify-content: center;
      
-     .imagem-doce img{
-        margin: 2em 0em 1em 2.5em;
-        width: 15em;
+    .imagem-doce img{
+        margin: 1em;
+        width: auto;
         height: 12em;
     }
     
@@ -19,18 +22,21 @@ const ContainerBoxProduto = styled.div`
         display: flex;
         flex-direction: row;
     
-        margin-left: 40px;
     }
     
-    .nm_doce {
-        font-size: 50px;
+    .nm-doce {
+        font-size: 25px;
+        
+        text-align: center;
+        margin-left: 1em;
+        margin-right: 1em;
     }
     
     .icones {
         display: flex;
         flex-direction: row;
     
-        margin-left: 60px;
+        
     }
     
     .icone-carrinho img{
@@ -52,8 +58,13 @@ const ContainerBoxProduto = styled.div`
     .preco {
         font-size: 20px;
         text-align: center;
-        margin: 30px 0px 30px 0px;
-        
+        margin: 1em;
+    }
+
+    .button{
+        display: flex;
+        justify-content: center;
+        margin: 1em;
     }
     
     button {
@@ -63,7 +74,6 @@ const ContainerBoxProduto = styled.div`
         border-radius: 50px;
         width:  100px;
         height: 50px;
-        margin-left: 110px;
         cursor: pointer;
         font-family: pacifico;
         
