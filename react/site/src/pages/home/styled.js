@@ -53,7 +53,7 @@ const ContainerInicial = styled.div`
         width: 15em;
         height: 5em;
 
-        animation-duration: 10s;
+        animation-duration: 2s;
     }
 
 `
