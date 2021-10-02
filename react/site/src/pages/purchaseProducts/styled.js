@@ -261,7 +261,9 @@ const ContainerCompra = styled.div`
     }
 
     .calcular-input:focus {
-        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
+
+        transition: 0.3s;
     }
 
     .estrelinhas-compra1{
