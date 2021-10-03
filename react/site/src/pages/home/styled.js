@@ -7,7 +7,7 @@ const ContainerInicial = styled.div`
     flex-direction: column;
 
     background-image: url(../../assets/images/onda_esquerda.png);
-    background-size: 42em 3000px;
+    background-size: 42em 800em;
     background-position: right;
     background-repeat: repeat-y;
 
@@ -124,6 +124,74 @@ const BoxSlide = styled.div`
 
 
 `
+const BoxEmAlta = styled.div`
 
+    .titulo{
+        margin-left: 2em;
+        font-size: 3em;
 
-export {ContainerInicial, BoxSlide}
+        color: #FF8AB5;
+    }
+
+    .box_em_alta{
+        display: flex;
+        flex-direction: row;
+        margin: 2em 20em;
+
+        height: 20em;
+        width: 45em;
+
+        background-color: #a4bcff;
+        border-radius: 30px;
+        border-style: solid;
+        border-color: #FF8AB5;
+        border-width: 5px;
+    }
+
+    .imagem_emAlta img{
+        height: 20em;
+        width: 18em;
+
+        border: solid;
+        border-color: #FF8AB5;
+        border-radius: 20px;
+    }
+
+    .box_texto{
+        text-align: center;
+        padding: 2em;
+
+        color: white;
+        font-size: 20px;
+    }
+
+    .box_texto button {
+        background-color: #2F1747;
+
+        color: #ffffff;
+        border: none;
+        border-radius: 50px;
+
+        width:  190px;
+        height: 40px;
+
+        cursor: pointer;
+
+        font-family:  Pacifico;
+        font-size: 15px;
+    }
+
+    .box_texto button:hover {
+        background-color: #52277D;
+        transition: all 0.5s ease-in;
+    }
+
+    .container_doces{
+        display: flex;
+        flex-direction: row;
+        margin: 5em 0em 10em 10em;
+    }
+
+`
+
+export {ContainerInicial, BoxSlide, BoxEmAlta}

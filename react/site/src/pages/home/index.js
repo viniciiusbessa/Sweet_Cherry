@@ -4,8 +4,9 @@ import Rodape from "../../components/commum/footer";
 import Cabecalho from "../../components/commum/header";
 import  BoxNews  from "./box-news/index";
 import BoxProduto from "../../components/commum/cardProduct";
-import { BoxSlide } from "./styled";
 
+import { BoxSlide } from "./styled";
+import { BoxEmAlta } from "./styled";
 import { ContainerInicial} from "./styled";
 
 export default function inicial () {
@@ -45,6 +46,28 @@ export default function inicial () {
                             </div>
                     </div>
                 </BoxSlide>
+                   <BoxEmAlta>  
+                    <div class="Faixa4_inicio">
+                        <div class="titulo">Em alta</div>
+                        <div class="box_em_alta">
+                            <div class="imagem_emAlta">
+                                <img src="../../assets/images/macarrons.jpg" alt=""/>
+                            </div>
+                            <div class="box_texto">
+                                <p>Os Deliciosos Macarons chegaram!</p>
+                                <p>Delicie-se na sua cor favorita com esses biscoitos</p>
+                                <button> Garanta já o seu!  </button>
+                            </div>
+                        </div>
+                            <div class="container_doces">
+                                    <BoxProduto/>
+                                
+                                    <BoxProduto/>
+                               
+                                    <BoxProduto/>
+                            </div>
+                    </div>
+                </BoxEmAlta>
             <Rodape/>
         </ContainerInicial>
     )
