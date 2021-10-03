@@ -95,25 +95,43 @@ const ContainerCompra = styled.div`
         margin-bottom: 1em;
     }
 
-    .qtd-prod-input {
-        text-align: center;
+    .box-qtd {
+        display: flex;
+        flex-direction: row;
 
+        margin-right: 2em;
+
+        border-radius: 20px;
         background-color: #D1EAF5;
-        border: none;
-        border-radius: 12px;
-
-        width: 91px;
-        height: 49px;
-
-        font-family: Pacifico;
-        font-size: 20px;
         
-        margin-right: 2.7em;
-        padding: 1em 0.5em 1em 0.5em;
+        & > * {
+            background-color: #D1EAF5;
+            user-select: none;
+        }
     }
 
-    .qtd-prod-input:hover {
-        cursor: text;
+    .menos {
+        cursor: pointer;
+        border-radius: 25px;
+
+        font-size: 1.7em;
+
+        padding-left: 0.4em;
+    }
+
+    .quantidade {
+        font-size: 1.7em;
+        
+        padding: 0em 0.5em;
+    }
+
+    .mais {
+        cursor: pointer;
+        border-radius: 25px;
+
+        font-size: 1.7em;
+
+        padding-right: 0.4em;
     }
 
 
@@ -243,7 +261,9 @@ const ContainerCompra = styled.div`
     }
 
     .calcular-input:focus {
-        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
+
+        transition: 0.3s;
     }
 
     .estrelinhas-compra1{
