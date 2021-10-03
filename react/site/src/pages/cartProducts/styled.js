@@ -3,23 +3,31 @@ import styled from "styled-components";
 const CartProduct = styled.div`
     display: flex;
     flex-direction: column;
+
+    background-color: #F6AAC6;
+
+    .fundo-cabecalho {
+        background-image: url(/assets/images/fundo1.png);
+        background-size: 100% 200px;
+
+        height: 200px;
+    }
     
     .box-carrinho {
-        margin: 2em 15em;
+        margin: 2em 8em;
     }
 
     .titulo-carrinho {
         font-size: 30px;
         color: #140018;
-
     }
 
     table {
-        width: 70em;
-        margin: 3em 2em 0em 5em;
+        width: 100%;
+        margin: 3em 0em 0em 0em;
 
         background-color: white;
-        border-collapse:collapse;
+        border-collapse: collapse;
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
         text-align: left;
@@ -74,11 +82,14 @@ const CartProduct = styled.div`
         width: 12em;
         height: 4em;
 
-        font-size: 18px;
+        font-size: 22px;
+        font-family: Pacifico;
+
         border: 0px;
         border-radius: 20px;
+
         background-color: #ffff;
-        font-family: Pacifico;
+        
         cursor: pointer;
     }
 
@@ -88,14 +99,16 @@ const CartProduct = styled.div`
     } 
 
     .total {
-        margin-left: 86em;
+        align-self: flex-end;
+
+        margin-right: 8em;
     }
 
     .continuar button {
         width: 12em;
         height: 4em;
 
-        font-size: 18px;
+        font-size: 20px;
         border: 0px;
         border-radius: 20px;
         background-color: #ffff;
@@ -108,7 +121,7 @@ const CartProduct = styled.div`
         width: 12em;
         height: 4em;
 
-        font-size: 18px;
+        font-size: 20px;
         border: 0px;
         border-radius: 20px;
         background-color: #D1EAF5;
@@ -120,79 +133,66 @@ const CartProduct = styled.div`
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        width: 79.5em;
-        margin: 3em 0em 0em 20em;
+
+        margin: 3em 8em 0em 8em;
     }
+
+
 
     .box-cartoes {
         display: flex;
         flex-direction: column;
 
-        margin: 3em 0em 2em 20em;
+        margin: 3em 0em 2em 5em;
     }
 
-
-
+    .titulo-box {
+        font-size: 25px;
+    }
 
     .box-icones {
+        display: flex;
+        flex-direction: column;
+
         border: 3px solid #ffff;
         border-radius: 20px;
-        width: 15em;
-        height: 6em;
+
+        width: 18em;
+        height: 9em;
 
         margin-top: 10px;
         padding: 1em;
-
-        display: flex;
-        flex-direction: column;
-        align-items: center;
     }
 
     .icons1 {
         margin-bottom: 1em;
     }
 
-    .icon-pagseguro, .icon-mastercard {
-        margin-right: 2em;
+
+    .icon-pagseguro {
+        width: 8em;
+        height: auto;
     }
 
+    .icon-visa {
+        width: 3.5em;
+        height: auto;
 
-    footer {
-        background-color: #FF8AB5;
-        color: white;
-
-        display: flex;
-        flex-direction: row;
-
-        justify-content: center;
-        height: 120px;
-
-        text-align: center;
-        font-size: 18px;
+        margin-left: 3em;
     }
 
+    .icon-mastercard {
+        width: 5em;
+        height: auto;
 
-    .rodape {
-        display: flex;
-        flex-direction: row;
-
-        margin-top: 30px;
+        margin-left: 2em;
     }
 
-    .sociais {
-        display: flex;
-        flex-direction: row;
+    .icon-elo {
+        width: 5em;
+        height: auto;
 
-        cursor: pointer;
-    }
-
-    .icon img {
-        padding-left: 12px;
-        margin-top: 10px;
-    }
-
-    .linha {
-        margin-top: 15px;
+        margin-left: 2em;
     }
 `
 export {CartProduct}

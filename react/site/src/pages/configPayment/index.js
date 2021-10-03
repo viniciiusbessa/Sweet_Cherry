@@ -13,56 +13,60 @@ export default function ConfirmarPagamento() {
         navigation.push('/compra-finalizada')
     }
 
+    const pagAnterior = async () => {
+        window.history.back()
+    }
+
     return(
         <ContainerPagamento>
-            <div className="fundo-cabecalho">
+            <div classNameName="fundo-cabecalho">
                 <Cabecalho />
             </div>
 
-            <div class="conteudo">
-                <div class="nome-conteudo">Confirmar pagamento</div>
-                <div class="conteiner-geral">
-                    <div class="conteiner-pes-etrg">
-                        <div class="dados">
-                            <div class="nm-box">Dados pessoais</div>
-                            <div class="nm-input">E-mail:</div>
+            <div className="conteudo">
+                <div className="nome-conteudo">Confirmar pagamento</div>
+                <div className="conteiner-geral">
+                    <div className="conteiner-pes-etrg">
+                        <div className="dados">
+                            <div className="nm-box">Dados pessoais</div>
+                            <div className="nm-input">E-mail:</div>
                             <InputPayment/>
-                            <div class="nm-input">CPF:</div>
+                            <div className="nm-input">CPF:</div>
                             <InputPayment/>
-                            <div class="nm-input">Telefone:</div>
+                            <div className="nm-input">Telefone:</div>
                             <InputPayment/>
                         </div>
-                        <div class="entrega">
-                            <div class="fr-entrega">
-                                <div class="nm-box">Entrega</div>
-                                <select name="tipoentrega" id="" class="entrega">
+                        <div className="entrega">
+                            <div className="fr-entrega">
+                                <div className="nm-box">Entrega</div>
+                                <select name="tipoentrega" id="" className="entrega">
                                     <option>Domicílio</option>
                                 </select>
                             </div>
-                            <div class="nm-input">Endereço:</div>
+                            <div className="nm-input">Endereço:</div>
                             <InputPayment/>
-                            <div class="box-nurm-comple">
-                                <div class="box-numero">
-                                    <div class="nm-input">Número:</div>
+                            <div className="box-nurm-comple">
+                                <div className="box-numero">
+                                    <div className="nm-input">Número:</div>
                                     <InputPayment/>
                                 </div>
-                                <div class="box-complemento">
-                                    <div class="nm-input">Complemento:</div>
+                                <div className="box-complemento">
+                                    <div className="nm-input">Complemento:</div>
                                     <InputPayment/>
                                 </div>
                             </div>
-                            <div class="nm-input">Destinatário:</div>
+                            <div className="nm-input">Destinatário:</div>
                             <InputPayment/>
                         </div>                          
                     </div>
 
-                    <div class="conteiner-pagamento">
-                        <div class="box-pg">
-                            <div class="nm-box">Pagamento</div>
-                            <div class="nm-input">Número do cartão:</div>
+                    <div className="conteiner-pagamento">
+                        <div className="box-pg">
+                            <div className="nm-box">Pagamento</div>
+                            <div className="nm-input">Número do cartão:</div>
                             <InputPayment/>
-                            <div class="nm-input">Parcelas:</div>
-                            <select name="listaparcelas" id="" class="parcelas">
+                            <div className="nm-input">Parcelas:</div>
+                            <select name="listaparcelas" id="" className="parcelas">
                                 <option>1x</option>
                                 <option>2x</option>
                                 <option>3x</option>
@@ -76,27 +80,27 @@ export default function ConfirmarPagamento() {
                                 <option>11x</option>
                                 <option>12x</option>
                             </select>
-                            <div class="nm-input">Nome:</div>
+                            <div className="nm-input">Nome:</div>
                             <InputPayment/>
-                            <div class="nm-input">Código de segurança:</div>
+                            <div className="nm-input">Código de segurança:</div>
                             <InputPayment/>
-                            <div class="nm-input">CPF do titular:</div>
+                            <div className="nm-input">CPF do titular:</div>
                             <InputPayment/>
                         </div>
-                        <div class="botoes-pgmt">
-                            <button class="vlt-carrinho">Voltar</button>
-                            <button onClick={compraFinalizada} class="final-cmpra">Finalizar compra</button>
+                        <div className="botoes-pgmt">
+                            <button onClick={pagAnterior} className="vlt-carrinho">Voltar</button>
+                            <button onClick={compraFinalizada} className="final-cmpra">Finalizar compra</button>
                         </div>
-                        <div class="box-cartoes">
-                            <div class="titulo-box">Pague com:</div>
-                            <div class="box-icones">
-                                <div class="icons1">
-                                    <img src="../../assets/images/pagseguro.svg" alt="" class="icon-pagseguro" />
-                                    <img src="../../assets/images/visa.svg" alt="" class="icon-visa" />
+                        <div className="box-cartoes">
+                            <div className="titulo-box">Pague com:</div>
+                            <div className="box-icones">
+                                <div className="icons1">
+                                    <img src="../../assets/images/pagseguro.svg" alt="" className="icon-pagseguro" />
+                                    <img src="../../assets/images/visa.svg" alt="" className="icon-visa" />
                                 </div>
-                                <div class="icons2">
-                                    <img src="../../assets/images/mastercard.svg" alt="" class="icon-mastercard" />
-                                    <img src="../../assets/images/elo.svg" alt="" class="icon-elo" />
+                                <div className="icons2">
+                                    <img src="../../assets/images/mastercard.svg" alt="" className="icon-mastercard" />
+                                    <img src="../../assets/images/elo.svg" alt="" className="icon-elo" />
                                 </div>
                             </div>
                         </div>

@@ -9,6 +9,7 @@ const ContainerAdmProduto = styled.div`
     padding: 1.5em 2em 2em 2em;
 
     height: 100%;
+    width: 100%;
 
     button {
         font-family: Pacifico;
