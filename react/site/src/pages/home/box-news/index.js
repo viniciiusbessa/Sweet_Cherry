@@ -7,6 +7,7 @@ export default function BoxNews () {
         <BoxNovidades>
             <div class="Faixa2_inicio"> 
                 <div class="titulo"> Novidades </div>
+                <div className="box"> 
                 <div class="box_novidades">
                         <div class="titulo_novidades"> Novidades chegando na loja </div>
                         <div class="lista">
@@ -25,6 +26,7 @@ export default function BoxNews () {
                 <div class="vermais_novidades">
                     <button> Ver Mais </button>
                 </div>   
+                </div>
             </div>
         </BoxNovidades>
     )
