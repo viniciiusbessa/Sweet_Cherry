@@ -1,4 +1,4 @@
-
+import "animate.css"
 import { useHistory } from "react-router";
 
 import Rodape from "../../components/commum/footer";
