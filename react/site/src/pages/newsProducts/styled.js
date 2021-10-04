@@ -37,6 +37,8 @@ const ContainerNovidades = styled.div `
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
+        justify-content: space-around;
+
 
         padding: 4.5em;
     }

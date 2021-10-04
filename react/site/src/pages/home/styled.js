@@ -93,7 +93,7 @@ const BoxSlide = styled.div`
         display: flex;
         flex-direction: row;
         padding-right: 14em;
-        margin-bottom: 60vh;
+        margin-bottom: 80vh;
     }
 
 
@@ -195,6 +195,9 @@ const BoxEmAlta = styled.div`
     .container_doces{
         display: flex;
         flex-direction: row;
+
+        justify-content: space-around;
+
 
     }
 

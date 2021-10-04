@@ -1,4 +1,4 @@
-
+import { useHistory } from "react-router";
 
 import Rodape from "../../components/commum/footer";
 import Cabecalho from "../../components/commum/header";
@@ -9,18 +9,32 @@ import { BoxSlide } from "./styled";
 import { BoxEmAlta } from "./styled";
 import { ContainerInicial} from "./styled";
 
-export default function inicial () {
+export default function Inicial () {
+
+    const navigation = useHistory();
+
+    const categorias = async () => {
+        navigation.push('/destaque')
+    }
+
+    const perfil = async () => {
+        navigation.push('/perfil')
+    }
+
+
     return(
+
+
         <ContainerInicial>
             <Cabecalho/>
            
             <div className="F1_home">
                     <div className="perfil">
-                        <button className="button1 animate__animated animate__bounceInLeft"><img src="/assets/images/pesquisa-de-usuario 1.png" alt=""/></button>
+                        <button className="button1 animate__animated animate__bounceInLeft" onClick={perfil}><img src="/assets/images/pesquisa-de-usuario 1.png" alt=""/></button>
                     </div>
                 
                     <div className="busca">
-                        <button className="button2 animate__animated animate__bounceInRight"><img src="/assets/images/ferramenta-lupa 1.png" alt=""/></button>
+                        <button className="button2 animate__animated animate__bounceInRight" onClick={categorias}><img src="/assets/images/ferramenta-lupa 1.png" alt=""/></button>
                     </div>
             </div>
                 <BoxNews/>
@@ -57,7 +71,7 @@ export default function inicial () {
                             <div className="box_texto">
                                 <p>Os Deliciosos Macarons chegaram!</p>
                                 <p>Delicie-se na sua cor favorita com esses biscoitos</p>
-                                <button> Garanta já o seu!  </button>
+                                <button onClick={categorias}> Garanta já o seu!  </button>
                             </div>
                         </div>
                             <div className="container_doces">
