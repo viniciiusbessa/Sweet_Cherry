@@ -1,4 +1,4 @@
-import "animate.css"
+
 
 import Rodape from "../../components/commum/footer";
 import Cabecalho from "../../components/commum/header";

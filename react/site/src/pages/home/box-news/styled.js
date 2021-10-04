@@ -18,7 +18,7 @@ const BoxNovidades = styled.div`
 .box_novidades{
     display: flex;
     flex-direction: column;
-    margin: 1em 15em;
+    margin: 2em 15em;
 
 
     background-color: #d1eaf5;
@@ -81,6 +81,8 @@ const BoxNovidades = styled.div`
 
     font-family:  Pacifico;
     font-size: 15px;
+
+    margin: 2em 1em 0em 0em;
 }
 
 .vermais_novidades button:hover {
