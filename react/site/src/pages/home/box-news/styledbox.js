@@ -14,20 +14,12 @@ const BoxNovidades = styled.div`
 
     color: #FF8AB5;
 }
-.box{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-}
 
 .box_novidades{
     display: flex;
     flex-direction: column;
-    
-    width: 60rem;
-    height: 25rem;
+    margin: 2em 15em;
+
 
     background-color: #d1eaf5;
     border-radius: 1em;
@@ -90,7 +82,7 @@ const BoxNovidades = styled.div`
     font-family:  Pacifico;
     font-size: 15px;
 
-    margin-top: 2em;
+    margin: 2em 1em 0em 0em;
 }
 
 .vermais_novidades button:hover {

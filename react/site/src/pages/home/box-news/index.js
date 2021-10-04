@@ -1,6 +1,5 @@
-import { useHistory } from "react-router"
-import { BoxNovidades } from "./styled"
-
+import { BoxNovidades } from "./styledbox"
+import { useHistory } from "react-router";
 
 export default function BoxNews () {
 

@@ -1,5 +1,4 @@
-import "animate.css"
-import { useHistory } from 'react-router-dom';
+import { useHistory } from "react-router";
 
 import Rodape from "../../components/commum/footer";
 import Cabecalho from "../../components/commum/header";
