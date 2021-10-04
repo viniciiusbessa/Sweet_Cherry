@@ -16,13 +16,11 @@ export default function Favorites() {
                     <div class="ds">Os doces que você curtiu estão aqui :)</div>
                 </div>
 
-                <div class="box-doces1">
+                <div class="box-doces">
                     <CardProduct/>
                     <CardProduct/>
                     <CardProduct/>
-                </div>
-
-                <div class="box-doces2">
+                
                     <CardProduct/>
                     <CardProduct/>
                     <CardProduct/>

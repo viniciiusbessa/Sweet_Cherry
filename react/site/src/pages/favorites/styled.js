@@ -7,7 +7,7 @@ const ContainerFavoritos = styled.div `
     flex-direction: column;
 
     .cabecalho {
-        background-image: url(../../assets/images/fundo2.png);
+        background-image: url(/assets/images/fundo2.png);
         background-size: 100% 180px;
 
         height: 180px;
@@ -18,11 +18,11 @@ const ContainerFavoritos = styled.div `
         display: flex;
         flex-direction: column;
 
-        margin: 5em 0em 0em 10em;
     }
 
     .box-texto {
         margin-bottom: 3em;
+        margin-left: 2em;
     }
 
     .titulo-fav {
@@ -36,15 +36,16 @@ const ContainerFavoritos = styled.div `
 
     }
 
-    .box-doces1, .box-doces2 {
+    .box-doces {
     display: flex;
     flex-direction: row; 
+    flex-wrap: wrap;
 
-    width: 100em;
+   
     justify-content: space-around;
     align-items: center;
 
-    margin-bottom: 80px;
+
     }
 `
 

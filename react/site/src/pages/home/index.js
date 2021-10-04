@@ -19,27 +19,27 @@ export default function inicial () {
                         <button className="button1 animate__animated animate__bounceInLeft"><img src="/assets/images/pesquisa-de-usuario 1.png" alt=""/></button>
                     </div>
                 
-                    <div class="busca">
+                    <div className="busca">
                         <button className="button2 animate__animated animate__bounceInRight"><img src="/assets/images/ferramenta-lupa 1.png" alt=""/></button>
                     </div>
             </div>
                 <BoxNews/>
                 <BoxSlide>
-                    <div class="Faixa3_inicio">
-                            <div class="titulo"> Destaques </div>
-                            <div class="slide">
+                    <div className="Faixa3_inicio">
+                            <div className="titulo"> Destaques </div>
+                            <div className="slide">
                                 <input type="radio" name="slider" id="item-1" checked/>
                                 <input type="radio" name="slider" id="item-2"/>
                                 <input type="radio" name="slider" id="item-3"/>
 
-                                    <div class="cartoes">
-                                        <label class="cartao" for="item-1" id="song-1">
+                                    <div className="cartoes">
+                                        <label className="cartao" for="item-1" id="song-1">
                                             <BoxProduto/>
                                         </label>
-                                        <label class="cartao" for="item-2" id="song-2">
+                                        <label className="cartao" for="item-2" id="song-2">
                                             <BoxProduto/>    
                                         </label>
-                                        <label class="cartao" for="item-3" id="song-3">
+                                        <label className="cartao" for="item-3" id="song-3">
                                             <BoxProduto/>
                                         </label>
                                     </div>   
@@ -47,25 +47,28 @@ export default function inicial () {
                     </div>
                 </BoxSlide>
                    <BoxEmAlta>  
-                    <div class="Faixa4_inicio">
-                        <div class="titulo">Em alta</div>
-                        <div class="box_em_alta">
-                            <div class="imagem_emAlta">
+                    <div className="Faixa4_inicio">
+                        <div className="titulo">Em alta</div>
+                        <div className="box">
+                        <div className="box_em_alta">
+                            <div className="imagem_emAlta">
                                 <img src="../../assets/images/macarrons.jpg" alt=""/>
                             </div>
-                            <div class="box_texto">
+                            <div className="box_texto">
                                 <p>Os Deliciosos Macarons chegaram!</p>
                                 <p>Delicie-se na sua cor favorita com esses biscoitos</p>
                                 <button> Garanta já o seu!  </button>
                             </div>
                         </div>
-                            <div class="container_doces">
+                            <div className="container_doces">
                                     <BoxProduto/>
                                 
                                     <BoxProduto/>
                                
                                     <BoxProduto/>
+
                             </div>
+                        </div>
                     </div>
                 </BoxEmAlta>
             <Rodape/>

@@ -93,8 +93,7 @@ const BoxSlide = styled.div`
         display: flex;
         flex-direction: row;
         padding-right: 14em;
-
-        margin-bottom: 100vh;
+        margin-bottom: 60vh;
     }
 
 
@@ -124,18 +123,26 @@ const BoxSlide = styled.div`
 
 `
 const BoxEmAlta = styled.div`
+    display: flex;
+    flex-direction: column;
+
 
     .titulo{
-        margin-left: 2em;
         font-size: 3em;
-
+        margin-left: 2em;
         color: #FF8AB5;
+        
+    }
+
+    .box{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     .box_em_alta{
         display: flex;
         flex-direction: row;
-        margin: 2em 20em;
 
         height: 20em;
         width: 45em;
@@ -148,7 +155,7 @@ const BoxEmAlta = styled.div`
     }
 
     .imagem_emAlta img{
-        height: 20em;
+        height: 19.5em;
         width: 18em;
 
         border: solid;
@@ -188,7 +195,7 @@ const BoxEmAlta = styled.div`
     .container_doces{
         display: flex;
         flex-direction: row;
-        margin: 5em 0em 10em 10em;
+
     }
 
 `
