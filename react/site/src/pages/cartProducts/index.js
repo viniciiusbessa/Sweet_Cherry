@@ -1,6 +1,6 @@
 import Cabecalho from "../../components/commum/header";
 import Rodape from "../../components/commum/footer";
-import TableProduct from "../../components/styled/tableCart";
+// import TableProduct from "../../components/styled/tableCart";
 
 import { CartProduct } from "./styled";
 
