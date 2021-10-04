@@ -16,6 +16,37 @@ export default function Perfil() {
         navigation.push('/')
     }
 
+
+    // async function removerProduto(id) {
+    //     loading.current.complete();
+
+    //     confirmAlert({
+    //         title: 'Remover Produto',
+    //         message: `Tem certeza que deseja remover o produto ${id} ?`, 
+    //         buttons: [
+    //             {
+    //                 label: 'Sim',
+    //                 onClick: async () => {
+    //                     let r = await api.removerProduto(id);
+    //                     if(r.erro)
+    //                         toast.error(`${r.erro}`);
+    //                     else {
+    //                         toast.success('🗑️ Produto removido com sucesso!');
+    //                         listarProdutos();
+    //                     }
+    //                 }
+    //             },
+    //             {
+    //                 label: 'Não'
+    //             }
+    //         ]
+    //     });
+    // }
+
+    // useEffect(() => {
+    //     listarProdutos();
+    // },[])
+
     return (
     <ContainerPerfil>
         <Cabecalho />
@@ -86,7 +117,7 @@ export default function Perfil() {
                 </div>
                 
 
-                <div className="box-excluir">
+                <div className="box-excluir" onClick={Inicio}>
                     <div className="excluir-conta-perfil">Excluir conta</div>
                     <img src="../../assets/images/Lixeira-perfil.svg" alt="" />
                 </div>

@@ -17,12 +17,11 @@ const ContainerFavoritos = styled.div `
     .box-favoritos{
         display: flex;
         flex-direction: column;
-
+        margin: 2em 0em 0em 10em;
     }
 
     .box-texto {
         margin-bottom: 3em;
-        margin-left: 2em;
     }
 
     .titulo-fav {
@@ -40,12 +39,19 @@ const ContainerFavoritos = styled.div `
     display: flex;
     flex-direction: row; 
     flex-wrap: wrap;
+    max-width: 80%;
 
    
     justify-content: space-around;
     align-items: center;
+    }
 
-
+    .hoverProduto {
+        transition: all ease-in-out .25s;
+    }
+     
+    .hoverProduto:hover {
+        transform: translateY(-2em);
     }
 `
 

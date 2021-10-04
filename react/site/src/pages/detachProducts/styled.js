@@ -71,6 +71,14 @@ const ContainerDestaque = styled.div `
 
         margin-top: 5em;
     }
+
+    .hoverProduto {
+        transition: all ease-in-out .25s;
+    }
+     
+    .hoverProduto:hover {
+        transform: translateY(-2em);
+    }
 `
 
 export { ContainerDestaque }

@@ -1,4 +1,3 @@
-import 'animate.css'
 
 import { useHistory } from "react-router";
 

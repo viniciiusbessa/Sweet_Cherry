@@ -11,7 +11,7 @@ const ContainerBoxProduto = styled.div`
 
     display: flex;
     justify-content: center;
-     
+
     .imagem-doce img{
         margin: 1em;
         width: auto;
