@@ -1,6 +1,14 @@
+import { useHistory } from "react-router"
 import { BoxNovidades } from "./styled"
 
+
 export default function BoxNews () {
+
+    const navigation = useHistory();
+
+    const novidades = async () => {
+        navigation.push('/novidades')
+    }
 
     return(
 
@@ -24,7 +32,7 @@ export default function BoxNews () {
                         </div>
                 </div>
                 <div class="vermais_novidades">
-                    <button> Ver Mais </button>
+                    <button onClick={novidades}> Ver Mais </button>
                 </div>   
                 </div>
             </div>
