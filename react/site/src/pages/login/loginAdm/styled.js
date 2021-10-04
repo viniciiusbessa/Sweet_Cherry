@@ -19,12 +19,12 @@ const ContainerLoginAdm = styled.div`
     }
 
     .bemvindo-titulo{
-        font-size: 60px;
+        font-size: 50px;
         padding-top: 0.5em;
     }
 
     .bemvindo-titulo1 {
-        font-size: 60px;
+        font-size: 50px;
     }
 
     .conteudo-entrar-bv {

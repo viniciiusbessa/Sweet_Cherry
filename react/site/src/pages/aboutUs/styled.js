@@ -17,25 +17,31 @@ const ContainerSobreNos = styled.div`
             font-size: 3em;
 
             color: #FF8AB5;
+            margin-top: 1em;
         }
 
         .texto p {
             display: flex;
             justify-content: center;
             text-align: center;
-            font-size: 2em;
+            font-size: 1.5em;
             font-family: Pacifico;
+        }
+
+        .texto {
+            margin: 0em 4em 0em 4em;
         }
 
         .imagens{
             display: flex;
             justify-content: center;
+            margin: 2em
         }
 
         .imagens img{
             border-radius: 1em;
             width: 50vw;
-            height: 60vh;
+            height: 50vh;
 
             margin: 1em;
             border: solid;

@@ -4,9 +4,8 @@ const ContainerDestaque = styled.div `
     display: flex;
     flex-direction: column;
 
-    background-image: url(../../assets/images/onda.png);
-    background-size: 40% 600px;
-    background-position: left;
+    background-image: url(../../assets/images/fundo2.svg);
+    background-size: 75% auto;
     background-repeat: repeat-y;
 
     .conteudo {
@@ -70,7 +69,7 @@ const ContainerDestaque = styled.div `
 
         justify-content: space-around;
 
-        margin-top: 2em;
+        margin-top: 5em;
     }
 `
 

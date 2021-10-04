@@ -12,7 +12,7 @@ const ContainerCadastro = styled.div`
         justify-content: space-around;
         font-size: 20px;
         font-family: Pattaya;
-        background-image: url(/assets/images/fundo1.png);
+        background-image: url(/assets/images/cabecalhoBranco.png);
         background-size: 100% 200px;
 
         height: 200px;
