@@ -205,7 +205,7 @@ const ContainerPagamento = styled.div`
         justify-content: left;
         align-items: center;
 
-        border: 5px solid #ffff;
+        border: 3px solid #ffff;
         border-radius: 30px;
 
         width: 13em;

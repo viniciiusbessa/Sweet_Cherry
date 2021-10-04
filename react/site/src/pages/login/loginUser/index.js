@@ -35,7 +35,7 @@ export default function Login() {
 
                     <div className="box-input-senha">
                         <img src="../../assets/images/img-senha-login.svg" alt="" />
-                        <input className="input-senha" type="password" placeholder="password" />
+                        <input className="input-senha" type="password" placeholder="password"/>
                     </div>
                     
                 </div>

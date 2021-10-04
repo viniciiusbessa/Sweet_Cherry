@@ -28,7 +28,7 @@ const ContainerInicial = styled.div`
         border-top-right-radius: 2em;
 
         background-color: lightpink;
-
+        padding-right: 1.5em;
     }
 
     .button2{
@@ -39,7 +39,7 @@ const ContainerInicial = styled.div`
         border-top-left-radius: 2em;
         
         background-color: lightblue;
-
+        padding-left: 1.5em;
     }
 
     .button1, .button2{
@@ -53,6 +53,10 @@ const ContainerInicial = styled.div`
         height: 5em;
 
         animation-duration: 2s;
+    }
+
+    .perfil img, .busca img {
+        cursor: pointer;
     }
 
 `

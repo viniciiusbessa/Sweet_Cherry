@@ -5,8 +5,8 @@ const ContainerAdm = styled.div`
     flex-direction: column;
 
     background-color: #F3F7F6;
-    background-image: url(../../../assets/images/onda.png);
-    background-size: 54% 700px;
+    background-image: url(../../../assets/images/fundo2.svg);
+    background-size: 105% auto;
     background-repeat: repeat-y;
     background-position: left;
 
