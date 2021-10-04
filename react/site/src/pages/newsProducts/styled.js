@@ -42,6 +42,14 @@ const ContainerNovidades = styled.div `
 
         padding: 4.5em;
     }
+
+    .hoverProduto {
+        transition: all ease-in-out .25s;
+    }
+     
+    .hoverProduto:hover {
+        transform: translateY(-2em);
+    }
 `
 
 export { ContainerNovidades }
