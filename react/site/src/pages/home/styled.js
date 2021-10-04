@@ -59,6 +59,15 @@ const ContainerInicial = styled.div`
         cursor: pointer;
     }
 
+    .perfil, .busca {
+        transition: all 0.2s;
+        cursor: pointer;
+    }
+
+    .perfil:hover, .busca:hover{
+    transform: scale(1.05);
+}
+
 `
 
 const BoxSlide = styled.div`
