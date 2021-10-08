@@ -4,7 +4,6 @@ const ContainerAdmProduto = styled.div`
     display: flex;
     flex-direction: column;
 
-    background-color: #F3F7F6;
 
     padding: 1.5em 2em 2em 2em;
 
@@ -80,8 +79,6 @@ const ContainerAdmProduto = styled.div`
     .barra-pesquisa-adm2 input {
         width: 494px;
         height: 40px;
-
-        background: #F3F7F6;
 
         border: 3px solid #D1EAF5;
         border-radius: 24px;

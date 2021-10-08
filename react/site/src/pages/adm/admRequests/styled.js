@@ -4,11 +4,9 @@ const ContainerAdmPedidos = styled.div`
     display: flex;
     flex-direction: column;
 
-    background-color: #F3F7F6;
+    padding: 2em 11em;
 
-    padding: 2em 13em;
-
-    height: 130vh;
+    height: 100%;
 
     button {
         font-family: Patua One;
@@ -76,6 +74,8 @@ const ContainerAdmPedidos = styled.div`
 
         font-size: 25px;
         font-family: Pacifico;
+
+        white-space: nowrap;
     }
 
     .barra-pesquisa-adm2 {
@@ -86,8 +86,6 @@ const ContainerAdmPedidos = styled.div`
     .barra-pesquisa-adm2 input {
         width: 520px;
         height: 40px;
-
-        background: #F3F7F6;
 
         border: 3px solid #D1EAF5;
         border-radius: 24px;
@@ -132,68 +130,45 @@ const ContainerAdmPedidos = styled.div`
     }
 
 
-    table {
-        border: 1px solid #140018;
-        border-collapse: collapse;
+    .table-pai {
+        border: 2px solid #140018;
 
-        font-family: Patua One;
+        padding: 0em 1em 2em 1em;
+        margin-bottom: 3em;
     }
 
-    tr {
-        border: 1px solid #140018;
+    .box-pedido-cliente {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
     }
 
-    th {
-        border: 1px solid #140018;
+    .nome-cliente {
+        color: #000000;
+        font-size: 1.4em;
 
-        text-align: left;
-
-        padding: 0.5em 0em 0.5em 1em;
+        margin: 1.5em 0em 0em 0em;
     }
 
-    td {
-        border: 1px solid #140018;
-
-        padding: 0.5em 0em 0.5em 1em;
+    .estado-pedido {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
     }
 
-    .campo-btns {
-        border: none;
-
-        width: 15%;
+    .acoes-titulo {
+        color: #000000;
+        font-size: 1.2em;
     }
 
-    .espaco {
-        border: none;
+    .box-btns {
+        display: flex;
+        flex-direction: row;
 
-        width: 15%;
+        margin: 1em 0em 1.5em 0em;
     }
 
-    .espaco1 {
-        border: none;
-
-        width: 15%;
-    }
-
-    .botao-visivel {
-        border: none;
-
-        padding: 0.8em 0em 0.8em 1em;
-    }
-
-    .botao-visivel1 {
-        border: none;
-
-        padding: 0.8em 0em 0.8em 1em;
-    }
-
-    .botao-visivel2 {
-        border: none;
-
-        padding: 0.8em 0em 0.8em 1em;
-    }
-
-    .botao-visivel button {
+    .btn1 {
         background-color: #54e88f;
 
         font-size: 16px;
@@ -203,11 +178,11 @@ const ContainerAdmPedidos = styled.div`
         padding: 0.3em 0.4em;
     }
 
-    .botao-visivel button:hover {
+    .btn1:hover {
         background-color: #30cf70;
     }
 
-    .botao-visivel1 button {
+    .btn2 {
         background-color: #96B3FF;
 
         font-size: 16px;
@@ -215,13 +190,14 @@ const ContainerAdmPedidos = styled.div`
         border-radius: 10px;
 
         padding: 0.3em 1.5em;
+        margin: 0em 0.5em;
     }
 
-    .botao-visivel1 button:hover {
+    .btn2:hover {
         background-color: #6989db;
     }
 
-    .botao-visivel2 button {
+    .btn3 {
         background-color: #FF6F6F;
 
         font-size: 16px;
@@ -229,10 +205,53 @@ const ContainerAdmPedidos = styled.div`
         border-radius: 10px;
 
         padding: 0.3em 0.4em;
+
+        white-space: nowrap;
     }
 
-    .botao-visivel2 button:hover {
+    .btn3:hover {
         background-color: #ee5252;
+    }
+
+    .table-filha {
+        border: 1px solid #140018;
+        border-collapse: collapse;
+
+        font-family: Patua One;
+
+        width: 100%;
+
+        white-space: nowrap;
+    }
+
+    tr {
+        border: 1px solid #140018;
+    }
+
+    th {
+        border: 1px solid #140018;
+
+        padding: 0.3em 0em 0.5em 0em;
+    }
+
+    td {
+        border: 1px solid #140018;
+
+        text-align: center;
+
+        padding: 0.5em 0em 0.5em 0em;
+    }
+
+    .campo-btns {
+        border: none;
+    }
+
+    .espaco {
+        border: none;
+    }
+
+    .espaco1 {
+        border: none;
     }
 `
 
