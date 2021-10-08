@@ -1,7 +1,9 @@
 import Cabecalho from '../../components/commum/header/index'
 import Rodape from '../../components/commum/footer/index'
-
 import { ContainerPerfil } from './styled'
+
+import React, { useRef } from 'react'
+import LoadingBar from 'react-top-loading-bar'
 
 import { useHistory } from 'react-router-dom'
 
@@ -16,22 +18,24 @@ export default function Perfil() {
         navigation.push('/')
     }
 
+    const loading = useRef(null)
+
 
     // async function removerProduto(id) {
     //     loading.current.complete();
 
     //     confirmAlert({
-    //         title: 'Remover Produto',
-    //         message: `Tem certeza que deseja remover o produto ${id} ?`, 
+    //         title: 'Excluir conta',
+    //         message: `Tem certeza que deseja excluir esta conta?`, 
     //         buttons: [
     //             {
     //                 label: 'Sim',
     //                 onClick: async () => {
-    //                     let r = await api.removerProduto(id);
+    //                     let r = await api.removerConta(id);
     //                     if(r.erro)
     //                         toast.error(`${r.erro}`);
     //                     else {
-    //                         toast.success('🗑️ Produto removido com sucesso!');
+    //                         toast.success('🗑️ Conta excluída com sucesso!');
     //                         listarProdutos();
     //                     }
     //                 }
@@ -49,6 +53,7 @@ export default function Perfil() {
 
     return (
     <ContainerPerfil>
+        <LoadingBar color='white' ref={loading}/>
         <Cabecalho />
         <div className="conteudo-perfil">
 

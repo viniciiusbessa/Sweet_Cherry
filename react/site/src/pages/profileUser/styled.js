@@ -4,8 +4,8 @@ const ContainerPerfil = styled.div `
     display: flex;
     flex-direction: column;
 
-    background-image: url(../../assets/images/ondaa.png);
-    background-size: 37% 750px;
+    background-image: url(../../assets/images/fundo2.svg);
+    background-size: 110% auto;
     background-repeat: repeat-y;
     background-position: left;
 
@@ -19,6 +19,8 @@ const ContainerPerfil = styled.div `
         .info-pessoal-perfil {
             display: flex;
             flex-direction: column;
+
+            margin-left: 5em;
         }
 
         .box-titulo-pedido {
@@ -32,6 +34,7 @@ const ContainerPerfil = styled.div `
 
             text-decoration: underline 5px solid #D1EAF5;
             text-align: center;
+            margin-bottom: 1em;
         }
 
         .dados-conta-perfil, .dados-pessoais-perfil {

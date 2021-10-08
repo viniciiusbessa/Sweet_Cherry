@@ -5,7 +5,10 @@ const BoxNovidades = styled.div`
 .Faixa2_inicio{
     display: flex;
     flex-direction: column;
+}
 
+@media (max-width: 1440px){
+    margin-top: 1em;
 }
 
 .titulo{

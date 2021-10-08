@@ -10,6 +10,10 @@ const ContainerInicial = styled.div`
     background-size: 120% auto;
     background-repeat: repeat-y;
 
+    @media (max-width: 1024px){
+        background-size: 130% auto;
+    }
+
 
     .F1_home{
         display: flex;

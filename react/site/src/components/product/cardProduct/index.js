@@ -1,11 +1,12 @@
 import { ContainerBoxProduto } from "./styled";
 
 import { useHistory } from 'react-router-dom'
+import { useState } from "react";
 
 
-export default function BoxProduto (){
-
+export default function BoxProduto (props){
     const navigation = useHistory();
+    const [produto, setProduto] = useState(props.info)
 
     const compra = async () => {
         navigation.push('/compra')
@@ -24,16 +25,17 @@ export default function BoxProduto (){
         <div className='hoverProduto'>
             <ContainerBoxProduto>
                 <div className="doces">
-                        <div className="imagem-doce"><img src="/assets/images/bolo vermelo.png" alt=""/></div>
+
+                        <div className="imagem-doce"><img src={props.imagem} alt=""/></div>
                                 <div className="sobre_Produto">
-                                    <div className="nm-doce">Bolo vermelho</div>
+                                    <div className="nm-doce">{props.nome}</div>
                                     <div className="icones">
                                         <div className="icone-carrinho" onClick={carrinho}><img src="/assets/images/carrinho.svg" alt=""/></div>
                                         <div className="icone-coracao" onClick={favoritos}><img src="/assets/images/coracao-favoritos-compra.svg" alt=""/></div>
                                     </div>
                                 </div>
 
-                        <div className="preco">R$19,90</div>
+                        <div className="preco">{props.preco}</div>
                     <div className="button"> <button onClick={compra}>Ver mais</button> </div>
                 </div>
             </ContainerBoxProduto>

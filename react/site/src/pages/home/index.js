@@ -4,14 +4,13 @@ import { useHistory } from "react-router";
 import Rodape from "../../components/commum/footer";
 import Cabecalho from "../../components/commum/header";
 import  BoxNews  from "./box-news/index";
-import BoxProduto from "../../components/commum/cardProduct";
+import BoxProduto from "../../components/product/cardProduct";
 
 import { BoxSlide } from "./styled";
 import { BoxEmAlta } from "./styled";
 import { ContainerInicial} from "./styled";
 
 export default function Inicial () {
-
     const navigation = useHistory();
 
     const categorias = async () => {
@@ -21,7 +20,6 @@ export default function Inicial () {
     const perfil = async () => {
         navigation.push('/perfil')
     }
-
 
     return(
 
@@ -76,11 +74,9 @@ export default function Inicial () {
                             </div>
                         </div>
                             <div className="container_doces">
-                                    <BoxProduto/>
-                                
-                                    <BoxProduto/>
-                               
-                                    <BoxProduto/>
+                                <BoxProduto />
+                                <BoxProduto />
+                                <BoxProduto />
 
                             </div>
                         </div>

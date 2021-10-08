@@ -46,7 +46,7 @@ export default function Cabecalho() {
 
             <div className="box-imgs-perfil">
                 <div className="img-carrinho-perfil"><img src="../../assets/images/carrinho.svg" alt="" onClick={carrinho} /> </div>
-                <div className="img-favoritos-perfil"><img src="../../assets/images/lupa-com-coracao.svg" alt="" onClick={favoritos}  /> </div>
+                <div className="img-favoritos-perfil"><img src="../../assets/images/coracao.svg" alt="" onClick={favoritos}  /> </div>
             </div>
         </ContainerCabecalho>
     )

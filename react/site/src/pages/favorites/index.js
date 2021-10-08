@@ -1,5 +1,5 @@
 import Header from "../../components/commum/header";
-import CardProduct from "../../components/commum/cardProduct";
+import CardProduct from "../../components/product/cardProduct";
 import Footer from "../../components/commum/footer";
 import { ContainerFavoritos } from "./styled";
 
