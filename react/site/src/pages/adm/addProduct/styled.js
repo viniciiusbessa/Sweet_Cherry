@@ -72,17 +72,9 @@ const ContainerAddProduto = styled.div`
 
     .novo-produto-add {
         font-size: 35px;
-    }
+        text-decoration: underline 6px solid #F6AAC6;
 
-    .traco-titulo {
-        background: #F6AAC6;
-
-        width: 13.5em;
-        height: 4px;
-
-        margin: -0.5em 0em 6em 0em;
-
-        border-radius: 1em;
+        margin-bottom: 2em;
     }
 
     .conteudo-add {
