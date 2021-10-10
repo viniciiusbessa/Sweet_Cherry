@@ -1,5 +1,8 @@
 import { useState } from 'react'
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 import { ContainerAddProduto } from './styled'
 
 import { useHistory } from 'react-router-dom'
@@ -23,13 +26,17 @@ export default function AdicionarProduto() {
     async function inserir() {
         let r = await api.inserirProduto(produto, preco, categoria, descricao, avaliacao, imagem)
         if (r.erro) {
-            alert(`❌ ${r.erro}`)
+            toast.error(`❌ ${r.erro}`)
         } else {
-            alert('✔️ Produto inserido com sucesso')
+            toast.dark('✔️ Produto inserido com sucesso')
             navigation.push('/administrar-produtos')
         }
 
         limparCampos();
+    }
+
+    const AdmProduto = async () => {
+        navigation.push('/administrar-produtos')
     }
 
     function limparCampos() {
@@ -42,13 +49,19 @@ export default function AdicionarProduto() {
         setidAlterando(0);
     }
 
-
-    const AdmProduto = async () => {
-        navigation.push('/administrar-produtos')
+    async function alterando(item) {
+        setProduto(item.nm_produto);
+        setPreco(item.vl_produto);
+        setCategoria(item.nm_categoria);
+        setDescricao(item.ds_produto);
+        setAvaliacao(item.ds_avaliacao);
+        setImagem(item.ds_imagem);
+        setidAlterando(item.id_produto);
     }
 
     return (
     <ContainerAddProduto>
+    <ToastContainer />
 
         <div class="fundo-rodape-add">
             <div class="container-fundo-add">
