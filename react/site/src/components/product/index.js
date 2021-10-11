@@ -17,7 +17,7 @@ export default function Produto(){
                 nome:"Red Velvet", preco:"R$ 25,99", imagem:"/assets/images/bolovermelho.png"
               },
               {
-                nome:"Kit Kat Cake", preco:"R$ 90,99", imagem:"/assets/images/kitkat.png"
+                nome:"Kit Kat Cake", preco:"R$ 90,99", imagem:"/assets/images/bolokitkat.png"
               }
         ]
 
@@ -36,7 +36,7 @@ export default function Produto(){
     return (
              <div className="products">
                 {produtos.map(item => 
-                    <BoxProduto nome={item.nome} preco={item.preco} imagem={item.imagem}/>
+                    <BoxProduto info={item}/>
                 )}
             </div>
     )

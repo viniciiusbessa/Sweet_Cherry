@@ -14,29 +14,28 @@ const ContainerBoxProduto = styled.div`
 
     .imagem-doce img{
         margin: 1em;
-        width: auto;
-        height: 12em;
-    }
-    
-    .sobre_Produto {
-        display: flex;
-        flex-direction: row;
-    
+        max-width: 15em;
+        height: 11em;
+        border-radius: 10px;
     }
     
     .nm-doce {
-        font-size: 25px;
+        font-size: 1.3em;
         
         text-align: center;
-        margin-left: 1em;
-        margin-right: 1em;
+        margin: 0em .5em 0em .5em
+    }
+
+    .produto {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
     }
     
     .icones {
         display: flex;
         flex-direction: row;
-    
-        
+        margin-top: 1.5em
     }
     
     .icone-carrinho img{
@@ -64,7 +63,6 @@ const ContainerBoxProduto = styled.div`
     .button{
         display: flex;
         justify-content: center;
-        margin: 1em;
     }
     
     button {
@@ -76,7 +74,7 @@ const ContainerBoxProduto = styled.div`
         height: 50px;
         cursor: pointer;
         font-family: pacifico;
-        
+        margin-top: 1.5em;
     }
     
     button:hover {

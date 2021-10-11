@@ -47,13 +47,13 @@ export default function Inicial () {
 
                                     <div className="cartoes">
                                         <label className="cartao" for="item-1" id="song-1">
-                                            <BoxProduto/>
+                                            <BoxProduto nome="Brigadeiro" preco="R$ 19,99" imagem="/assets/images/brigadeiro.png"/>
                                         </label>
                                         <label className="cartao" for="item-2" id="song-2">
-                                            <BoxProduto/>    
+                                            <BoxProduto nome="Kit Kat Cake" preco="R$ 90,99" imagem="/assets/images/bolokitkat.jpg"/>   
                                         </label>
                                         <label className="cartao" for="item-3" id="song-3">
-                                            <BoxProduto/>
+                                            <BoxProduto nome="Red Velvet" preco="R$ 25,99" imagem="/assets/images/bolo vermelo.png"/>
                                         </label>
                                     </div>   
                             </div>
@@ -74,9 +74,9 @@ export default function Inicial () {
                             </div>
                         </div>
                             <div className="container_doces">
-                                <BoxProduto />
-                                <BoxProduto />
-                                <BoxProduto />
+                                <BoxProduto nome="Sonho sabor chocolate" preco="R$ 9,99" imagem="/assets/images/sonho.jpg"/>
+                                <BoxProduto nome="Cupcake" preco="R$ 15,50" imagem="/assets/images/cupcakemorango.jpg"/>
+                                <BoxProduto nome="Trufa" preco="R$ 6,80" imagem="/assets/images/trufa1.jpg"/>
 
                             </div>
                         </div>
