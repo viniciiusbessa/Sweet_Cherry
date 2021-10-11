@@ -1,11 +1,18 @@
-import { ContainerEstrelasAvaliacao } from "./styled";
+import { useState } from 'react';
+import { Rating } from 'react-simple-star-rating';
+import { ContainerEstrelasAvaliacao } from './styled';
 
-export default function Estrelas() {
-    return (
-        <ContainerEstrelasAvaliacao > 
-            <div>
-                <img className="estrelinha" src="../../assets/images/estrelinhas/Star 3.svg" alt="" />
-            </div>
+
+export default function Estrelas(){
+    const [rating, setRating] = useState(0)
+
+    const handRating = (rate) => {
+        setRating(rate)
+    }
+
+   return (
+       <ContainerEstrelasAvaliacao>
+                <Rating onClick={handRating} ratingValue={rating}/>
         </ContainerEstrelasAvaliacao>
-    )
+   )
 }

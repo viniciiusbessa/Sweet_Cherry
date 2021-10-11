@@ -55,10 +55,6 @@ export default function Compra() {
 
                     <div className="box-estrelinhas">
                         <Estrelas />
-                        <Estrelas />
-                        <Estrelas />
-                        <Estrelas />
-                        <Estrelas />
                     </div>
 
                 </div>
