@@ -23,7 +23,7 @@ export default function AdministrarPedidos() {
             <div class="btn-add-adm2"><button>Administração Pedidos</button></div>
             <div class="barra-pesquisa-adm2">
                 <input placeholder="pesquisa" />
-                <div class="img-lupa"></div>
+                <div title="pesquisar" class="img-lupa"></div>
             </div>
         </div>
 

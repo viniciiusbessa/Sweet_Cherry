@@ -33,7 +33,7 @@ export default function AdministrarProdutos() {
             <div className="btn-add-adm2"><button>Administração Produtos</button></div>
             <div className="barra-pesquisa-adm2">
                 <input placeholder="pesquisa" /> 
-                <div className="img-lupa"></div>
+                <div title="pesquisar" className="img-lupa"></div>
             </div>
         </div>
 
