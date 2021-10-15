@@ -2,13 +2,54 @@ import Cabecalho from '../../components/commum/header/index'
 import Rodape from '../../components/commum/footer/index'
 import { ContainerPerfil } from './styled'
 
-import React, { useRef } from 'react'
+
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 import LoadingBar from 'react-top-loading-bar'
+
+
+import React, { useRef, useState } from 'react'
 
 import { useHistory } from 'react-router-dom'
 
+
+import Api from '../../service/api'
+const api = new Api();
+
 export default function Perfil() {
+    const [dadosClientes, setDadosClientes] = useState([]);
+    const [endereco, setEndereco] = useState('')
+    const [nome, setNome] = useState('')
+    const [cpf, setCpf] = useState('')
+    const [nascimento, setNascimento] = useState('')
+    const [telefone, setTelefone] = useState('')
+    const [email, setEmail] = useState('')
+    const [senha, setSenha] = useState('')
+    const [idAlterando, setidAlterando] = useState(0);
+
     const navigation = useHistory();
+
+    async function inserirDados() {
+        let r = await api.inserirCliente( endereco, nome, cpf, nascimento, telefone, email, senha )
+        if (r.erro) {
+            toast.error(`❌ ${r.erro}`)
+        } else {
+            toast.dark('✔️ Cliente inserido com sucesso')
+        }
+    }
+
+    async function alterando(item) {
+        setEndereco(item.id_endereco);
+        setNome(item.nm_cliente);
+        setCpf(item.ds_cpf);
+        setNascimento(item.dt_nascimento);
+        setTelefone(item.nr_telefone);
+        setEmail(item.ds_email);
+        setSenha(item.ds_senha);
+        setidAlterando(item.id_cliente);
+    }
+
 
     const verItens = async () => {
         navigation.push('/ver-pedido')
@@ -51,9 +92,11 @@ export default function Perfil() {
     //     listarProdutos();
     // },[])
 
+
     return (
     <ContainerPerfil>
         <LoadingBar color='white' ref={loading}/>
+        <ToastContainer />
         <Cabecalho />
         <div className="conteudo-perfil">
 
@@ -66,13 +109,13 @@ export default function Perfil() {
                         <img src="../../assets/images/asterisco-perfil.png" alt="" />
                         <div className="email">E-mail:</div>
                     </div>
-                    <input className="input-email" />
+                    <input className="input-email" value={email} onChange={e => setEmail(e.target.value)} />
 
                     <div className="box-infos">
                         <img src="../../assets/images/asterisco-perfil.png" alt="" />
                         <div className="senha">Senha:</div>
                     </div>
-                    <input className="input-senha" />
+                    <input className="input-senha" value={senha} onChange={e => setSenha(e.target.value)} />
                 </div>
 
                 <div className="box-dados-pessoais-perfil">
@@ -83,13 +126,13 @@ export default function Perfil() {
                         <div className="nome">Nome:</div>
                     </div>
 
-                    <input className="input-nome" />
+                    <input className="input-nome" value={nome} onChange={e => setNome(e.target.value)} />
 
                     <div className="box-infos">
                         <img src="../../assets/images/asterisco-perfil.png" alt="" />
                         <div className="endereco">Endereco:</div>
                     </div>
-                    <input className="input-endereco" />
+                    <input className="input-endereco" value={endereco} onChange={e => setEndereco(e.target.value)} />
 
                     <div className="box-infos">
                         <img src="../../assets/images/asterisco-perfil.png" alt="" />
@@ -97,21 +140,21 @@ export default function Perfil() {
                     </div>
                     <div className="info-obrigatorio-data">Necessário ter maioridade para comprar em nosso site com cartão de crédito</div>
                     <div className="formato">Formato DD/MM/AAAA</div>
-                    <input className="input-data" type="date" />
+                    <input className="input-data" type="date" value={nascimento} onChange={e => setNascimento(e.target.value)} />
 
                     <div className="box-infos">
                         <img src="../../assets/images/asterisco-perfil.png" alt="" />
                         <div className="cpf">CPF</div>
                     </div>
                     <div className="info-obrigatorio-cpf">Necessário para emissão de notas fiscais</div>
-                    <input className="input-cpf" />
+                    <input className="input-cpf" value={cpf} onChange={e => setCpf(e.target.value)} />
 
                     <div className="box-infos">
                         <img src="../../assets/images/asterisco-perfil.png" alt="" />
                         <div className="telefone">Telefone</div>
                     </div>
                     <div className="info-obrigatorio-telefone">Caso a gente precise entrar em contato sobre seus pedidos</div>
-                    <input className="input-telefone" />
+                    <input className="input-telefone" value={telefone} onChange={e => setTelefone(e.target.value)} />
 
                 </div>
 
@@ -127,7 +170,7 @@ export default function Perfil() {
                     <img src="../../assets/images/Lixeira-perfil.svg" alt="" />
                 </div>
 
-                <div className="btn-salvar"><button>Salvar</button></div>
+                <div className="btn-salvar"><button onClick={inserirDados}>Salvar</button></div>
             </div>
 
             <div className="info-pedidos">
