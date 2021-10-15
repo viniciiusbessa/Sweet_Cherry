@@ -4,8 +4,9 @@ import { ContainerPerfil } from './styled'
 
 import React, { useRef } from 'react'
 import LoadingBar from 'react-top-loading-bar'
+import confirmAlert from 'react-confirm-alert';
 
-import { useHistory } from 'react-router-dom'
+import { useHistory } from 'react-router-dom';
 
 export default function Perfil() {
     const navigation = useHistory();
@@ -21,35 +22,37 @@ export default function Perfil() {
     const loading = useRef(null)
 
 
-    // async function removerProduto(id) {
-    //     loading.current.complete();
 
-    //     confirmAlert({
-    //         title: 'Excluir conta',
-    //         message: `Tem certeza que deseja excluir esta conta?`, 
-    //         buttons: [
-    //             {
-    //                 label: 'Sim',
-    //                 onClick: async () => {
-    //                     let r = await api.removerConta(id);
-    //                     if(r.erro)
-    //                         toast.error(`${r.erro}`);
-    //                     else {
-    //                         toast.success('🗑️ Conta excluída com sucesso!');
-    //                         listarProdutos();
-    //                     }
-    //                 }
-    //             },
-    //             {
-    //                 label: 'Não'
-    //             }
-    //         ]
-    //     });
-    // }
 
-    // useEffect(() => {
-    //     listarProdutos();
-    // },[])
+     async function removerProduto(id) {
+         loading.current.complete();
+
+         confirmAlert({
+             title: 'Excluir conta',
+             message: `Tem certeza que deseja excluir esta conta?`, 
+             buttons: [
+                 {
+                     label: 'Sim',
+                     onClick: async () => {
+                         let r = await api.removerConta(id);
+                         if(r.erro)
+                             toast.error(`${r.erro}`);
+                         else {
+                             toast.success('🗑️ Conta excluída com sucesso!');
+                             listarProdutos();
+                         }
+                     }
+                 },
+                 {
+                     label: 'Não'
+                 }
+             ]
+         });
+     }
+
+     useEffect(() => {
+         listarProdutos();
+     },[])
 
     return (
     <ContainerPerfil>
