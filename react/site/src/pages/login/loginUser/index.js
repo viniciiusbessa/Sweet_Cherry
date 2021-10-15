@@ -2,11 +2,32 @@ import { ContainerLogin } from './styled'
 
 import { useHistory } from 'react-router-dom'
 
+import { useState } from 'react'
+
+
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+import Cookies from 'js-cookie'
+
+import Api from '../../../service/api'
+const api = new Api();
+
 export default function Login() {
     const navigation = useHistory();
+    
+    const [email, setEmail] = useState('');
+    const [senha, setSenha] = useState('');
 
-    const inicio = async () => {
-        navigation.push('/')
+    const logar = async () => {
+        let r = await api.login(email, senha)
+        if (r.erro) {
+            toast.error(`${r.erro}`)
+
+        } else {
+            Cookies.set('usuario-logado', JSON.stringify(r));
+            navigation.push('/')
+        }
     }
 
     const cadastro = async () => {
@@ -19,6 +40,7 @@ export default function Login() {
 
     return (
         <ContainerLogin>
+            <ToastContainer />
             <div className="cabecalho-entrar-bem-vindo">
                 <div className="bemvindo-titulo">Bem-vindo(a)</div>
             </div>
@@ -30,12 +52,12 @@ export default function Login() {
                 <div className="inputs-entrarbv">
                     <div className="box-input-email">
                         <img src="../../assets/images/img-email-login.svg" alt="" />
-                        <input className="input-email" type="text" placeholder="e-mail" />
+                        <input className="input-email" type="text" placeholder="e-mail" value={email} onChange={e => setEmail(e.target.value)} />
                     </div>
 
                     <div className="box-input-senha">
                         <img src="../../assets/images/img-senha-login.svg" alt="" />
-                        <input className="input-senha" type="password" placeholder="password"/>
+                        <input className="input-senha" type="password" placeholder="password" value={senha} onChange={e => setSenha(e.target.value)} />
                     </div>
                     
                 </div>
@@ -43,7 +65,7 @@ export default function Login() {
                 <div className="botoes-entrar-bv">
 
                     <div className="botoes-um">
-                        <button onClick={inicio} className="bt-entrar"> Entrar </button>
+                        <button onClick={logar} className="bt-entrar"> Entrar </button>
                         <button onClick={cadastro} className="bt-criar"> Criar </button>
                     </div>
 

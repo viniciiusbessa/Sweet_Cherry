@@ -2,19 +2,43 @@ import { ContainerCadastro } from './styled'
 
 import { useHistory } from 'react-router-dom'
 
-export default function Cadastro() {
-    const navigation = useHistory();
+import { useState } from 'react'
 
-    const inicio = async () => {
-        navigation.push('/')
+
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+import Cookies from 'js-cookie'
+
+import Api from '../../../service/api'
+const api = new Api();
+
+export default function Cadastro() {
+    const [nome, setNome] = useState('');
+    const [email, setEmail] = useState('');
+    const [senha, setSenha] = useState('');
+
+    const logar = async () => {
+
+        let r = await api.cadastrar(nome, email, senha)
+        if (r.erro) {
+            toast.error(`${r.erro}`)
+
+        } else {
+            Cookies.set('usuario-logado', JSON.stringify(r));
+            navigation.push('/')
+        }
     }
 
-    const login = async () => {
+    const navigation = useHistory();
+
+    const voltar = async () => {
         navigation.push('/login')
     }
 
     return (
         <ContainerCadastro>
+            <ToastContainer />
             <div className="cabecalho-entrar-bem-vindo">
                     <div className="bv-titulo"> Cadastre - se </div>
             </div>
@@ -26,28 +50,28 @@ export default function Cadastro() {
                 <div className="inputs-entrarbv">
                     <div className="box-input-nome">
                         <img src="../../assets/images/nomecompleto-cadastro.svg" alt="" />
-                        <input className="input-cadastro" type="text" placeholder="nome completo" ></input>
+                        <input className="input-cadastro" type="text" placeholder="nome completo" value={nome} onChange={e => setNome(e.target.value)} />
                     </div>
 
                     <div className="box-input-usuario">
                         <img src="../../assets/images/username-cadastro.svg" alt="" />
-                        <input className="input-cadastro" type="text" placeholder="username"></input>
+                        <input className="input-cadastro" type="text" placeholder="username" />
                     </div>
 
                     <div className="box-input-email">
                         <img src="../../assets/images/email-cadastro.svg" alt="" />
-                        <input className="input-cadastro" type="text" placeholder="e-mail"></input>
+                        <input className="input-cadastro" type="text" placeholder="e-mail" value={email} onChange={e => setEmail(e.target.value)} />
                     </div>
 
                     <div className="box-input-senha">
                         <img src="../../assets/images/password-cadastro.svg" alt="" />
-                        <input className="input-cadastro" type="password" placeholder="password"></input>
+                        <input className="input-cadastro" type="password" placeholder="password" value={senha} onChange={e => setSenha(e.target.value)} />
                     </div>
                 </div>
 
                 <div className="botoes-entrarbv">
-                    <button onClick={login} className="bt-voltar"> Voltar </button>
-                    <button onClick={inicio} className="bt-criar"> Criar </button>
+                    <button onClick={voltar} className="bt-voltar"> Voltar </button>
+                    <button onClick={logar} className="bt-criar"> Criar </button>
                 </div>
             </div>
         </ContainerCadastro>

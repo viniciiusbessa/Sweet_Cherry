@@ -29,4 +29,14 @@ export default class Api {
         return r.data;
     }
 
+    async login (email, senha) {
+        let r = await api.post('/login', { email, senha })
+        return r.data;
+    }
+
+    async cadastrar (nome, email, senha) {
+        let r = await api.post('/cadastro', { nome, email, senha })
+        return r.data;
+    }
+
 }

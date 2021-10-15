@@ -9,15 +9,19 @@ import 'react-toastify/dist/ReactToastify.css';
 import LoadingBar from 'react-top-loading-bar'
 import confirmAlert from 'react-confirm-alert';
 
-import React, { useRef, useState, useEffect } from 'react'
+import React, { useRef, useState } from 'react'
 
 import { useHistory } from 'react-router-dom'
+
+import Cookies from 'js-cookie'
 
 
 import Api from '../../service/api'
 const api = new Api();
 
 export default function Perfil() {
+    const navigation = useHistory();
+
     const [dadosClientes, setDadosClientes] = useState([]);
     const [endereco, setEndereco] = useState('')
     const [nome, setNome] = useState('')
@@ -28,7 +32,10 @@ export default function Perfil() {
     const [senha, setSenha] = useState('')
     const [idAlterando, setidAlterando] = useState(0);
 
-    const navigation = useHistory();
+    const logoff = () => {
+        Cookies.remove('usuario-logado')
+        navigation.push('/')
+    }
 
     async function inserirDados() {
         let r = await api.inserirCliente( endereco, nome, cpf, nascimento, telefone, email, senha )
@@ -161,7 +168,7 @@ export default function Perfil() {
                 </div>
 
                 
-                <div className="box-logout" onClick={Inicio}>
+                <div className="box-logout" onClick={logoff}>
                     <div className="logout-conta-perfil">Sair da conta</div>
                     <img src="../../assets/images/log-out.svg" alt="" />
                 </div>

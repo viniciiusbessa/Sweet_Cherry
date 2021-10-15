@@ -11,6 +11,10 @@ import { BoxSlide } from "./styled";
 import { BoxEmAlta } from "./styled";
 import { ContainerInicial} from "./styled";
 
+import { useState } from 'react'
+
+import Cookies from 'js-cookie'
+
 export default function Inicial () {
     const navigation = useHistory();
 
