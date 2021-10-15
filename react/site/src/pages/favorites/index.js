@@ -1,5 +1,5 @@
 import Header from "../../components/commum/header";
-import CardProduct from "../../components/product/cardProduct";
+import BoxProduto from '../../components/product/cardProduct/index'
 import Footer from "../../components/commum/footer";
 import { ContainerFavoritos } from "./styled";
 
@@ -17,13 +17,13 @@ export default function Favorites() {
                 </div>
 
                 <div class="box-doces">
-                    <CardProduct/>
-                    <CardProduct/>
-                    <CardProduct/>
-                
-                    <CardProduct/>
-                    <CardProduct/>
-                    <CardProduct/>
+                    <BoxProduto nome="Cupcake" preco="R$ 15,50" imagem="/assets/images/cupcake.jpg"/>
+                    <BoxProduto nome="Cupcake" preco="R$ 15,50" imagem="/assets/images/cupcakemorango.jpg"/>
+                    <BoxProduto nome="Cupcake" preco="R$ 15,50" imagem="/assets/images/cupcake.jpg"/>
+                    <BoxProduto nome="Cupcake" preco="R$ 15,50" imagem="/assets/images/cupcakemorango.jpg"/>
+                    <BoxProduto/>
+                    <BoxProduto/>
+                    <BoxProduto/>
                 </div>
             </div>
 
