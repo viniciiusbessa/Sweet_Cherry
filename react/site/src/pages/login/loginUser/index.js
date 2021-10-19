@@ -38,6 +38,10 @@ export default function Login() {
         navigation.push('/login-adm')
     }
 
+    const forgotPass = async() => {
+        navigation.push('/forgot')
+    }
+
     return (
         <ContainerLogin>
             <ToastContainer />
@@ -63,7 +67,7 @@ export default function Login() {
                 </div>
 
                 <div className="botoes-entrar-bv">
-
+                    <div className="esqueceu-senha" onClick={forgotPass}>Esqueceu a senha?</div>
                     <div className="botoes-um">
                         <button onClick={logar} className="bt-entrar"> Entrar </button>
                         <button onClick={cadastro} className="bt-criar"> Criar </button>

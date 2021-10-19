@@ -4,6 +4,7 @@ import Login from './pages/login/loginUser/index'
 import Cadastro from './pages/login/registerUser/index'
 import LoginAdm from './pages/login/loginAdm/index'
 import ForgotPass from './pages/login/forgotPassword'
+import ResetPass from './pages/login/resetPassword'
 
 import Inicio from './pages/home/index'
 import Categoria from './pages/detachProducts/index'
@@ -48,7 +49,7 @@ export default function Routes() {
                 <Route path="/administrar-pedidos" component={AdmPedidos} />
                 <Route path="/add-produto" component={AddProduto} />
                 <Route path="/forgot" component={ForgotPass} />
-                
+                <Route path="/reset" component={ResetPass} />
             </Switch>
         </BrowserRouter>
     )

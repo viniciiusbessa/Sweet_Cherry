@@ -3,7 +3,6 @@ import styled from 'styled-components'
 const ContainerCadastro = styled.div`
     display: flex;
     flex-direction: column;
-
     background-color: #F6AAC6;
 
     .cabecalho-entrar-bem-vindo {
@@ -29,8 +28,7 @@ const ContainerCadastro = styled.div`
         align-items: center;
 
         padding-bottom: 3em;
-
-        height: 80vh;
+        height: 50vw;
     }
 
     .img-login img {

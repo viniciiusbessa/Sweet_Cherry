@@ -1,9 +1,14 @@
 import { useState } from "react";
+import { useHistory } from "react-router";
 import { ContainerForgotPass } from "./styled";
 
 export default function ForgotPass(){
-
+    const navigation = useHistory();
     const [email, setEmail] = useState('');
+
+    const resetPass = async () => {
+        navigation.push('/reset')
+    }
 
     return(
         <ContainerForgotPass>
@@ -17,7 +22,7 @@ export default function ForgotPass(){
                         <input className="input-email" type="text" placeholder="e-mail" value={email} onChange={e => setEmail(e.target.value)} />
                     </div>
 
-                    <button className="bt-redefinir"> Redefinir senha </button>
+                    <button className="bt-redefinir" onClick={resetPass}> Redefinir senha </button>
             </div>
         </ContainerForgotPass>
     )

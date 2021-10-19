@@ -36,6 +36,16 @@ const ContainerLogin = styled.div`
         margin-top: -2em;
     }
 
+    .esqueceu-senha {
+        font-size: 13px;
+        font-family: Patua One;
+        color: #BBC6C4;
+        text-decoration: underline;
+        text-align: center;
+        margin-top: 2em;
+        cursor: pointer;
+    }
+
     .box-input-email img {
         width: 25px;
         height: auto;
