@@ -42,6 +42,7 @@ const ContainerForgotPass = styled.div`
     .input-email {
         font-size: 17px;
         font-family: Patua One;
+        color: #c4c4c4;
         border-top: none;
         border-left: none;
         border-right: none;

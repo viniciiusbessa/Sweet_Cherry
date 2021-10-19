@@ -40,10 +40,13 @@ const ContainerLogin = styled.div`
         font-size: 13px;
         font-family: Patua One;
         color: #BBC6C4;
-        text-decoration: underline;
         text-align: center;
         margin-top: 2em;
         cursor: pointer;
+    }
+
+    .esqueceu-senha:hover {
+        text-decoration: underline;
     }
 
     .box-input-email img {
@@ -60,7 +63,10 @@ const ContainerLogin = styled.div`
         height: auto;
 
         margin: 0em -1.7em -0.5em 0em;
+        position: relative;
+    }
 
+    .box-input-senha {
         position: relative;
     }
 
@@ -74,17 +80,25 @@ const ContainerLogin = styled.div`
     .input-email, .input-senha {
         font-size: 17px;
         font-family: Patua One;
-
+        color: #c4c4c4;
         border-top: none;
         border-left: none;
         border-right: none;
         border-bottom: 2.5px solid #C4C4C4;
-
         cursor: text;
-
         padding: 1.5em 0.5em 0.3em 2em;
-
         width: 280px;
+    }
+
+    .eye {
+    position: absolute;
+    top: 1em;
+    left: 15em;
+    cursor: pointer;
+    }
+
+    .eye img {
+        width: 2.5em;
     }
 
     .input-email::placeholder, .input-senha::placeholder {

@@ -42,6 +42,15 @@ export default function Login() {
         navigation.push('/forgot')
     }
 
+    function mostrarOcultarSenha(){
+        var senha = document.getElementById("senha");
+        if(senha.type === "password"){
+            senha.type = "text";
+        } else {
+            senha.type = "password";
+        }
+    }
+
     return (
         <ContainerLogin>
             <ToastContainer />
@@ -61,7 +70,8 @@ export default function Login() {
 
                     <div className="box-input-senha">
                         <img src="../../assets/images/img-senha-login.svg" alt="" />
-                        <input className="input-senha" type="password" placeholder="password" value={senha} onChange={e => setSenha(e.target.value)} />
+                        <input className="input-senha" type="password" placeholder="password" id="senha" value={senha} onChange={e => setSenha(e.target.value)} />
+                        <div className="eye" onClick={mostrarOcultarSenha}><img src="/assets/images/eyeIcon.svg" alt="" /></div>
                     </div>
                     
                 </div>

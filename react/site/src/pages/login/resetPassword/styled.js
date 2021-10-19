@@ -27,7 +27,6 @@ const ContainerResetPass = styled.div`
         display: flex;
         flex-direction: column;
         align-items: center;
-
         height: 50vw;
         margin-top: 2em;
     }
@@ -42,6 +41,7 @@ const ContainerResetPass = styled.div`
     .input-email {
         font-size: 17px;
         font-family: Patua One;
+        color: #FFFFFF;
         border-top: none;
         border-left: none;
         border-right: none;
