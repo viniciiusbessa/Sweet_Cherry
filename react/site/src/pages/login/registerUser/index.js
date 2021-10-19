@@ -23,7 +23,7 @@ export default function Cadastro() {
             toast.error(`${r.erro}`)
 
         } else {
-            Cookies.set('usuario-logado', JSON.stringify(r));
+            // Cookies.set('usuario-logado', JSON.stringify(r));
             navigation.push('/')
         }
     }
@@ -48,7 +48,9 @@ export default function Cadastro() {
                 <div className="inputs-entrarbv">
                     <div className="box-input-nome">
                         <img src="../../assets/images/nomecompleto-cadastro.svg" alt="" />
-                        <input className="input-cadastro" type="text" placeholder="nome completo" value={nome} onChange={e => setNome(e.target.value)} />
+                        <input className="input-cadastro" type="text" placeholder="nome completo" 
+                        value={nome} 
+                        onChange={e => setNome(e.target.value)} />
                     </div>
 
                     <div className="box-input-usuario">
@@ -58,12 +60,16 @@ export default function Cadastro() {
 
                     <div className="box-input-email">
                         <img src="../../assets/images/email-cadastro.svg" alt="" />
-                        <input className="input-cadastro" type="text" placeholder="e-mail" value={email} onChange={e => setEmail(e.target.value)} />
+                        <input className="input-cadastro" type="text" placeholder="e-mail" 
+                        value={email} 
+                        onChange={e => setEmail(e.target.value)} />
                     </div>
 
                     <div className="box-input-senha">
                         <img src="../../assets/images/password-cadastro.svg" alt="" />
-                        <input className="input-cadastro" type="password" placeholder="password" value={senha} onChange={e => setSenha(e.target.value)} />
+                        <input className="input-cadastro" type="password" placeholder="password" 
+                        value={senha} 
+                        onChange={e => setSenha(e.target.value)} />
                     </div>
                 </div>
 

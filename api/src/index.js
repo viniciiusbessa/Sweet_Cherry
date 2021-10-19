@@ -2,6 +2,7 @@ import db from './db.js';
 import express from 'express'
 import cors from 'cors'
 import axios from 'axios'
+import crypto from 'crypto-js'
 
 import enviarEmail from './email.js';
 
@@ -11,10 +12,97 @@ app.use(express.json());
 
 // Recuperaçao de senha
 
-app.post('/BemVindo', async (req,resp) =>{
-    
-})
 
+// app.post('/login', async (req, resp) => {
+// const user = await db.insf_tb_usuario.findOne({
+//     where: {
+//     ds_email: req.body.email,
+//     ds_senha: req.body.senha
+//     }
+// })
+
+// if (!user) {
+//     resp.send({ status: 'erro', mensagem: 'Credenciais inválidas.' });
+// } else {
+//     resp.send({ status: 'ok', nome: user.nm_usuario });
+// }
+
+// })
+
+
+// app.post('/esqueciASenha', async (req, resp) => {
+// const user = await db.insf_tb_usuario.findOne({
+//     where: {
+//     ds_email: req.body.email   
+//     }
+// });
+
+// if (!user) {
+//     resp.send({ status: 'erro', mensagem: 'E-mail inválido.' });
+// }
+
+// let code = getRandomInteger(1000, 9999);
+// await db.insf_tb_usuario.update({
+//     ds_codigo_rec: code
+// }, {
+//     where: { id_usuario: user.id_usuario }
+// })
+
+// enviarEmail(user.ds_email, 'Recuperação de Senha', `
+//     <h3> Recuperação de Senha </h3>
+//     <p> Você solicitou a recuperação de senha da sua conta. </p>
+//     <p> Entre com o código <b>${code}</b> para prosseguir com a recuperação.
+// `)
+
+// resp.send({ status: 'ok' });
+// })
+
+
+// app.post('/validarCodigo', async (req, resp) => {
+// const user = await db.insf_tb_usuario.findOne({
+//     where: {
+//     ds_email: req.body.email   
+//     }
+// });
+
+// if (!user) {
+//     resp.send({ status: 'erro', mensagem: 'E-mail inválido.' });
+// }
+
+// if (user.ds_codigo_rec !== req.body.codigo) {
+//     resp.send({ status: 'erro', mensagem: 'Código inválido.' });
+// }
+
+// resp.send({ status: 'ok', mensagem: 'Código validado.' });
+
+// })
+
+// app.put('/resetSenha', async (req, resp) => {
+// const user = await db.insf_tb_usuario.findOne({
+//     where: {
+//     ds_email: req.body.email   
+//     }
+// });
+
+// if (!user) {
+//     resp.send({ status: 'erro', mensagem: 'E-mail inválido.' });
+// }
+
+
+// if (user.ds_codigo_rec !== req.body.codigo ||
+//     user.ds_codigo_rec === '') {
+//     resp.send({ status: 'erro', mensagem: 'Código inválido.' });
+// }
+
+// await db.insf_tb_usuario.update({
+//     ds_senha: req.body.novaSenha,
+//     ds_codigo_rec: ''
+// }, {
+//     where: { id_usuario: user.id_usuario }
+// })
+
+// resp.send({ status: 'ok', mensagem: 'Senha alterada.' });
+// })  
 
 
 // Recuperaçao de senha
@@ -22,7 +110,7 @@ app.post('/BemVindo', async (req,resp) =>{
 
 app.get('/produto', async (req, resp) => {
     try {
-        let r = await db.infod_ssc_produto.findAll( );
+        let r = await db.infod_ssc_produto.findAll({ order: [[ 'id_produto', 'desc' ]] });
         resp.send(r);
     } catch (e) {
         resp.send({ erro: e.toString() })
@@ -34,6 +122,9 @@ app.post('/produto', async (req, resp) => {
         
         let { nome, preco, categoria, descricao, avaliacao, imagem } = req.body;
 
+        if (nome === ''  || preco === ''  || descricao === '' || imagem === '')
+            return resp.send({ erro: 'Preencha todos os campos!' })
+
         let b = await db.infod_ssc_produto.create({
             nm_produto: nome,
             vl_produto: preco,
@@ -44,9 +135,9 @@ app.post('/produto', async (req, resp) => {
         })
         resp.send(b);
     
-} catch(b) {
-    resp.send({ erro: b.toString() })
-}
+    } catch(b) {
+        resp.send({ erro: b.toString() })
+    }
 })
 
 app.delete('/produto/:id', async (req, resp) => {
@@ -165,7 +256,7 @@ app.post('/cliente', async (req, resp) => {
             dt_nascimento: dtnascimento,
             nr_telefone: telefone,
             ds_email: email,
-            ds_senha: senha
+            ds_senha: crypto.SHA256(senha).toString(crypto.enc.Base64)
         })
         resp.send(b);
     
@@ -213,16 +304,21 @@ app.delete('/cliente/:id', async (req, resp) => {
 app.post('/login', async (req, resp) => {
     try {
         let { email, senha } = req.body;
+        let cryptoSenha = crypto.SHA256(senha).toString(crypto.enc.Base64);
 
         let r = await db.infod_ssc_cliente.findOne(
             {
                 where: {
                     ds_email: email,
-                    ds_senha: senha
+                    ds_senha: cryptoSenha
                 },
                 raw: true
             }
         )
+
+        if (email === "" && senha === "") {
+            return resp.send({ erro: 'Preencha todos os campos!' });
+        }
 
         if (r === null) {
             return resp.send({ erro: 'Credenciais inválidas.' })
@@ -241,15 +337,20 @@ app.post('/cadastro', async (req, resp) => {
         
         let  { nome, email, senha } = req.body;
 
-        let b = await db.infod_ssc_cliente.create({
-            nm_cliente: nome,
-            ds_email: email,
-            ds_senha: senha
-        })
-
         if (nome === "" && email === "" && senha === "") {
             return resp.send({ erro: 'Preencha todos os campos!' });
         }
+
+        if (email.includes('@')) {
+            return resp.send('Ok')
+        }
+
+        let b = await db.infod_ssc_cliente.create({
+            nm_cliente: nome,
+            ds_email: email,
+            ds_senha: crypto.SHA256(senha).toString(crypto.enc.Base64)
+        })
+
         resp.send(b);
     
 } catch(b) {
