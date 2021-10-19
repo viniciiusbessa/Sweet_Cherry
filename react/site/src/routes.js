@@ -3,6 +3,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import Login from './pages/login/loginUser/index'
 import Cadastro from './pages/login/registerUser/index'
 import LoginAdm from './pages/login/loginAdm/index'
+import ForgotPass from './pages/login/forgotPassword'
 
 import Inicio from './pages/home/index'
 import Categoria from './pages/detachProducts/index'
@@ -46,6 +47,8 @@ export default function Routes() {
                 <Route path="/administrar-produtos" component={AdmProdutos} />
                 <Route path="/administrar-pedidos" component={AdmPedidos} />
                 <Route path="/add-produto" component={AddProduto} />
+                <Route path="/forgot" component={ForgotPass} />
+                
             </Switch>
         </BrowserRouter>
     )
