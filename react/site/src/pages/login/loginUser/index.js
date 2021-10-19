@@ -25,7 +25,7 @@ export default function Login() {
             toast.error(`${r.erro}`)
 
         } else {
-            Cookies.set('usuario-logado', JSON.stringify(r));
+           // Cookies.set('usuario-logado', JSON.stringify(r));
             navigation.push('/')
         }
     }
