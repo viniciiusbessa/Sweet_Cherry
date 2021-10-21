@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
+
 const BoxNovidades = styled.div`
 
 .Faixa2_inicio{
@@ -18,17 +19,8 @@ const BoxNovidades = styled.div`
     color: #FF8AB5;
 }
 
-.box_novidades{
-    display: flex;
-    flex-direction: column;
-    margin: 2em 15em;
-
-
-    background-color: #d1eaf5;
-    border-radius: 1em;
-    border-style: solid;
-    border-color: #fff;
-    border-width: 5px;
+.box{
+    align-items: center;
 }
 
 .titulo_novidades{

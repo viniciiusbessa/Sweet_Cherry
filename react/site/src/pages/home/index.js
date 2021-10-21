@@ -26,6 +26,7 @@ export default function Inicial () {
         navigation.push('/perfil')
     }
 
+
     return(
 
 
