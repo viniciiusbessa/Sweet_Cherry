@@ -1,6 +1,11 @@
 import { BoxNovidades } from "./styledbox"
 import { useHistory } from "react-router";
 
+import cardProduct from "../../../components/product/cardProduct/index";
+
+import { Splide, SplideSlide } from '@splidejs/react-splide';
+import '@splidejs/splide/dist/css/splide.min.css';
+
 export default function BoxNews () {
 
     const navigation = useHistory();
@@ -9,6 +14,7 @@ export default function BoxNews () {
         navigation.push('/novidades')
     }
 
+
     return(
 
         <BoxNovidades>
@@ -16,19 +22,14 @@ export default function BoxNews () {
                 <div class="titulo"> Novidades </div>
                 <div className="box"> 
                 <div class="box_novidades">
-                        <div class="titulo_novidades"> Novidades chegando na loja </div>
-                        <div class="lista">
-                            <div class="imagem_bolo"> <img src="/assets/images/bolo vermelo.png" alt=""/> </div>
-                                <div class="lista1">
-                                    <p> Novos bolos decorados:</p>
-                                    Sabores: 
-                                    <ul>
-                                        <li> Chocolate </li>
-                                        <li> Morango </li>
-                                        <li> Doce De Leite </li>
-                                    </ul>
-                             </div>
-                        </div>
+                        <Splide>
+                            <SplideSlide>
+                                <cardProduct/>
+                            </SplideSlide>
+                            <SplideSlide>
+                                <cardProduct/>
+                            </SplideSlide>
+                        </Splide>
                 </div>
                 <div class="vermais_novidades">
                     <button onClick={novidades}> Ver Mais </button>
