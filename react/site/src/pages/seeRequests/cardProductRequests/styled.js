@@ -66,7 +66,7 @@ const ContainerBoxPedido = styled.div`
 
             background-color: #D1EAF5;
 
-            margin: 1em 2.5em 0em 2.5em;
+            margin: 1em 2.5em 2em 2.5em;
             padding: 0.8em;
 
             border-radius: 7px;
