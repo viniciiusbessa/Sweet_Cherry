@@ -5,7 +5,7 @@ const ContainerDestaque = styled.div `
     flex-direction: column;
 
     background-image: url(../../assets/images/fundo2.svg);
-    background-size: 75% auto;
+    background-size: 72% auto;
     background-repeat: repeat-y;
 
     .conteudo {

@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
 import BoxProduto from "./cardProduct";
 import Cookie from 'js-cookie'
+import axios from "axios";
+import Loader from "./loader";
 
 
 export default function Produto(){
     const [produtos, setProdutos] = useState([]);
-
+    const [loading, setLoading] = useState(true)
     useEffect(uploadProducts, []);
 
     function listar() {
@@ -32,12 +34,28 @@ export default function Produto(){
         setProdutos(produto);
     }
 
+    async function loader() {
+        setLoading(true);
+
+        const resp = await axios.get('http://localhost:3030');
+        setProdutos(...resp.data);
+
+        setLoading(false)
+    }
+
+    useEffect(() => {
+        loader();
+    });
+
 
     return (
-             <div className="products">
-                {produtos.map(item => 
-                    <BoxProduto info={item}/>
-                )}
-            </div>
+        <div className="products">
+            {loading && <Loader/>}
+
+            {!loading && 
+            produtos.map(item => 
+                <BoxProduto info={item}/>
+            )}
+        </div>
     )
 }

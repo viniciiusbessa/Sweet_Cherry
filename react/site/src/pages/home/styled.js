@@ -7,7 +7,7 @@ const ContainerInicial = styled.div`
     flex-direction: column;
 
     background-image: url(../../assets/images/fundo1.svg);
-    background-size: 120% auto;
+    background-size: 125% auto;
     background-repeat: repeat-y;
 
     @media (max-width: 1024px){
