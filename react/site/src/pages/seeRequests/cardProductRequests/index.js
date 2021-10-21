@@ -12,7 +12,7 @@ export default function BoxPedido() {
     return (
         <ContainerBoxPedido> 
             <div className="pedido-item-9">
-                <div className="imagem_do_bolo-9"><img src="../../assets/images/bolim.png" alt="" /></div>
+                <div className="imagem_do_bolo-9"><img src="/assets/images/brigadeiro.png" alt="" /></div>
                 <div className="informacoes_do_doce-9">
                     <div className="bolo_qtd-9">
                         <div className="nome_doce">Bolo</div>
