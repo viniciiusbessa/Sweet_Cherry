@@ -9,8 +9,12 @@ import { ContainerDestaque } from './styled'
 import Api from '../../service/api'
 const api = new Api();
 
+
 export default function Destaque() {
     const [produtos, setProdutos] = useState([]);
+    const [produto, setProduto] = useState('')
+    const [preco, setPreco] = useState('')
+    const [imagem, setImagem] = useState('')
     const [ordenacao, setOrdenacao] = useState('Menor Preço');
     
     async function listar() {
