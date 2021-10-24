@@ -26,6 +26,7 @@ export default function BoxNews () {
                                 rewind: true,
                                 gap   : '1rem',
                                 perPage: 4,
+                                margin : '1em',
                                 type   : 'loop',
                                 drag   : 'free',
                             
