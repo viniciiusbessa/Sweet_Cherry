@@ -13,13 +13,13 @@ export default function Produto(){
     function listar() {
         const r = [
             {
-                nome:"Brigadeiro", preco:"R$ 19,99", imagem:"/assets/images/brigadeiro.png"
+                id: 1001, nome:"Brigadeiro", preco:"R$ 19,99", imagem:"/assets/images/brigadeiro.png"
               },
               {
-                nome:"Red Velvet", preco:"R$ 25,99", imagem:"/assets/images/bolovermelho.png"
+                id: 1001, nome:"Red Velvet", preco:"R$ 25,99", imagem:"/assets/images/bolovermelho.png"
               },
               {
-                nome:"Kit Kat Cake", preco:"R$ 90,99", imagem:"/assets/images/bolokitkat.png"
+                id: 1001, nome:"Kit Kat Cake", preco:"R$ 90,99", imagem:"/assets/images/bolokitkat.png"
               }
         ]
 

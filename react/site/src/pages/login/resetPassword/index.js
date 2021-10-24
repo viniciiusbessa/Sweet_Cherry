@@ -1,6 +1,13 @@
 import { ContainerResetPass } from "./styled";
+import { useHistory } from "react-router";
 
 export default function ResetPass(){
+    const navigation = useHistory()
+
+    const newPass = async () => {
+        navigation.push('/newpass')
+    }
+
     return(
         <ContainerResetPass>
             <div className="cabecalho">
@@ -13,7 +20,7 @@ export default function ResetPass(){
                         <input className="input-email" type="text" placeholder="Código" />
                     </div>
 
-                    <button className="bt-redefinir"> Enviar código </button>
+                    <button className="bt-redefinir" onClick={newPass}> Enviar código </button>
             </div>
         </ContainerResetPass>
     )
