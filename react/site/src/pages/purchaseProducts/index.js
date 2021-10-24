@@ -1,18 +1,15 @@
 import { useState } from 'react'
-
 import Cabecalho from '../../components/commum/header/index'
 import Rodape from '../../components/commum/footer/index'
-
 import Estrelas from './stars-avaliation/index'
-
 import { ContainerCompra } from './styled'
-
 import { useHistory } from 'react-router-dom'
+import Cookie from 'js-cookie'
 
-export default function Compra() {
+export default function Compra(props) {
     const navigation = useHistory();
-
-    const [qtd, setQtd] = useState(0);
+    const [products, setProducts] = useState(props.location.state);
+    const [qtd, setQtd] = useState(1);
 
     
     const confPagamento = async () => {
@@ -30,6 +27,19 @@ export default function Compra() {
         if (qtd === 0) 
             return;
         setQtd(qtd-1)
+    }
+
+    function cartItem(){
+        let cart = Cookie.get('cart');
+        cart = cart !== undefined
+                ? JSON.parse(cart)
+                : [];
+
+        if(cart.some(item => item.id === products.id) === false)
+            cart.push({...products});
+
+        Cookie.set('cart', JSON.stringify(cart));
+        navigation.push('/carrinho')
     }
 
     return (
@@ -83,7 +93,7 @@ export default function Compra() {
                                 </div>
                             </div>
 
-                            <button className="Add-carrinho-bt"> <img src="../../assets/images/carrinho.png" alt="" /> Add ao Carrinho </button>
+                            <button className="Add-carrinho-bt" onClick={cartItem}> <img src="../../assets/images/carrinho.png" alt=""/> Add ao Carrinho </button>
                         </div>
 
                         <div className="botoes-box2">
@@ -108,15 +118,14 @@ export default function Compra() {
                 <div className="compra1-box3">
                     <div className="imagens-logo">
 
-                        <div className="tres-primeiros">
+                        <div className="dois-primeiros">
                             <div className="cartao1"> <img src="../../assets/images/logos-cartao/pagseguro-logo.svg" alt="" /></div>
                             <div className="cartao2"> <img src="../../assets/images/logos-cartao/visa-logo.svg" alt="" /> </div>
-                            <div className="cartao3"> <img src="../../assets/images/logos-cartao/elo-logo1.svg" alt="" /> </div>
                         </div>
 
                         <div className="dois-primeiros">
-                            <div className="cartao4"> <img src="../../assets/images/logos-cartao/pix-bc-logo.svg" alt="" /></div>
-                            <div className="cartao5"> <img src="../../assets/images/logos-cartao/mastercard-logo.svg" alt="" /></div>
+                            <div className="cartao3"> <img src="../../assets/images/logos-cartao/elo-logo1.svg" alt="" /> </div>
+                            <div className="cartao4"> <img src="../../assets/images/logos-cartao/mastercard-logo.svg" alt="" /></div>
                         </div>
 
                     </div>

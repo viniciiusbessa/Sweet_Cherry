@@ -290,11 +290,6 @@ const ContainerCompra = styled.div`
         flex-direction: row;
     }
 
-    .tres-primeiros {
-        display: flex;
-        flex-direction: row;
-    }
-
     .cartao1 img {
         width: 10em;
         height: auto;
@@ -321,11 +316,6 @@ const ContainerCompra = styled.div`
     }
 
     .cartao4 img {
-        width: 11em;
-        height: auto;
-    }
-
-    .cartao5 img {
         width: 5em;
         height: auto;
     }

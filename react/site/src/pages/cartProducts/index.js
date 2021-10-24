@@ -1,13 +1,16 @@
 import Cabecalho from "../../components/commum/header";
 import Rodape from "../../components/commum/footer";
 // import TableProduct from "../../components/styled/tableCart";
-
+import Cookie from 'js-cookie'
 import { CartProduct } from "./styled";
-
 import { useHistory } from 'react-router-dom'
+import { useEffect, useState } from "react";
+import CartItem from "./cartItem";
 
 export default function CarrinhoProdutos() {
     const navigation = useHistory();
+
+    const [products, setProducts] = useState([])
 
     const confPagamento = async () => {
         navigation.push('/conf_pagamento')
@@ -16,6 +19,23 @@ export default function CarrinhoProdutos() {
     const contComprar = async () => {
         navigation.push('/destaque')
     }
+
+    useEffect(uploadCart, []);
+
+    function uploadCart() {
+        let cart = Cookie.get('cart')
+        cart = cart !== undefined 
+                ? JSON.parse(cart)
+                : [];
+        setProducts(cart);
+    }
+
+    // function changeProduct(id, qtd) {
+    //     let changed = products.filter(item => item.id === id)[0];
+    //     changed.qtd = qtd;
+
+    //     Cookie.set('cart', JSON.stringify(products));
+    // }
 
     return(
         <CartProduct>
@@ -39,60 +59,7 @@ export default function CarrinhoProdutos() {
                     </thead>
 
                     <tbody>
-                        <tr>
-                            <td className="doce-carrinho">
-                                <img src="../../assets/images/bolo-carrinho.svg" alt=""/>
-                                <div className="nome-produto">Bolo de chocolate</div>
-                            </td>
-
-                            <td>R$19,90</td>
-                            <td>1</td>
-                            <td className="lixeira-carrinho"><img src="../../assets/images/lixeira.svg" alt=""/></td>
-                        </tr>
-
-                        <tr>
-                            <td className="doce-carrinho">
-                                <img src="../../assets/images/bolo-carrinho.svg" alt=""/>
-                                <div className="nome-produto">Bolo de chocolate</div>
-                            </td>
-
-                            <td>R$19,90</td>
-                            <td>1</td>
-                            <td className="lixeira-carrinho"><img src="../../assets/images/lixeira.svg" alt=""/></td>
-                        </tr>
-
-                        <tr>
-                            <td className="doce-carrinho">
-                                <img src="../../assets/images/bolo-carrinho.svg" alt=""/>
-                                <div className="nome-produto">Bolo de chocolate</div>
-                            </td>
-
-                            <td>R$19,90</td>
-                            <td>1</td>
-                            <td className="lixeira-carrinho"><img src="../../assets/images/lixeira.svg" alt=""/></td>
-                        </tr>
-
-                        <tr>
-                            <td className="doce-carrinho">
-                                <img src="../../assets/images/bolo-carrinho.svg" alt=""/>
-                                <div className="nome-produto">Bolo de chocolate</div>
-                            </td>
-
-                            <td>R$19,90</td>
-                            <td>1</td>
-                            <td className="lixeira-carrinho"><img src="../../assets/images/lixeira.svg" alt=""/></td>
-                        </tr>
-
-                        <tr>
-                            <td className="doce-carrinho">
-                                <img src="../../assets/images/bolo-carrinho.svg" alt=""/>
-                                <div className="nome-produto">Bolo de chocolate</div>
-                            </td>
-
-                            <td>R$19,90</td>
-                            <td>1</td>
-                            <td className="lixeira-carrinho"><img src="../../assets/images/lixeira.svg" alt=""/></td>
-                        </tr>
+                        <CartItem/>
                     </tbody>
                 </table>
             </div>
