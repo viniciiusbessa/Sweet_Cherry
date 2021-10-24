@@ -16,6 +16,11 @@ export default class Api {
         return r.data;
     }
 
+    async listarProdutosOrdenados() {
+        let r = await api.get('/produtos');
+        return[...r.data];
+    }
+
 
     // Cliente
 

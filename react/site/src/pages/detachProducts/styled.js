@@ -79,6 +79,15 @@ const ContainerDestaque = styled.div `
     .hoverProduto:hover {
         transform: translateY(-2em);
     }
+
+    select {
+        padding: .2em .6em;
+        border-radius: 1em;
+        border: 1px solid #989898;
+        margin-right: 1em;
+        margin-bottom: 2em;
+        outline: none;
+    }
 `
 
 export { ContainerDestaque }

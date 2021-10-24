@@ -118,15 +118,14 @@ export default function Compra(props) {
                 <div className="compra1-box3">
                     <div className="imagens-logo">
 
-                        <div className="tres-primeiros">
+                        <div className="dois-primeiros">
                             <div className="cartao1"> <img src="../../assets/images/logos-cartao/pagseguro-logo.svg" alt="" /></div>
                             <div className="cartao2"> <img src="../../assets/images/logos-cartao/visa-logo.svg" alt="" /> </div>
-                            <div className="cartao3"> <img src="../../assets/images/logos-cartao/elo-logo1.svg" alt="" /> </div>
                         </div>
 
                         <div className="dois-primeiros">
-                            <div className="cartao4"> <img src="../../assets/images/logos-cartao/pix-bc-logo.svg" alt="" /></div>
-                            <div className="cartao5"> <img src="../../assets/images/logos-cartao/mastercard-logo.svg" alt="" /></div>
+                            <div className="cartao3"> <img src="../../assets/images/logos-cartao/elo-logo1.svg" alt="" /> </div>
+                            <div className="cartao4"> <img src="../../assets/images/logos-cartao/mastercard-logo.svg" alt="" /></div>
                         </div>
 
                     </div>

@@ -9,7 +9,7 @@ export default function Rodape (){
                         <div className="TrabelheConosco">
                             <div className="titulo-Trabalhe">Trabalhe Conosco</div>
                             <div className="titulo-Trabalhe">Entre em contato em:</div>
-                                <div className="Email">Sweet_Cherry@Hotmail.com.br</div>
+                                <div className="Email">sweetcherryssc7@gmail.com</div>
                         </div>
 
                         <div className="atendimento">
