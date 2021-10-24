@@ -76,67 +76,18 @@ const ContainerInicial = styled.div`
 
 const BoxSlide = styled.div`
 
-    transition: background 0.4s ease-in;
-
-
-    input[type=radio] {
-        display: none;
-    }
+    padding: 5em;
 
     .titulo{
         margin-left: 2em;
         font-size: 3em;
-
         color: #FF8AB5;
     }
 
-    .cartao{
-        position: absolute;
-        width: 8em;
-        height: 3em;
-        cursor: pointer;
-        transition: transform 0,10s ease;
-
-    }
-
-    .slide{
+    .boxSlide{
         display: flex;
-        flex-direction: column;
-        transform-style: preserve-3d;
-        align-items: center;
+        justify-content: center;
     }
-
-    .cartoes{
-        display: flex;
-        flex-direction: row;
-        padding-right: 14em;
-        margin-bottom: 80vh;
-    }
-
-
-
-    #item-1:checked ~ .cartoes #song-3, #item-2:checked ~ .cartoes #song-1, #item-3:checked ~ .cartoes #song-2{
-        transform: translateX(-80%) scale(0.8);
-        opacity: .4;
-        z-index: 0;
-    }
-
-    #item-1:checked ~ .cartoes #song-2, #item-2:checked ~ .cartoes #song-3, #item-3:checked ~ .cartoes #song-1{
-        transform: translateX(80%) scale(0.8);
-        opacity: .4;
-        z-index: 0;
-    }
-
-    #item-1:checked ~ .cartoes #song-1, #item-2:checked ~ .cartoes #song-2, #item-3:checked ~ .cartoes #song-3{
-        transform: translateX(0) scale(1);
-        opacity: 1;
-        z-index: 1;
-    }
-
-    #item-1:checked ~ .cartoes #song-1 img, #item-2:checked ~ .cartoes #song-2 img, #item-3:checked ~ .cartoes #song-3 img{
-        box-shadow: 0px 0px 5px 0px rgba(81, 81, 81, 0,47);
-    }
-
 
 `
 const BoxEmAlta = styled.div`
