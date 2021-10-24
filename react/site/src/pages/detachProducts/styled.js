@@ -5,7 +5,7 @@ const ContainerDestaque = styled.div `
     flex-direction: column;
 
     background-image: url(../../assets/images/fundo2.svg);
-    background-size: 75% auto;
+    background-size: 72% auto;
     background-repeat: repeat-y;
 
     .conteudo {
@@ -78,6 +78,15 @@ const ContainerDestaque = styled.div `
      
     .hoverProduto:hover {
         transform: translateY(-2em);
+    }
+
+    select {
+        padding: .2em .6em;
+        border-radius: 1em;
+        border: 1px solid #989898;
+        margin-right: 1em;
+        margin-bottom: 2em;
+        outline: none;
     }
 `
 
