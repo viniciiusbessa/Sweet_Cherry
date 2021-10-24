@@ -2,9 +2,25 @@ import Cabecalho from '../../components/commum/header/index'
 import Rodape from '../../components/commum/footer/index'
 import BoxProduto from '../../components/product/cardProduct/index'
 
+import { useState, useEffect } from 'react'
+
 import { ContainerDestaque } from './styled'
 
+import Api from '../../service/api'
+const api = new Api();
+
 export default function Destaque() {
+    const [produtos, setProdutos] = useState([]);
+    const [ordenacao, setOrdenacao] = useState('Menor Preço');
+    
+    async function listar() {
+        let r = await api.listarProdutosOrdenados() + ordenacao;
+        setProdutos(r);
+    }
+
+    useEffect(() => {
+    listar();
+    }, [ordenacao])
     
     return (
     <ContainerDestaque>
@@ -17,6 +33,17 @@ export default function Destaque() {
             </div>
 
             <div className="nm-box">Destaques</div>
+
+            <div className="ordenacao">
+                <select value={ordenacao} 
+                    onChange={e => setOrdenacao(e.target.value)} >
+                    <option value="Menor Preço"> Menor Preço </option>
+                    <option value="Maior Preço"> Maior Preço </option>
+                    <option value="A - Z"> A - Z </option>
+                    <option value="Z - A"> Z - A </option>
+                </select>
+            </div>
+
             <div className="box-itens">
                 <BoxProduto nome="Brigadeiro" preco="R$ 19,99" imagem="/assets/images/brigadeiro.png"/>
                 <BoxProduto nome="Sonho sabor chocolate" preco="R$ 9,99" imagem="/assets/images/sonho.jpg"/>
