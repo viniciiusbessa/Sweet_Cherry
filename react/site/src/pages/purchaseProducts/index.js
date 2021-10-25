@@ -35,7 +35,7 @@ export default function Compra(props) {
                 ? JSON.parse(cart)
                 : [];
 
-        if(cart.some(item => item.id === products.id) === false)
+        if(cart.some(item => item.id === props.id) === false)
             cart.push({...products});
 
         Cookie.set('cart', JSON.stringify(cart));

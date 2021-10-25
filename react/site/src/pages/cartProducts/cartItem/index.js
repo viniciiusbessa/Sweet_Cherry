@@ -9,7 +9,7 @@ export default function CartItem(props) {
     return (
         <ContainerItem>
             <img src={props.imagem} alt=""/>
-            <div className="nome-produto">{products.nome}</div>
+            <div className="nome-produto">{props.nome}</div>
 
             <td>{props.preco}</td>
             <td>1</td>
