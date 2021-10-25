@@ -5,26 +5,21 @@ import axios from "axios";
 import Loader from "./loader";
 
 
+import Api from '../../service/api'
+const api = new Api();
+
+
 export default function Produto(){
     const [produtos, setProdutos] = useState([]);
     const [loading, setLoading] = useState(true)
     useEffect(uploadProducts, []);
 
-    function listar() {
-        const r = [
-            {
-                id: 1001, nome:"Brigadeiro", preco:"R$ 19,99", imagem:"/assets/images/brigadeiro.png"
-              },
-              {
-                id: 1001, nome:"Red Velvet", preco:"R$ 25,99", imagem:"/assets/images/bolovermelho.png"
-              },
-              {
-                id: 1001, nome:"Kit Kat Cake", preco:"R$ 90,99", imagem:"/assets/images/bolokitkat.png"
-              }
-        ]
 
+    async function listar() {
+        let r = await api.listarProduto;
         setProdutos(r);
     }
+
 
     function uploadProducts() {
         let produto = Cookie.get('produto');
@@ -45,6 +40,10 @@ export default function Produto(){
 
     useEffect(() => {
         loader();
+    });
+
+    useEffect(() => {
+        listar();
     });
 
 

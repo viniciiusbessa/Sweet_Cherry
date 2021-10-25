@@ -80,12 +80,21 @@ const ContainerDestaque = styled.div `
         transform: translateY(-2em);
     }
 
+    .ordenacao {
+        align-self: flex-end;
+
+        margin-top: -3.5em;
+    }
+
     select {
         padding: .2em .6em;
+
         border-radius: 1em;
-        border: 1px solid #989898;
+        border: 2px solid #FF8AB5;
+
         margin-right: 1em;
         margin-bottom: 2em;
+
         outline: none;
     }
 `
