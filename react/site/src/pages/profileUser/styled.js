@@ -261,6 +261,16 @@ const ContainerPerfil = styled.div `
             font-size: 20px;
         }
 
+        .barra-pesquisa-adm2 img {
+            width: 1.8em;
+            height: 1.8em;
+
+            margin-bottom: -0.5em;
+            margin-left: -2.8em;
+
+            cursor: pointer;
+        }
+
         .subtitulo-pedido {
             font-size: 23px;
             font-family: Patua One;

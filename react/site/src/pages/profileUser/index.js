@@ -185,7 +185,10 @@ export default function Perfil() {
             <div className="info-pedidos">
                 <div className="titulo-pedido">Pedidos</div>
 
-                <input className="input-pesquisa-pedido" placeholder="pesquisa" />
+                <div className="barra-pesquisa-adm2">
+                    <input className="input-pesquisa-pedido" placeholder="pesquisa" /> 
+                    <img title="pesquisa" src="../../assets/images/ferramenta-lupa 7.png" alt="" />
+                </div>
 
                 <div className="subtitulo-pedido">Seus pedidos em</div>
                 <div className="subtitulo-pedido">andamento estão aqui :)</div>

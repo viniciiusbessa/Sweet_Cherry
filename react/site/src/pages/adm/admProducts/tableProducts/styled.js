@@ -13,7 +13,7 @@ const ContainerTableProducts = styled.table`
     th {
         border: 1px solid #140018;
 
-        padding: 0.5em 1.5em 1em 1em;
+        padding: 0.5em 0em 1em 1em;
 
         text-align: left;
     }
@@ -21,7 +21,7 @@ const ContainerTableProducts = styled.table`
     td {
         border: 1px solid #140018;
 
-        padding: 0.2em 1em 0.2em 1em;
+        padding: 0.2em 0em 0.2em 1em;
     }
 
     .campo-btns {
@@ -48,19 +48,19 @@ const ContainerTableProducts = styled.table`
     .botao-visivel {
         border: none;
 
-        padding: 0.2em 0em 0.2em 1em;
+        padding: 0.2em 1.5em 0.2em 2em;
     }
 
     .botao-visivel1 {
         border: none;
 
-        padding: 0.2em 0em 0.2em 0em;
+        padding: 0.2em 0em 0.2em 0.5em;
     }
 
     .botao-visivel2 {
         border: none;
 
-        padding: 0.2em 0em 0.2em 0em;
+        padding: 0.2em 0.5em 0.2em 0.5em;
     }
 
     .botao-visivel button {

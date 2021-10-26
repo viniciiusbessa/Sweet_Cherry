@@ -5,18 +5,21 @@ import 'react-toastify/dist/ReactToastify.css';
 
 import { ContainerAddProduto } from './styled'
 
+import { InputAdm, TextAreaAdm } from '../../../components/styled/inputsAdm'
+
 import { useHistory } from 'react-router-dom'
 
 
 import Api from '../../../service/api'
 const api = new Api();
 
-export default function AdicionarProduto() {
+export default function AdicionarProduto(props) {
     const [produto, setProduto] = useState('')
     const [preco, setPreco] = useState('')
     const [categoria, setCategoria] = useState('')
     const [descricao, setDescricao] = useState('')
     const [avaliacao, setAvaliacao] = useState('')
+    const [estoque, setEstoque] = useState('')
     const [imagem, setImagem] = useState('')
     const [idAlterando, setidAlterando] = useState(0);
 
@@ -24,13 +27,29 @@ export default function AdicionarProduto() {
 
 
     async function inserir() {
-        let r = await api.inserirProduto(produto, preco, categoria, descricao, avaliacao, imagem)
-        if (r.erro) {
-            toast.error(`❌ ${r.erro}`)
+        if (idAlterando !== 0) {
+            let alter = await api.alterarProduto(idAlterando, produto, preco, categoria, avaliacao, descricao, estoque, imagem);
+            
+            if (alter.erro)
+                toast.error(`❌ ${alter.erro}`)
+
+            else {
+                toast.dark('✔️ Produto alterado com sucesso');
+                navigation.push('/administrar-produtos')
+            }
+
         } else {
-            toast.dark('✔️ Produto inserido com sucesso')
-            navigation.push('/administrar-produtos')
+            let r = await api.inserirProduto(produto, preco, categoria, avaliacao, descricao, estoque, imagem)
+            
+            if (r.erro) {
+                toast.error(`❌ ${r.erro}`)
+
+            } else {
+                toast.dark('✔️ Produto inserido com sucesso')
+                navigation.push('/administrar-produtos')
+            }
         }
+
 
         limparCampos();
     }
@@ -45,6 +64,7 @@ export default function AdicionarProduto() {
         setCategoria('');
         setDescricao('');
         setAvaliacao('');
+        setEstoque('');
         setImagem('');
         setidAlterando(0);
     }
@@ -55,6 +75,7 @@ export default function AdicionarProduto() {
         setCategoria(item.nm_categoria);
         setDescricao(item.ds_produto);
         setAvaliacao(item.ds_avaliacao);
+        setEstoque(item.qtd_disponivel_estoque);
         setImagem(item.ds_imagem);
         setidAlterando(item.id_produto);
     }
@@ -63,58 +84,66 @@ export default function AdicionarProduto() {
     <ContainerAddProduto>
     <ToastContainer />
 
-        <div class="fundo-rodape-add">
-            <div class="container-fundo-add">
-                <div class="titulo-add">
-                    <div class="novo-produto-add">{idAlterando === 0 ? 'Novo Produto' : 'Alterando Produto ' + idAlterando}</div>
+        <div className="fundo-rodape-add">
+            <div className="container-fundo-add">
+                <div className="titulo-add">
+                    <div className="novo-produto-add">{idAlterando === 0 ? 'Novo Produto' : 'Alterando Produto ' + idAlterando}</div>
                 </div>
 
-                <div class="conteudo-add">
-                    <div class="nome-descricao-add">
+                <div className="conteudo-add">
+                    <div className="nome-descricao-add">
 
-                        <div class="box-input-nome">
-                            <div class="campo-nome">Nome: </div>
-                            <input class="input-nome" value={produto} onChange={e => setProduto(e.target.value)} />
+                        <div className="box-input-nome">
+                            <div className="campo-nome-input">Nome: </div>
+                            <InputAdm value={produto} onChange={e => setProduto(e.target.value)} />
                         </div>
 
-                        <div class="box-textarea-desc">
-                            <div class="campo-descricao">Descrição: </div>
-                            <textarea class="textarea-descricao" value={descricao} onChange={e => setDescricao(e.target.value)}></textarea>
+                        <div className="box-input-categoria">
+                            <div className="campo-nome-input">Categoria: </div>
+                            <InputAdm value={categoria} onChange={e => setCategoria(e.target.value)} />
+                        </div>
+
+                        <div className="box-textarea-desc">
+                            <div className="campo-nome-input">Descrição: </div>
+                            <TextAreaAdm value={descricao} onChange={e => setDescricao(e.target.value)} />
                         </div>
 
                     </div>
 
-                    <div class="preco-qtds-add">
+                    <div className="box-adicionar-produto">
 
-                        <div class="box-input-preco">
-                            <div class="campo-preco">Preço: </div>
-                            <input class="input-preco" value={preco} onChange={e => setPreco(e.target.value)} />
+                        <div className="preco-qtds-add">
+
+                            <div className="box-input">
+                                <div className="campo-nome-input">Preço: </div>
+                                <InputAdm value={preco} onChange={e => setPreco(e.target.value)} />
+                            </div>
+
+                            <div className="box-input">
+                                <div className="campo-nome-input">Avaliação: </div>
+                                <InputAdm value={avaliacao} onChange={e => setAvaliacao(e.target.value)} />
+                            </div>
+
+                            <div className="box-input">
+                                <div className="campo-nome-input">Qtd estoque: </div>
+                                <InputAdm value={estoque} onChange={e => setEstoque(e.target.value)} />
+                            </div>
+
+                            <div className="box-input-imagem">
+                                <div className="campo-nome-input">Link imagem: </div>
+                                <InputAdm value={imagem} onChange={e => setImagem(e.target.value)} />
+                            </div>
+
                         </div>
 
-                        <div class="box-input-maxima">
-                            <div class="campo-maxima">Qtd máxima: </div>
-                            <input class="input-maxima" />
+                        <div className="box-botoes">
+                            <div className="btn-voltar"><button onClick={AdmProduto}>Voltar</button></div>
+                            <div className="btn-add-produto"><button onClick={inserir}>{idAlterando === 0 ? 'Adicionar Novo Produto' : 'Alterar Produto'}</button></div>
                         </div>
-
-                        <div class="box-input-minima">
-                            <div class="campo-minima">Qtd mínima: </div>
-                            <input class="input-minima" />
-                        </div>
-
-                    </div>
-
-                    <div class="box-adicionar-produto">
-                        <div class="img-produto"><img src="../../../assets/images/img-add-adm.png" alt="" /></div>
-                        <div class="btn-add-produto"><button onClick={inserir}>{idAlterando === 0 ? 'Adicionar Produto' : 'Alterar Produto'}</button></div>
-                        <div class="btn-voltar"><button onClick={AdmProduto}>Voltar</button></div>
                     </div>
 
                 </div>
 
-                <div class="box-input-link">
-                    <div class="campo-link-img">Link imagem: </div>
-                    <input class="input-lin-img" value={imagem} onChange={e => setImagem(e.target.value)} />
-                </div>
             </div>
         </div>
 

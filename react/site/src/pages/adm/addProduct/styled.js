@@ -29,45 +29,11 @@ const ContainerAddProduto = styled.div`
         background-repeat: no-repeat;
     }
 
-    input {
-        background-color: #F3F7F6;
-
-        border: 1px solid #140018;
-        border-radius: 10px;
-
-        cursor: text;
-    }
-
-    input:focus {
-        box-shadow: 0 0 0 0;
-        outline: 0;
-
-        border: 2px solid #615f61;
-    }
-
-    textarea {
-        background-color: #F3F7F6;
-
-        border: 1px solid #140018;
-        border-radius: 10px;
-
-        cursor: text;
-
-        resize: none;
-    }
-
-    textarea:focus {
-        box-shadow: 0 0 0 0;
-        outline: 0;
-
-        border: 2px solid #615f61;
-    }
-
     .titulo-add {
         display: flex;
         flex-direction: column;
 
-        margin-top: 4em;
+        margin-top: 3em;
     }
 
     .novo-produto-add {
@@ -84,7 +50,7 @@ const ContainerAddProduto = styled.div`
         font-size: 22px;
     }
 
-    .campo-nome, .campo-descricao, .campo-preco, .campo-maxima, .campo-minima, .campo-link-img {
+    .campo-nome-input {
         margin: -0.2em 0.7em 0em 0em;
     }
 
@@ -100,22 +66,26 @@ const ContainerAddProduto = styled.div`
         display: flex;
         flex-direction: row;
 
-        margin-bottom: 2em;
+        margin-bottom: 2.7em;
     }
 
-    .input-nome {
-        width: 218px;
-        height: 35px;
+    .box-input-categoria {
+        display: flex;
+        flex-direction: row;
+
+        margin-bottom: 2.7em;
+    }
+
+    .box-input {
+        display: flex;
+        flex-direction: row;
+
+        margin-bottom: 2em;
     }
 
     .box-textarea-desc {
         display: flex;
         flex-direction: row;
-    }
-
-    .textarea-descricao {
-        width: 218px;
-        height: 178px;
     }
 
     .preco-qtds-add {
@@ -124,26 +94,7 @@ const ContainerAddProduto = styled.div`
         align-items: flex-end;
     }
 
-    .preco-qtds-add input {
-        width: 116px;
-        height: 35px;
-    }
-
-    .box-input-preco {
-        display: flex;
-        flex-direction: row;
-
-        margin-bottom: 3.2em;
-    }
-
-    .box-input-maxima {
-        display: flex;
-        flex-direction: row;
-
-        margin-bottom: 3.2em;
-    }
-
-    .box-input-minima {
+    .box-input-imagem {
         display: flex;
         flex-direction: row;
     }
@@ -151,14 +102,15 @@ const ContainerAddProduto = styled.div`
     .box-adicionar-produto {
         display: flex;
         flex-direction: column;
-        align-items: center;
-
-        margin-left: 4em;
     }
 
-    .img-produto img {
-        width: 12em;
-        height: auto;
+    .box-botoes {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        margin-left: 6em;
+        margin-top: 1.9em;
     }
 
     .btn-add-produto button {
@@ -172,14 +124,13 @@ const ContainerAddProduto = styled.div`
         font-size: 17px;
 
         padding: 0.5em 1.3em;
-        margin-top: 0.8em;
 
         cursor: pointer;
     }
 
     .btn-add-produto button:hover {
         background: #8a61b3;
-        transition: 1s;
+        transition: 0.5s;
     }
 
     .btn-voltar button {
@@ -191,30 +142,13 @@ const ContainerAddProduto = styled.div`
         font-size: 16px;
 
         padding: 0.2em 1em;
-        margin-top: 0.8em;
+        margin-right: 1em;
 
         cursor: pointer;
     }
 
     .btn-voltar button:hover {
         border: 2.5px solid #643692;
-    }
-
-    .box-input-link {
-        display: flex;
-        flex-direction: row;
-
-        padding-right: 23.7em;
-        margin-top: 1em;
-    }
-
-    .campo-link-img {
-        font-size: 22px;
-    }
-
-    .input-lin-img {
-        width: 512px;
-        height: 35px;
     }
 `
 
