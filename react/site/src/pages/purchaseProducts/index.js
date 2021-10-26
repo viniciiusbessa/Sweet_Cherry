@@ -103,11 +103,12 @@ export default function Compra(props) {
 
                         <div className="botoes-box3">
                             <div className="botao-calc-titl">
-                                <div className="titulo-calcular-bt">
-                                    <div className="calcular-titulo">Calcular Frete</div>
+                                
+                                <div className="valor-input-fixo">
+                                    <div className="frete-fixo">Frete:</div>
+                                    <input  readonly="56365" className="calcular-input" value="R$ 5,00"/>
                                 </div>
-                                <input className="calcular-input"/>
-                                <button className="calcular-bt">Calcular</button>
+                                
                             </div>
                         </div>
                     </div>

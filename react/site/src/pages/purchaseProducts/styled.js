@@ -91,7 +91,7 @@ const ContainerCompra = styled.div`
         display: flex;
         flex-direction: row;
         width: 30em;
-
+        justify-content: space-between;
         margin-bottom: 1em;
     }
 
@@ -99,7 +99,7 @@ const ContainerCompra = styled.div`
         display: flex;
         flex-direction: row;
 
-        margin-right: 2em;
+        margin-right: 3em;
 
         border-radius: 20px;
         background-color: #D1EAF5;
@@ -166,6 +166,8 @@ const ContainerCompra = styled.div`
         transition: 0.5s;
 
         background-color: #b5daeb;
+
+        align-self: flex-end;
     }
 
     .botoes-box2{
@@ -242,12 +244,24 @@ const ContainerCompra = styled.div`
         font-size: 20px;
     }
 
+    .valor-input-fixo{
+       display: flex;
+       flex-direction: row;
+       margin-top: 35px;
+       justify-content: center
+    }
+
+    .frete-fixo{
+        padding-right: 10px;
+        font-size: 23px;
+    }
+
     .calcular-input {
         width: 180px;
-        height: 35px;
+        height: 40px;
 
         border-radius: 12px;
-        border: 1px solid #D1EAF5;
+        border: 3px solid #D1EAF5;
 
         font-family: Pacifico;
         font-size: 18px;
@@ -258,6 +272,7 @@ const ContainerCompra = styled.div`
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
         cursor: text;
+
     }
 
     .calcular-input:focus {
