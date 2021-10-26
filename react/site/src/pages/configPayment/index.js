@@ -24,7 +24,7 @@ export default function ConfirmarPagamento() {
             </div>
 
             <div className="conteudo">
-                <div className="nome-conteudo">Confirmar pagamento</div>
+                <div className="nome-conteudo">Confirmar pagamento: R$ 5,00 </div>
                 <div className="conteiner-geral">
                     <div className="conteiner-pes-etrg">
                         <div className="dados">
@@ -72,13 +72,6 @@ export default function ConfirmarPagamento() {
                                 <option>3x</option>
                                 <option>4x</option>
                                 <option>5x</option>
-                                <option>6x</option>
-                                <option>7x</option>
-                                <option>8x</option>
-                                <option>9x</option>
-                                <option>10x</option>
-                                <option>11x</option>
-                                <option>12x</option>
                             </select>
                             <div className="nm-input">Nome:</div>
                             <InputPayment/>
