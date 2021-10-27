@@ -21,7 +21,7 @@ const ContainerPagamento = styled.div`
 
     .nome-conteudo {
         font-size: 2.6em;
-
+        
         margin-left: 2em;
     }
 
@@ -228,6 +228,7 @@ const ContainerPagamento = styled.div`
 
         padding: 0.4px 49.9%;
     }
+
 `
 
 export { ContainerPagamento }

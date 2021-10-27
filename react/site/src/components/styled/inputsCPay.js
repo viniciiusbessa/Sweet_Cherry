@@ -7,6 +7,9 @@ const InputPayment = styled.input`
 
     width: 98%;
     height: 2em;
+    font-family: Patua one;
+    box-shadow: 0 0 0 0;
+    outline: 0;
 `
 
 export {InputPayment}
