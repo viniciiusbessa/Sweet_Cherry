@@ -24,7 +24,7 @@ export default function BoxProduto (props){
             <ContainerBoxProduto>
                 <div className="doces">
 
-                    <div className="imagem-doce"> <img src={props.imagem} alt="" /> </div>
+                    <div className="imagem-doce"> <img src={props.ds_imagem} alt="" /> </div>
                     <div className="nm-doce">{props.nome}</div>
 
                     <div className="produto">

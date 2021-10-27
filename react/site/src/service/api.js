@@ -16,11 +16,6 @@ export default class Api {
         return r.data;
     }
 
-    async listarProdutosOrdenados() {
-        let r = await api.get('/produtos');
-        return[...r.data];
-    }
-
     async alterarProduto(id, nome, preco, categoria, avaliacao, descricao, estoque, imagem) {
         let r = await api.put('/produto/' + id, { nome, preco, categoria, avaliacao, descricao, estoque, imagem });
         return r.data;
@@ -30,6 +25,19 @@ export default class Api {
         let r = await api.delete('/produto/' + id);
         return r.data;
     }
+
+
+        // TESTANDO
+            async listarProdutosOrdenados() {
+                let r = await api.get('/produtos');
+                return [...r.data];
+            }
+
+            async listarPaginacao() {
+                let r = await api.get('/v3/produtos');
+                return [...r.data.items], r.data;
+            }
+        // TESTANDO
 
 
     // Cliente

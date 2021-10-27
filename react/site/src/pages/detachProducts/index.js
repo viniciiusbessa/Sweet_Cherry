@@ -4,7 +4,11 @@ import BoxProduto from '../../components/product/cardProduct/index'
 
 import { useState, useEffect } from 'react'
 
+import axios from 'axios'
+
 import { ContainerDestaque } from './styled'
+
+import PageChange from '../../components/product/pageChange/index'
 
 import Api from '../../service/api'
 const api = new Api();
@@ -12,20 +16,40 @@ const api = new Api();
 
 export default function Destaque() {
     const [produtos, setProdutos] = useState([]);
-    const [produto, setProduto] = useState('')
-    const [preco, setPreco] = useState('')
-    const [imagem, setImagem] = useState('')
+
     const [ordenacao, setOrdenacao] = useState('Menor Preço');
+
+    const [pagina, setPagina] = useState(1);
+    const [totalPaginas, setTotalPaginas] = useState(0);
     
-    async function listar() {
+
+    async function listarOrdenacao() {
         let r = await api.listarProdutosOrdenados();
         setProdutos(r);
     }
 
+
+    async function listarPaginacao() {
+        const r = await api.listarPaginacao();
+        setProdutos(r);
+    }
+
+
+    function irPara(pagina) {
+        setPagina(pagina);
+    }
+
+
     useEffect(() => {
-        listar();
+        listarOrdenacao();
     }, [ordenacao])
+
+    //useEffect(() => {
+    //    listarPaginacao();
+    //}, [pagina])
     
+
+
     return (
     <ContainerDestaque>
         <Cabecalho />
@@ -58,30 +82,69 @@ export default function Destaque() {
 
             </div>
 
+            <div className="paginacao">
+                <PageChange 
+                    totalPaginas={totalPaginas}
+                    pagina={pagina}   
+                    onPageChange={irPara}
+                />
+            </div>
+
+
+
             <div className="nm-box">Bolos</div>
             <div className="box-itens">
                 {produtos.map(item => 
                     <BoxProduto 
                         key={item.id_produto}
-                        info={item}
-                    />
+                        info={item} />
                 )}
             </div>
-            
-            <div className="nm-box">Cupcakes</div>
-            <div className="box-itens">
-                <BoxProduto nome="Cupcake" preco="R$ 15,50" imagem="/assets/images/cupcake.jpg"/>
-                <BoxProduto nome="Cupcake" preco="R$ 15,50" imagem="/assets/images/cupcakemorango.jpg"/>
-                <BoxProduto nome="Cupcake" preco="R$ 15,50" imagem="/assets/images/cupcake.jpg"/>
-                <BoxProduto nome="Cupcake" preco="R$ 15,50" imagem="/assets/images/cupcakemorango.jpg"/>
+
+            <div className="paginacao">
+                <PageChange 
+                    totalPaginas={totalPaginas}
+                    pagina={pagina}   
+                    onPageChange={irPara}
+                />
             </div>
             
+
+
+            <div className="nm-box">Cupcakes</div>
+            <div className="box-itens">
+                {produtos.map(item => 
+                    <BoxProduto 
+                        key={item.id_produto}
+                        info={item} />
+                )}
+            </div>
+
+            <div className="paginacao">
+                <PageChange 
+                    totalPaginas={totalPaginas}
+                    pagina={pagina}   
+                    onPageChange={irPara}
+                />
+            </div>
+            
+
+
             <div className="nm-box">Trufas</div>
             <div className="box-itens">
-                <BoxProduto nome="Trufa" preco="R$ 6,80" imagem="/assets/images/trufa.jpg"/>
-                <BoxProduto nome="Trufa" preco="R$ 6,80" imagem="/assets/images/trufa1.jpg"/>
-                <BoxProduto nome="Trufa" preco="R$ 6,80" imagem="/assets/images/trufa.jpg"/>
-                <BoxProduto nome="Trufa" preco="R$ 6,80" imagem="/assets/images/trufa1.jpg"/>
+                {produtos.map(item => 
+                    <BoxProduto 
+                        key={item.id_produto}
+                        info={item} />
+                )}
+            </div>
+
+            <div className="paginacao">
+                <PageChange 
+                    totalPaginas={totalPaginas}
+                    pagina={pagina}   
+                    onPageChange={irPara}
+                />
             </div>
 
         </div>

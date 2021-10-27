@@ -97,6 +97,13 @@ const ContainerDestaque = styled.div `
 
         outline: none;
     }
+
+
+    .paginacao {
+        display: flex;
+        justify-content: center;
+        margin-top: 3em;
+    }
 `
 
 export { ContainerDestaque }
