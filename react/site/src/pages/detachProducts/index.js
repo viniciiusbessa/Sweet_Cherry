@@ -53,8 +53,7 @@ export default function Destaque() {
                 {produtos.map(item => 
                     <BoxProduto 
                         key={item.id_produto}
-                        info={item}
-                    />
+                        info={item} />
                 )}
 
             </div>
