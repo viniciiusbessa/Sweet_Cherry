@@ -112,12 +112,12 @@ export default function TableProduct() {
                         <td>{item.nm_categoria}</td>
                         <td>{item.qtd_disponivel_estoque}</td>
                         <td title={item.ds_produto}>
-                            {item.ds_produto != null && item.ds_produto.length >= 20
-                                ? item.ds_produto.substr(0, 20) + '...'  : item.ds_produto}
+                            {item.ds_produto != null && item.ds_produto.length >= 25
+                                ? item.ds_produto.substr(0, 25) + '...'  : item.ds_produto}
                         </td>
                         <td className="botao-visivel"><button onClick={AddProduto}>adicionar</button></td>
-                        <td className="botao-visivel1"> <button onClick={() => alterando(item), AddProduto}>editar</button> </td>
-                        <td className="botao-visivel2"><button onClick={() => remover(item.id_produto) }>deletar</button></td>
+                        <td className="botao-visivel1"> <button onClick={() => alterando(item)}> editar </button> </td>
+                        <td className="botao-visivel2"><button onClick={() => remover(item.id_produto) }> deletar </button></td>
                     </tr>
 
                 )}
