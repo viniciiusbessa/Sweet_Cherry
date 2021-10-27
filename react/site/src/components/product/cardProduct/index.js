@@ -24,16 +24,16 @@ export default function BoxProduto (props){
             <ContainerBoxProduto>
                 <div className="doces">
 
-                        <div className="imagem-doce"><img src={props.imagem} alt=""/></div>
-                        <div className="nm-doce">{props.nome}</div>
+                    <div className="imagem-doce"> <img src={props.imagem} alt="" /> </div>
+                    <div className="nm-doce">{props.nome}</div>
 
-                        <div className="produto">
+                    <div className="produto">
 
-                            <div className="preco">{props.preco}</div>
-                            <div className="icones">
-                                <div className="icone-carrinho" onClick={carrinho}><img src="/assets/images/carrinho.svg" alt=""/></div>
-                                <div className="icone-coracao" onClick={favoritos}><img src="/assets/images/coracao-favoritos-compra.svg" alt=""/></div>
-                            </div>
+                        <div className="preco">{props.preco}</div>
+                        <div className="icones">
+                            <div className="icone-carrinho" onClick={carrinho}><img src="/assets/images/carrinho.svg" alt=""/></div>
+                            <div className="icone-coracao" onClick={favoritos}><img src="/assets/images/coracao-favoritos-compra.svg" alt=""/></div>
+                        </div>
                         </div>
                     <div className="button"> <button onClick={compra}>Ver mais</button> </div>
                 </div>

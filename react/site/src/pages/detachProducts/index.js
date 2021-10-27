@@ -18,12 +18,12 @@ export default function Destaque() {
     const [ordenacao, setOrdenacao] = useState('Menor Preço');
     
     async function listar() {
-        let r = await api.listarProdutosOrdenados() + ordenacao;
+        let r = await api.listarProdutosOrdenados();
         setProdutos(r);
     }
 
     useEffect(() => {
-    listar();
+        listar();
     }, [ordenacao])
     
     return (
@@ -49,18 +49,24 @@ export default function Destaque() {
             </div>
 
             <div className="box-itens">
-                <BoxProduto nome="Brigadeiro" preco="R$ 19,99" imagem="/assets/images/brigadeiro.png"/>
-                <BoxProduto nome="Sonho sabor chocolate" preco="R$ 9,99" imagem="/assets/images/sonho.jpg"/>
-                <BoxProduto nome="Red Velvet" preco="R$ 25,99" imagem="/assets/images/bolo vermelo.png"/>
-                <BoxProduto nome="Kit Kat Cake" preco="R$ 90,99" imagem="/assets/images/bolokitkat.jpg"/>
+
+                {produtos.map(item => 
+                    <BoxProduto 
+                        key={item.id_produto}
+                        info={item}
+                    />
+                )}
+
             </div>
 
             <div className="nm-box">Bolos</div>
             <div className="box-itens">
-                <BoxProduto nome="Red Velvet" preco="R$ 25,99" imagem="/assets/images/bolo vermelo.png"/>
-                <BoxProduto nome="Kit Kat Cake" preco="R$ 90,99" imagem="/assets/images/bolokitkat.jpg"/>
-                <BoxProduto nome="Red Velvet" preco="R$ 25,99" imagem="/assets/images/bolo vermelo.png"/>
-                <BoxProduto nome="Kit Kat Cake" preco="R$ 90,99" imagem="/assets/images/bolokitkat.jpg"/>
+                {produtos.map(item => 
+                    <BoxProduto 
+                        key={item.id_produto}
+                        info={item}
+                    />
+                )}
             </div>
             
             <div className="nm-box">Cupcakes</div>
