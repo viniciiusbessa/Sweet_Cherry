@@ -19,7 +19,7 @@ import { useState } from 'react'
 import Cookies from 'js-cookie'
 
 export default function Inicial () {
-
+    const [produtos, setProdutos] = useState([]);
 
     const navigation = useHistory();
 
@@ -62,13 +62,25 @@ export default function Inicial () {
                             } }
                         >
                             <SplideSlide>
-                                <BoxProduto nome="Kit Kat Cake" preco="R$ 90,99" imagem="/assets/images/bolokitkat.jpg"/>   
+                            {produtos.map(item => 
+                                <BoxProduto 
+                                    key={item.id}
+                                    info={item} />
+                            )}  
                             </SplideSlide>
                             <SplideSlide>
-                                <BoxProduto nome="Trufa" preco="R$ 6,80" imagem="/assets/images/trufa1.jpg"/>
+                            {produtos.map(item => 
+                                <BoxProduto 
+                                    key={item.id}
+                                    info={item} />
+                            )}  
                             </SplideSlide>
                             <SplideSlide>
-                                <BoxProduto nome="Kit Kat Cake" preco="R$ 90,99" imagem="/assets/images/bolokitkat.jpg"/>   
+                            {produtos.map(item => 
+                                <BoxProduto 
+                                    key={item.id}
+                                    info={item} />
+                            )}    
                             </SplideSlide>
                         </Splide>
                     </div>
@@ -89,9 +101,21 @@ export default function Inicial () {
                         </div>
                     </div>
                         <div className="container_doces">
-                            <BoxProduto nome="Sonho sabor chocolate" preco="R$ 9,99" imagem="/assets/images/sonho.jpg"/>
-                            <BoxProduto nome="Cupcake" preco="R$ 15,50" imagem="/assets/images/cupcakemorango.jpg"/>
-                            <BoxProduto nome="Trufa" preco="R$ 6,80" imagem="/assets/images/trufa1.jpg"/>
+                        {produtos.map(item => 
+                            <BoxProduto 
+                                    key={item.id}
+                                    info={item} />
+                            )}  
+                        {produtos.map(item => 
+                            <BoxProduto 
+                                    key={item.id}
+                                    info={item} />
+                            )}  
+                        {produtos.map(item => 
+                            <BoxProduto 
+                                    key={item.id}
+                                    info={item} />
+                            )}   
 
                         </div>
                     </div>

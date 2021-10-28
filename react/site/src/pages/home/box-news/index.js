@@ -1,12 +1,16 @@
 import { BoxNovidades } from "./styledbox"
 import { useHistory } from "react-router";
 
+import { useState } from 'react'
+
 import BoxProduto from "../../../components/product/cardProduct";
 
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/splide/dist/css/splide.min.css';
 
 export default function BoxNews () {
+
+    const [produtos, setProdutos] = useState([]);
 
     const navigation = useHistory();
 
@@ -33,28 +37,60 @@ export default function BoxNews () {
                                 } }
                         >
                         <SplideSlide>
-                            <BoxProduto nome="Kit Kat Cake" preco="R$ 90,99" imagem="/assets/images/bolokitkat.jpg"/>   
+                        {produtos.map(item => 
+                                <BoxProduto 
+                                    key={item.id}
+                                    info={item} />
+                            )}  
                         </SplideSlide>
                         <SplideSlide>
-                            <BoxProduto nome="Trufa" preco="R$ 6,80" imagem="/assets/images/trufa1.jpg"/>
+                        {produtos.map(item => 
+                                <BoxProduto 
+                                    key={item.id}
+                                    info={item} />
+                            )}  
                         </SplideSlide>
                         <SplideSlide>
-                            <BoxProduto nome="Kit Kat Cake" preco="R$ 90,99" imagem="/assets/images/bolokitkat.jpg"/>   
+                        {produtos.map(item => 
+                                <BoxProduto 
+                                    key={item.id}
+                                    info={item} />
+                            )}    
                         </SplideSlide>
                         <SplideSlide>
-                            <BoxProduto nome="Trufa" preco="R$ 6,80" imagem="/assets/images/trufa1.jpg"/>
+                        {produtos.map(item => 
+                                <BoxProduto 
+                                    key={item.id}
+                                    info={item} />
+                            )}  
                         </SplideSlide>
                         <SplideSlide>
-                            <BoxProduto nome="Kit Kat Cake" preco="R$ 90,99" imagem="/assets/images/bolokitkat.jpg"/>   
+                        {produtos.map(item => 
+                                <BoxProduto 
+                                    key={item.id}
+                                    info={item} />
+                            )}    
                         </SplideSlide>
                         <SplideSlide>
-                            <BoxProduto nome="Trufa" preco="R$ 6,80" imagem="/assets/images/trufa1.jpg"/>
+                        {produtos.map(item => 
+                                <BoxProduto 
+                                    key={item.id}
+                                    info={item} />
+                            )}  
                         </SplideSlide>
                         <SplideSlide>
-                            <BoxProduto nome="Kit Kat Cake" preco="R$ 90,99" imagem="/assets/images/bolokitkat.jpg"/>   
+                        {produtos.map(item => 
+                                <BoxProduto 
+                                    key={item.id}
+                                    info={item} />
+                            )}   
                         </SplideSlide>
                         <SplideSlide>
-                            <BoxProduto nome="Trufa" preco="R$ 6,80" imagem="/assets/images/trufa1.jpg"/>
+                        {produtos.map(item => 
+                                <BoxProduto 
+                                    key={item.id}
+                                    info={item} />
+                            )}  
                         </SplideSlide>
                         </Splide>
                 <div class="vermais_novidades">
