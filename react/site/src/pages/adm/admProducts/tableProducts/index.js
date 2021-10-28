@@ -62,13 +62,16 @@ export default function TableProduct() {
 
 
     async function alterando(item) {
-        setProduto(item.nm_produto);
-        setPreco(item.vl_produto);
-        setCategoria(item.nm_categoria);
-        setDescricao(item.ds_produto);
-        setAvaliacao(item.ds_avaliacao);
-        setImagem(item.ds_imagem);
-        setidAlterando(item.id_produto);
+
+        navigation.push('/add-produto', item)
+
+        // setProduto(item.nm_produto);
+        // setPreco(item.vl_produto);
+        // setCategoria(item.nm_categoria);
+        // setDescricao(item.ds_produto);
+        // setAvaliacao(item.ds_avaliacao);
+        // setImagem(item.ds_imagem);
+        // setidAlterando(item.id_produto);
     }
 
     useEffect(() => {

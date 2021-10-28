@@ -15,7 +15,10 @@ const api = new Api();
 
 
 export default function Destaque() {
-    const [produtos, setProdutos] = useState([]);
+    const [bolos, setBolos] = useState([]);
+    const [destaques, setDestaques] = useState([]);
+    const [trufas, setTrufas] = useState([]);
+    const [cupcakes, setCupcakes] = useState([]);
 
     const [ordenacao, setOrdenacao] = useState('Menor Preço');
 
@@ -24,14 +27,21 @@ export default function Destaque() {
     
 
     async function listarOrdenacao() {
-        let r = await api.listarProdutosOrdenados();
-        setProdutos(r);
+        let r1 = await api.listarProdutosOrdenados('Bolos');
+        let r2 = await api.listarProdutosOrdenados('Destaques');
+        let r3 = await api.listarProdutosOrdenados('Trufas');
+        let r4 = await api.listarProdutosOrdenados('Cupcakes');
+
+        setBolos(r1);
+        setDestaques(r2);
+        setTrufas(r3);
+        setCupcakes(r4);
     }
 
 
     async function listarPaginacao() {
-        const r = await api.listarPaginacao();
-        setProdutos(r);
+        // const r = await api.listarPaginacao();
+        // console.log(r);
     }
 
 
@@ -74,9 +84,9 @@ export default function Destaque() {
 
             <div className="box-itens">
 
-                {produtos.map(item => 
+                {destaques.map(item => 
                     <BoxProduto 
-                        key={item.id_produto}
+                        key={item.id}
                         info={item} />
                 )}
 
@@ -94,7 +104,7 @@ export default function Destaque() {
 
             <div className="nm-box">Bolos</div>
             <div className="box-itens">
-                {produtos.map(item => 
+                {bolos.map(item => 
                     <BoxProduto 
                         key={item.id_produto}
                         info={item} />
@@ -113,7 +123,7 @@ export default function Destaque() {
 
             <div className="nm-box">Cupcakes</div>
             <div className="box-itens">
-                {produtos.map(item => 
+                {cupcakes.map(item => 
                     <BoxProduto 
                         key={item.id_produto}
                         info={item} />
@@ -132,7 +142,7 @@ export default function Destaque() {
 
             <div className="nm-box">Trufas</div>
             <div className="box-itens">
-                {produtos.map(item => 
+                {trufas.map(item => 
                     <BoxProduto 
                         key={item.id_produto}
                         info={item} />

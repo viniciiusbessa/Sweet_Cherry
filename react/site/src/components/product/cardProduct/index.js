@@ -24,12 +24,12 @@ export default function BoxProduto (props){
             <ContainerBoxProduto>
                 <div className="doces">
 
-                    <div className="imagem-doce"> <img src={props.ds_imagem} alt="" /> </div>
-                    <div className="nm-doce">{props.nome}</div>
+                    <div className="imagem-doce"> <img src={props.info.imagem} alt="" /> </div>
+                    <div className="nm-doce">{props.info.produto}</div>
 
                     <div className="produto">
 
-                        <div className="preco">{props.preco}</div>
+                        <div className="preco">{props.info.preco}</div>
                         <div className="icones">
                             <div className="icone-carrinho" onClick={carrinho}><img src="/assets/images/carrinho.svg" alt=""/></div>
                             <div className="icone-coracao" onClick={favoritos}><img src="/assets/images/coracao-favoritos-compra.svg" alt=""/></div>

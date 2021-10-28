@@ -28,8 +28,8 @@ export default class Api {
 
 
         // TESTANDO
-            async listarProdutosOrdenados() {
-                let r = await api.get('/produtos');
+            async listarProdutosOrdenados(categoria) {
+                let r = await api.get('/produtos?categoria='+categoria);
                 return [...r.data];
             }
 
