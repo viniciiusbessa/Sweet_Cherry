@@ -16,6 +16,10 @@ export default function AdministrarProdutos() {
         navigation.push('/inicio-adm')
     }
 
+    const AddProduto = async () => {
+        navigation.push('/add-produto')
+    }
+
     return (
     <ContainerAdmProduto>
 
@@ -30,7 +34,7 @@ export default function AdministrarProdutos() {
         <div className="titulo-adm2">Administração / Sweet Cherry</div>
 
         <div className="box-conteudo-adm2">
-            <div className="btn-add-adm2"><button>Administração Produtos</button></div>
+            <div className="btn-add-adm2"><button onClick={AddProduto}>Adicionar Produto</button></div>
             <div className="barra-pesquisa-adm2">
                 <input placeholder="pesquisa" /> 
                 <div title="pesquisar" className="img-lupa"></div>
