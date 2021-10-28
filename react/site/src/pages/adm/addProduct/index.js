@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -24,6 +24,22 @@ export default function AdicionarProduto(props) {
     const [idAlterando, setidAlterando] = useState(0);
 
     const navigation = useHistory();
+
+
+    useEffect(() => {
+        const produtoInfo = props.location.state;
+        if (produtoInfo) {
+            setProduto(produtoInfo.nm_produto);
+            setPreco(produtoInfo.vl_produto);
+            setCategoria(produtoInfo.nm_categoria);
+            setDescricao(produtoInfo.ds_produto);
+            setAvaliacao(produtoInfo.ds_avaliacao);
+            setEstoque(produtoInfo.qtd_disponivel_estoque);
+            setImagem(produtoInfo.ds_imagem);
+            setidAlterando(produtoInfo.id_produto);
+            
+        }
+    }, []);
 
 
     async function inserir() {

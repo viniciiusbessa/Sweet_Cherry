@@ -34,6 +34,10 @@ export default function TableProduct() {
         navigation.push('/add-produto')
     }
 
+    const MostrarProduto = async () => {
+        navigation.push('/compra/:id')
+    }
+
 
     async function remover(id) {
         confirmAlert({
@@ -62,13 +66,16 @@ export default function TableProduct() {
 
 
     async function alterando(item) {
-        setProduto(item.nm_produto);
-        setPreco(item.vl_produto);
-        setCategoria(item.nm_categoria);
-        setDescricao(item.ds_produto);
-        setAvaliacao(item.ds_avaliacao);
-        setImagem(item.ds_imagem);
-        setidAlterando(item.id_produto);
+
+        navigation.push('/add-produto', item)
+
+        // setProduto(item.nm_produto);
+        // setPreco(item.vl_produto);
+        // setCategoria(item.nm_categoria);
+        // setDescricao(item.ds_produto);
+        // setAvaliacao(item.ds_avaliacao);
+        // setImagem(item.ds_imagem);
+        // setidAlterando(item.id_produto);
     }
 
     useEffect(() => {
@@ -115,7 +122,7 @@ export default function TableProduct() {
                             {item.ds_produto != null && item.ds_produto.length >= 25
                                 ? item.ds_produto.substr(0, 25) + '...'  : item.ds_produto}
                         </td>
-                        <td className="botao-visivel"><button onClick={AddProduto}>adicionar</button></td>
+                        <td className="botao-visivel"><button onClick={MostrarProduto}>mostrar</button></td>
                         <td className="botao-visivel1"> <button onClick={() => alterando(item)}> editar </button> </td>
                         <td className="botao-visivel2"><button onClick={() => remover(item.id_produto) }> deletar </button></td>
                     </tr>
