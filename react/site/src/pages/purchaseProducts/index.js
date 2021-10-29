@@ -74,7 +74,7 @@ export default function Compra(props) {
                         {products.produto}
                     </div>
 
-                    <div className="preco-produto"> {products.preco} </div>
+                    <div className="preco-produto"> R$ {products.preco} </div>
 
                     <div className="botoesC-1">
                         <div className="botoes-box1">

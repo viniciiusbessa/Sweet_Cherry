@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { useHistory } from 'react-router-dom'
-
+import LoadingBar from 'react-top-loading-bar';
 import { ContainerTableProducts } from './styled'
 
 import { confirmAlert } from 'react-confirm-alert';
@@ -13,6 +13,7 @@ import Api from '../../../../service/api'
 const api = new Api();
 
 export default function TableProduct() {
+    
     const [produtos, setProdutos] = useState([]);
     const [produto, setProduto] = useState('')
     const [preco, setPreco] = useState('')
@@ -21,13 +22,16 @@ export default function TableProduct() {
     const [avaliacao, setAvaliacao] = useState('')
     const [imagem, setImagem] = useState('')
     const [idAlterando, setidAlterando] = useState(0);
+    const loading = useRef(null);
 
     const navigation = useHistory();
 
 
     async function listar() {
+        
         let r = await api.listarProduto();
         setProdutos(r);
+        loading.current.complete()
     }
 
     const AddProduto = async () => {
@@ -84,6 +88,7 @@ export default function TableProduct() {
 
     return (
         <ContainerTableProducts>
+            <LoadingBar color= "#A4BCFF" ref={loading}/>
 
             <thead>
 

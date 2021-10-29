@@ -1,8 +1,9 @@
 import Cabecalho from '../../components/commum/header/index'
 import Rodape from '../../components/commum/footer/index'
 import BoxProduto from '../../components/product/cardProduct/index'
+import LoadingBar from 'react-top-loading-bar';
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 
 import axios from 'axios'
 
@@ -23,15 +24,14 @@ export default function Destaque() {
 
     const [produtos, setProdutos] = useState([]);
 
-
-    const [ordenacao, setOrdenacao] = useState('Menor Preço');
-
     
     const [pagina, setPagina] = useState(1);
     const [totalPaginas, setTotalPaginas] = useState(0);
+    const loading = useRef(null);
     
 
     async function listarCategoria() {
+        loading.current.continuousStart();
         let r1 = await api.listarProdutosCategoria('Bolos');
         let r2 = await api.listarProdutosCategoria('Destaques');
         let r3 = await api.listarProdutosCategoria('Trufas');
@@ -41,18 +41,13 @@ export default function Destaque() {
         setDestaques(r2);
         setTrufas(r3);
         setCupcakes(r4);
-    }
-
-    async function listarOrdenados() {
-        const r = await api.listarProdutosOrdenados();
-        setProdutos(r)
+        loading.current.complete()
     }
 
 
-    // async function listarPaginacao() {
-        // const r = await api.listarPaginacao();
-        // console.log(r);
-    // }
+     async function listarPaginacao() {
+         const r = await api.listarPaginacao();
+     }
 
 
     function irPara(pagina) {
@@ -63,18 +58,14 @@ export default function Destaque() {
 
 
     useEffect(() => {
-        listarCategoria();
-    })
-
-    useEffect(() => {
-        listarOrdenados();
-    }, [ordenacao])
+       listarCategoria();
+    }, [])
     
 
     return (
     <ContainerDestaque>
         <Cabecalho />
-        
+        <LoadingBar color="#A4BCFF" ref={loading}/>
         <div className="conteudo">
             <div className="buscar">
                 <input type="text" id="txtBusca" className="busca"/>
@@ -82,16 +73,6 @@ export default function Destaque() {
             </div>
 
             <div className="nm-box">Destaques</div>
-
-            <div className="ordenacao">
-                <select value={ordenacao} 
-                    onChange={e => setOrdenacao(e.target.value)} >
-                    <option value="Menor Preço"> Menor Preço </option>
-                    <option value="Maior Preço"> Maior Preço </option>
-                    <option value="A - Z"> A - Z </option>
-                    <option value="Z - A"> Z - A </option>
-                </select>
-            </div>
 
             <div className="box-itens">
 
