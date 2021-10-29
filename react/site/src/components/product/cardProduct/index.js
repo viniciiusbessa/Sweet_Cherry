@@ -29,7 +29,7 @@ export default function BoxProduto (props){
 
                     <div className="produto">
 
-                        <div className="preco">{props.info.preco}</div>
+                        <div className="preco"> R$ {props.info.preco}</div>
                         <div className="icones">
                             <div className="icone-carrinho" onClick={carrinho}><img src="/assets/images/carrinho.svg" alt=""/></div>
                             <div className="icone-coracao" onClick={favoritos}><img src="/assets/images/coracao-favoritos-compra.svg" alt=""/></div>
