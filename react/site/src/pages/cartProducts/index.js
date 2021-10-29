@@ -30,12 +30,18 @@ export default function CarrinhoProdutos() {
         setProducts(cart);
     }
 
-    // function changeProduct(id, qtd) {
-    //     let changed = products.filter(item => item.id === id)[0];
-    //     changed.qtd = qtd;
+    function removerProduto(id) {
+        let cart = products.filter(item => item.id !== id);
+        Cookie.set('cart', JSON.stringify(cart));
+        setProducts([...cart]);
+    }
 
-    //     Cookie.set('cart', JSON.stringify(products));
-    // }
+    function alterarProduto(id, qtd) {
+        let produtoAlterado = products.filter(item => item.id === id)[0];
+        produtoAlterado.qtd = qtd
+        Cookie.set('cart', JSON.stringify(produtoAlterado));
+    }
+
 
     return(
         <CartProduct>
@@ -59,7 +65,13 @@ export default function CarrinhoProdutos() {
                     </thead>
 
                     <tbody>
-                        <CartItem/>
+                        {products.map(item =>
+                            <CartItem key={item.id}
+                                info={item}
+                                onUpdate={alterarProduto}
+                                onRemove={removerProduto}
+                            />
+                        )}
                     </tbody>
                 </table>
             </div>

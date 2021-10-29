@@ -3,7 +3,7 @@ import Cabecalho from '../../components/commum/header/index'
 import Rodape from '../../components/commum/footer/index'
 import Estrelas from './stars-avaliation/index'
 import { ContainerCompra } from './styled'
-import { useHistory } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import Cookie from 'js-cookie'
 
 export default function Compra(props) {
@@ -30,16 +30,16 @@ export default function Compra(props) {
     }
 
     function cartItem(){
-        let cart = Cookie.get('cart');
-        cart = cart !== undefined
-                ? JSON.parse(cart)
-                : [];
-
-        if(cart.some(item => item.id === props.id) === false)
-            cart.push({...products});
-
-        Cookie.set('cart', JSON.stringify(cart));
-        navigation.push('/carrinho')
+        let carrinho = Cookie.get('carrinho');
+        carrinho = carrinho !== undefined 
+                    ? JSON.parse(carrinho) 
+                    : [];
+        if (carrinho.some(item => item.id === products.id) === false)
+            carrinho.push({...products, qtd: 1 });
+     
+        Cookie.set('carrinho', JSON.stringify(carrinho));
+        
+        navigation.push('/carrinho');
     }
 
     return (
@@ -54,13 +54,13 @@ export default function Compra(props) {
 
                 <div className="compra1-box1">
                     <div className="img-compra">
-                        <div className="imagemC-box1"> <img src="../../assets/images/brigadeiro-tela-compra.svg" alt="" /> </div>
+                        <div className="imagemC-box1"> <img src={products.imagem} alt="" /> </div>
                     </div>
                 
                     <div className="descricaoC-box1">
                         <div className="desc-titulo1">Descrição</div> 
-                        <div className="desc-descricao1">Que tal um brigadeiro com sabor diferenciado?</div>
-                        <div className="desc-descricao2">Esse é nossa nova sensação, brigadeiro sabor churros!!</div>
+                        <div className="desc-descricao1">{products.descricao}</div>
+                        <div className="desc-descricao2">{products.descricao}</div>
                     </div>
 
                     <div className="box-estrelinhas">
@@ -71,10 +71,10 @@ export default function Compra(props) {
 
                 <div className="compra1-box2">
                     <div className="tituloC-box2">
-                        Brigadeiro gourmet de churros
+                        {products.produto}
                     </div>
 
-                    <div className="preco-produto"> R$ 3,99 </div>
+                    <div className="preco-produto"> {products.preco} </div>
 
                     <div className="botoesC-1">
                         <div className="botoes-box1">
@@ -93,7 +93,12 @@ export default function Compra(props) {
                                 </div>
                             </div>
 
-                            <button className="Add-carrinho-bt" onClick={cartItem}> <img src="../../assets/images/carrinho.png" alt=""/> Add ao Carrinho </button>
+                            <Link to={{
+                                pathname: '/carrinho',
+                                state: props.info
+                            }}>
+                                <button className="Add-carrinho-bt" onClick={cartItem}> <img src="../../assets/images/carrinho.png" alt=""/> Add ao Carrinho </button>
+                            </Link>
                         </div>
 
                         <div className="botoes-box2">

@@ -53,7 +53,7 @@ export default function Produto(){
 
             {!loading && 
             produtos.map(item => 
-                <BoxProduto infoLoader={item}/>
+                <BoxProduto info={item}/>
             )}
         </div>
     )

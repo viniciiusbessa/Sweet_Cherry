@@ -1,6 +1,6 @@
 import { ContainerBoxProduto } from "./styled";
 
-import { useHistory } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 
 
 export default function BoxProduto (props){
@@ -35,8 +35,14 @@ export default function BoxProduto (props){
                             <div className="icone-coracao" onClick={favoritos}><img src="/assets/images/coracao-favoritos-compra.svg" alt=""/></div>
                         </div>
                         </div>
-                    <div className="button"> <button onClick={compra}>Ver mais</button> </div>
-                </div>
+
+                        <Link to={{
+                            pathname: '/compra',
+                            state: props.info
+                        }}>
+                            <div className="button"> <button onClick={compra}>Ver mais</button> </div>
+                        </Link>
+                    </div>
             </ContainerBoxProduto>
         </div>
     )
