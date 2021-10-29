@@ -29,15 +29,14 @@ export default function AdicionarProduto(props) {
     useEffect(() => {
         const produtoInfo = props.location.state;
         if (produtoInfo) {
-            setProduto(produtoInfo.nm_produto);
-            setPreco(produtoInfo.vl_produto);
-            setCategoria(produtoInfo.nm_categoria);
-            setDescricao(produtoInfo.ds_produto);
-            setAvaliacao(produtoInfo.ds_avaliacao);
-            setEstoque(produtoInfo.qtd_disponivel_estoque);
-            setImagem(produtoInfo.ds_imagem);
-            setidAlterando(produtoInfo.id_produto);
-            
+            setProduto(produtoInfo.produto);
+            setPreco(produtoInfo.preco);
+            setCategoria(produtoInfo.categoria);
+            setDescricao(produtoInfo.descricao);
+            setAvaliacao(produtoInfo.avaliacao);
+            setEstoque(produtoInfo.estoque);
+            setImagem(produtoInfo.imagem);
+            setidAlterando(produtoInfo.id);   
         }
     }, []);
 

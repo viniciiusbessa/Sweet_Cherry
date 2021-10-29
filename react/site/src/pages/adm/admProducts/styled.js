@@ -76,6 +76,10 @@ const ContainerAdmProduto = styled.div`
         font-size: 25px;
     }
 
+    .btn-add-adm2 button:hover {
+        background-color: #f075a3;
+    }
+
     .barra-pesquisa-adm2 input {
         width: 494px;
         height: 40px;
