@@ -37,17 +37,16 @@ export default function Destaque() {
         let r3 = await api.listarProdutosCategoria('Trufas');
         let r4 = await api.listarProdutosCategoria('Cupcakes');
 
+        const r = await api.listarPaginacao();
+
+        setProdutos(r);
+
         setBolos(r1);
         setDestaques(r2);
         setTrufas(r3);
         setCupcakes(r4);
         loading.current.complete()
     }
-
-
-     async function listarPaginacao() {
-         const r = await api.listarPaginacao();
-     }
 
 
     function irPara(pagina) {
