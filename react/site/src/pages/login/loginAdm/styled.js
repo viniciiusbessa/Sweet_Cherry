@@ -69,6 +69,17 @@ const ContainerLoginAdm = styled.div`
         position: relative;
     }
 
+    .eye {
+        position: absolute;
+        top: 1em;
+        left: 15em;
+        cursor: pointer;
+    }
+    
+    .eye img {
+            width: 2.5em;
+    }
+
     .inputs-entrarbv {
         display: flex;
         flex-direction: column;

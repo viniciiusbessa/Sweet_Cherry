@@ -169,7 +169,7 @@ const ContainerAdmPedidos = styled.div`
     }
 
     .btn1 {
-        background-color: #54e88f;
+        background-color: #FF6F6F;
 
         font-size: 16px;
 
@@ -179,7 +179,7 @@ const ContainerAdmPedidos = styled.div`
     }
 
     .btn1:hover {
-        background-color: #30cf70;
+        background-color: #ee5252;
     }
 
     .btn2 {
@@ -189,7 +189,7 @@ const ContainerAdmPedidos = styled.div`
 
         border-radius: 10px;
 
-        padding: 0.3em 1.5em;
+        padding: 0.3em 0.4em;
         margin: 0em 0.5em;
     }
 
@@ -198,7 +198,7 @@ const ContainerAdmPedidos = styled.div`
     }
 
     .btn3 {
-        background-color: #FF6F6F;
+        background-color: #54e88f;
 
         font-size: 16px;
 
@@ -210,7 +210,7 @@ const ContainerAdmPedidos = styled.div`
     }
 
     .btn3:hover {
-        background-color: #ee5252;
+        background-color: #30cf70;
     }
 
     .table-filha {
