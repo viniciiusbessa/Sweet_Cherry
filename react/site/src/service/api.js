@@ -31,19 +31,12 @@ export default class Api {
         let r = await api.get('/produtos?categoria='+categoria);
         return ([...r.data]);
     }
-
-
-    async listarProdutosOrdenados(ordenacao) {
-        let r = await api.get('/produtos?ordenacao='+ordenacao);
-        return [...r.data];
-    }
-
-
+    
         // TESTANDO
-           // async listarPaginacao() {
-              //  let r = await api.get('/v3/produtos');
-            //    return [...r.data.items], r.data;
-           // }
+            async listarPaginacao() {
+                let r = await api.get('/v3/produtos');
+                return [...r.data.items], r.data;
+            }
         // TESTANDO
 
 

@@ -23,9 +23,6 @@ export default function Destaque() {
 
     const [produtos, setProdutos] = useState([]);
 
-
-    const [ordenacao, setOrdenacao] = useState('Menor Preço');
-
     
     const [pagina, setPagina] = useState(1);
     const [totalPaginas, setTotalPaginas] = useState(0);
@@ -41,11 +38,6 @@ export default function Destaque() {
         setDestaques(r2);
         setTrufas(r3);
         setCupcakes(r4);
-    }
-
-    async function listarOrdenados() {
-        const r = await api.listarProdutosOrdenados();
-        setProdutos(r)
     }
 
 
@@ -65,10 +57,6 @@ export default function Destaque() {
     useEffect(() => {
         listarCategoria();
     })
-
-    useEffect(() => {
-        listarOrdenados();
-    }, [ordenacao])
     
 
     return (
@@ -82,16 +70,6 @@ export default function Destaque() {
             </div>
 
             <div className="nm-box">Destaques</div>
-
-            <div className="ordenacao">
-                <select value={ordenacao} 
-                    onChange={e => setOrdenacao(e.target.value)} >
-                    <option value="Menor Preço"> Menor Preço </option>
-                    <option value="Maior Preço"> Maior Preço </option>
-                    <option value="A - Z"> A - Z </option>
-                    <option value="Z - A"> Z - A </option>
-                </select>
-            </div>
 
             <div className="box-itens">
 
