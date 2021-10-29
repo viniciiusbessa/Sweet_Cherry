@@ -28,13 +28,13 @@ export default class Api {
 
 
     async listarProdutosCategoria(categoria) {
-        let r = await api.get('/produtos?categoria='+categoria);
+        let r = await api.get('/produto/cate?categoria='+categoria);
         return [...r.data];
     }
 
         // TESTANDO
             async listarPaginacao(paginacao) {
-                let r = await api.get('/v3/produtos?filtro='+paginacao);
+                let r = await api.get('/produto/v3?filtro='+paginacao);
                 return [...r.data.items];
             }
         // TESTANDO
