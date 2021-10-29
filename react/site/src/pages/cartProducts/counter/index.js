@@ -67,6 +67,10 @@ export default function Counter(props){
         seQtd(qtd-1)
     }
 
+    useEffect(() => {
+        props.onChange(qtd);
+      }, [qtd])
+
 
     return(
         <ContainerCounter>

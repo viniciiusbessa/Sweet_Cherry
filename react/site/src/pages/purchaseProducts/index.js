@@ -4,7 +4,7 @@ import Rodape from '../../components/commum/footer/index'
 import Estrelas from './stars-avaliation/index'
 import { ContainerCompra } from './styled'
 import { Link, useHistory } from 'react-router-dom'
-import Cookie from 'js-cookie'
+import Cookies from 'js-cookie'
 
 export default function Compra(props) {
     const navigation = useHistory();
@@ -30,14 +30,14 @@ export default function Compra(props) {
     }
 
     function cartItem(){
-        let carrinho = Cookie.get('carrinho');
+        let carrinho = Cookies.get('carrinho');
         carrinho = carrinho !== undefined 
                     ? JSON.parse(carrinho) 
                     : [];
         if (carrinho.some(item => item.id === products.id) === false)
             carrinho.push({...products, qtd: 1 });
      
-        Cookie.set('carrinho', JSON.stringify(carrinho));
+        Cookies.set('carrinho', JSON.stringify(carrinho));
         
         navigation.push('/carrinho');
     }
@@ -93,12 +93,12 @@ export default function Compra(props) {
                                 </div>
                             </div>
 
-                            <Link to={{
-                                pathname: '/carrinho',
-                                state: props.info
-                            }}>
-                                <button className="Add-carrinho-bt" onClick={cartItem}> <img src="../../assets/images/carrinho.png" alt=""/> Add ao Carrinho </button>
-                            </Link>
+                
+                                <button className="Add-carrinho-bt" onClick={cartItem}> 
+                                    <img src="../../assets/images/carrinho.png" alt=""/> 
+                                    Add ao Carrinho 
+                                </button>
+                            
                         </div>
 
                         <div className="botoes-box2">

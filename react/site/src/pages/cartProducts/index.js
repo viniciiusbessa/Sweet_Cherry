@@ -1,7 +1,7 @@
 import Cabecalho from "../../components/commum/header";
 import Rodape from "../../components/commum/footer";
 // import TableProduct from "../../components/styled/tableCart";
-import Cookie from 'js-cookie'
+import Cookies from "js-cookie";
 import { CartProduct } from "./styled";
 import { useHistory } from 'react-router-dom'
 import { useEffect, useState } from "react";
@@ -23,23 +23,23 @@ export default function CarrinhoProdutos() {
     useEffect(uploadCart, []);
 
     function uploadCart() {
-        let cart = Cookie.get('cart')
-        cart = cart !== undefined 
-                ? JSON.parse(cart)
-                : [];
-        setProducts(cart);
+        let carrinho = Cookies.get('carrinho');
+        carrinho = carrinho !== undefined 
+                      ? JSON.parse(carrinho) 
+                      : [];
+        setProducts(carrinho);
     }
 
     function removerProduto(id) {
-        let cart = products.filter(item => item.id !== id);
-        Cookie.set('cart', JSON.stringify(cart));
-        setProducts([...cart]);
+        let carrinho = products.filter(item => item.id !== id);
+        Cookies.set('carrinho', JSON.stringify(carrinho));
+        setProducts([...carrinho]);
     }
 
     function alterarProduto(id, qtd) {
         let produtoAlterado = products.filter(item => item.id === id)[0];
         produtoAlterado.qtd = qtd
-        Cookie.set('cart', JSON.stringify(produtoAlterado));
+        Cookies.set('carrinho', JSON.stringify(produtoAlterado));
     }
 
 
