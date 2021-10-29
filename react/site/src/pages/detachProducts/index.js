@@ -20,17 +20,22 @@ export default function Destaque() {
     const [trufas, setTrufas] = useState([]);
     const [cupcakes, setCupcakes] = useState([]);
 
+
+    const [produtos, setProdutos] = useState([]);
+
+
     const [ordenacao, setOrdenacao] = useState('Menor Preço');
 
+    
     const [pagina, setPagina] = useState(1);
     const [totalPaginas, setTotalPaginas] = useState(0);
     
 
-    async function listarOrdenacao() {
-        let r1 = await api.listarProdutosOrdenados('Bolos');
-        let r2 = await api.listarProdutosOrdenados('Destaques');
-        let r3 = await api.listarProdutosOrdenados('Trufas');
-        let r4 = await api.listarProdutosOrdenados('Cupcakes');
+    async function listarCategoria() {
+        let r1 = await api.listarProdutosCategoria('Bolos');
+        let r2 = await api.listarProdutosCategoria('Destaques');
+        let r3 = await api.listarProdutosCategoria('Trufas');
+        let r4 = await api.listarProdutosCategoria('Cupcakes');
 
         setBolos(r1);
         setDestaques(r2);
@@ -38,11 +43,16 @@ export default function Destaque() {
         setCupcakes(r4);
     }
 
+    async function listarOrdenados() {
+        const r = await api.listarProdutosOrdenados();
+        setProdutos(r)
+    }
 
-    async function listarPaginacao() {
+
+    // async function listarPaginacao() {
         // const r = await api.listarPaginacao();
         // console.log(r);
-    }
+    // }
 
 
     function irPara(pagina) {
@@ -50,15 +60,16 @@ export default function Destaque() {
     }
 
 
+
+
     useEffect(() => {
-        listarOrdenacao();
+        listarCategoria();
+    })
+
+    useEffect(() => {
+        listarOrdenados();
     }, [ordenacao])
-
-    //useEffect(() => {
-    //    listarPaginacao();
-    //}, [pagina])
     
-
 
     return (
     <ContainerDestaque>
@@ -106,7 +117,7 @@ export default function Destaque() {
             <div className="box-itens">
                 {bolos.map(item => 
                     <BoxProduto 
-                        key={item.id_produto}
+                        key={item.id}
                         info={item} />
                 )}
             </div>
@@ -125,7 +136,7 @@ export default function Destaque() {
             <div className="box-itens">
                 {cupcakes.map(item => 
                     <BoxProduto 
-                        key={item.id_produto}
+                        key={item.id}
                         info={item} />
                 )}
             </div>
@@ -144,7 +155,7 @@ export default function Destaque() {
             <div className="box-itens">
                 {trufas.map(item => 
                     <BoxProduto 
-                        key={item.id_produto}
+                        key={item.id}
                         info={item} />
                 )}
             </div>

@@ -69,13 +69,13 @@ export default function TableProduct() {
 
         navigation.push('/add-produto', item)
 
-        // setProduto(item.nm_produto);
-        // setPreco(item.vl_produto);
-        // setCategoria(item.nm_categoria);
-        // setDescricao(item.ds_produto);
-        // setAvaliacao(item.ds_avaliacao);
-        // setImagem(item.ds_imagem);
-        // setidAlterando(item.id_produto);
+         setProduto(item.produto);
+         setPreco(item.preco);
+         setCategoria(item.categoria);
+         setDescricao(item.descricao);
+         setAvaliacao(item.avaliacao);
+         setImagem(item.imagem);
+         setidAlterando(item.id);
     }
 
     useEffect(() => {
@@ -107,24 +107,24 @@ export default function TableProduct() {
                 {produtos.map((item) => 
 
                     <tr>
-                        <td>{item.id_produto}</td>
-                        <td title={item.nm_produto} className="nomeTb-adm2">
-                            {item.nm_produto != null && item.nm_produto.length >= 20
-                                ? item.nm_produto.substr(0, 20) + '...'  : item.nm_produto}
+                        <td>{item.id}</td>
+                        <td title={item.produto} className="nomeTb-adm2">
+                            {item.produto != null && item.produto.length >= 20
+                                ? item.produto.substr(0, 20) + '...'  : item.produto}
                         </td>
-                        <td title={item.ds_imagem}>
-                            <img src={item.ds_imagem} alt="" style={{ width: '50px', height: '42px' }} />
+                        <td title={item.imagem}>
+                            <img src={item.imagem} alt="" style={{ width: '50px', height: '42px' }} />
                         </td>
-                        <td>{item.vl_produto}</td>
-                        <td>{item.nm_categoria}</td>
-                        <td>{item.qtd_disponivel_estoque}</td>
-                        <td title={item.ds_produto}>
-                            {item.ds_produto != null && item.ds_produto.length >= 25
-                                ? item.ds_produto.substr(0, 25) + '...'  : item.ds_produto}
+                        <td>{item.preco}</td>
+                        <td>{item.categoria}</td>
+                        <td>{item.estoque}</td>
+                        <td title={item.descricao}>
+                            {item.descricao != null && item.descricao.length >= 25
+                                ? item.descricao.substr(0, 25) + '...'  : item.descricao}
                         </td>
                         <td className="botao-visivel"><button onClick={MostrarProduto}>mostrar</button></td>
                         <td className="botao-visivel1"> <button onClick={() => alterando(item)}> editar </button> </td>
-                        <td className="botao-visivel2"><button onClick={() => remover(item.id_produto) }> deletar </button></td>
+                        <td className="botao-visivel2"><button onClick={() => remover(item.id) }> deletar </button></td>
                     </tr>
 
                 )}
