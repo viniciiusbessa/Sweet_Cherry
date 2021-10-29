@@ -3,8 +3,13 @@ import BoxProduto from '../../components/product/cardProduct/index'
 import Footer from "../../components/commum/footer";
 import { ContainerFavoritos } from "./styled";
 
+import { useState } from "react";
+
 
 export default function Favorites() {
+
+    const [produtos, setProdutos] = useState ([]);
+
     return (
         <ContainerFavoritos>
             <div className="cabecalho">
@@ -17,13 +22,13 @@ export default function Favorites() {
                 </div>
 
                 <div class="box-doces">
-                    <BoxProduto nome="Cupcake" preco="R$ 15,50" imagem="/assets/images/cupcake.jpg"/>
-                    <BoxProduto nome="Cupcake" preco="R$ 15,50" imagem="/assets/images/cupcakemorango.jpg"/>
-                    <BoxProduto nome="Cupcake" preco="R$ 15,50" imagem="/assets/images/cupcake.jpg"/>
-                    <BoxProduto nome="Cupcake" preco="R$ 15,50" imagem="/assets/images/cupcakemorango.jpg"/>
-                    <BoxProduto nome="Cupcake" preco="R$ 15,50" imagem="/assets/images/cupcakemorango.jpg"/>
-                    <BoxProduto nome="Cupcake" preco="R$ 15,50" imagem="/assets/images/cupcakemorango.jpg"/>
-                    <BoxProduto nome="Cupcake" preco="R$ 15,50" imagem="/assets/images/cupcakemorango.jpg"/>
+                    {produtos.map(item => 
+                        <BoxProduto 
+                            key={item.id}
+                            info={item} />
+                    )}  
+                   
+                   
                 </div>
             </div>
 
