@@ -41,10 +41,9 @@ export default function Destaque() {
     }
 
 
-    // async function listarPaginacao() {
-        // const r = await api.listarPaginacao();
-        // console.log(r);
-    // }
+     async function listarPaginacao() {
+         const r = await api.listarPaginacao();
+     }
 
 
     function irPara(pagina) {
