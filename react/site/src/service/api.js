@@ -31,11 +31,11 @@ export default class Api {
         let r = await api.get('/produtos?categoria='+categoria);
         return [...r.data];
     }
-    
+
         // TESTANDO
-            async listarPaginacao() {
-                let r = await api.get('/v3/produtos');
-                return [...r.data.items], r.data;
+            async listarPaginacao(paginacao) {
+                let r = await api.get('/v3/produtos?filtro='+paginacao);
+                return [...r.data.items];
             }
         // TESTANDO
 

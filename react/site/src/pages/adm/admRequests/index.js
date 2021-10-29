@@ -37,8 +37,8 @@ export default function AdministrarPedidos() {
 
                     <div className="box-btns"> 
                         <button className="btn1">Preparando</button>
-                        <button className="btn2">Pronto</button>
-                        <button className="btn3">A caminho</button>
+                        <button className="btn2">Enviando</button>
+                        <button className="btn3">Entregue</button>
                     </div>
                 </div>
             </div>
@@ -87,8 +87,8 @@ export default function AdministrarPedidos() {
 
                     <div className="box-btns"> 
                         <button className="btn1">Preparando</button>
-                        <button className="btn2">Pronto</button>
-                        <button className="btn3">A caminho</button>
+                        <button className="btn2">Enviando</button>
+                        <button className="btn3">Entregue</button>
                     </div>
                 </div>
             </div>
