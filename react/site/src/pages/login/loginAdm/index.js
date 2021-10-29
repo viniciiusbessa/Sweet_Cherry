@@ -33,6 +33,7 @@ export default function LoginAdm() {
                     <div className="box-input-senha">
                         <img src="../../assets/images/img-senha-login.svg" alt="" />
                         <input className="input-senha" type="password" placeholder="password" />
+                        {/* <div className="eye"><img src="/assets/images/eyeIcon.svg" alt="" /></div> */}
                     </div>
 
                     <div className="box-input-usuario">
