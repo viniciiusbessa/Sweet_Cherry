@@ -8,25 +8,11 @@ import Cookies from 'js-cookie'
 
 export default function Compra(props) {
     const navigation = useHistory();
-    const [products, setProducts] = useState(props.location.state);
-    const [qtd, setQtd] = useState(1);
 
-    
+    const [products, setProducts] = useState(props.location.state);
+
     const confPagamento = async () => {
         navigation.push('/conf_pagamento')
-    }
-
-    
-    function incrementar() {
-        if (qtd >= 10)
-            return;
-        setQtd(qtd+1)
-    }
-
-    function decrementar() {
-        if (qtd === 0) 
-            return;
-        setQtd(qtd-1)
     }
 
     function cartItem(){
@@ -34,6 +20,7 @@ export default function Compra(props) {
         carrinho = carrinho !== undefined 
                     ? JSON.parse(carrinho) 
                     : [];
+                    
         if (carrinho.some(item => item.id === products.id) === false)
             carrinho.push({...products, qtd: 1 });
      
@@ -78,31 +65,17 @@ export default function Compra(props) {
 
                     <div className="botoesC-1">
                         <div className="botoes-box1">
-
-                            <div className="box-qtd"> 
-                                <div className="menos" onClick={decrementar}>
-                                    -
-                                </div>
-                                
-                                <div className="quantidade">
-                                    {qtd}
-                                </div>
-
-                                <div className="mais" onClick={incrementar}>
-                                    +
-                                </div>
-                            </div>
-
                 
-                                <button className="Add-carrinho-bt" onClick={cartItem}> 
-                                    <img src="../../assets/images/carrinho.png" alt=""/> 
-                                    Add ao Carrinho 
-                                </button>
+                            <button className="Add-favoritos-bt"> <img src="../../assets/images/coracao-favoritos-compra.svg"  alt="" /> Add aos Favoritos</button>
+
+                            <button className="Add-carrinho-bt" onClick={cartItem}> 
+                                <img src="../../assets/images/carrinho.png" alt=""/> 
+                                Add ao Carrinho 
+                            </button>
                             
                         </div>
 
                         <div className="botoes-box2">
-                            <button className="Add-favoritos-bt"> <img src="../../assets/images/coracao-favoritos-compra.svg"  alt="" /> Add aos Favoritos</button>
                             <button onClick={confPagamento} className="Confirm-compra1"> Confirmar Compra</button>
                         </div>
 
@@ -111,7 +84,7 @@ export default function Compra(props) {
                                 
                                 <div className="valor-input-fixo">
                                     <div className="frete-fixo">Frete:</div>
-                                    <input  readonly="56365" className="calcular-input" value="R$ 5,00"/>
+                                    <input readonly="56365" className="calcular-input" value="R$ 5,00"/>
                                 </div>
                                 
                             </div>

@@ -21,10 +21,6 @@ export default function Destaque() {
     const [trufas, setTrufas] = useState([]);
     const [cupcakes, setCupcakes] = useState([]);
 
-
-    const [produtos, setProdutos] = useState([]);
-
-    
     const [pagina, setPagina] = useState(1);
     const [totalPaginas, setTotalPaginas] = useState(0);
     
@@ -33,6 +29,7 @@ export default function Destaque() {
 
     async function listarCategoria() {
         loading.current.continuousStart();
+
         let r1 = await api.listarProdutosCategoria('Bolos');
         let r2 = await api.listarProdutosCategoria('Destaques');
         let r3 = await api.listarProdutosCategoria('Trufas');
@@ -42,6 +39,7 @@ export default function Destaque() {
         setDestaques(r2);
         setTrufas(r3);
         setCupcakes(r4);
+
         loading.current.complete()
     }
 
@@ -51,8 +49,7 @@ export default function Destaque() {
     }
 
 
-
-
+    
     useEffect(() => {
        listarCategoria();
     }, [])
