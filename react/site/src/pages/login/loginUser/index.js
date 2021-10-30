@@ -80,7 +80,7 @@ export default function Login() {
                     <div className="esqueceu-senha" onClick={forgotPass}>Esqueceu a senha?</div>
                     <div className="botoes-um">
                         <button onClick={logar} className="bt-entrar"> Entrar </button>
-                        <button onClick={cadastro} className="bt-criar"> Criar </button>
+                        <button onClick={cadastro} className="bt-criar"> Criar Conta</button>
                     </div>
 
                     <button onClick={loginAdm} className="conta-adm"> Entrar/Conta Administrativa </button>

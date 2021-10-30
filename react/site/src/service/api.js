@@ -53,12 +53,12 @@ export default class Api {
     }
 
     async login (email, senha) {
-        let r = await api.post('/login', { email, senha })
+        let r = await api.post('/cliente/login', { email, senha })
         return r.data;
     }
 
     async cadastrar (nome, email, senha) {
-        let r = await api.post('/cadastro', { nome, email, senha })
+        let r = await api.post('/cliente/cadastro', { nome, email, senha })
         return r.data;
     }
 

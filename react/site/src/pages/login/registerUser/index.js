@@ -53,11 +53,6 @@ export default function Cadastro() {
                         onChange={e => setNome(e.target.value)} />
                     </div>
 
-                    <div className="box-input-usuario">
-                        <img src="../../assets/images/username-cadastro.svg" alt="" />
-                        <input className="input-cadastro" type="text" placeholder="username" />
-                    </div>
-
                     <div className="box-input-email">
                         <img src="../../assets/images/email-cadastro.svg" alt="" />
                         <input className="input-cadastro" type="text" placeholder="e-mail" 
