@@ -71,20 +71,18 @@ const BoxNovidades = styled.div`
     border: none;
     border-radius: 50px;
 
-    width:  190px;
-    height: 40px;
-
     cursor: pointer;
 
     font-family:  Pacifico;
-    font-size: 15px;
+    font-size: 20px;
 
     margin: 2em 1em 0em 0em;
+    padding: 0.4em 1.2em;
 }
 
 .vermais_novidades button:hover {
     background-color: #52277D;
-    transition: all 0.5s ease-in;
+    transition: all 0.5s;
 }
 `
 
