@@ -2,13 +2,39 @@ import Cabecalho from '../../components/commum/header/index'
 import Rodape from '../../components/commum/footer/index'
 import BoxProduto from '../../components/product/cardProduct/index'
 
+import LoadingBar from 'react-top-loading-bar';
+
 import { ContainerNovidades } from './styled'
+import { useState, useRef, useEffect } from 'react'
+
+import Api from '../../service/api'
+const api = new Api();
 
 export default function Novidades() {
+
+    const loading = useRef(null);
+
+    const [novidades, setNovidades] = useState([]);
+
+    async function listarCategoria() {
+        loading.current.continuousStart();
+
+        let l = await api.listarProdutosCategoria('Novidades');
+
+        setNovidades(l);
+       
+        loading.current.complete()
+    }
+
+    useEffect(() => {
+        listarCategoria();
+     }, [])
 
     return (
     <ContainerNovidades>
         <Cabecalho />
+        
+        <LoadingBar color="#A4BCFF" ref={loading}/>
 
         <div class="box-text">
             <div className="box-bem-vindo">
@@ -22,14 +48,11 @@ export default function Novidades() {
         </div>
 
         <div className="box-doces">
-            <BoxProduto nome="Brigadeiro" preco="R$ 19,99" imagem="/assets/images/brigadeiro.png"/>
-            <BoxProduto nome="Brigadeiro" preco="R$ 19,99" imagem="/assets/images/brigadeiro.png"/>
-            <BoxProduto nome="Brigadeiro" preco="R$ 19,99" imagem="/assets/images/brigadeiro.png"/>
-            <BoxProduto nome="Brigadeiro" preco="R$ 19,99" imagem="/assets/images/brigadeiro.png"/>
-            <BoxProduto nome="Brigadeiro" preco="R$ 19,99" imagem="/assets/images/brigadeiro.png"/>
-            <BoxProduto nome="Brigadeiro" preco="R$ 19,99" imagem="/assets/images/brigadeiro.png"/>
-            <BoxProduto nome="Brigadeiro" preco="R$ 19,99" imagem="/assets/images/brigadeiro.png"/>
-            <BoxProduto nome="Brigadeiro" preco="R$ 19,99" imagem="/assets/images/brigadeiro.png"/>
+                {novidades.map(item => 
+                    <BoxProduto 
+                        key={item.id}
+                        info={item} />
+                )}  
         </div>
 
         <Rodape />
