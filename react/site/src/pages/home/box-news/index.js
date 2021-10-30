@@ -8,10 +8,7 @@ import BoxProduto from "../../../components/product/cardProduct";
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/splide/dist/css/splide.min.css';
 
-export default function BoxNews () {
-
-    const [produtos, setProdutos] = useState([]);
-
+export default function BoxNews (props) {
     const navigation = useHistory();
 
     const novidades = async () => {
@@ -25,77 +22,28 @@ export default function BoxNews () {
             <div class="Faixa2_inicio"> 
                 <div class="titulo"> Novidades </div>
                 <div className="box"> 
-                        <Splide
-                            options={ {
-                                rewind: true,
-                                gap   : '1rem',
-                                perPage: 4,
-                                margin : '1em',
-                                type   : 'loop',
-                                drag   : 'free',
-                            
-                                } }
+                    <Splide
+                        options={ {
+                            rewind: true,
+                            gap   : '1rem',
+                            perPage: 4,
+                            margin : '1em',
+                            type   : 'loop',
+                            drag   : 'free',
+                        
+                            } }
                         >
                         <SplideSlide>
-                        {produtos.map(item => 
+                        {props.info.map(item => 
                                 <BoxProduto 
                                     key={item.id}
                                     info={item} />
                             )}  
                         </SplideSlide>
-                        <SplideSlide>
-                        {produtos.map(item => 
-                                <BoxProduto 
-                                    key={item.id}
-                                    info={item} />
-                            )}  
-                        </SplideSlide>
-                        <SplideSlide>
-                        {produtos.map(item => 
-                                <BoxProduto 
-                                    key={item.id}
-                                    info={item} />
-                            )}    
-                        </SplideSlide>
-                        <SplideSlide>
-                        {produtos.map(item => 
-                                <BoxProduto 
-                                    key={item.id}
-                                    info={item} />
-                            )}  
-                        </SplideSlide>
-                        <SplideSlide>
-                        {produtos.map(item => 
-                                <BoxProduto 
-                                    key={item.id}
-                                    info={item} />
-                            )}    
-                        </SplideSlide>
-                        <SplideSlide>
-                        {produtos.map(item => 
-                                <BoxProduto 
-                                    key={item.id}
-                                    info={item} />
-                            )}  
-                        </SplideSlide>
-                        <SplideSlide>
-                        {produtos.map(item => 
-                                <BoxProduto 
-                                    key={item.id}
-                                    info={item} />
-                            )}   
-                        </SplideSlide>
-                        <SplideSlide>
-                        {produtos.map(item => 
-                                <BoxProduto 
-                                    key={item.id}
-                                    info={item} />
-                            )}  
-                        </SplideSlide>
-                        </Splide>
-                <div class="vermais_novidades">
-                    <button onClick={novidades}> Ver Mais </button>
-                </div>   
+                    </Splide>
+                    <div class="vermais_novidades">
+                        <button onClick={novidades}> Ver Mais </button>
+                    </div>   
                 </div>
             </div>
         </BoxNovidades>

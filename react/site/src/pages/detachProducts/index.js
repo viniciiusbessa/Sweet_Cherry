@@ -27,6 +27,7 @@ export default function Destaque() {
     
     const [pagina, setPagina] = useState(1);
     const [totalPaginas, setTotalPaginas] = useState(0);
+    
     const loading = useRef(null);
     
 
@@ -36,10 +37,6 @@ export default function Destaque() {
         let r2 = await api.listarProdutosCategoria('Destaques');
         let r3 = await api.listarProdutosCategoria('Trufas');
         let r4 = await api.listarProdutosCategoria('Cupcakes');
-
-        const r = await api.listarPaginacao();
-
-        setProdutos(r);
 
         setBolos(r1);
         setDestaques(r2);
