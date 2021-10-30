@@ -1,9 +1,13 @@
 import { useState } from 'react'
+
 import Cabecalho from '../../components/commum/header/index'
 import Rodape from '../../components/commum/footer/index'
 import Estrelas from './stars-avaliation/index'
+
 import { ContainerCompra } from './styled'
+
 import { useHistory } from 'react-router-dom'
+
 import Cookies from 'js-cookie'
 
 export default function Compra(props) {
