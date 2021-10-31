@@ -42,7 +42,7 @@ export default function BoxNews (props) {
                         </SplideSlide>
                     </Splide>
                     <div class="vermais_novidades">
-                        <button onClick={novidades}> Ver Mais </button>
+                        <button onClick={novidades}> Veja Todas as Novidades </button>
                     </div>   
                 </div>
             </div>

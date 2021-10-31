@@ -23,9 +23,15 @@ const ContainerSobreNos = styled.div`
         .texto p {
             display: flex;
             justify-content: center;
+
             text-align: center;
+
             font-size: 1.5em;
-            font-family: Pacifico;
+            font-family: Patua one;
+
+            padding: 0em 2.3em;
+
+            line-height: 1.5em;
         }
 
         .texto {

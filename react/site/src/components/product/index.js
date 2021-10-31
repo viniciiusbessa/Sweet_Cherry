@@ -40,11 +40,11 @@ export default function Produto(){
 
     useEffect(() => {
         loader();
-    });
+    }, []);
 
     useEffect(() => {
         listar();
-    });
+    }, []);
 
 
     return (
@@ -53,7 +53,7 @@ export default function Produto(){
 
             {!loading && 
             produtos.map(item => 
-                <BoxProduto info={item}/>
+                <BoxProduto />
             )}
         </div>
     )

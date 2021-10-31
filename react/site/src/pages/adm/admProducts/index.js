@@ -1,7 +1,6 @@
 import TableProduct from './tableProducts/index'
 import { ContainerAdmProduto } from './styled'
 
-import { useState, useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
 
 

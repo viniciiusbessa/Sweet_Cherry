@@ -1,32 +1,30 @@
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
+import { useHistory } from 'react-router-dom'
+
 import Cabecalho from '../../components/commum/header/index'
 import Rodape from '../../components/commum/footer/index'
 import Estrelas from './stars-avaliation/index'
+
 import { ContainerCompra } from './styled'
-import { useHistory } from 'react-router-dom'
+
 import Cookies from 'js-cookie'
+import { BoxSlide } from "../home/styled";
+import BoxProduto from '../../components/product/cardProduct'
+
+import { Splide, SplideSlide } from '@splidejs/react-splide';
+import '@splidejs/splide/dist/css/splide.min.css';
+
+import Api from '../../service/api'
+const api = new Api();
 
 export default function Compra(props) {
     const navigation = useHistory();
     const [products, setProducts] = useState(props.location.state);
-    const [qtd, setQtd] = useState(1);
+    const [destaques, setDestaques] = useState([]);
+    const loading = useRef(null);
 
-    
     const confPagamento = async () => {
         navigation.push('/conf_pagamento')
-    }
-
-    
-    function incrementar() {
-        if (qtd >= 10)
-            return;
-        setQtd(qtd+1)
-    }
-
-    function decrementar() {
-        if (qtd === 0) 
-            return;
-        setQtd(qtd-1)
     }
 
     function cartItem(){
@@ -34,16 +32,30 @@ export default function Compra(props) {
         carrinho = carrinho !== undefined 
                     ? JSON.parse(carrinho) 
                     : [];
-        // if (carrinho.some(item => item.id === products.id) === false)
-        //     carrinho.push({...products, qtd: 1 });
-     
+        //  if (carrinho.some(item => item.id === products.id) === false)
+        //      carrinho.push({...products, qtd: 1 });
+
         Cookies.set('carrinho', JSON.stringify(carrinho));
         
         navigation.push('/carrinho');
     }
 
+     async function listarCategoria() {
+        //  loading.current.continuousStart();
+
+         let r2 = await api.listarProduto();
+
+         setDestaques(r2);
+        //  loading.current.complete()
+     }
+
+     useEffect(() => {
+         listarCategoria();
+      }, [])
+
     return (
     <ContainerCompra>
+        {/* <LoadingBar color="#A4BCFF" ref={loading}/> */}
         <div className="fundo-cabecalho">
             <Cabecalho />
         </div>
@@ -60,7 +72,6 @@ export default function Compra(props) {
                     <div className="descricaoC-box1">
                         <div className="desc-titulo1">Descrição</div> 
                         <div className="desc-descricao1">{products.descricao}</div>
-                        <div className="desc-descricao2">{products.descricao}</div>
                     </div>
 
                     <div className="box-estrelinhas">
@@ -78,31 +89,17 @@ export default function Compra(props) {
 
                     <div className="botoesC-1">
                         <div className="botoes-box1">
-
-                            <div className="box-qtd"> 
-                                <div className="menos" onClick={decrementar}>
-                                    -
-                                </div>
-                                
-                                <div className="quantidade">
-                                    {qtd}
-                                </div>
-
-                                <div className="mais" onClick={incrementar}>
-                                    +
-                                </div>
-                            </div>
-
                 
-                                <button className="Add-carrinho-bt" onClick={cartItem}> 
-                                    <img src="../../assets/images/carrinho.png" alt=""/> 
-                                    Add ao Carrinho 
-                                </button>
+                            <button className="Add-favoritos-bt"> <img src="../../assets/images/coracao-favoritos-compra.svg"  alt="" /> Add aos Favoritos</button>
+
+                            <button className="Add-carrinho-bt" onClick={cartItem}> 
+                                <img src="../../assets/images/carrinho.png" alt=""/> 
+                                Add ao Carrinho 
+                            </button>
                             
                         </div>
 
                         <div className="botoes-box2">
-                            <button className="Add-favoritos-bt"> <img src="../../assets/images/coracao-favoritos-compra.svg"  alt="" /> Add aos Favoritos</button>
                             <button onClick={confPagamento} className="Confirm-compra1"> Confirmar Compra</button>
                         </div>
 
@@ -111,12 +108,39 @@ export default function Compra(props) {
                                 
                                 <div className="valor-input-fixo">
                                     <div className="frete-fixo">Frete:</div>
-                                    <input  readonly="56365" className="calcular-input" value="R$ 5,00"/>
+                                    <input readonly="56365" className="calcular-input" value="R$ 5,00"/>
                                 </div>
                                 
                             </div>
                         </div>
                     </div>
+                </div>
+
+                <div className="compra1-box3">
+                        <BoxSlide>
+                        <div className="Faixa3_inicio">
+                        <div className="titulo-slide">Veja mais doces! :)</div>
+                            <div className="boxSlide">
+                                <Splide
+                                    options={ {
+                                        direction: 'ttb',
+                                        height   : '35rem',
+                                        wheel    : true,
+                                        type   : 'loop',
+                                        drag   : 'free',
+                                        } }
+                                    >
+                                    <SplideSlide>
+                                        {destaques.map(item => 
+                                            <BoxProduto 
+                                                key={item.id}
+                                                info={item} />
+                                        )}  
+                                    </SplideSlide>
+                                </Splide>
+                            </div>
+                        </div>
+                    </BoxSlide>
                 </div>
             </div>
 

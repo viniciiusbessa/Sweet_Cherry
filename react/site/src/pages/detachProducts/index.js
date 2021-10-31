@@ -5,7 +5,7 @@ import LoadingBar from 'react-top-loading-bar';
 
 import { useState, useEffect, useRef } from 'react'
 
-import axios from 'axios'
+import { Loader } from "../../components/product/loader";
 
 import { ContainerDestaque } from './styled'
 
@@ -21,18 +21,19 @@ export default function Destaque() {
     const [trufas, setTrufas] = useState([]);
     const [cupcakes, setCupcakes] = useState([]);
 
-
-    const [produtos, setProdutos] = useState([]);
-
-    
     const [pagina, setPagina] = useState(1);
     const [totalPaginas, setTotalPaginas] = useState(0);
+
+    const [loadingProducts, setLoadingProducts] = useState(true)
     
     const loading = useRef(null);
     
 
     async function listarCategoria() {
         loading.current.continuousStart();
+
+        setLoadingProducts(true);
+
         let r1 = await api.listarProdutosCategoria('Bolos');
         let r2 = await api.listarProdutosCategoria('Destaques');
         let r3 = await api.listarProdutosCategoria('Trufas');
@@ -42,6 +43,9 @@ export default function Destaque() {
         setDestaques(r2);
         setTrufas(r3);
         setCupcakes(r4);
+
+        setLoadingProducts(false)
+
         loading.current.complete()
     }
 
@@ -51,8 +55,7 @@ export default function Destaque() {
     }
 
 
-
-
+    
     useEffect(() => {
        listarCategoria();
     }, [])
@@ -72,7 +75,10 @@ export default function Destaque() {
 
             <div className="box-itens">
 
-                {destaques.map(item => 
+                {loadingProducts && <Loader />}
+
+                {!loadingProducts && 
+                destaques.map(item => 
                     <BoxProduto 
                         key={item.id}
                         info={item} />
@@ -92,7 +98,10 @@ export default function Destaque() {
 
             <div className="nm-box">Bolos</div>
             <div className="box-itens">
-                {bolos.map(item => 
+                {loadingProducts && <Loader />}
+
+                {!loadingProducts &&
+                bolos.map(item => 
                     <BoxProduto 
                         key={item.id}
                         info={item} />
@@ -111,7 +120,10 @@ export default function Destaque() {
 
             <div className="nm-box">Cupcakes</div>
             <div className="box-itens">
-                {cupcakes.map(item => 
+                {loadingProducts && <Loader />}
+            
+                {!loadingProducts &&
+                cupcakes.map(item => 
                     <BoxProduto 
                         key={item.id}
                         info={item} />
@@ -130,7 +142,10 @@ export default function Destaque() {
 
             <div className="nm-box">Trufas</div>
             <div className="box-itens">
-                {trufas.map(item => 
+                {loadingProducts && <Loader />}
+
+                {!loadingProducts &&
+                trufas.map(item => 
                     <BoxProduto 
                         key={item.id}
                         info={item} />
