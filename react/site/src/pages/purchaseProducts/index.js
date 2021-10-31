@@ -48,9 +48,9 @@ export default function Compra(props) {
      async function listarCategoria() {
         loading.current.continuousStart();
 
-        let r2 = await api.listarProduto();
+        let r = await api.listarProduto();
 
-        setProduto(r2);
+        setProduto(r);
 
         loading.current.complete()
      }
