@@ -48,7 +48,7 @@ const ContainerTableProducts = styled.table`
     .botao-visivel {
         border: none;
 
-        padding: 0.2em 1.5em 0.2em 2em;
+        padding: 0.7em 1.5em 0.2em 2em;
     }
 
     .botao-visivel1 {
@@ -69,6 +69,8 @@ const ContainerTableProducts = styled.table`
         font-size: 16px;
 
         border-radius: 5px;
+
+        visibility: hidden;
     }
 
     .botao-visivel button:hover {
@@ -81,6 +83,8 @@ const ContainerTableProducts = styled.table`
         font-size: 16px;
 
         border-radius: 5px;
+
+        visibility: hidden;
     }
 
     .botao-visivel1 button:hover {
@@ -93,10 +97,20 @@ const ContainerTableProducts = styled.table`
         font-size: 16px;
 
         border-radius: 5px;
+
+        visibility: hidden;
     }
 
     .botao-visivel2 button:hover {
         background-color: #ee5252;
+    }
+
+    tr:hover {
+        
+        .botao-visivel > button, .botao-visivel1 > button, .botao-visivel2 > button {
+            visibility: visible;
+        }
+        
     }
 `
 

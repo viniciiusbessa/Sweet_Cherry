@@ -1,6 +1,9 @@
 import { useState, useEffect, useRef } from 'react'
-import { useHistory } from 'react-router-dom'
+
+import { Link, useHistory } from 'react-router-dom'
+
 import LoadingBar from 'react-top-loading-bar';
+
 import { ContainerTableProducts } from './styled'
 
 import { confirmAlert } from 'react-confirm-alert';
@@ -38,9 +41,9 @@ export default function TableProduct() {
         navigation.push('/add-produto')
     }
 
-    const MostrarProduto = async () => {
-        navigation.push('/compra/:id')
-    }
+    // const MostrarProduto = async () => {
+       // navigation.push('/compra/:id')
+    // }
 
 
     async function remover(id) {
@@ -88,6 +91,7 @@ export default function TableProduct() {
 
     return (
         <ContainerTableProducts>
+            <ToastContainer />
             <LoadingBar color= "#A4BCFF" ref={loading}/>
 
             <thead>
@@ -127,7 +131,14 @@ export default function TableProduct() {
                             {item.descricao != null && item.descricao.length >= 25
                                 ? item.descricao.substr(0, 25) + '...'  : item.descricao}
                         </td>
-                        <td className="botao-visivel"><button onClick={MostrarProduto}>mostrar</button></td>
+
+                        <Link to={{
+                            pathname: '/compra',
+                            state: item
+                        }}>
+                            <td className="botao-visivel"><button >mostrar</button></td>
+                        </Link>
+
                         <td className="botao-visivel1"> <button onClick={() => alterando(item)}> editar </button> </td>
                         <td className="botao-visivel2"><button onClick={() => remover(item.id) }> deletar </button></td>
                     </tr>
