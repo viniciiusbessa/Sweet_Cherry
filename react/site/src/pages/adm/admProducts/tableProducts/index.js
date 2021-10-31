@@ -25,20 +25,19 @@ export default function TableProduct() {
     const [avaliacao, setAvaliacao] = useState('')
     const [imagem, setImagem] = useState('')
     const [idAlterando, setidAlterando] = useState(0);
+    
     const loading = useRef(null);
 
     const navigation = useHistory();
 
 
     async function listar() {
+        loading.current.continuousStart();
         
         let r = await api.listarProduto();
         setProdutos(r);
-        loading.current.complete()
-    }
 
-    const AddProduto = async () => {
-        navigation.push('/add-produto')
+        loading.current.complete()
     }
 
     // const MostrarProduto = async () => {
