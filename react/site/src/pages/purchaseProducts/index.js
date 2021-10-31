@@ -34,8 +34,8 @@ export default function Compra(props) {
         carrinho = carrinho !== undefined 
                     ? JSON.parse(carrinho) 
                     : [];
-        if (carrinho.some(item => item.id === products.id) === false)
-            carrinho.push({...products, qtd: 1 });
+        // if (carrinho.some(item => item.id === products.id) === false)
+        //     carrinho.push({...products, qtd: 1 });
      
         Cookies.set('carrinho', JSON.stringify(carrinho));
         

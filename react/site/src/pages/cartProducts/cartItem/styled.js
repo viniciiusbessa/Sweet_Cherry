@@ -28,6 +28,11 @@ const ContainerItem = styled.tr`
         width: 40px;
         margin-right: 2em;
     }
+
+    .contador {
+        width: 1em;
+        heigth: auto;
+    }
 `
 
 export{ContainerItem}
