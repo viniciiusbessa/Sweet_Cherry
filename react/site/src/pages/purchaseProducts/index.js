@@ -4,12 +4,14 @@ import { useHistory } from 'react-router-dom'
 import Cabecalho from '../../components/commum/header/index'
 import Rodape from '../../components/commum/footer/index'
 import Estrelas from './stars-avaliation/index'
+import { BoxSlide } from "../home/styled";
+import BoxProduto from '../../components/product/cardProduct'
+
+import LoadingBar from 'react-top-loading-bar';
 
 import { ContainerCompra } from './styled'
 
 import Cookies from 'js-cookie'
-import { BoxSlide } from "../home/styled";
-import BoxProduto from '../../components/product/cardProduct'
 
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/splide/dist/css/splide.min.css';
@@ -19,10 +21,13 @@ const api = new Api();
 
 export default function Compra(props) {
     const navigation = useHistory();
-    const [products, setProducts] = useState(props.location.state);
-    const [destaques, setDestaques] = useState([]);
+
     const loading = useRef(null);
 
+    const [products, setProducts] = useState(props.location.state);
+    const [produto, setProduto] = useState([]);
+
+    
     const confPagamento = async () => {
         navigation.push('/conf_pagamento')
     }
@@ -41,12 +46,13 @@ export default function Compra(props) {
     }
 
      async function listarCategoria() {
-        //  loading.current.continuousStart();
+        loading.current.continuousStart();
 
-         let r2 = await api.listarProduto();
+        let r2 = await api.listarProduto();
 
-         setDestaques(r2);
-        //  loading.current.complete()
+        setProduto(r2);
+
+        loading.current.complete()
      }
 
      useEffect(() => {
@@ -55,7 +61,7 @@ export default function Compra(props) {
 
     return (
     <ContainerCompra>
-        {/* <LoadingBar color="#A4BCFF" ref={loading}/> */}
+         <LoadingBar color="#A4BCFF" ref={loading}/> 
         <div className="fundo-cabecalho">
             <Cabecalho />
         </div>
@@ -131,7 +137,7 @@ export default function Compra(props) {
                                         } }
                                     >
                                     <SplideSlide>
-                                        {destaques.map(item => 
+                                        {produto.map(item => 
                                             <BoxProduto 
                                                 key={item.id}
                                                 info={item} />
