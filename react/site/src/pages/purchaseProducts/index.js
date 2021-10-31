@@ -51,7 +51,6 @@ export default function Compra(props) {
                     <div className="descricaoC-box1">
                         <div className="desc-titulo1">Descrição</div> 
                         <div className="desc-descricao1">{products.descricao}</div>
-                        <div className="desc-descricao2">{products.descricao}</div>
                     </div>
 
                     <div className="box-estrelinhas">
