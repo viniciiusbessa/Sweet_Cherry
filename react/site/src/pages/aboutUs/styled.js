@@ -50,9 +50,7 @@ const ContainerSobreNos = styled.div`
             height: 50vh;
 
             margin: 1em;
-            border: solid;
-            border-color: #FF8AB5;
-            border-width: 10px;
+            border: 5px solid #FF8AB5;
         }
 `
 

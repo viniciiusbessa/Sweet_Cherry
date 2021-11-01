@@ -26,19 +26,25 @@ export default function CarrinhoProdutos() {
         carrinho = carrinho !== undefined 
                       ? JSON.parse(carrinho) 
                       : [];
+
+        console.log(carrinho);
+
+        //Cookies.remove('carrinho');
         setProducts(carrinho);
     }
 
     function removerProduto(id) {
         let carrinho = products.filter(item => item.id !== id);
+        
         Cookies.set('carrinho', JSON.stringify(carrinho));
         setProducts([...carrinho]);
     }
 
     function alterarProduto(id, qtd) {
         let produtoAlterado = products.filter(item => item.id === id)[0];
+        
         produtoAlterado.qtd = qtd
-        Cookies.set('carrinho', JSON.stringify(produtoAlterado));
+        Cookies.set('carrinho', JSON.stringify(products));
     }
 
 
@@ -64,7 +70,7 @@ export default function CarrinhoProdutos() {
                     </thead>
 
                     <tbody>
-                        {products.map(item =>
+                        {products.map((item) =>
                             <CartItem key={item.id}
                                 info={item}
                                 onUpdate={alterarProduto}

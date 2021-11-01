@@ -176,6 +176,7 @@ const ContainerLogin = styled.div`
         cursor: pointer;
         transition: 0.5s;
     }
+
 `
 
 export { ContainerLogin }

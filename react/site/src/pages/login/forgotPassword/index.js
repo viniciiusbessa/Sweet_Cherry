@@ -19,7 +19,7 @@ export default function ForgotPass(){
             <div className="conteudo">
                     <div className="box-input-email">
                         <img src="../../assets/images/img-email-login.svg" alt="" />
-                        <input className="input-email" type="text" placeholder="e-mail" value={email} onChange={e => setEmail(e.target.value)} />
+                        <input className="input-email" type="text" placeholder="E-mail" value={email} onChange={e => setEmail(e.target.value)} />
                     </div>
 
                     <button className="bt-redefinir" onClick={resetPass}> Redefinir senha </button>
