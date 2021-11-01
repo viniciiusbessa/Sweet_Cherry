@@ -28,6 +28,10 @@ export default function Destaque() {
     
     const loading = useRef(null);
     
+    const [busca, setBusca] = useState('');
+    console.log(busca);
+
+    // const produtosFiltrados = products.filter((products) => products.startsWith(busca))
 
     async function listarCategoria() {
         loading.current.continuousStart();
@@ -67,7 +71,7 @@ export default function Destaque() {
         <LoadingBar color="#A4BCFF" ref={loading}/>
         <div className="conteudo">
             <div className="buscar">
-                <input type="text" id="txtBusca" className="busca"/>
+                <input type="text" id="txtBusca" className="busca" value={busca} onChange={(ev) => setBusca(ev.target.value)}/>
                 <img src="../../assets/images/ferramenta-lupa 7.png" alt="" />
             </div>
 
@@ -75,7 +79,7 @@ export default function Destaque() {
             <div className="box-itens">
                 {loadingProducts && <Loader />}
 
-                {!loadingProducts &&
+                {!loadingProducts && 
                 bolos.map(item => 
                     <BoxProduto 
                         key={item.id}

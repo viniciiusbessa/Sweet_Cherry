@@ -1,11 +1,9 @@
 import styled from 'styled-components'
 
 const ContainerNovidades = styled.div `
-    background-image: url(../../assets/images/onda.png);
-    background-size: 38% 600px;
-    background-position: left;
+    background-image: url(../../assets/images/fundo2.svg);
+    background-size: 95% auto;
     background-repeat: repeat-y;
-
     height: 100%;
 
     .box-text {

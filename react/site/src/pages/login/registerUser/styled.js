@@ -64,6 +64,10 @@ const ContainerCadastro = styled.div`
 
         position: relative;
     }
+    
+    .box-input-senha {
+        position: relative;
+    }
 
     .box-input-senha img {
         width: 22px;
@@ -179,6 +183,17 @@ const ContainerCadastro = styled.div`
     .botao-dois{
         margin-top: 10px;
         margin-left: 15px;
+    }
+
+    .eye {
+        position: absolute;
+        top: 1em;
+        left: 15em;
+    }
+    
+    .eye img {
+        width: 2.5em;
+        cursor: pointer;
     }
 `
 

@@ -24,8 +24,8 @@ export default function Compra(props) {
 
     const loading = useRef(null);
 
-    const [products, setProducts] = useState(props.location.state);
-    const [produto, setProduto] = useState([]);
+    const [product, setProduct] = useState(props.location.state);
+    const [products, setProducts] = useState([]);
 
     
     const confPagamento = async () => {
@@ -37,12 +37,13 @@ export default function Compra(props) {
         carrinho = carrinho !== undefined 
                     ? JSON.parse(carrinho) 
                     : [];
-        //  if (carrinho.some(item => item.id === products.id) === false)
-        //      carrinho.push({...products, qtd: 1 });
+         
+         if (carrinho.some(item => item.id === product.id) === false)
+             carrinho.push({...product, qtd: 1 });
 
-        Cookies.set('carrinho', JSON.stringify(carrinho));
-        
-        navigation.push('/carrinho');
+         Cookies.set('carrinho', JSON.stringify(carrinho));
+         navigation.push('/carrinho');
+
     }
 
      async function listarCategoria() {
@@ -50,7 +51,7 @@ export default function Compra(props) {
 
         let r = await api.listarProduto();
 
-        setProduto(r);
+        setProducts(r);
 
         loading.current.complete()
      }
@@ -72,12 +73,12 @@ export default function Compra(props) {
 
                 <div className="compra1-box1">
                     <div className="img-compra">
-                        <div className="imagemC-box1"> <img src={products.imagem} alt="" /> </div>
+                        <div className="imagemC-box1"> <img src={product.imagem} alt="" /> </div>
                     </div>
                 
                     <div className="descricaoC-box1">
                         <div className="desc-titulo1">Descrição</div> 
-                        <div className="desc-descricao1">{products.descricao}</div>
+                        <div className="desc-descricao1">{product.descricao}</div>
                     </div>
 
                     <div className="box-estrelinhas">
@@ -88,10 +89,10 @@ export default function Compra(props) {
 
                 <div className="compra1-box2">
                     <div className="tituloC-box2">
-                        {products.produto}
+                        {product.produto}
                     </div>
 
-                    <div className="preco-produto"> R$ {products.preco} </div>
+                    <div className="preco-produto"> R$ {product.preco} </div>
 
                     <div className="botoesC-1">
                         <div className="botoes-box1">
@@ -137,7 +138,7 @@ export default function Compra(props) {
                                         } }
                                     >
                                     <SplideSlide>
-                                        {produto.map(item => 
+                                        {products.map(item => 
                                             <BoxProduto 
                                                 key={item.id}
                                                 info={item} />
