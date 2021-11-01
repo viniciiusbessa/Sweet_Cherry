@@ -14,15 +14,12 @@ const ContainerCompra = styled.div`
     .container-conteudo{
         display: flex;
         flex-direction: column;
-        justify-content: space-evenly;
-
         padding: 4em 11em;
     }
 
     .container-compra {
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
     }
 
     .compra1-box1{
@@ -292,6 +289,16 @@ const ContainerCompra = styled.div`
     .cartao4 img {
         width: 5em;
         height: auto;
+    }
+
+    .compra1-box3 {
+        margin-left: 10em;
+    }
+
+    .titulo-slide {
+        font-size: 23px;
+        color: #c4c4c4;
+        margin: 0em 0em .5em 1em;
     }
 `
 

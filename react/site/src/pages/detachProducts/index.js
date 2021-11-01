@@ -17,7 +17,7 @@ const api = new Api();
 
 export default function Destaque() {
     const [bolos, setBolos] = useState([]);
-    const [destaques, setDestaques] = useState([]);
+    const [diversos, setDiversos] = useState([]);
     const [trufas, setTrufas] = useState([]);
     const [cupcakes, setCupcakes] = useState([]);
 
@@ -35,12 +35,12 @@ export default function Destaque() {
         setLoadingProducts(true);
 
         let r1 = await api.listarProdutosCategoria('Bolos');
-        let r2 = await api.listarProdutosCategoria('Destaques');
+        let r2 = await api.listarProdutosCategoria('Diversos');
         let r3 = await api.listarProdutosCategoria('Trufas');
         let r4 = await api.listarProdutosCategoria('Cupcakes');
 
         setBolos(r1);
-        setDestaques(r2);
+        setDiversos(r2);
         setTrufas(r3);
         setCupcakes(r4);
 
@@ -58,7 +58,7 @@ export default function Destaque() {
     
     useEffect(() => {
        listarCategoria();
-    }, [])
+    }, [pagina])
     
 
     return (
@@ -70,31 +70,6 @@ export default function Destaque() {
                 <input type="text" id="txtBusca" className="busca"/>
                 <img src="../../assets/images/ferramenta-lupa 7.png" alt="" />
             </div>
-
-            <div className="nm-box">Destaques</div>
-
-            <div className="box-itens">
-
-                {loadingProducts && <Loader />}
-
-                {!loadingProducts && 
-                destaques.map(item => 
-                    <BoxProduto 
-                        key={item.id}
-                        info={item} />
-                )}
-
-            </div>
-
-            <div className="paginacao">
-                <PageChange 
-                    totalPaginas={totalPaginas}
-                    pagina={pagina}   
-                    onPageChange={irPara}
-                />
-            </div>
-
-
 
             <div className="nm-box">Bolos</div>
             <div className="box-itens">
@@ -160,6 +135,29 @@ export default function Destaque() {
                 />
             </div>
 
+
+            <div className="nm-box">Diversos</div>
+
+            <div className="box-itens">
+
+                {loadingProducts && <Loader />}
+
+                {!loadingProducts && 
+                diversos.map(item => 
+                    <BoxProduto 
+                        key={item.id}
+                        info={item} />
+                )}
+
+            </div>
+
+            <div className="paginacao">
+                <PageChange 
+                    totalPaginas={totalPaginas}
+                    pagina={pagina}   
+                    onPageChange={irPara}
+                />
+            </div>
         </div>
 
         <Rodape />

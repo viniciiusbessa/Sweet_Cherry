@@ -9,8 +9,7 @@ import CartItem from "./cartItem";
 
 export default function CarrinhoProdutos() {
     const navigation = useHistory();
-
-    const [products, setProducts] = useState([])
+    const [products, setProducts] = useState([]);
 
     const confPagamento = async () => {
         navigation.push('/conf_pagamento')

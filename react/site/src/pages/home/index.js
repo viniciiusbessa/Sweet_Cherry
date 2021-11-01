@@ -26,7 +26,7 @@ const api = new Api();
 
 export default function Inicial () {
     const [novidades, setNovidades] = useState([]);
-    const [destaques, setDestaques] = useState([]);
+    const [diversos, setDiversos] = useState([]);
     const [emAlta, setEmAlta] = useState([]);
 
     const loading = useRef(null);
@@ -42,11 +42,11 @@ export default function Inicial () {
         loading.current.continuousStart();
 
         let r1 = await api.listarProdutosCategoria('Novidades');
-        let r2 = await api.listarProdutosCategoria('Destaques');
+        let r2 = await api.listarProdutosCategoria('diversos');
         let r3 = await api.listarProdutosCategoria('Em alta');
 
         setNovidades(r1);
-        setDestaques(r2);
+        setDiversos(r2);
         setEmAlta(r3);
 
         loading.current.complete()
@@ -86,7 +86,7 @@ export default function Inicial () {
             <BoxNews info={novidades}/>
             <BoxSlide>
                 <div className="Faixa3_inicio">
-                    <div className="titulo"> Destaques </div>
+                    <div className="titulo">Diversos</div>
                     <div className="boxSlide">
                         <Splide
                             options={ {
@@ -98,7 +98,7 @@ export default function Inicial () {
                                 } }
                             >
                             <SplideSlide>
-                                {destaques.map(item => 
+                                {diversos.map(item => 
                                     <BoxProduto 
                                         key={item.id}
                                         info={item} />
