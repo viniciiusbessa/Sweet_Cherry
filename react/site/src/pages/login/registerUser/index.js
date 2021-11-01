@@ -23,8 +23,7 @@ export default function Cadastro() {
             toast.error(`${r.erro}`)
 
         } else {
-            // Cookies.set('usuario-logado', JSON.stringify(r));
-            navigation.push('/')
+            navigation.push('/login')
         }
     }
 

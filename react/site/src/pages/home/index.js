@@ -23,12 +23,20 @@ import Cookies from 'js-cookie'
 import Api from '../../service/api'
 const api = new Api();
 
+
 export default function Inicial () {
     const [novidades, setNovidades] = useState([]);
     const [destaques, setDestaques] = useState([]);
     const [emAlta, setEmAlta] = useState([]);
 
     const loading = useRef(null);
+
+
+    let logado = Cookies.get('usuario-logado')
+    if (logado === null) {
+        navigation.push('/login')
+    }
+
 
     async function listarCategoria() {
         loading.current.continuousStart();

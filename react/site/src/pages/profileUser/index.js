@@ -7,7 +7,6 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 import LoadingBar from 'react-top-loading-bar'
-import confirmAlert from 'react-confirm-alert';
 
 import React, { useRef, useState } from 'react'
 
@@ -34,17 +33,17 @@ export default function Perfil() {
 
     const logoff = () => {
         Cookies.remove('usuario-logado')
-        navigation.push('/')
+        navigation.push('/login')
     }
 
-    async function inserirDados() {
-        let r = await api.inserirCliente( endereco, nome, cpf, nascimento, telefone, email, senha )
-        if (r.erro) {
-            toast.error(`❌ ${r.erro}`)
-        } else {
-            toast.dark('✔️ Cliente inserido com sucesso')
-        }
-    }
+    // async function inserirDados() {
+    //     let r = await api.inserirCliente( endereco, nome, cpf, nascimento, telefone, email, senha )
+    //     if (r.erro) {
+    //         toast.error(`❌ ${r.erro}`)
+    //     } else {
+    //         toast.dark('✔️ Cliente inserido com sucesso')
+    //     }
+    // }
 
     async function alterando(item) {
         setEndereco(item.id_endereco);
@@ -179,7 +178,7 @@ export default function Perfil() {
                     <img src="../../assets/images/Lixeira-perfil.svg" alt="" />
                 </div>
 
-                <div className="btn-salvar"><button onClick={inserirDados}>Salvar</button></div>
+                <div className="btn-salvar"><button>Salvar</button></div>
             </div>
 
             <div className="info-pedidos">
