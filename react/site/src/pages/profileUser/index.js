@@ -31,9 +31,10 @@ export default function Perfil() {
     const [senha, setSenha] = useState('')
     const [idAlterando, setidAlterando] = useState(0);
 
+    
     const logoff = () => {
-        Cookies.remove('usuario-logado')
-        navigation.push('/login')
+        // Cookies.remove('usuario-logado')
+        // navigation.push('/login')
     }
 
     // async function inserirDados() {

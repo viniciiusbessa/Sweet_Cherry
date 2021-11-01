@@ -20,22 +20,22 @@ export default function Login() {
     const [senha, setSenha] = useState('');
 
 
-    let logado = Cookies.get('usuario-logado')
-    // if (logado !== null) {
-    //     navigation.push('/')
-    // }
-
-
     const logar = async () => {
         let r = await api.login(email, senha)
         if (r.erro) {
             toast.error(`${r.erro}`)
 
         } else {
-            Cookies.set('usuario-logado', JSON.stringify(r));
+            // Cookies.set('usuario-logado', JSON.stringify(r));
             navigation.push('/')
         }
     }
+
+    // let logado = Cookies.get('usuario-logado')
+    // if (logado !== null) {
+    //     navigation.push('/')
+    // }
+
 
     const cadastro = async () => {
         navigation.push('/cadastro')
