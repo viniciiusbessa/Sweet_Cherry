@@ -1,17 +1,35 @@
 import { useState } from "react";
+
 import { useHistory } from "react-router";
+
 import { ContainerForgotPass } from "./styled";
+
+
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+import Api from '../../../service/api'
+const api = new Api();
+
 
 export default function ForgotPass(){
     const navigation = useHistory();
+
     const [email, setEmail] = useState('');
 
     const resetPass = async () => {
-        navigation.push('/reset')
+        let r = await api.esqueciASenha(email)
+        if (r.erro) {
+            toast.error(`${r.erro}`)
+
+        } else {
+            navigation.push('/reset')
+        }
     }
 
     return(
         <ContainerForgotPass>
+            <ToastContainer />
             <div className="cabecalho-esqueceu-senha">
                 <div className="titulo">Esqueceu sua senha?</div>
             </div>

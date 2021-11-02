@@ -62,4 +62,18 @@ export default class Api {
         return r.data;
     }
 
+
+
+    // Recuperação de Senha
+
+    async esqueciASenha (email) {
+        let r = await api.post('/recuperarsenha/esqueciasenha', { email: email })
+        return r.data;
+    }
+
+    async validarCodigo (codigo) {
+        let r = await api.post('/recuperarsenha/validarcodigo', { codigo: codigo })
+        return r.data;
+    }
+
 }
