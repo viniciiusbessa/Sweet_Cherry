@@ -71,8 +71,18 @@ export default class Api {
         return r.data;
     }
 
-    async validarCodigo (codigo) {
-        let r = await api.post('/recuperarsenha/validarcodigo', { codigo: codigo })
+    async validarCodigo (email, codigo) {
+        let r = await api.post('/recuperarsenha/validarcodigo', { 
+            email: email, 
+            codigo: codigo })
+        return r.data;
+    }
+
+    async resetarSenha (email, codigo, novaSenha) {
+        let r = await api.put('/recuperarsenha/resetsenha', { 
+            email: email, 
+            codigo: codigo, 
+            novaSenha: novaSenha })
         return r.data;
     }
 

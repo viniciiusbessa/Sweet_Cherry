@@ -2,13 +2,28 @@ import { ContainerNewPassword} from './styled'
 import { useHistory } from 'react-router-dom'
 import { useState } from 'react'
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
-export default function NovaSenha() {
+import Api from '../../../service/api'
+const api = new Api();
+
+export default function NovaSenha(props) {
     const navigation = useHistory();
-    const [senha, setSenha] = useState('');
 
-    const login = async () => {
-        navigation.push('/login')
+    const [ email, setEmail ] = useState(props.location.state.email)
+    const [ codigo, setCodigo ] = useState(props.location.state.codigo)
+    const [ senha, setSenha ] = useState('');
+
+    const newPass = async () => {
+        let r = await api.resetarSenha(email, codigo, senha);
+
+        if (r.erro) {
+            toast.error(`${r.erro}`)
+
+        } else {
+            navigation.push('/login')
+        }
     }
 
     function mostrarOcultarSenha(){
@@ -20,17 +35,9 @@ export default function NovaSenha() {
         }
     }
 
-    function mostrarOcultarSenha1(){
-        var senha = document.getElementById("senha1");
-        if(senha.type === "password"){
-            senha.type = "text";
-        } else {
-            senha.type = "password";
-        }
-    }
-
  return (
   <ContainerNewPassword>
+      <ToastContainer />
       <div className="cabecalho">
                 <div className="titulo">Nova Senha</div>
             </div>
@@ -41,13 +48,9 @@ export default function NovaSenha() {
                         <input className="input-email" type="password" placeholder="Insira sua nova senha" id="senha" value={senha} onChange={e => setSenha(e.target.value)} />
                         <div className="eye" onClick={mostrarOcultarSenha}><img src="/assets/images/eyeIconWhite.svg" alt="" /></div>
                     </div>
-                    <div className="box-input-email">
-                        <img src="../../assets/images/img-senha-login copy.svg" alt="" />
-                        <input className="input-email" type="password" placeholder="Confirme sua senha" id="senha1" />
-                        <div className="eye" onClick={mostrarOcultarSenha1}><img src="/assets/images/eyeIconWhite.svg" alt="" /></div>
-                    </div>
+                    
 
-                    <button className="bt-redefinir" onClick={login}> Confirmar </button>
+                    <button className="bt-redefinir" onClick={newPass}> Confirmar </button>
             </div>
   </ContainerNewPassword>
 

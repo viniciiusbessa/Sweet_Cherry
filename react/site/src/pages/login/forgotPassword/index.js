@@ -23,7 +23,7 @@ export default function ForgotPass(){
             toast.error(`${r.erro}`)
 
         } else {
-            navigation.push('/reset')
+            navigation.push('/reset', { email: email })
         }
     }
 

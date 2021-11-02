@@ -9,19 +9,20 @@ import 'react-toastify/dist/ReactToastify.css';
 import Api from '../../../service/api'
 const api = new Api();
 
-export default function ResetPass(){
+export default function ResetPass(props) {
+    const [ email, setEmail ] = useState(props.location.state.email)
     const [ codigo, setCodigo ] = useState('')
 
     const navigation = useHistory()
 
-    const newPass = async () => {
-        let r = await api.validarCodigo(codigo);
+    const validarCodigo = async () => {
+        let r = await api.validarCodigo(email, codigo);
 
         if (r.erro) {
             toast.error(`${r.erro}`)
 
         } else {
-            navigation.push('/newpass')
+            navigation.push('/newpass', { email: email, codigo: codigo })
         }
     }
 
@@ -39,7 +40,7 @@ export default function ResetPass(){
                             value={codigo} onChange={e => setCodigo(e.target.value)} />
                     </div>
 
-                    <button className="bt-redefinir" onClick={newPass}> Enviar código </button>
+                    <button className="bt-redefinir" onClick={validarCodigo}> Enviar código </button>
             </div>
         </ContainerResetPass>
     )
