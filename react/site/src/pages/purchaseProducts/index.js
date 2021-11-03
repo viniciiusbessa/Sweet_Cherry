@@ -115,7 +115,7 @@ export default function Compra(props) {
                                 
                                 <div className="valor-input-fixo">
                                     <div className="frete-fixo">Frete:</div>
-                                    <input readonly="56365" className="calcular-input" value="R$ 5,00"/>
+                                    <input readOnly="56365" className="calcular-input" value="R$ 5,00"/>
                                 </div>
                                 
                             </div>
