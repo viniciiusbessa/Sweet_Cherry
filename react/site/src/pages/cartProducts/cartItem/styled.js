@@ -33,6 +33,25 @@ const ContainerItem = styled.tr`
         width: 1em;
         heigth: auto;
     }
+
+    .acao img {
+        backgound-color: #ffff;
+        cursor: pointer;
+    }
+
+    .acao > button {
+        visibility: hidden;
+    }
+
+    &:hover {
+        .acao > button {
+        visibility: visible;
+    }
+
+    button {
+        background-color: Transparent;
+        border 0px;
+    }
 `
 
 export{ContainerItem}

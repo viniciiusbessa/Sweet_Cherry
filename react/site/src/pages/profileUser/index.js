@@ -110,7 +110,7 @@ export default function Perfil() {
         <div className="conteudo-perfil">
 
             <div className="info-pessoal-perfil">
-                <div className="nome-pessoa-perfil">Olá Fulano</div>
+                <div className="nome-pessoa-perfil">Olá {nome.nm_cliente}</div>
 
                 <div className="box-dados-conta-perfil">
                     <div className="dados-conta-perfil">Dados da conta</div>
@@ -118,7 +118,7 @@ export default function Perfil() {
                         <img src="../../assets/images/asterisco-perfil.png" alt="" />
                         <div className="email">E-mail:</div>
                     </div>
-                    <input className="input-email" value={email} onChange={e => setEmail(e.target.value)} />
+                    <input className="input-email" value={email.ds_email} onChange={e => setEmail(e.target.value)} />
 
                     <div className="box-infos">
                         <img src="../../assets/images/asterisco-perfil.png" alt="" />

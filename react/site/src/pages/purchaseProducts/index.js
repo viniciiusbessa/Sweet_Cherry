@@ -124,9 +124,9 @@ export default function Compra(props) {
                 </div>
 
                 <div className="compra1-box3">
-                        <BoxSlide>
+                    <BoxSlide>
                         <div className="Faixa3_inicio">
-                        <div className="titulo-slide">Veja mais doces! :)</div>
+                            <div className="titulo-slide">Veja mais doces! :)</div>
                             <div className="boxSlide">
                                 <Splide
                                     options={ {
