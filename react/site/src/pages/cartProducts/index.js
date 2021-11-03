@@ -29,7 +29,7 @@ export default function CarrinhoProdutos() {
 
         console.log(carrinho);
 
-        //Cookies.remove('carrinho');
+        // Cookies.remove('carrinho');
         setProducts(carrinho);
     }
 
