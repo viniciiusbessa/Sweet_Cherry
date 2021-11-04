@@ -47,6 +47,15 @@ export default function CarrinhoProdutos() {
         Cookies.set('carrinho', JSON.stringify(products));
     }
 
+    var carrinho=[]
+    function Compra(obj){ carrinho.push(obj); alert(calculaTotal())}
+    
+    function calculaTotal(){
+         var total=0
+             for(var x=0; x<carrinho.length; x++)
+             total+=parseFloat((carrinho[x].preço))
+             return total.toFixed(2)
+    }
 
     return(
         <CartProduct>
@@ -82,7 +91,7 @@ export default function CarrinhoProdutos() {
             </div>
 
             <div className="total">
-                <button className="botao-total">Total: R$53,90</button>
+                <button className="botao-total">Total: R$ </button>
             </div>
 
             <div className="botoes">

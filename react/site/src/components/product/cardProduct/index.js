@@ -7,7 +7,7 @@ import { useState } from "react";
 
 export default function BoxProduto (props){
     const navigation = useHistory();
-    const [product, setProduct] = useState([]);
+    const [product, setProduct] = useState(props.info);
     
     
     const compra = async () => {

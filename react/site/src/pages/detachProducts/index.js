@@ -67,10 +67,10 @@ export default function Destaque() {
     }, [pagina])
     
 
-    const buscarProduto = async (event) => {
+    const buscarProduto = async () => {
         loading.current.continuousStart();
 
-        let r = await api.buscarProdutos();
+        let r = await api.buscarProdutos(busca);
         setProduct(r);
 
         loading.current.complete();
@@ -82,11 +82,25 @@ export default function Destaque() {
         <LoadingBar color="#A4BCFF" ref={loading}/>
         <div className="conteudo">
             <div className="buscar">
-                <input type="text" id="txtBusca" className="busca" onChange={(event) => buscarProduto(event)}/>
+                <input type="text" id="txtBusca" className="busca" value={busca} onChange={e => setBusca(e.target.value)}/>
                 {/* value={product} onChange={(ev) => setProduct(ev.target.value)}*/}
                 {/*onChange={(event) => buscarProduto(event)}*/}
-                <img src="../../assets/images/ferramenta-lupa 7.png" alt="" />
+                <img src="../../assets/images/ferramenta-lupa 7.png" alt="" onClick={buscarProduto} />
             </div>
+
+
+            {product.length !== 0 &&
+                <div>
+                    <div className="nm-box">Resultados da Pesquisa</div>
+                    <div className="box-itens">
+                        {product.map(item => 
+                            <BoxProduto 
+                                key={item.id}
+                                info={item} />
+                        )}
+                    </div>
+                </div>
+            }
 
             <div className="nm-box">Bolos</div>
             <div className="box-itens">
