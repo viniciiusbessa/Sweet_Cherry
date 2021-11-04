@@ -51,6 +51,10 @@ const ContainerLoginAdm = styled.div`
         position: relative;
     }
 
+    .box-input-senha {
+        position: relative;
+    }
+
     .box-input-senha img {
         width: 25px;
         height: auto;
@@ -69,6 +73,17 @@ const ContainerLoginAdm = styled.div`
         position: relative;
     }
 
+    .eye {
+        position: absolute;
+        top: 1em;
+        left: 15em;
+    }
+    
+    .eye img {
+            width: 2.5em;
+            cursor: pointer;
+    }
+
     .inputs-entrarbv {
         display: flex;
         flex-direction: column;
@@ -79,6 +94,8 @@ const ContainerLoginAdm = styled.div`
     .input-email, .input-senha {
         font-size: 17px;
         font-family: Patua One;
+        color: #b3b1b1;
+
 
         border-top: none;
         border-left: none;

@@ -29,8 +29,8 @@ export default function SobreNos() {
                                 Conheça nosso espaço
                             </div>
                             <div className="imagens">
-                                <img src="../../assets/images/espaço_sweet Cherry.png" alt=""/>
-                                <img src="../../assets/images/espaço_sweet Cherry (2).png" alt=""/>
+                                <img src="../../assets/images/loja.jpg" alt=""/>
+                                <img src="../../assets/images/loja1.jpg" alt=""/>
                             </div>
                         </div>
             <Rodape/>

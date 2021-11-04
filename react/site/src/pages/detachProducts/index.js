@@ -5,7 +5,7 @@ import LoadingBar from 'react-top-loading-bar';
 
 import { useState, useEffect, useRef } from 'react'
 
-import axios from 'axios'
+import { Loader } from "../../components/product/loader";
 
 import { ContainerDestaque } from './styled'
 
@@ -17,38 +17,43 @@ const api = new Api();
 
 export default function Destaque() {
     const [bolos, setBolos] = useState([]);
-    const [destaques, setDestaques] = useState([]);
+    const [diversos, setDiversos] = useState([]);
     const [trufas, setTrufas] = useState([]);
     const [cupcakes, setCupcakes] = useState([]);
+    const [product, setProduct] = useState([]);
+    console.log(product);
 
-
-    const [produtos, setProdutos] = useState([]);
-
-    
     const [pagina, setPagina] = useState(1);
     const [totalPaginas, setTotalPaginas] = useState(0);
+
+    const [loadingProducts, setLoadingProducts] = useState(true)
+    
     const loading = useRef(null);
     
+    const [busca, setBusca] = useState('');
+    console.log(busca);
+
+    // const produtosFiltrados = products.filter((products) => products.startsWith(busca))
 
     async function listarCategoria() {
         loading.current.continuousStart();
+
+        setLoadingProducts(true);
+
         let r1 = await api.listarProdutosCategoria('Bolos');
-        let r2 = await api.listarProdutosCategoria('Destaques');
+        let r2 = await api.listarProdutosCategoria('Diversos');
         let r3 = await api.listarProdutosCategoria('Trufas');
         let r4 = await api.listarProdutosCategoria('Cupcakes');
 
         setBolos(r1);
-        setDestaques(r2);
+        setDiversos(r2);
         setTrufas(r3);
         setCupcakes(r4);
+
+        setLoadingProducts(false)
+
         loading.current.complete()
     }
-
-
-    // async function listarPaginacao() {
-        // const r = await api.listarPaginacao();
-        // console.log(r);
-    // }
 
 
     function irPara(pagina) {
@@ -56,12 +61,20 @@ export default function Destaque() {
     }
 
 
-
-
+    
     useEffect(() => {
        listarCategoria();
-    }, [])
+    }, [pagina])
     
+
+    const buscarProduto = async (event) => {
+        loading.current.continuousStart();
+
+        let r = await api.buscarProdutos();
+        setProduct(r);
+
+        loading.current.complete();
+    }
 
     return (
     <ContainerDestaque>
@@ -69,35 +82,18 @@ export default function Destaque() {
         <LoadingBar color="#A4BCFF" ref={loading}/>
         <div className="conteudo">
             <div className="buscar">
-                <input type="text" id="txtBusca" className="busca"/>
+                <input type="text" id="txtBusca" className="busca" onChange={(event) => buscarProduto(event)}/>
+                {/* value={product} onChange={(ev) => setProduct(ev.target.value)}*/}
+                {/*onChange={(event) => buscarProduto(event)}*/}
                 <img src="../../assets/images/ferramenta-lupa 7.png" alt="" />
             </div>
 
-            <div className="nm-box">Destaques</div>
-
-            <div className="box-itens">
-
-                {destaques.map(item => 
-                    <BoxProduto 
-                        key={item.id}
-                        info={item} />
-                )}
-
-            </div>
-
-            <div className="paginacao">
-                <PageChange 
-                    totalPaginas={totalPaginas}
-                    pagina={pagina}   
-                    onPageChange={irPara}
-                />
-            </div>
-
-
-
             <div className="nm-box">Bolos</div>
             <div className="box-itens">
-                {bolos.map(item => 
+                {loadingProducts && <Loader />}
+
+                {!loadingProducts && 
+                bolos.map(item => 
                     <BoxProduto 
                         key={item.id}
                         info={item} />
@@ -116,7 +112,10 @@ export default function Destaque() {
 
             <div className="nm-box">Cupcakes</div>
             <div className="box-itens">
-                {cupcakes.map(item => 
+                {loadingProducts && <Loader />}
+            
+                {!loadingProducts &&
+                cupcakes.map(item => 
                     <BoxProduto 
                         key={item.id}
                         info={item} />
@@ -135,7 +134,10 @@ export default function Destaque() {
 
             <div className="nm-box">Trufas</div>
             <div className="box-itens">
-                {trufas.map(item => 
+                {loadingProducts && <Loader />}
+
+                {!loadingProducts &&
+                trufas.map(item => 
                     <BoxProduto 
                         key={item.id}
                         info={item} />
@@ -150,6 +152,29 @@ export default function Destaque() {
                 />
             </div>
 
+
+            <div className="nm-box">Diversos</div>
+
+            <div className="box-itens">
+
+                {loadingProducts && <Loader />}
+
+                {!loadingProducts && 
+                diversos.map(item => 
+                    <BoxProduto 
+                        key={item.id}
+                        info={item} />
+                )}
+
+            </div>
+
+            <div className="paginacao">
+                <PageChange 
+                    totalPaginas={totalPaginas}
+                    pagina={pagina}   
+                    onPageChange={irPara}
+                />
+            </div>
         </div>
 
         <Rodape />

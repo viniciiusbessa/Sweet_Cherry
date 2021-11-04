@@ -19,16 +19,23 @@ export default function Login() {
     const [email, setEmail] = useState('');
     const [senha, setSenha] = useState('');
 
+
     const logar = async () => {
         let r = await api.login(email, senha)
         if (r.erro) {
             toast.error(`${r.erro}`)
 
         } else {
-           // Cookies.set('usuario-logado', JSON.stringify(r));
+            // Cookies.set('usuario-logado', JSON.stringify(r));
             navigation.push('/')
         }
     }
+
+    // let logado = Cookies.get('usuario-logado')
+    // if (logado !== null) {
+    //     navigation.push('/')
+    // }
+
 
     const cadastro = async () => {
         navigation.push('/cadastro')
@@ -65,12 +72,12 @@ export default function Login() {
                 <div className="inputs-entrarbv">
                     <div className="box-input-email">
                         <img src="../../assets/images/img-email-login.svg" alt="" />
-                        <input className="input-email" type="text" placeholder="e-mail" value={email} onChange={e => setEmail(e.target.value)} />
+                        <input className="input-email" type="text" placeholder="E-mail" value={email} onChange={e => setEmail(e.target.value)} />
                     </div>
 
                     <div className="box-input-senha">
                         <img src="../../assets/images/img-senha-login.svg" alt="" />
-                        <input className="input-senha" type="password" placeholder="password" id="senha" value={senha} onChange={e => setSenha(e.target.value)} />
+                        <input className="input-senha" type="password" placeholder="Senha" id="senha" value={senha} onChange={e => setSenha(e.target.value)} />
                         <div className="eye" onClick={mostrarOcultarSenha}><img src="/assets/images/eyeIcon.svg" alt="" /></div>
                     </div>
                     
@@ -80,7 +87,7 @@ export default function Login() {
                     <div className="esqueceu-senha" onClick={forgotPass}>Esqueceu a senha?</div>
                     <div className="botoes-um">
                         <button onClick={logar} className="bt-entrar"> Entrar </button>
-                        <button onClick={cadastro} className="bt-criar"> Criar </button>
+                        <button onClick={cadastro} className="bt-criar"> Criar Conta</button>
                     </div>
 
                     <button onClick={loginAdm} className="conta-adm"> Entrar/Conta Administrativa </button>

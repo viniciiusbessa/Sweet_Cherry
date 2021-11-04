@@ -28,15 +28,20 @@ export default class Api {
 
 
     async listarProdutosCategoria(categoria) {
-        let r = await api.get('/produtos?categoria='+categoria);
+        let r = await api.get('/produto/cate?categoria=' + categoria);
         return [...r.data];
     }
-    
+
+    async buscarProdutos(produto) {
+        let r = await api.get('/produto/busca?search=' + produto);
+        return [...r.data];
+    }
+
         // TESTANDO
-            async listarPaginacao() {
-                let r = await api.get('/v3/produtos');
-                return [...r.data.items], r.data;
-            }
+           async listarPaginacao(paginacao) {
+               let r = await api.get('/produto/v3?categoria=&page=' + paginacao);
+               return [...r.data.items], [r.data.totalPaginas];
+           }
         // TESTANDO
 
 
@@ -53,12 +58,36 @@ export default class Api {
     }
 
     async login (email, senha) {
-        let r = await api.post('/login', { email, senha })
+        let r = await api.post('/cliente/login', { email, senha })
         return r.data;
     }
 
     async cadastrar (nome, email, senha) {
-        let r = await api.post('/cadastro', { nome, email, senha })
+        let r = await api.post('/cliente/cadastro', { nome, email, senha })
+        return r.data;
+    }
+
+
+
+    // Recuperação de Senha
+
+    async esqueciASenha (email) {
+        let r = await api.post('/recuperarsenha/esqueciasenha', { email: email })
+        return r.data;
+    }
+
+    async validarCodigo (email, codigo) {
+        let r = await api.post('/recuperarsenha/validarcodigo', { 
+            email: email, 
+            codigo: codigo })
+        return r.data;
+    }
+
+    async resetarSenha (email, codigo, novaSenha) {
+        let r = await api.put('/recuperarsenha/resetsenha', { 
+            email: email, 
+            codigo: codigo, 
+            novaSenha: novaSenha })
         return r.data;
     }
 

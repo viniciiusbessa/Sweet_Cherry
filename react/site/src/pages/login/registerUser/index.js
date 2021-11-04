@@ -23,8 +23,7 @@ export default function Cadastro() {
             toast.error(`${r.erro}`)
 
         } else {
-            // Cookies.set('usuario-logado', JSON.stringify(r));
-            navigation.push('/')
+            navigation.push('/login')
         }
     }
 
@@ -32,6 +31,15 @@ export default function Cadastro() {
 
     const voltar = async () => {
         navigation.push('/login')
+    }
+
+    function mostrarOcultarSenha(){
+        var senha = document.getElementById("senha");
+        if(senha.type === "password"){
+            senha.type = "text";
+        } else {
+            senha.type = "password";
+        }
     }
 
     return (
@@ -48,28 +56,24 @@ export default function Cadastro() {
                 <div className="inputs-entrarbv">
                     <div className="box-input-nome">
                         <img src="../../assets/images/nomecompleto-cadastro.svg" alt="" />
-                        <input className="input-cadastro" type="text" placeholder="nome completo" 
+                        <input className="input-cadastro" type="text" placeholder="Nome completo" 
                         value={nome} 
                         onChange={e => setNome(e.target.value)} />
                     </div>
 
-                    <div className="box-input-usuario">
-                        <img src="../../assets/images/username-cadastro.svg" alt="" />
-                        <input className="input-cadastro" type="text" placeholder="username" />
-                    </div>
-
                     <div className="box-input-email">
                         <img src="../../assets/images/email-cadastro.svg" alt="" />
-                        <input className="input-cadastro" type="text" placeholder="e-mail" 
+                        <input className="input-cadastro" type="text" placeholder="E-mail"
                         value={email} 
                         onChange={e => setEmail(e.target.value)} />
                     </div>
 
                     <div className="box-input-senha">
                         <img src="../../assets/images/password-cadastro.svg" alt="" />
-                        <input className="input-cadastro" type="password" placeholder="password" 
+                        <input className="input-cadastro" type="password" placeholder="Senha" id="senha"
                         value={senha} 
                         onChange={e => setSenha(e.target.value)} />
+                        <div className="eye" onClick={mostrarOcultarSenha}><img src="/assets/images/eyeIconWhite.svg" alt="" /></div>
                     </div>
                 </div>
 

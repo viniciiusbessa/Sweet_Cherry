@@ -1,21 +1,38 @@
 import { ContainerBoxProduto } from "./styled";
 
 import { Link, useHistory } from 'react-router-dom'
+import Cookies from "js-cookie";
+import { useState } from "react";
 
 
 export default function BoxProduto (props){
     const navigation = useHistory();
+    const [product, setProduct] = useState([]);
+    
     
     const compra = async () => {
         navigation.push('/compra')
     }
 
-    const carrinho = async () => {
-        navigation.push('/carrinho')
-    }
+    // const carrinho = async () => {
+    //     navigation.push('/carrinho')
+    // }
 
     const favoritos = async () => {
         navigation.push('/favoritos')
+    }
+
+    function cartItem(){
+        let carrinho = Cookies.get('carrinho');
+        carrinho = carrinho !== undefined 
+                    ? JSON.parse(carrinho) 
+                    : [];
+         
+         if (carrinho.some(item => item.id === product.id) === false)
+             carrinho.push({...product, qtd: 1 });
+
+         Cookies.set('carrinho', JSON.stringify(carrinho));
+         navigation.push('/carrinho');
     }
 
 
@@ -31,7 +48,7 @@ export default function BoxProduto (props){
 
                         <div className="preco"> R$ {props.info.preco}</div>
                         <div className="icones">
-                            <div className="icone-carrinho" onClick={carrinho}><img src="/assets/images/carrinho.svg" alt=""/></div>
+                            <div className="icone-carrinho" onClick={cartItem}><img src="/assets/images/carrinho.svg" alt=""/></div>
                             <div className="icone-coracao" onClick={favoritos}><img src="/assets/images/coracao-favoritos-compra.svg" alt=""/></div>
                         </div>
                         </div>

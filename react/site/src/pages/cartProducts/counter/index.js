@@ -9,10 +9,8 @@ const ContainerCounter = styled.div`
         margin-right: 3em;
 
         border-radius: 20px;
-        background-color: #D1EAF5;
         
         & > * {
-            background-color: #D1EAF5;
             user-select: none;
         }
     }
@@ -20,15 +18,12 @@ const ContainerCounter = styled.div`
     .menos {
         cursor: pointer;
         border-radius: 25px;
-
-        font-size: 1.7em;
-
+        font-size: 1.3em;
         padding-left: 0.4em;
     }
 
     .quantidade {
-        font-size: 1.7em;
-        
+        font-size: 1.3em;
         padding: 0em 0.5em;
     }
 
@@ -36,7 +31,7 @@ const ContainerCounter = styled.div`
         cursor: pointer;
         border-radius: 25px;
 
-        font-size: 1.7em;
+        font-size: 1.3em;
 
         padding-right: 0.4em;
     }
@@ -56,16 +51,20 @@ export default function Counter(props){
     const [qtd, seQtd] = useState(props.value)
 
     function increment() {
-        if (qtd >= 10)
+        if (qtd >= 30)
             return;
         seQtd(qtd+1);
     }
 
     function decrement() {
-        if (qtd === 0)
+        if (qtd === 1)
             return;
         seQtd(qtd-1)
     }
+
+    useEffect(() => {
+        props.onChange(qtd);
+      }, [qtd])
 
 
     return(

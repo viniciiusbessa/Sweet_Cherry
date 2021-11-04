@@ -7,7 +7,6 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 import LoadingBar from 'react-top-loading-bar'
-import confirmAlert from 'react-confirm-alert';
 
 import React, { useRef, useState } from 'react'
 
@@ -32,19 +31,20 @@ export default function Perfil() {
     const [senha, setSenha] = useState('')
     const [idAlterando, setidAlterando] = useState(0);
 
+    
     const logoff = () => {
-        Cookies.remove('usuario-logado')
-        navigation.push('/')
+        // Cookies.remove('usuario-logado')
+        // navigation.push('/login')
     }
 
-    async function inserirDados() {
-        let r = await api.inserirCliente( endereco, nome, cpf, nascimento, telefone, email, senha )
-        if (r.erro) {
-            toast.error(`❌ ${r.erro}`)
-        } else {
-            toast.dark('✔️ Cliente inserido com sucesso')
-        }
-    }
+    // async function inserirDados() {
+    //     let r = await api.inserirCliente( endereco, nome, cpf, nascimento, telefone, email, senha )
+    //     if (r.erro) {
+    //         toast.error(`❌ ${r.erro}`)
+    //     } else {
+    //         toast.dark('✔️ Cliente inserido com sucesso')
+    //     }
+    // }
 
     async function alterando(item) {
         setEndereco(item.id_endereco);
@@ -110,7 +110,7 @@ export default function Perfil() {
         <div className="conteudo-perfil">
 
             <div className="info-pessoal-perfil">
-                <div className="nome-pessoa-perfil">Olá Fulano</div>
+                <div className="nome-pessoa-perfil">Olá {nome.nm_cliente}</div>
 
                 <div className="box-dados-conta-perfil">
                     <div className="dados-conta-perfil">Dados da conta</div>
@@ -118,7 +118,7 @@ export default function Perfil() {
                         <img src="../../assets/images/asterisco-perfil.png" alt="" />
                         <div className="email">E-mail:</div>
                     </div>
-                    <input className="input-email" value={email} onChange={e => setEmail(e.target.value)} />
+                    <input className="input-email" value={email.ds_email} onChange={e => setEmail(e.target.value)} />
 
                     <div className="box-infos">
                         <img src="../../assets/images/asterisco-perfil.png" alt="" />
@@ -179,7 +179,7 @@ export default function Perfil() {
                     <img src="../../assets/images/Lixeira-perfil.svg" alt="" />
                 </div>
 
-                <div className="btn-salvar"><button onClick={inserirDados}>Salvar</button></div>
+                <div className="btn-salvar"><button>Salvar</button></div>
             </div>
 
             <div className="info-pedidos">

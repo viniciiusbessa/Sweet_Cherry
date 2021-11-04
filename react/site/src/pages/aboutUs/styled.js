@@ -23,9 +23,15 @@ const ContainerSobreNos = styled.div`
         .texto p {
             display: flex;
             justify-content: center;
+
             text-align: center;
+
             font-size: 1.5em;
-            font-family: Pacifico;
+            font-family: Patua one;
+
+            padding: 0em 2.3em;
+
+            line-height: 1.5em;
         }
 
         .texto {
@@ -44,9 +50,7 @@ const ContainerSobreNos = styled.div`
             height: 50vh;
 
             margin: 1em;
-            border: solid;
-            border-color: #FF8AB5;
-            border-width: 10px;
+            border: 5px solid #FF8AB5;
         }
 `
 

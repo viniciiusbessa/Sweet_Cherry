@@ -31,6 +31,10 @@ min-height: calc(124vh - 220px);
     margin-top: 2em;
 }
 
+.box-input-email {
+    position: relative;
+}
+
 .box-input-email img {
     width: 25px;
     height: auto;
@@ -79,6 +83,17 @@ input:focus {
 button:hover {
     background-color: #E8F7FE;
     transition: all 0.5s;
+}
+
+.eye {
+    position: absolute;
+    top: 1em;
+    left: 15em;
+}
+
+.eye img {
+    width: 2.5em;
+    cursor: pointer;
 }
 `
 export {ContainerNewPassword}

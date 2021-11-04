@@ -80,25 +80,30 @@ const ContainerLogin = styled.div`
     .input-email, .input-senha {
         font-size: 17px;
         font-family: Patua One;
-        color: #c4c4c4;
+        color: #b3b1b1;
+
         border-top: none;
         border-left: none;
         border-right: none;
         border-bottom: 2.5px solid #C4C4C4;
+
         cursor: text;
+
         padding: 1.5em 0.5em 0.3em 2em;
+
         width: 280px;
     }
 
     .eye {
-    position: absolute;
-    top: 1em;
-    left: 15em;
-    cursor: pointer;
+        position: absolute;
+        top: 1em;
+        left: 15em;
     }
 
     .eye img {
         width: 2.5em;
+
+        cursor: pointer;
     }
 
     .input-email::placeholder, .input-senha::placeholder {
@@ -138,7 +143,7 @@ const ContainerLogin = styled.div`
         border: none;
         border-radius: 12px;
 
-        padding: 0.3em 1.8em;
+        padding: 0.3em 1.4em;
     }
 
     .bt-criar {
@@ -150,7 +155,7 @@ const ContainerLogin = styled.div`
         border: none;
         border-radius: 12px;
 
-        padding: 0.3em 1.8em;
+        padding: 0.3em 1.4em;
     }
 
     .conta-adm {
@@ -171,6 +176,7 @@ const ContainerLogin = styled.div`
         cursor: pointer;
         transition: 0.5s;
     }
+
 `
 
 export { ContainerLogin }

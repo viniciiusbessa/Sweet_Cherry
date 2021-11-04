@@ -14,15 +14,12 @@ const ContainerCompra = styled.div`
     .container-conteudo{
         display: flex;
         flex-direction: column;
-        justify-content: space-evenly;
-
         padding: 4em 11em;
     }
 
     .container-compra {
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
     }
 
     .compra1-box1{
@@ -90,48 +87,11 @@ const ContainerCompra = styled.div`
     .botoes-box1{
         display: flex;
         flex-direction: row;
-        width: 30em;
         justify-content: space-between;
-        margin-bottom: 1em;
-    }
 
-    .box-qtd {
-        display: flex;
-        flex-direction: row;
+        width: 30em;
 
-        margin-right: 3em;
-
-        border-radius: 20px;
-        background-color: #D1EAF5;
-        
-        & > * {
-            background-color: #D1EAF5;
-            user-select: none;
-        }
-    }
-
-    .menos {
-        cursor: pointer;
-        border-radius: 25px;
-
-        font-size: 1.7em;
-
-        padding-left: 0.4em;
-    }
-
-    .quantidade {
-        font-size: 1.7em;
-        
-        padding: 0em 0.5em;
-    }
-
-    .mais {
-        cursor: pointer;
-        border-radius: 25px;
-
-        font-size: 1.7em;
-
-        padding-right: 0.4em;
+        margin-bottom: 1.5em;
     }
 
 
@@ -150,7 +110,7 @@ const ContainerCompra = styled.div`
         font-family: Pacifico;
         font-size: 24px;
 
-        padding: 0.3em 3.5em 0.3em 0.7em;
+        padding: 0.3em 0.7em 0.3em 0.7em;
     }
 
     .Add-carrinho-bt img {
@@ -158,7 +118,7 @@ const ContainerCompra = styled.div`
         height: auto;
 
         margin-bottom: -0.1em;
-        margin-right: 1em;
+        margin-right: 0.7em;
     }
 
     .Add-carrinho-bt:hover {
@@ -173,7 +133,7 @@ const ContainerCompra = styled.div`
     .botoes-box2{
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: flex-end;
 
         margin-bottom: 1.5em;
     }
@@ -186,8 +146,6 @@ const ContainerCompra = styled.div`
 
         border: none;
         border-radius: 10px;
-        
-        margin-right: 1em;
     }
 
     .Add-favoritos-bt:hover {
@@ -212,7 +170,7 @@ const ContainerCompra = styled.div`
         border-radius: 10px;
         border: none;
 
-        padding: 0.2em 0.5em;
+        padding: 0.2em 0.7em;
     }
 
     .Confirm-compra1:hover {
@@ -271,12 +229,10 @@ const ContainerCompra = styled.div`
 
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
-        cursor: text;
-
     }
 
     .calcular-input:focus {
-        box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
         transition: 0.3s;
     }
@@ -333,6 +289,16 @@ const ContainerCompra = styled.div`
     .cartao4 img {
         width: 5em;
         height: auto;
+    }
+
+    .compra1-box3 {
+        margin-left: 10em;
+    }
+
+    .titulo-slide {
+        font-size: 23px;
+        color: #c4c4c4;
+        margin: 0em 0em .5em 1em;
     }
 `
 

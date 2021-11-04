@@ -13,6 +13,15 @@ export default function LoginAdm() {
         navigation.push('/login')
     }
 
+    function mostrarOcultarSenha(){
+        var senha = document.getElementById("senha");
+        if(senha.type === "password"){
+            senha.type = "text";
+        } else {
+            senha.type = "password";
+        }
+    }
+
     return (
         <ContainerLoginAdm>
             <div className="cabecalho-entrar-bem-vindo">
@@ -27,17 +36,18 @@ export default function LoginAdm() {
                 <div className="inputs-entrarbv">
                     <div className="box-input-email">
                         <img src="../../assets/images/img-email-login.svg" alt="" />
-                        <input className="input-email" type="text" placeholder="e-mail" />
+                        <input className="input-email" type="text" placeholder="E-mail" />
                     </div>
 
                     <div className="box-input-senha">
                         <img src="../../assets/images/img-senha-login.svg" alt="" />
-                        <input className="input-senha" type="password" placeholder="password" />
+                        <input className="input-senha" type="password" placeholder="Senha" id="senha"/>
+                         <div className="eye" onClick={mostrarOcultarSenha}><img src="/assets/images/eyeIcon.svg" alt="" /></div> 
                     </div>
 
                     <div className="box-input-usuario">
                         <img src="../../assets/images/login-usuario-adm.svg" alt="" />
-                        <input className="input-senha" type="text" placeholder="id_usuario" />
+                        <input className="input-senha" type="text" placeholder="Código do usuário" />
                     </div>
                     
                 </div>
