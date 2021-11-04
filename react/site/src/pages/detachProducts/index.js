@@ -20,6 +20,8 @@ export default function Destaque() {
     const [diversos, setDiversos] = useState([]);
     const [trufas, setTrufas] = useState([]);
     const [cupcakes, setCupcakes] = useState([]);
+    const [product, setProduct] = useState([]);
+    console.log(product);
 
     const [pagina, setPagina] = useState(1);
     const [totalPaginas, setTotalPaginas] = useState(0);
@@ -65,13 +67,24 @@ export default function Destaque() {
     }, [pagina])
     
 
+    const buscarProduto = async (event) => {
+        loading.current.continuousStart();
+
+        let r = await api.buscarProdutos();
+        setProduct(r);
+
+        loading.current.complete();
+    }
+
     return (
     <ContainerDestaque>
         <Cabecalho />
         <LoadingBar color="#A4BCFF" ref={loading}/>
         <div className="conteudo">
             <div className="buscar">
-                <input type="text" id="txtBusca" className="busca" value={busca} onChange={(ev) => setBusca(ev.target.value)}/>
+                <input type="text" id="txtBusca" className="busca" onChange={(event) => buscarProduto(event)}/>
+                {/* value={product} onChange={(ev) => setProduct(ev.target.value)}*/}
+                {/*onChange={(event) => buscarProduto(event)}*/}
                 <img src="../../assets/images/ferramenta-lupa 7.png" alt="" />
             </div>
 

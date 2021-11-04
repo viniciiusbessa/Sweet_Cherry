@@ -1,5 +1,6 @@
 
 import styled from "styled-components";
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 
 const ContainerInicial = styled.div`
   
@@ -168,7 +169,6 @@ const BoxEmAlta = styled.div`
 
 
     }
-
 `
 
 export {ContainerInicial, BoxSlide, BoxEmAlta}
