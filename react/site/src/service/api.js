@@ -32,6 +32,11 @@ export default class Api {
         return [...r.data];
     }
 
+    async buscarProdutos(produto) {
+        let r = await api.get('/produto/busca?search=' + produto);
+        return [...r.data];
+    }
+
         // TESTANDO
         //    async listarPaginacao(paginacao) {
         //        let r = await api.get('/produto/v3?categoria=&page=' + paginacao);

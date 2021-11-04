@@ -5,11 +5,13 @@ import '@splidejs/splide/dist/css/splide.min.css';
 
 import LoadingBar from 'react-top-loading-bar';
 
+// import LoaderSpinner from 'react-loader-spinner';
+
 import { useHistory } from "react-router";
 
 import Rodape from "../../components/commum/footer";
 import Cabecalho from "../../components/commum/header";
-import  BoxNews  from "./box-news/index";
+import BoxNews  from "./box-news/index";
 import BoxProduto from "../../components/product/cardProduct";
 
 import { BoxSlide } from "./styled";
@@ -22,7 +24,6 @@ import Cookies from 'js-cookie'
 
 import Api from '../../service/api'
 const api = new Api();
-
 
 export default function Inicial () {
     const navigation = useHistory();
@@ -72,6 +73,15 @@ export default function Inicial () {
 
         <ContainerInicial>
             <Cabecalho/>
+            {/* <div className="loader" style={{display: 'flex', justifyContent: 'center'}}>
+            <LoaderSpinner
+                type="TailSpin"
+                color="#ADD8E6"
+                height={100}
+                width={100}
+                timeout={3000} //3 secs
+            />
+            </div> */}
             <LoadingBar color="#A4BCFF" ref={loading}/>
            
             <div className="F1_home">
