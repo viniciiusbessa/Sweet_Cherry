@@ -22,7 +22,7 @@ export default function Destaque() {
     const [cupcakes, setCupcakes] = useState([]);
 
     const [pagina, setPagina] = useState(1);
-    const [totalPaginas, setTotalPaginas] = useState(0);
+    const [totalPaginas] = useState(0);
 
     const [loadingProducts, setLoadingProducts] = useState(true)
     

@@ -4,9 +4,6 @@ import { ContainerAdmProduto } from './styled'
 import { useHistory } from 'react-router-dom'
 
 
-import Api from '../../../service/api'
-const api = new Api();
-
 export default function AdministrarProdutos() {
     const navigation = useHistory();
 

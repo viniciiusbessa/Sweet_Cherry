@@ -6,8 +6,6 @@ import { useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-import Cookies from 'js-cookie'
-
 import Api from '../../../service/api'
 const api = new Api();
 

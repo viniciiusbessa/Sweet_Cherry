@@ -33,10 +33,10 @@ export default class Api {
     }
 
         // TESTANDO
-           async listarPaginacao(paginacao) {
-               let r = await api.get('/produto/v3?categoria=&page=' + paginacao);
-               return [...r.data.items], [r.data.totalPaginas];
-           }
+        //    async listarPaginacao(paginacao) {
+        //        let r = await api.get('/produto/v3?categoria=&page=' + paginacao);
+        //        return [...r.data.items], [r.data.totalPaginas];
+        //    }
         // TESTANDO
 
 
