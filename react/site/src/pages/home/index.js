@@ -11,7 +11,7 @@ import { useHistory } from "react-router";
 
 import Rodape from "../../components/commum/footer";
 import Cabecalho from "../../components/commum/header";
-import  BoxNews  from "./box-news/index";
+import BoxNews  from "./box-news/index";
 import BoxProduto from "../../components/product/cardProduct";
 
 import { BoxSlide } from "./styled";
