@@ -7,12 +7,8 @@ import { useState } from "react";
 
 export default function BoxProduto (props){
     const navigation = useHistory();
-<<<<<<< HEAD
-    const [product] = useState([]);
-=======
-    const [product, setProduct] = useState(props.info);
->>>>>>> 558c43281654455cf705e784c6d09479715b4908
     
+    const [product] = useState(props.info);
     
     const compra = async () => {
         navigation.push('/compra')
