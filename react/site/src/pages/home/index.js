@@ -26,6 +26,8 @@ import Api from '../../service/api'
 const api = new Api();
 
 export default function Inicial () {
+    const navigation = useHistory();
+
     const [novidades, setNovidades] = useState([]);
     const [diversos, setDiversos] = useState([]);
     const [emAlta, setEmAlta] = useState([]);
@@ -52,8 +54,6 @@ export default function Inicial () {
 
         loading.current.complete()
     }
-
-    const navigation = useHistory();
 
     const categorias = async () => {
         navigation.push('/destaque')

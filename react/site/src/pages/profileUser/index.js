@@ -3,25 +3,17 @@ import Rodape from '../../components/commum/footer/index'
 import { ContainerPerfil } from './styled'
 
 
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-
 import LoadingBar from 'react-top-loading-bar'
 
 import React, { useRef, useState } from 'react'
 
 import { useHistory } from 'react-router-dom'
 
-import Cookies from 'js-cookie'
 
-
-import Api from '../../service/api'
-const api = new Api();
 
 export default function Perfil() {
     const navigation = useHistory();
 
-    const [dadosClientes, setDadosClientes] = useState([]);
     const [endereco, setEndereco] = useState('')
     const [nome, setNome] = useState('')
     const [cpf, setCpf] = useState('')
@@ -29,7 +21,6 @@ export default function Perfil() {
     const [telefone, setTelefone] = useState('')
     const [email, setEmail] = useState('')
     const [senha, setSenha] = useState('')
-    const [idAlterando, setidAlterando] = useState(0);
 
     
     const logoff = () => {
@@ -46,16 +37,16 @@ export default function Perfil() {
     //     }
     // }
 
-    async function alterando(item) {
-        setEndereco(item.id_endereco);
-        setNome(item.nm_cliente);
-        setCpf(item.ds_cpf);
-        setNascimento(item.dt_nascimento);
-        setTelefone(item.nr_telefone);
-        setEmail(item.ds_email);
-        setSenha(item.ds_senha);
-        setidAlterando(item.id_cliente);
-    }
+    // async function alterando(item) {
+    //     setEndereco(item.id_endereco);
+    //     setNome(item.nm_cliente);
+    //     setCpf(item.ds_cpf);
+    //     setNascimento(item.dt_nascimento);
+    //     setTelefone(item.nr_telefone);
+    //     setEmail(item.ds_email);
+    //     setSenha(item.ds_senha);
+    //     setidAlterando(item.id_cliente);
+    // }
 
 
     const verItens = async () => {
@@ -105,7 +96,6 @@ export default function Perfil() {
     return (
     <ContainerPerfil>
         <LoadingBar color='white' ref={loading}/>
-        <ToastContainer />
         <Cabecalho />
         <div className="conteudo-perfil">
 

@@ -24,7 +24,7 @@ export default function Compra(props) {
 
     const loading = useRef(null);
 
-    const [product, setProduct] = useState(props.location.state);
+    const [product] = useState(props.location.state);
     const [products, setProducts] = useState([]);
 
     

@@ -24,7 +24,7 @@ export default function Destaque() {
     console.log(product);
 
     const [pagina, setPagina] = useState(1);
-    const [totalPaginas, setTotalPaginas] = useState(0);
+    const [totalPaginas] = useState(0);
 
     const [loadingProducts, setLoadingProducts] = useState(true)
     
