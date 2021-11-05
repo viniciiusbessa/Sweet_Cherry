@@ -9,8 +9,6 @@ import { InputAdm, TextAreaAdm } from '../../../components/styled/inputsAdm'
 
 import { useHistory } from 'react-router-dom'
 
-import LoadingBar from 'react-top-loading-bar';
-
 
 import Api from '../../../service/api'
 const api = new Api();
@@ -28,9 +26,6 @@ export default function AdicionarProduto(props) {
     const loading = useRef(null);
 
     const navigation = useHistory();
-
-    loading.current.complete()
-
 
     useEffect(() => {
         const produtoInfo = props.location.state;
@@ -94,7 +89,6 @@ export default function AdicionarProduto(props) {
     return (
     <ContainerAddProduto>
     <ToastContainer />
-    <LoadingBar color= "#A4BCFF" ref={loading}/>
 
         <div className="fundo-rodape-add">
             <div className="container-fundo-add">
