@@ -18,13 +18,13 @@ const api = new Api();
 export default function TableProduct() {
     
     const [produtos, setProdutos] = useState([]);
-    const [produto, setProduto] = useState('')
-    const [preco, setPreco] = useState('')
-    const [categoria, setCategoria] = useState('')
-    const [descricao, setDescricao] = useState('')
-    const [avaliacao, setAvaliacao] = useState('')
-    const [imagem, setImagem] = useState('')
-    const [idAlterando, setidAlterando] = useState(0);
+    const [/* produto */, setProduto] = useState('')
+    const [/* preco */, setPreco] = useState('')
+    const [/* categoria */, setCategoria] = useState('')
+    const [/* descricao */, setDescricao] = useState('')
+    const [/* avaliacao */, setAvaliacao] = useState('')
+    const [/* imagem */, setImagem] = useState('')
+    const [/* idAlterando */, setidAlterando] = useState(0);
     
     const loading = useRef(null);
 
