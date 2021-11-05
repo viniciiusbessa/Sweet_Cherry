@@ -80,5 +80,20 @@ const ContainerForgotPass = styled.div`
         background-color: #E8F7FE;
         transition: all 0.5s;
     }
+
+    .bt-voltar {
+        font-family: Patua One;
+        font-size: 17px;
+        color: #140018;
+        background-color: #D1EAF5;
+        border-radius: 39px;
+        margin-top: 1em;
+        padding: 0.3em 1.8em;
+        width: 8em;
+        height: 2em;
+        cursor: pointer;
+        border: 1px solid #D1EAF5;
+    }
+
 `
 export{ContainerForgotPass}

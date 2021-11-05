@@ -27,6 +27,10 @@ export default function ForgotPass(){
         }
     }
 
+    const voltar = async () => {
+        navigation.push('/login')
+    }
+
     return(
         <ContainerForgotPass>
             <ToastContainer />
@@ -41,6 +45,7 @@ export default function ForgotPass(){
                     </div>
 
                     <button className="bt-redefinir" onClick={resetPass}> Redefinir senha </button>
+                    <button onClick={voltar} className="bt-voltar"> Voltar </button>
             </div>
         </ContainerForgotPass>
     )

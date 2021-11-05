@@ -177,6 +177,12 @@ const ContainerLogin = styled.div`
         transition: 0.5s;
     }
 
+    .seta-sair {
+        position: absolute;
+        left: 3em;
+        top: 3em;
+        cursor: pointer;
+    }
 `
 
 export { ContainerLogin }

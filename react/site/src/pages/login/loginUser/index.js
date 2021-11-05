@@ -9,6 +9,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 import Api from '../../../service/api'
+import Inicial from '../../home';
 const api = new Api();
 
 export default function Login() {
@@ -47,6 +48,10 @@ export default function Login() {
         navigation.push('/forgot')
     }
 
+    const voltar = async() => {
+        navigation.push('/')
+    }
+
     function mostrarOcultarSenha(){
         var senha = document.getElementById("senha");
         if(senha.type === "password"){
@@ -60,6 +65,7 @@ export default function Login() {
         <ContainerLogin>
             <ToastContainer />
             <div className="cabecalho-entrar-bem-vindo">
+                <img className="seta-sair" src="/assets/images/para-tras (1).svg" onClick={voltar}/>
                 <div className="bemvindo-titulo">Bem-vindo(a)</div>
             </div>
 
