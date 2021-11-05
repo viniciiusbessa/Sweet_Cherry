@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from 'react'
+import { useEffect, useState } from 'react'
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -8,8 +8,6 @@ import { ContainerAddProduto } from './styled'
 import { InputAdm, TextAreaAdm } from '../../../components/styled/inputsAdm'
 
 import { useHistory } from 'react-router-dom'
-
-import LoadingBar from 'react-top-loading-bar';
 
 
 import Api from '../../../service/api'
@@ -25,12 +23,8 @@ export default function AdicionarProduto(props) {
     const [estoque, setEstoque] = useState('')
     const [imagem, setImagem] = useState('')
     const [idAlterando, setidAlterando] = useState(0);
-    const loading = useRef(null);
 
     const navigation = useHistory();
-
-    loading.current.complete()
-
 
     useEffect(() => {
         const produtoInfo = props.location.state;
@@ -94,7 +88,6 @@ export default function AdicionarProduto(props) {
     return (
     <ContainerAddProduto>
     <ToastContainer />
-    <LoadingBar color= "#A4BCFF" ref={loading}/>
 
         <div className="fundo-rodape-add">
             <div className="container-fundo-add">
