@@ -44,6 +44,7 @@ export default function AdicionarProduto(props) {
             setImagem(produtoInfo.imagem);
             setidAlterando(produtoInfo.id);   
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
 

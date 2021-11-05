@@ -64,6 +64,7 @@ export default function Counter(props){
 
     useEffect(() => {
         props.onChange(qtd);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
       }, [qtd])
 
 
