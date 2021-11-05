@@ -98,7 +98,7 @@ export default function TableProduct() {
                 <tr>
                     <th>Nº</th>
                     <th>Nome</th>
-                    <th>Img</th>
+                    <th>Imagem</th>
                     <th>Preço</th>
                     <th>Categoria</th>
                     <th>Estoque</th>
