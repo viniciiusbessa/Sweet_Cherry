@@ -10,7 +10,7 @@ import Api from '../../../service/api'
 const api = new Api();
 
 export default function ResetPass(props) {
-    const [ email, setEmail ] = useState(props.location.state.email)
+    const [ email ] = useState(props.location.state.email)
     const [ codigo, setCodigo ] = useState('')
 
     const navigation = useHistory()

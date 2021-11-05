@@ -8,7 +8,7 @@ import { useState } from "react";
 
 export default function Favorites() {
 
-    const [produtos, setProdutos] = useState ([]);
+    const [produtos] = useState ([]);
 
     return (
         <ContainerFavoritos>

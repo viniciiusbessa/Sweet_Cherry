@@ -1,6 +1,6 @@
 import axios from 'axios'
 const api = axios.create({
-    baseURL: 'http://localhost:3030'
+    baseURL: 'https://sweet-cherry-api.herokuapp.com/'
 })
 
 export default class Api {
@@ -38,10 +38,10 @@ export default class Api {
     }
 
         // TESTANDO
-           async listarPaginacao(paginacao) {
-               let r = await api.get('/produto/v3?categoria=&page=' + paginacao);
-               return [...r.data.items], [r.data.totalPaginas];
-           }
+        //    async listarPaginacao(paginacao) {
+        //        let r = await api.get('/produto/v3?categoria=&page=' + paginacao);
+        //        return [...r.data.items], [r.data.totalPaginas];
+        //    }
         // TESTANDO
 
 

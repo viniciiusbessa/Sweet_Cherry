@@ -47,6 +47,10 @@ export default function CarrinhoProdutos() {
         Cookies.set('carrinho', JSON.stringify(products));
     }
 
+    const total = products.reduce(getTotal, 0);
+    function getTotal(total, item) {
+    return total + (item.preco * item.qtd);
+    }
 
     return(
         <CartProduct>
@@ -82,7 +86,7 @@ export default function CarrinhoProdutos() {
             </div>
 
             <div className="total">
-                <button className="botao-total">Total: R$53,90</button>
+                <button className="botao-total">Total: R$ {total}</button>
             </div>
 
             <div className="botoes">

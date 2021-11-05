@@ -11,8 +11,8 @@ const api = new Api();
 export default function NovaSenha(props) {
     const navigation = useHistory();
 
-    const [ email, setEmail ] = useState(props.location.state.email)
-    const [ codigo, setCodigo ] = useState(props.location.state.codigo)
+    const [ email ] = useState(props.location.state.email)
+    const [ codigo ] = useState(props.location.state.codigo)
     const [ senha, setSenha ] = useState('');
 
     const newPass = async () => {

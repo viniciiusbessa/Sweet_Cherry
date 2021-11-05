@@ -1,8 +1,6 @@
 import { BoxNovidades } from "./styledbox"
 import { useHistory } from "react-router";
 
-import { useState } from 'react'
-
 import BoxProduto from "../../../components/product/cardProduct";
 
 import { Splide, SplideSlide } from '@splidejs/react-splide';

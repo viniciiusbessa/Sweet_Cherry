@@ -2,8 +2,6 @@ import { useState } from "react"
 import Counter from "../counter";
 import { ContainerItem } from "./styled"
 
-import Cookies from "js-cookie";
-
 export default function CartItem(props) {
     const [products, setProducts] = useState(props.info)
 
