@@ -20,6 +20,8 @@ const ContainerCabecalho = styled.div`
 
     .logo1-perfil, .logo2-perfil {
         font-size: 35px;
+
+        cursor: pointer;
     }
 
     .logo2-perfil {

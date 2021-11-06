@@ -57,6 +57,8 @@ export default class Api {
         return r.data;
     }
 
+    // Cliente Login
+
     async login (email, senha) {
         let r = await api.post('/cliente/login', { email, senha })
         return r.data;
@@ -88,6 +90,15 @@ export default class Api {
             email: email, 
             codigo: codigo, 
             novaSenha: novaSenha })
+        return r.data;
+    }
+
+
+
+    // Login ADM
+
+    async loginAdm (email, senha) {
+        let r = await api.post('/adm/login', { email: email, senha: senha })
         return r.data;
     }
 
