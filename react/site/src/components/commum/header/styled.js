@@ -10,6 +10,9 @@ const ContainerCabecalho = styled.div`
 
     padding: 1.5em 0em 1em 0em;
 
+    cursor: pointer;
+    user-select: none;
+
     .logo-perfil {
         display: flex;
         flex-direction: column;
