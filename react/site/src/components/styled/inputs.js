@@ -9,6 +9,9 @@ const InputEntrar = styled.input`
     border-right: none;
     text-align: center;
     font-family: Patua-one;
+
+    cursor: pointer;
+    user-select: none;
 `
 
 export {InputEntrar}

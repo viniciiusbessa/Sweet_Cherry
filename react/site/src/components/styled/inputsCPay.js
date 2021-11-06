@@ -11,6 +11,9 @@ const InputPayment = styled.input`
     font-family: Patua one;
     box-shadow: 0 0 0 0;
     outline: 0;
+
+    cursor: pointer;
+    user-select: none;
 `
 
 export {InputPayment}

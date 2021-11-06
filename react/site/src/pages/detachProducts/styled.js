@@ -31,6 +31,7 @@ const ContainerDestaque = styled.div `
         margin-left: -3.5em;
 
         cursor: pointer;
+        user-select: none;
     }
 
     input {

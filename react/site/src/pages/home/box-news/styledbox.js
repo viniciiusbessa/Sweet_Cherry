@@ -72,6 +72,7 @@ const BoxNovidades = styled.div`
     border-radius: 50px;
 
     cursor: pointer;
+    user-select: none;
 
     font-family:  Pacifico;
     font-size: 20px;

@@ -17,6 +17,9 @@ const ContainerBoxProduto = styled.div`
         max-width: 15em;
         height: 11em;
         border-radius: 10px;
+
+        cursor: pointer;
+        user-select: none;
     }
     
     .nm-doce {
@@ -30,6 +33,9 @@ const ContainerBoxProduto = styled.div`
         display: flex;
         flex-direction: row;
         justify-content: space-around;
+
+        cursor: pointer;
+        user-select: none;
     }
     
     .icones {
@@ -63,6 +69,9 @@ const ContainerBoxProduto = styled.div`
     .button{
         display: flex;
         justify-content: center;
+
+        cursor: pointer;
+        user-select: none;
     }
     
     button {
@@ -72,7 +81,10 @@ const ContainerBoxProduto = styled.div`
         border-radius: 50px;
         width:  100px;
         height: 50px;
+
         cursor: pointer;
+        user-select: none;
+
         font-family: pacifico;
         margin-top: 1.5em;
     }

@@ -12,6 +12,9 @@ const ConteinerRodape = styled.div`
 
     font-size: 18px;
 
+    cursor: pointer;
+    user-select: none;
+
 .rodape {
     display: flex;
     flex-direction: row;
@@ -20,7 +23,6 @@ const ConteinerRodape = styled.div`
 
     margin: 30px 0px 20px 0px;
 }
-
 
 .TrabelheConosco, .atendimento, .redes{
     margin-top: 1em;
@@ -39,7 +41,6 @@ const ConteinerRodape = styled.div`
     padding-right: 12px;
    
 }
-
 .linha {
     margin-top: 15px;
 }
