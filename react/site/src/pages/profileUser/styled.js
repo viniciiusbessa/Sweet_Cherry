@@ -27,6 +27,9 @@ const ContainerPerfil = styled.div `
             display: flex;
             flex-direction: column;
             align-items: center;
+
+            cursor: pointer;
+            user-select: none;
         }
 
         .nome-pessoa-perfil {
@@ -42,6 +45,9 @@ const ContainerPerfil = styled.div `
 
             margin-left: 1.5em;
             margin-bottom: 0.5em;
+
+            cursor: pointer;
+            user-select: none;
         }
 
         .box-infos {
@@ -52,6 +58,9 @@ const ContainerPerfil = styled.div `
             font-size: 17px;
 
             margin-left: 1em;
+
+            cursor: pointer;
+            user-select: none;
         }
 
         .box-infos > div {
@@ -116,14 +125,23 @@ const ContainerPerfil = styled.div `
 
         .info-obrigatorio-data {
             width: 18em;
+
+            cursor: pointer;
+            user-select: none;
         }
 
         .info-obrigatorio-cpf {
             width: 11em;
+
+            cursor: pointer;
+            user-select: none;
         }
 
         .info-obrigatorio-telefone {
             width: 15em;
+
+            cursor: pointer;
+            user-select: none;
         }
 
         .formato {
@@ -132,6 +150,9 @@ const ContainerPerfil = styled.div `
             font-family: Patua One;
 
             margin: 0.3em 0em 0.5em 2.8em;
+
+            cursor: pointer;
+            user-select: none;
         }
 
         .box-logout {
@@ -146,6 +167,9 @@ const ContainerPerfil = styled.div `
             color: #FBE8FF;
 
             height: 2em;
+
+            cursor: pointer;
+            user-select: none;
         }
 
         .box-logout:hover {
@@ -175,6 +199,9 @@ const ContainerPerfil = styled.div `
             font-family: Patua One;
             font-size: 22px;
             color: #FF1A1A;
+
+            cursor: pointer;
+            user-select: none;
         }
 
         .box-excluir:hover {
@@ -204,6 +231,9 @@ const ContainerPerfil = styled.div `
 
             padding: 0.2em 1.8em;
             margin: 1.5em 0em 1em 13em;
+
+            cursor: pointer;
+            user-select: none;
         }
 
         .btn-salvar button:hover {
@@ -261,6 +291,12 @@ const ContainerPerfil = styled.div `
             font-size: 20px;
         }
 
+
+        .barra-pesquisa-adm2 {
+            cursor: pointer;
+            user-select: none;
+        }
+
         .barra-pesquisa-adm2 img {
             width: 1.8em;
             height: 1.8em;
@@ -269,12 +305,16 @@ const ContainerPerfil = styled.div `
             margin-left: -2.8em;
 
             cursor: pointer;
+            user-select: none;
         }
 
         .subtitulo-pedido {
             font-size: 23px;
             font-family: Patua One;
             color: #808080;
+
+            cursor: pointer;
+            user-select: none;
         }
 
         .box-pedido {
@@ -291,6 +331,9 @@ const ContainerPerfil = styled.div `
 
             font-size: 25px;
             color: #140018;
+
+            cursor: pointer;
+            user-select: none;
         }
 
         .img-pedidos {
@@ -309,6 +352,9 @@ const ContainerPerfil = styled.div `
 
             padding: 0.2em 1.8em;
             margin-top: 0.5em;
+
+            cursor: pointer;
+            user-select: none;
         }
 
         .btn-ver-itens button:hover {
@@ -329,6 +375,9 @@ const ContainerPerfil = styled.div `
 
             padding: 0.4em 1em;
             margin: 8em 0em 0em 13em;
+
+            cursor: pointer;
+            user-select: none;
         }
 
         .btn-cancelar-pedido button:hover {

@@ -22,6 +22,9 @@ const ContainerCompraFinalizada = styled.div`
             color: #000;
 
             height: 75vh;
+
+            cursor: pointer;
+            user-select: none;
       }
 
       .mensagem1-compra-finalizada {

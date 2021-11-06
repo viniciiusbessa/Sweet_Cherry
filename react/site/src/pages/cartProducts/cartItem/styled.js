@@ -5,6 +5,9 @@ const ContainerItem = styled.tr`
     border-radius: 50px;
     border-bottom: 2px solid #D1EAF5;
 
+    cursor: pointer;
+    user-select: none;
+
     .doce-carrinho {
         display: flex;
         flex-direction: row;

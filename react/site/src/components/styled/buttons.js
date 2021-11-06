@@ -8,6 +8,9 @@ const Botao = styled.button`
     border: none;
     padding-right: 25px;
     padding-left: 25px;
+
+    cursor: pointer;
+    user-select: none;
 `
 
 export {Botao}

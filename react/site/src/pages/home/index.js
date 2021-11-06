@@ -1,7 +1,7 @@
 import "animate.css";
 
-import { Splide, SplideSlide } from '@splidejs/react-splide';
-import '@splidejs/splide/dist/css/splide.min.css';
+/*import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";*/
 
 import LoadingBar from 'react-top-loading-bar';
 
@@ -41,6 +41,25 @@ export default function Inicial () {
         navigation.push('/login')
     }
 
+    /*const responsive = {
+        desktop: {
+          breakpoint: { max: 3000, min: 1024 },
+          items: 3,
+          slidesToSlide: 3 
+        },
+        tablet: {
+          breakpoint: { max: 1024, min: 464 },
+          items: 2,
+          slidesToSlide: 2 
+        },
+        mobile: {
+          breakpoint: { max: 464, min: 0 },
+          items: 1,
+          slidesToSlide: 1
+        }
+      };*/
+      
+
 
     async function listarCategoria() {
         loading.current.continuousStart();
@@ -68,6 +87,8 @@ export default function Inicial () {
     useEffect(() => {
         listarCategoria();
      }, [])
+
+     
 
     return(
 
@@ -99,23 +120,11 @@ export default function Inicial () {
                 <div className="Faixa3_inicio">
                     <div className="titulo">Diversos</div>
                     <div className="boxSlide">
-                        <Splide
-                            options={ {
-                                direction: 'ttb',
-                                height   : '35rem',
-                                wheel    : true,
-                                type   : 'loop',
-                                drag   : 'free',
-                                } }
-                            >
-                            <SplideSlide>
-                                {diversos.map(item => 
-                                    <BoxProduto 
-                                        key={item.id}
-                                        info={item} />
-                                )}  
-                            </SplideSlide>
-                        </Splide>
+                            {diversos.map(item => 
+                                <BoxProduto 
+                                    key={item.id}
+                                    info={item} />
+                            )}
                     </div>
                 </div>
             </BoxSlide>

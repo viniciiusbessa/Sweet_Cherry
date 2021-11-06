@@ -6,6 +6,7 @@ const CartProduct = styled.div`
 
     background-color: #F6AAC6;
 
+
     .fundo-cabecalho {
         background-image: url(/assets/images/cabecalhoBranco.png);
         background-size: 100% 200px;
@@ -33,6 +34,9 @@ const CartProduct = styled.div`
         text-align: left;
 
         font-size: 18px;
+
+        cursor: pointer;
+        user-select: none;
     }
 
 
@@ -67,6 +71,9 @@ const CartProduct = styled.div`
 
     .doce-carrinho img {
         width: 8em;
+
+        cursor: pointer;
+        user-select: none;
     }
 
     .nome-produto {
@@ -76,6 +83,9 @@ const CartProduct = styled.div`
     .lixeira-carrinho  img {
         width: 40px;
         margin-right: 2em;
+
+        cursor: pointer;
+        user-select: none;
     }
 
     .total button{
@@ -102,6 +112,9 @@ const CartProduct = styled.div`
         align-self: flex-end;
 
         margin-right: 8em;
+
+        cursor: pointer;
+        user-select: none;
     }
 
     .continuar button {
@@ -135,6 +148,9 @@ const CartProduct = styled.div`
         justify-content: space-between;
 
         margin: 3em 8em 0em 8em;
+
+        cursor: pointer;
+        user-select: none;
     }
 
 
@@ -162,6 +178,9 @@ const CartProduct = styled.div`
 
         margin-top: 10px;
         padding: 1em;
+
+        cursor: pointer;
+        user-select: none;
     }
 
     .icons1 {

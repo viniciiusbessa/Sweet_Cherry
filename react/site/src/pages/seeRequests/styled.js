@@ -4,6 +4,9 @@ const ContainerVerPedido = styled.div`
     display: flex;
     flex-direction: column;
 
+    cursor: pointer;
+    user-select: none;
+
         .fundo-ver-pedido {
             background-image: url(../../assets/images/fundo2.png);
             background-size: 100% 180px;

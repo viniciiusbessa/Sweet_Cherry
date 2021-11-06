@@ -4,6 +4,9 @@ const ContainerLoginAdm = styled.div`
     display: flex;
     flex-direction: column;
 
+    cursor: pointer;
+    user-select: none;
+
     .cabecalho-entrar-bem-vindo {
         display: flex;
         flex-direction: column;

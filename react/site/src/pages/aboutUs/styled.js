@@ -42,6 +42,9 @@ const ContainerSobreNos = styled.div`
             display: flex;
             justify-content: center;
             margin: 2em
+
+            cursor: pointer;
+            user-select: none;
         }
 
         .imagens img{

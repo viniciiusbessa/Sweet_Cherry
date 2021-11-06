@@ -5,6 +5,9 @@ const ContainerCadastro = styled.div`
     flex-direction: column;
     background-color: #F6AAC6;
 
+    cursor: pointer;
+    user-select: none;
+
     .cabecalho-entrar-bem-vindo {
         display: flex;
         flex-direction: row;
