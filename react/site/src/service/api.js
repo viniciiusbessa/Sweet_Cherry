@@ -1,6 +1,12 @@
 import axios from 'axios'
 const api = axios.create({
     baseURL: 'http://localhost:3030/'
+<<<<<<< HEAD
+=======
+    baseURL: 'http://localhost:3030'
+>>>>>>> 8226aea738f1d4d0787a221dd8fcbe60d0465dbdP
+=======
+>>>>>>> fc32471aef22e665096b40025f4151781f5b680b
 })
 
 export default class Api {
