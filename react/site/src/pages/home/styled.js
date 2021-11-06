@@ -180,6 +180,20 @@ const BoxEmAlta = styled.div`
 
 
     }
+
+    @media (max-width: 1040px) {
+        .button1{
+        display: flex;
+        flex-direction: row-reverse;
+
+        border-bottom-right-radius: 2em;
+        border-top-right-radius: 2em;
+        width: 10px;
+        height: 10px;
+        background-color: lightpink;
+        padding-right: 1.5em;
+     }
+    }
 `
 
 export {ContainerInicial, BoxSlide, BoxEmAlta}

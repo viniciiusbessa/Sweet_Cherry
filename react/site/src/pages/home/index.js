@@ -18,6 +18,7 @@ import { BoxSlide } from "./styled";
 import { BoxEmAlta } from "./styled";
 import { ContainerInicial} from "./styled";
 
+
 import { useState, useRef, useEffect } from 'react'
 
 import Cookies from 'js-cookie'
