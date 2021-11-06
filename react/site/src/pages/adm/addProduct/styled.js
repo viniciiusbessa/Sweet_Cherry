@@ -48,6 +48,9 @@ const ContainerAddProduto = styled.div`
         flex-direction: row;
 
         font-size: 22px;
+
+        cursor: pointer;
+        user-select: none;
     }
 
     .campo-nome-input {

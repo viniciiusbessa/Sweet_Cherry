@@ -22,6 +22,9 @@ const ContainerAdmProduto = styled.div`
     .box-titulo {
         display: flex;
         flex-direction: row;
+
+        cursor: pointer;
+        user-select: none;
     }
 
     .box-titulo img:hover {
@@ -62,6 +65,9 @@ const ContainerAdmProduto = styled.div`
         flex-direction: row;
 
         margin: 3em 0em 3em 4em;
+
+        cursor: pointer;
+        user-select: none;
     }
 
     .btn-add-adm2 button {
