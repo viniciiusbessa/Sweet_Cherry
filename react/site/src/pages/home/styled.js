@@ -23,6 +23,9 @@ const ContainerInicial = styled.div`
         justify-content: space-between;
         margin-bottom: 30vh;
         margin-top: 30vh;
+
+        cursor: pointer;
+        user-select: none;
     }
 
     .button1{
@@ -34,6 +37,7 @@ const ContainerInicial = styled.div`
 
         background-color: lightpink;
         padding-right: 1.5em;
+
     }
 
     .button2{
@@ -49,6 +53,7 @@ const ContainerInicial = styled.div`
 
     .button1, .button2{
         cursor: pointer;
+        user-select: none;
 
         align-items: center;
 
@@ -62,11 +67,13 @@ const ContainerInicial = styled.div`
 
     .perfil img, .busca img {
         cursor: pointer;
+        user-select: none;
     }
 
     .perfil, .busca {
         transition: all 0.2s;
         cursor: pointer;
+        user-select: none;
     }
 
     .perfil:hover, .busca:hover{
@@ -130,6 +137,9 @@ const BoxEmAlta = styled.div`
         border: solid;
         border-color: #FF8AB5;
         border-radius: 20px;
+
+        cursor: pointer;
+        user-select: none;
     }
 
     .box_texto{
@@ -151,6 +161,7 @@ const BoxEmAlta = styled.div`
         height: 40px;
 
         cursor: pointer;
+        user-select: none;
 
         font-family:  Pacifico;
         font-size: 15px;
