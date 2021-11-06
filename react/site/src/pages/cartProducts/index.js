@@ -49,7 +49,7 @@ export default function CarrinhoProdutos() {
 
     const total = products.reduce(getTotal, 0);
     function getTotal(total, item) {
-    return total + (item.preco * item.qtd);
+        return total + (item.preco * item.qtd);
     }
 
     return(

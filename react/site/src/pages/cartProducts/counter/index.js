@@ -48,18 +48,21 @@ export{ContainerCounter}
 
 
 export default function Counter(props){
-    const [qtd, seQtd] = useState(props.value)
+    const [qtd, setQtd] = useState(props.value)
 
     function increment() {
         if (qtd >= 30)
             return;
-        seQtd(qtd+1);
+
+        setQtd(qtd + 1)
     }
+
 
     function decrement() {
         if (qtd === 1)
             return;
-        seQtd(qtd-1)
+
+        setQtd(qtd - 1)
     }
 
     useEffect(() => {
