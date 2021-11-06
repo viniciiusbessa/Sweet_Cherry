@@ -33,6 +33,9 @@ const ContainerPagamento = styled.div`
         margin-top: 2.5em;
 
         font-size: 1.5em;
+
+        cursor: pointer;
+        user-select: none;
     }
 
     .nm-input {
