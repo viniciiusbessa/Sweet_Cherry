@@ -80,7 +80,7 @@ const BoxSlide = styled.div`
     padding: 5em;
 
     .titulo{
-        margin-left: 2em;
+        margin-left: .5em;
         font-size: 3em;
         color: #FF8AB5;
     }
