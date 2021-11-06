@@ -15,9 +15,10 @@ export default function LoginAdm() {
 
     const [email, setEmail] = useState('');
     const [senha, setSenha] = useState('');
+    const [codigo, setCodigo] = useState('');
 
     const logar = async () => {
-        let r = await api.loginAdm(email, senha)
+        let r = await api.loginAdm(email, senha, codigo)
         if (r.erro) {
             toast.error(`${r.erro}`)
 
@@ -67,7 +68,7 @@ export default function LoginAdm() {
 
                     <div className="box-input-usuario">
                         <img src="../../assets/images/login-usuario-adm.svg" alt="" />
-                        <input className="input-senha" type="text" placeholder="Código do usuário" />
+                        <input className="input-senha" type="text" placeholder="Código do usuário" value={codigo} onChange={e => setCodigo(e.target.value)} />
                     </div>
                     
                 </div>
