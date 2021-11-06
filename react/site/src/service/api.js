@@ -1,10 +1,6 @@
 import axios from 'axios'
 const api = axios.create({
-<<<<<<< HEAD
     baseURL: 'http://localhost:3030/'
-=======
-    baseURL: 'http://localhost:3030'
->>>>>>> 8226aea738f1d4d0787a221dd8fcbe60d0465dbd
 })
 
 export default class Api {
@@ -97,17 +93,15 @@ export default class Api {
         return r.data;
     }
 
-<<<<<<< HEAD
     async credenciais (email, cpf, telefone, endereco, numero, complemento, destinatario, nrcartao, nmcliente, codeseguranca, cpftit) {
-        let r = await api.post('/conf-pagamento', { email, cpf, telefone, endereco, numero, complemento, destinatario, nrcartao, nmcliente, codeseguranca, cpftit })
-=======
-
+        let r = await api.post('/cliente/confi_pagamento', { email, cpf, telefone, endereco, numero, complemento, destinatario, nrcartao, nmcliente, codeseguranca, cpftit })
+        return r.data
+    }
 
     // Login ADM
 
     async loginAdm (email, senha, codigo) {
         let r = await api.post('/adm/login', { email: email, senha: senha, codigo: codigo })
->>>>>>> 8226aea738f1d4d0787a221dd8fcbe60d0465dbd
         return r.data;
     }
 
