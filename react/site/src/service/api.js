@@ -4,7 +4,7 @@ const api = axios.create({
     baseURL: 'http://localhost:3030/'
 =======
     baseURL: 'http://localhost:3030'
->>>>>>> 8226aea738f1d4d0787a221dd8fcbe60d0465dbd
+>>>>>>> 8226aea738f1d4d0787a221dd8fcbe60d0465dbdP
 })
 
 export default class Api {
