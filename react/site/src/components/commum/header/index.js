@@ -32,7 +32,7 @@ export default function Cabecalho() {
 
     return (
         <ContainerCabecalho>
-            <div className="logo-perfil">
+            <div className="logo-perfil" onClick={inicio}>
                 <div className="logo1-perfil">Sweet</div>
                 <div className="logo2-perfil">Cherry</div>
             </div>
