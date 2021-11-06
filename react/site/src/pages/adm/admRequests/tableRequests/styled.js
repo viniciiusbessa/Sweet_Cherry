@@ -23,6 +23,9 @@ const ContainerTableRequests = styled.div`
         display: flex;
         flex-direction: column;
         text-align: center;
+
+        cursor: pointer;
+        user-select: none;
     }
 
     .acoes-titulo {
@@ -101,6 +104,9 @@ const ContainerTableRequests = styled.div`
         border: 1px solid #140018;
 
         padding: 0.3em 0em 0.5em 0em;
+
+        cursor: pointer;
+        user-select: none;
     }
 
     td {

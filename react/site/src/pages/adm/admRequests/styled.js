@@ -15,8 +15,14 @@ const ContainerAdmPedidos = styled.div`
         border: none;
 
         cursor: pointer;
+        user-select: none;
 
         transition: 0.5s;
+    }
+
+    input {
+        cursor: pointer;
+        user-select: none;
     }
 
     .box-titulo {

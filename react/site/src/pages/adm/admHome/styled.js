@@ -12,6 +12,9 @@ const ContainerAdm = styled.div`
 
     height: 100vh;
 
+    cursor: pointer;
+    user-select: none;
+
     .cabecalho-adm {
         display: flex;
         flex-direction: row;

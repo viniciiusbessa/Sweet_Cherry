@@ -6,6 +6,11 @@ const ContainerTableProducts = styled.table`
 
     font-family: Patua One;
 
+    img {
+        cursor: pointer;
+        user-select: none;
+    }
+
     tr {
         border: 1px solid #140018;
     }
@@ -16,6 +21,9 @@ const ContainerTableProducts = styled.table`
         padding: 0.5em 0em 1em 1em;
 
         text-align: left;
+
+        cursor: pointer;
+        user-select: none;
     }
 
     td {
@@ -49,18 +57,27 @@ const ContainerTableProducts = styled.table`
         border: none;
 
         padding: 0.7em 1.5em 0.2em 2em;
+
+        cursor: pointer;
+        user-select: none;
     }
 
     .botao-visivel1 {
         border: none;
 
         padding: 0.2em 0em 0.2em 0.5em;
+
+        cursor: pointer;
+        user-select: none;
     }
 
     .botao-visivel2 {
         border: none;
 
         padding: 0.2em 0.5em 0.2em 0.5em;
+
+        cursor: pointer;
+        user-select: none;
     }
 
     .botao-visivel button {
