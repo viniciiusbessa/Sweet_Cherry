@@ -9,7 +9,6 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 import Api from '../../../service/api'
-import Inicial from '../../home';
 const api = new Api();
 
 export default function Login() {
@@ -65,7 +64,7 @@ export default function Login() {
         <ContainerLogin>
             <ToastContainer />
             <div className="cabecalho-entrar-bem-vindo">
-                <img className="seta-sair" src="/assets/images/para-tras (1).svg" onClick={voltar}/>
+                <img className="seta-sair" src="/assets/images/para-tras (1).svg" alt="" onClick={voltar} />
                 <div className="bemvindo-titulo">Bem-vindo(a)</div>
             </div>
 
