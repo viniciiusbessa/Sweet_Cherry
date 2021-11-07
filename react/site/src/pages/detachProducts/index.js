@@ -67,8 +67,11 @@ export default function Destaque() {
     }, [pagina])
     
 
-    const buscarProduto = async () => {
+    const buscarProduto = async (event) => {
         loading.current.continuousStart();
+
+        if(event.type === "keypress" && ( event.charCode !== 13))
+        return;
 
         let r = await api.buscarProdutos(busca);
         setProduct(r);
@@ -76,16 +79,24 @@ export default function Destaque() {
         loading.current.complete();
     }
 
+    
+    // const Minimodeletras = async (resp) => {
+    //     if (product.length <= 3)
+    //     return resp.send({erro: 'Coloque mais caracteres pf '})
+    // }
+
+    
     return (
     <ContainerDestaque>
         <Cabecalho />
         <LoadingBar color="#A4BCFF" ref={loading}/>
         <div className="conteudo">
             <div className="buscar">
-                <input type="text" id="txtBusca" className="busca" value={busca} onChange={e => setBusca(e.target.value)}/>
+            <input type="text" id="txtBusca" className="busca" value={busca} onChange={e => setBusca(e.target.value)} onKeyPress={buscarProduto} maxlength="30"/>
                 {/* value={product} onChange={(ev) => setProduct(ev.target.value)}*/}
                 {/*onChange={(event) => buscarProduto(event)}*/}
-                <img src="../../assets/images/ferramenta-lupa 7.png" alt="" onClick={buscarProduto} />
+                <img src="../../assets/images/ferramenta-lupa 7.png" alt="" onClick={buscarProduto}  />
+                
             </div>
 
 
