@@ -4,6 +4,8 @@ import { useHistory } from 'react-router-dom'
 
 import { useState } from 'react'
 
+import Cookies from 'js-cookie';
+
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -24,15 +26,10 @@ export default function Login() {
             toast.error(`${r.erro}`)
 
         } else {
-            // Cookies.set('usuario-logado', JSON.stringify(r));
+            Cookies.set('usuario-logado', JSON.stringify(r));
             navigation.push('/')
         }
     }
-
-    // let logado = Cookies.get('usuario-logado')
-    // if (logado !== null) {
-    //     navigation.push('/')
-    // }
 
 
     const cadastro = async () => {

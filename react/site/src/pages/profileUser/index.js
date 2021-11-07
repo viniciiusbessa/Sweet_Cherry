@@ -7,8 +7,8 @@ import LoadingBar from 'react-top-loading-bar'
 
 import React, { useRef, useState } from 'react'
 
-import { useHistory } from 'react-router-dom'
 
+import { useHistory } from 'react-router-dom'
 
 
 export default function Perfil() {
@@ -23,10 +23,10 @@ export default function Perfil() {
     const [senha, setSenha] = useState('')
 
     
-    const logoff = () => {
-        // Cookies.remove('usuario-logado')
-        // navigation.push('/login')
-    }
+    // const logoff = () => {
+    //     Cookies.remove('usuario-logado')
+    //     navigation.push('/')
+    // }
 
     // async function inserirDados() {
     //     let r = await api.inserirCliente( endereco, nome, cpf, nascimento, telefone, email, senha )
@@ -100,7 +100,7 @@ export default function Perfil() {
         <div className="conteudo-perfil">
 
             <div className="info-pessoal-perfil">
-                <div className="nome-pessoa-perfil">Olá {nome.nm_cliente}</div>
+                <div className="nome-pessoa-perfil">Olá </div>
 
                 <div className="box-dados-conta-perfil">
                     <div className="dados-conta-perfil">Dados da conta</div>
@@ -158,7 +158,7 @@ export default function Perfil() {
                 </div>
 
                 
-                <div className="box-logout" onClick={logoff}>
+                <div className="box-logout" >
                     <div className="logout-conta-perfil">Sair da conta</div>
                     <img src="../../assets/images/log-out.svg" alt="" />
                 </div>

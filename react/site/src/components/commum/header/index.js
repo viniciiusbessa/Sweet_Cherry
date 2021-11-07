@@ -3,8 +3,15 @@ import { ContainerCabecalho } from './styled'
 
 import { useHistory } from 'react-router-dom'
 
-export default function Cabecalho() {
+import Cookies from 'js-cookie';
+
+export default function Cabecalho(props) {
     const navigation = useHistory();
+
+    const logoff = () => {
+        Cookies.remove('usuario-logado')
+        navigation.push('/login')
+    }
 
     const inicio = async () => {
         navigation.push('/')
@@ -43,6 +50,11 @@ export default function Cabecalho() {
                 <div className="rota-perfil" onClick={categoria}>Categorias</div>
                 <div className="rota-perfil" onClick={sobreNos}>Sobre nós</div>
                 <div className="rota-perfil" onClick={login}>Login</div>
+            </div>
+
+            <div className="box-nome-usuario">
+                <div className="ola"> Olá {props.value}</div>
+                <button className="btn-logoff" onClick={logoff}> Sair </button>
             </div>
 
             <div className="box-imgs-perfil">

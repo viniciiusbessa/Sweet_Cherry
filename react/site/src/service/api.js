@@ -102,15 +102,15 @@ export default class Api {
 
     ///Area de Pagamento
 
-    async confirmarPagmento (email, cpf, telefone, endereco, numero, complemento, nmcliente ) {
+    async confirmarPagmento ( email, cpf, telefone, endereco, numero, complemento ) {
         let j = await api.post('/cliente/confi_pagamento', {
             email, 
             cpf, 
             telefone, 
             endereco, 
             numero, 
-            complemento, 
-            nmcliente })
+            complemento
+        })
         return j.data
     }  
 }
