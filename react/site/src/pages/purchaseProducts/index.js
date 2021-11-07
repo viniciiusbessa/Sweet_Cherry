@@ -26,7 +26,7 @@ export default function Compra(props) {
 
     const [product] = useState(props.location.state);
     const [products, setProducts] = useState([]);
-
+    const [diversos, setDiversos] = useState([]);
     
     const confPagamento = async () => {
         navigation.push('/conf_pagamento')
@@ -46,15 +46,14 @@ export default function Compra(props) {
 
     }
 
-     async function listarCategoria() {
+    async function listarCategoria() {
         loading.current.continuousStart();
 
-        let r = await api.listarProduto();
+        let r2 = await api.listarProdutosCategoria('Diversos');
 
-        setProducts(r);
-
+        setDiversos(r2);
         loading.current.complete()
-     }
+    }
 
      useEffect(() => {
          listarCategoria();
@@ -138,7 +137,7 @@ export default function Compra(props) {
                                         } }
                                     >
                                     <SplideSlide>
-                                        {products.map(item => 
+                                        {diversos.map(item => 
                                             <BoxProduto 
                                                 key={item.id}
                                                 info={item} />

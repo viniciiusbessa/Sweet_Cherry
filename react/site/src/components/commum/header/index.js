@@ -3,7 +3,7 @@ import { ContainerCabecalho } from './styled'
 
 import { useHistory } from 'react-router-dom'
 
-export default function Cabecalho() {
+export default function Cabecalho(props) {
     const navigation = useHistory();
 
     const inicio = async () => {
@@ -46,6 +46,7 @@ export default function Cabecalho() {
             </div>
 
             <div className="box-imgs-perfil">
+                <div className="nm-usu">Olá fulano</div>
                 <div className="img-carrinho-perfil"><img src="../../assets/images/carrinho.svg" alt="" onClick={carrinho} /> </div>
                 <div className="img-favoritos-perfil"><img src="../../assets/images/coracao.svg" alt="" onClick={favoritos}  /> </div>
             </div>

@@ -131,6 +131,12 @@ const ContainerCabecalho = styled.div`
         cursor: pointer;
         }
     }
+
+    .nm-usu {
+        font-size: 18px;
+        font-weight: 500;
+        margin: .5em 1em 0em 0em;
+    }
     
 `
 

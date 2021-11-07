@@ -5,10 +5,11 @@ import { ContainerPerfil } from './styled'
 
 import LoadingBar from 'react-top-loading-bar'
 
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 
 import { useHistory } from 'react-router-dom'
-
+import Api from '../../service/api'
+const api = new Api();
 
 
 export default function Perfil() {
@@ -21,6 +22,7 @@ export default function Perfil() {
     const [telefone, setTelefone] = useState('')
     const [email, setEmail] = useState('')
     const [senha, setSenha] = useState('')
+    const [usu, setUsu] = useState('')
 
     
     const logoff = () => {
@@ -59,6 +61,14 @@ export default function Perfil() {
 
     const loading = useRef(null)
 
+    async function listar() {
+        let r = await api.listarClientes;
+        setUsu(r);
+    }
+    
+    useEffect(() => {
+        listar();
+    }, []);
 
 
 
@@ -100,7 +110,7 @@ export default function Perfil() {
         <div className="conteudo-perfil">
 
             <div className="info-pessoal-perfil">
-                <div className="nome-pessoa-perfil">Olá {nome.nm_cliente}</div>
+                <div className="nome-pessoa-perfil">Olá {usu.nm_cliente}</div>
 
                 <div className="box-dados-conta-perfil">
                     <div className="dados-conta-perfil">Dados da conta</div>
