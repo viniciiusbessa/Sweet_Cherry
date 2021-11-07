@@ -79,8 +79,6 @@ export default function ConfirmarPagamento() {
                                     <InputPayment onChange={e => setComplemento(e.target.value)}/>
                                 </div>
                             </div>
-                            <div className="nm-input">Destinatário:</div>
-                            <InputPayment onChange={e => setDestinatario(e.target.value)}/>
                         </div>                          
                     </div>
 
@@ -99,10 +97,6 @@ export default function ConfirmarPagamento() {
                             </select>
                             <div className="nm-input">Nome:</div>
                             <InputPayment onChange={e => setNmcliente(e.target.value)} />
-                            <div className="nm-input">Código de segurança:</div>
-                            <InputPayment onChange={e => setCodeSeguranca(e.target.value)} />
-                            <div className="nm-input">CPF do titular:</div>
-                            <InputPayment onChange={e => setCpftit(e.target.value)}/>
                         </div>
                         <div className="botoes-pgmt">
                             <button onClick={pagAnterior} className="vlt-carrinho">Voltar</button>
