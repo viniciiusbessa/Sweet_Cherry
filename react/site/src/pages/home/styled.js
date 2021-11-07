@@ -174,13 +174,69 @@ const BoxEmAlta = styled.div`
         flex-direction: row;
 
         justify-content: space-around;
+    }
 
+    @media(max-width: 1040px){
+       
+        background-image: transparent;
+
+        .button1{
+        display: flex;
+        flex-direction: row-reverse;
+
+        border-bottom-right-radius: 2em;
+        border-top-right-radius: 2em;
+
+        background-color: red;
+        padding-right: 1.5em;
 
     }
 
-    @media (max-width: 1040px) {
-        
+      .titulo{
+          color: #A4BCFF;
+          margin-right: 0px;
+          font-size: 35px;
+          padding-left: 25px;
+      }
+
+      .box{
+          margin: 30px 0px;
+          display: flex;
+          flex-direction: column;
+      }
+
+        .imagem_emAlta img{
+         width: 120px;
+         height: 120px;
+        }
+
+        .imagem_emAlta{
+            margin-left: 60px;
+            margin-top: 10px;
+            padding-bottom: 0px;
+        }
+
+      .box_em_alta{
+          width: 250px;
+          height: 360px;
+          display: flex;
+          flex-direction: column;
+          margin-bottom: 20px;
+      }
+
+      .box_texto{
+          font-size: 15px;
+          padding-top: 0px;
+          margin-top: 0px;
+      }
+
+      .container_doces{
+          display: flex;
+          flex-direction: column;
+      }
+      
     }
+    
 `
 
 export {ContainerInicial, BoxSlide, BoxEmAlta}
