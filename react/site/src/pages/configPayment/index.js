@@ -11,28 +11,50 @@ import 'react-toastify/dist/ReactToastify.css';
 
 import { useState } from 'react'
 
+import Cookies from 'js-cookie'
+
 import Api from '../../service/api'
 const api = new Api();
 
-export default function ConfirmarPagamento() {
+
+function lerUsuarioLogado (navigation) {
+    let logado = Cookies.get('usuario-logado')
+    if (logado === null) {
+        navigation.push('/login')
+        return null
+    }
+
+    let usuarioLogado = JSON.parse(logado);
+    return usuarioLogado;
+}
+
+export default function ConfirmarPagamento(props) {
     const navigation = useHistory();
 
-    const [email, setEmail] = useState('');
+    let usuarioLogado = lerUsuarioLogado(navigation) || {};
+
+    const [email] = useState(usuarioLogado.ds_email);
+    const [nmCliente] = useState(usuarioLogado.nm_cliente);
+
     const [cpf, setCpf] = useState('');
     const [telefone, setTelefone] = useState('');
     const [endereco, setEndereco] = useState('');
     const [numero, setNumero] = useState('');
     const [complemento, setComplemento] = useState('');
-    const [destinatario, setDestinatario] = useState('');
-    const [nrcartao, setnrCartao] = useState('');
-    const [nmcliente, setNmcliente] = useState('');
-    const [codeseguranca, setCodeSeguranca] = useState('');
-    const [cpftit, setCpftit] = useState('');
 
     
-    const compraFinalizada = async () => {
-        navigation.push('/compra-finalizada')
+
+    const finalizarCompra = async () => {
+        let r = await api.confirmarPagmento( email, cpf, telefone, endereco, numero, complemento )
+        if (r.erro) {
+            toast.error(`${r.erro}`)
+
+        } else {
+            navigation.push('/compra-finalizada')
+        }
     }
+
+    console.log(finalizarCompra)
 
     const pagAnterior = async () => {
         window.history.back()
@@ -44,21 +66,25 @@ export default function ConfirmarPagamento() {
         <ContainerPagamento>
             <ToastContainer />
             <div classNameName="fundo-cabecalho">
-                <Cabecalho />
+                <Cabecalho value={nmCliente} />
             </div>
 
             <div className="conteudo">
-                <div className="nome-conteudo">Confirmar pagamento: R$ 5,00 </div>
+                <div className="nome-conteudo">Confirmar pagamento: R$ {props.location.state} </div>
                 <div className="conteiner-geral">
                     <div className="conteiner-pes-etrg">
                         <div className="dados">
                             <div className="nm-box">Dados pessoais</div>
+
                             <div className="nm-input">E-mail:</div>
-                            <InputPayment onChange={e => setEmail(e.target.value)} />
+                            <InputPayment value={email} readOnly={true} />
+
                             <div className="nm-input">CPF:</div>
-                            <InputPayment onChange={e => setCpf(e.target.value)} />
+                            <InputPayment value={cpf} onChange={e => setCpf(e.target.value)} />
+
                             <div className="nm-input">Telefone:</div>
-                            <InputPayment onChange={e => setTelefone(e.target.value)}/>
+                            <InputPayment value={telefone} onChange={e => setTelefone(e.target.value)}/>
+
                         </div>
                         <div className="entrega">
                             <div className="fr-entrega">
@@ -67,28 +93,33 @@ export default function ConfirmarPagamento() {
                                     <option>Domicílio</option>
                                 </select>
                             </div>
+
                             <div className="nm-input">Endereço:</div>
-                            <InputPayment onChange={e => setEndereco(e.target.value)}/>
+                            <InputPayment value={endereco} onChange={e => setEndereco(e.target.value)}/>
+
                             <div className="box-nurm-comple">
+
                                 <div className="box-numero">
                                     <div className="nm-input">Número:</div>
-                                    <InputPayment onChange={e => setNumero(e.target.value)}/>
+                                    <InputPayment value={numero} onChange={e => setNumero(e.target.value)}/>
                                 </div>
+
                                 <div className="box-complemento">
                                     <div className="nm-input">Complemento:</div>
-                                    <InputPayment onChange={e => setComplemento(e.target.value)}/>
+                                    <InputPayment value={complemento} onChange={e => setComplemento(e.target.value)}/>
                                 </div>
+
                             </div>
-                            <div className="nm-input">Destinatário:</div>
-                            <InputPayment onChange={e => setDestinatario(e.target.value)}/>
                         </div>                          
                     </div>
 
                     <div className="conteiner-pagamento">
                         <div className="box-pg">
                             <div className="nm-box">Pagamento</div>
+
                             <div className="nm-input">Número do cartão:</div>
-                            <InputPayment onChange={e => setnrCartao(e.target.value)} />
+                            <InputPayment  />
+
                             <div className="nm-input">Parcelas:</div>
                             <select name="listaparcelas" id="" className="parcelas">
                                 <option>1x</option>
@@ -98,15 +129,11 @@ export default function ConfirmarPagamento() {
                                 <option>5x</option>
                             </select>
                             <div className="nm-input">Nome:</div>
-                            <InputPayment onChange={e => setNmcliente(e.target.value)} />
-                            <div className="nm-input">Código de segurança:</div>
-                            <InputPayment onChange={e => setCodeSeguranca(e.target.value)} />
-                            <div className="nm-input">CPF do titular:</div>
-                            <InputPayment onChange={e => setCpftit(e.target.value)}/>
+                            <InputPayment value={nmCliente} readOnly={true} />
                         </div>
                         <div className="botoes-pgmt">
                             <button onClick={pagAnterior} className="vlt-carrinho">Voltar</button>
-                            <button onClick={compraFinalizada} className="final-cmpra">Finalizar compra</button>
+                            <button onClick={finalizarCompra} className="final-cmpra">Finalizar compra</button>
                         </div>
                         <div className="box-cartoes">
                             <div className="titulo-box">Pague com:</div>

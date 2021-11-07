@@ -3,11 +3,11 @@ import Rodape from "../../components/commum/footer";
 // import TableProduct from "../../components/styled/tableCart";
 import Cookies from "js-cookie";
 import { CartProduct } from "./styled";
-import { useHistory } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import { useEffect, useState } from "react";
 import CartItem from "./cartItem";
 
-export default function CarrinhoProdutos() {
+export default function CarrinhoProdutos(props) {
     const navigation = useHistory();
     const [products, setProducts] = useState([]);
 
@@ -47,9 +47,10 @@ export default function CarrinhoProdutos() {
         Cookies.set('carrinho', JSON.stringify(products));
     }
 
+    
     const total = products.reduce(getTotal, 0);
     function getTotal(total, item) {
-    return total + Math.round(item.preco * item.qtd);
+    return total + (item.preco * item.qtd);
     }
 
     return(
@@ -91,7 +92,13 @@ export default function CarrinhoProdutos() {
 
             <div className="botoes">
                 <div className="continuar"><button onClick={contComprar}>Continuar comprando</button></div>
-                <div className="confirmar"><button onClick={confPagamento}>Confirmar compra</button></div>
+
+                <Link to={{
+                    pathname: '/conf_pagamento',
+                    state: total
+                }}>
+                <div className="confirmar"><button>Confirmar compra</button></div>
+                </Link>
             </div>
 
             <div className="box-cartoes">

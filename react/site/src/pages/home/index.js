@@ -26,20 +26,42 @@ import Cookies from 'js-cookie'
 import Api from '../../service/api'
 const api = new Api();
 
+
+function lerUsuarioLogado (navigation) {
+    let logado = Cookies.get('usuario-logado')
+    if (logado === null) {
+        navigation.push('/login')
+        return null
+    }
+
+    let usuarioLogado = JSON.parse(logado);
+    return usuarioLogado;
+}
+
+
 export default function Inicial () {
     const navigation = useHistory();
+
+    let usuarioLogado = lerUsuarioLogado(navigation) || {};
 
     const [novidades, setNovidades] = useState([]);
     const [diversos, setDiversos] = useState([]);
     const [emAlta, setEmAlta] = useState([]);
 
+    const [usu] = useState(usuarioLogado.nm_cliente);
+
     const loading = useRef(null);
 
+    console.log(Cookies.get('usuario-logado'))
 
-    let logado = Cookies.get('usuario-logado')
-    if (logado === null) {
-        navigation.push('/login')
-    }
+    
+
+
+    // let logado = Cookies.get('usuario-logado')
+    // if (logado === null) {
+    //     navigation.push('/login')
+        
+    // }
 
     /*const responsive = {
         desktop: {
@@ -94,7 +116,7 @@ export default function Inicial () {
 
 
         <ContainerInicial>
-            <Cabecalho/>
+            <Cabecalho value={usu} />
             {/* <div className="loader" style={{display: 'flex', justifyContent: 'center'}}>
             <LoaderSpinner
                 type="TailSpin"

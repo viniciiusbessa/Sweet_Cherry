@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const BoxNovidades = styled.div`
 
-.Faixa2_inicio{
+.Faixa2_inicio {
     display: flex;
     flex-direction: column;
 }
@@ -84,6 +84,21 @@ const BoxNovidades = styled.div`
 .vermais_novidades button:hover {
     background-color: #52277D;
     transition: all 0.5s;
+}
+
+@media(max-width:1040px){
+    
+    .titulo{
+        font-size: 30px;
+        margin-left: 100px;
+        color: #ffffff;
+    }
+
+    .vermais_novidades button{
+        margin: 20px 40px;
+        border-radius: 40px;
+        font-size: 15px;
+    }
 }
 `
 

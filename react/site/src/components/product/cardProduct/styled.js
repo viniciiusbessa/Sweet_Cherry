@@ -93,6 +93,34 @@ const ContainerBoxProduto = styled.div`
         background-color: #52277D;
         transition: all 0.5s ease-in;
     }
+
+    @media(max-width: 1040px){
+         
+        background-color: #D1EAF5;
+        width: 15em;
+        height: 25em;
+        border-radius: 20px;
+        cursor: pointer;
+        margin: 2em;
+
+        display: flex;
+        justify-content: center;
+
+        .imagem-doce img{
+          width: 135px;
+          height: 135px;
+        }
+
+        .imagem-doce{
+            margin-left: 15px;
+        }
+
+        .nm-doce{
+            font-size: 20px;
+        }
+
+        
+    }
 `
 
 export {ContainerBoxProduto}

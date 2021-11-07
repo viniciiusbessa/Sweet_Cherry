@@ -9,21 +9,30 @@ import React, { useEffect, useRef, useState } from 'react'
 
 import { useHistory } from 'react-router-dom'
 import Api from '../../service/api'
+import Cookies from 'js-cookie'
 const api = new Api();
 
+function infoUsu(navigation){
+    let info = Cookies.get('usuario-logado')
+    if (info === null) {
+        navigation.push('/login')
+        return null
+    }
+
+    let usuario = JSON.parse(info);
+    return usuario;
+}
 
 export default function Perfil() {
     const navigation = useHistory();
+    let informacoes = infoUsu(navigation);
 
-    const [endereco, setEndereco] = useState('')
-    const [nome, setNome] = useState('')
-    const [cpf, setCpf] = useState('')
-    const [nascimento, setNascimento] = useState('')
-    const [telefone, setTelefone] = useState('')
-    const [email, setEmail] = useState('')
-    const [senha, setSenha] = useState('')
     const [usu, setUsu] = useState('')
-
+    const [email] = useState(informacoes.ds_email);
+    const [nome] = useState(informacoes.nm_cliente);
+    // const [endereco] = useState(informacoes.ds_endereco);
+    // const [email] = useState(informacoes.ds_email);
+    // const [email] = useState(informacoes.ds_email);
     
     const logoff = () => {
         // Cookies.remove('usuario-logado')
@@ -70,8 +79,6 @@ export default function Perfil() {
         listar();
     }, []);
 
-
-
      // async function removerProduto(id) {
       //    loading.current.complete();
 
@@ -110,7 +117,8 @@ export default function Perfil() {
         <div className="conteudo-perfil">
 
             <div className="info-pessoal-perfil">
-                <div className="nome-pessoa-perfil">Olá {usu.nm_cliente}</div>
+
+            <div className="nome-pessoa-perfil">Olá {usu.nm_cliente}</div>
 
                 <div className="box-dados-conta-perfil">
                     <div className="dados-conta-perfil">Dados da conta</div>
@@ -118,13 +126,7 @@ export default function Perfil() {
                         <img src="../../assets/images/asterisco-perfil.png" alt="" />
                         <div className="email">E-mail:</div>
                     </div>
-                    <input className="input-email" value={email.ds_email} onChange={e => setEmail(e.target.value)} />
-
-                    <div className="box-infos">
-                        <img src="../../assets/images/asterisco-perfil.png" alt="" />
-                        <div className="senha">Senha:</div>
-                    </div>
-                    <input className="input-senha" value={senha} onChange={e => setSenha(e.target.value)} />
+                    <input className="input-email" value={email} readOnly={true} />
                 </div>
 
                 <div className="box-dados-pessoais-perfil">
@@ -135,13 +137,13 @@ export default function Perfil() {
                         <div className="nome">Nome:</div>
                     </div>
 
-                    <input className="input-nome" value={nome} onChange={e => setNome(e.target.value)} />
+                    <input className="input-nome" value={nome} readOnly={true} />
 
                     <div className="box-infos">
                         <img src="../../assets/images/asterisco-perfil.png" alt="" />
                         <div className="endereco">Endereco:</div>
                     </div>
-                    <input className="input-endereco" value={endereco} onChange={e => setEndereco(e.target.value)} />
+                    <input className="input-endereco"  />
 
                     <div className="box-infos">
                         <img src="../../assets/images/asterisco-perfil.png" alt="" />
@@ -149,21 +151,21 @@ export default function Perfil() {
                     </div>
                     <div className="info-obrigatorio-data">Necessário ter maioridade para comprar em nosso site com cartão de crédito</div>
                     <div className="formato">Formato DD/MM/AAAA</div>
-                    <input className="input-data" type="date" value={nascimento} onChange={e => setNascimento(e.target.value)} />
+                    <input className="input-data" type="date"/>
 
                     <div className="box-infos">
                         <img src="../../assets/images/asterisco-perfil.png" alt="" />
                         <div className="cpf">CPF</div>
                     </div>
                     <div className="info-obrigatorio-cpf">Necessário para emissão de notas fiscais</div>
-                    <input className="input-cpf" value={cpf} onChange={e => setCpf(e.target.value)} />
+                    <input className="input-cpf" />
 
                     <div className="box-infos">
                         <img src="../../assets/images/asterisco-perfil.png" alt="" />
                         <div className="telefone">Telefone</div>
                     </div>
                     <div className="info-obrigatorio-telefone">Caso a gente precise entrar em contato sobre seus pedidos</div>
-                    <input className="input-telefone" value={telefone} onChange={e => setTelefone(e.target.value)} />
+                    <input className="input-telefone" />
 
                 </div>
 

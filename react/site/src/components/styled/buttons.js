@@ -11,6 +11,7 @@ const Botao = styled.button`
 
     cursor: pointer;
     user-select: none;
+
 `
 
 export {Botao}

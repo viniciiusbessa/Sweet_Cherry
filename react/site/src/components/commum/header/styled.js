@@ -41,7 +41,6 @@ const ContainerCabecalho = styled.div`
         margin-top: 1.3em;
 
         font-size: 25px;
-        margin-right: 80px;
     }
 
     .rota-perfil:hover {
@@ -55,6 +54,20 @@ const ContainerCabecalho = styled.div`
     .rota-perfil{
         margin-right: 0px;
 
+    }
+
+    .box-nome-usuario {
+        display: flex;
+        flex-direction: row;
+        margin-top: 2em;
+    }
+
+    .ola {
+        font-size: 20px;
+        text-decoration: underline 3px solid #D1EAF5;
+
+        margin-top: 0.8em;
+        margin-right: 1em;
     }
 
 
@@ -71,6 +84,26 @@ const ContainerCabecalho = styled.div`
     .img-carrinho-perfil img, .img-favoritos-perfil img {
         cursor: pointer;
         margin-right: 30px;
+    }
+
+    .btn-logoff {
+        font-size: 18px;
+
+        border-radius: 10px;
+        background-color: #d1eaf5;
+        border: 1px solid hotpink;
+
+        cursor: pointer;
+
+        height: 50px;
+        width: 70px;
+
+        margin-top: 0.2em;
+    }
+
+    .btn-logoff:hover {
+        background-color: #A4BCFF;
+        transition: 0.7s;
     }
 
     @media(max-width: 1040px){
