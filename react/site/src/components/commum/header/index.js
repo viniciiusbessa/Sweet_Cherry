@@ -36,7 +36,8 @@ export default function Cabecalho() {
                 <div className="logo1-perfil">Sweet</div>
                 <div className="logo2-perfil">Cherry</div>
             </div>
-
+           
+ 
             <div className="rotas-perfil">
                 <div className="rota-perfil" onClick={inicio}>Início</div>
                 <div className="rota-perfil" onClick={categoria}>Categorias</div>
@@ -48,6 +49,7 @@ export default function Cabecalho() {
                 <div className="img-carrinho-perfil"><img src="../../assets/images/carrinho.svg" alt="" onClick={carrinho} /> </div>
                 <div className="img-favoritos-perfil"><img src="../../assets/images/coracao.svg" alt="" onClick={favoritos}  /> </div>
             </div>
+            
         </ContainerCabecalho>
     )
 }

@@ -29,15 +29,7 @@ export default function ConfirmarPagamento() {
     const [codeseguranca, setCodeSeguranca] = useState('');
     const [cpftit, setCpftit] = useState('');
 
-    const credenciais = async () => {
-        let r = await api.credenciais(email, cpf, telefone, endereco, numero, complemento, destinatario, nrcartao, nmcliente, codeseguranca, cpftit)
-        if (r.erro) {
-            toast.error(`${r.erro}`)
-        } else {
-            navigation.push('/compra-finalizada')
-        }
-    }
-
+    
     const compraFinalizada = async () => {
         navigation.push('/compra-finalizada')
     }
@@ -62,11 +54,11 @@ export default function ConfirmarPagamento() {
                         <div className="dados">
                             <div className="nm-box">Dados pessoais</div>
                             <div className="nm-input">E-mail:</div>
-                            <InputPayment onClick={credenciais} onChange={e => setEmail(e.target.value)} />
+                            <InputPayment onChange={e => setEmail(e.target.value)} />
                             <div className="nm-input">CPF:</div>
-                            <InputPayment onClick={credenciais} onChange={e => setCpf(e.target.value)} />
+                            <InputPayment onChange={e => setCpf(e.target.value)} />
                             <div className="nm-input">Telefone:</div>
-                            <InputPayment onClick={credenciais} onChange={e => setTelefone(e.target.value)}/>
+                            <InputPayment onChange={e => setTelefone(e.target.value)}/>
                         </div>
                         <div className="entrega">
                             <div className="fr-entrega">
@@ -76,19 +68,17 @@ export default function ConfirmarPagamento() {
                                 </select>
                             </div>
                             <div className="nm-input">Endereço:</div>
-                            <InputPayment onClick={credenciais} onChange={e => setEndereco(e.target.value)}/>
+                            <InputPayment onChange={e => setEndereco(e.target.value)}/>
                             <div className="box-nurm-comple">
                                 <div className="box-numero">
                                     <div className="nm-input">Número:</div>
-                                    <InputPayment onClick={credenciais} onChange={e => setNumero(e.target.value)}/>
+                                    <InputPayment onChange={e => setNumero(e.target.value)}/>
                                 </div>
                                 <div className="box-complemento">
                                     <div className="nm-input">Complemento:</div>
-                                    <InputPayment onClick={credenciais} onChange={e => setComplemento(e.target.value)}/>
+                                    <InputPayment onChange={e => setComplemento(e.target.value)}/>
                                 </div>
                             </div>
-                            <div className="nm-input">Destinatário:</div>
-                            <InputPayment onClick={credenciais} onChange={e => setDestinatario(e.target.value)}/>
                         </div>                          
                     </div>
 
@@ -96,7 +86,7 @@ export default function ConfirmarPagamento() {
                         <div className="box-pg">
                             <div className="nm-box">Pagamento</div>
                             <div className="nm-input">Número do cartão:</div>
-                            <InputPayment onClick={credenciais} onChange={e => setnrCartao(e.target.value)} />
+                            <InputPayment onChange={e => setnrCartao(e.target.value)} />
                             <div className="nm-input">Parcelas:</div>
                             <select name="listaparcelas" id="" className="parcelas">
                                 <option>1x</option>
@@ -106,11 +96,7 @@ export default function ConfirmarPagamento() {
                                 <option>5x</option>
                             </select>
                             <div className="nm-input">Nome:</div>
-                            <InputPayment onClick={credenciais} onChange={e => setNmcliente(e.target.value)} />
-                            <div className="nm-input">Código de segurança:</div>
-                            <InputPayment onClick={credenciais} onChange={e => setCodeSeguranca(e.target.value)} />
-                            <div className="nm-input">CPF do titular:</div>
-                            <InputPayment onClick={credenciais} onChange={e => setCpftit(e.target.value)}/>
+                            <InputPayment onChange={e => setNmcliente(e.target.value)} />
                         </div>
                         <div className="botoes-pgmt">
                             <button onClick={pagAnterior} className="vlt-carrinho">Voltar</button>

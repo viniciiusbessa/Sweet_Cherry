@@ -16,6 +16,8 @@ const ContainerCabecalho = styled.div`
     .logo-perfil {
         display: flex;
         flex-direction: column;
+        margin-right: 100px;
+        margin-left: 25px;
     }
 
     .logo1-perfil, .logo2-perfil {
@@ -39,6 +41,7 @@ const ContainerCabecalho = styled.div`
         margin-top: 1.3em;
 
         font-size: 25px;
+        margin-right: 80px;
     }
 
     .rota-perfil:hover {
@@ -49,6 +52,12 @@ const ContainerCabecalho = styled.div`
         cursor: pointer;
     }
 
+    .rota-perfil{
+        margin-right: 0px;
+
+    }
+
+
     .box-imgs-perfil {
         display: flex;
         flex-direction: row;
@@ -56,11 +65,73 @@ const ContainerCabecalho = styled.div`
 
         width: 15%;
         margin-top: 1.3em;
+        margin-left: 70px;
     }
 
     .img-carrinho-perfil img, .img-favoritos-perfil img {
         cursor: pointer;
+        margin-right: 30px;
     }
+
+    @media(max-width: 1040px){
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .logo-perfil{
+            margin-top: 30px;
+            margin-bottom: 10px;
+            justify-content: center;
+            margin-left: 100px;
+        }
+
+        .logo1-perfil, .logo2-perfil{
+          font-size: 25px;
+        }
+
+        .rotas-perfil{
+            font-size: 15px;
+            display: flex;
+            flex-direction: row;
+            margin-left: 80px;
+        }
+
+        .rota-perfil{
+            margin-right: 20px;
+        }
+
+
+         .box-imgs-perfil{
+             margin-left: 10px;
+         }
+
+        .box-imgs-perfil img{
+            width: 30px;
+        }
+
+        .img-carrinho-perfil{
+            margin-left: 20px;
+            margin-right: 0px;
+        }
+
+        .img-favoritos-perfil{
+            
+        }
+
+        .img-favoritos-perfil img{
+          width: 25px;
+        }
+
+        .rota-perfil:hover{
+        text-decoration: underline;
+        color: #000;
+        font-size: 15px;
+
+        cursor: pointer;
+        }
+    }
+    
 `
 
 export { ContainerCabecalho }

@@ -93,11 +93,6 @@ export default class Api {
         return r.data;
     }
 
-    async credenciais (email, cpf, telefone, endereco, numero, complemento, destinatario, nrcartao, nmcliente, codeseguranca, cpftit) {
-        let r = await api.post('/cliente/confi_pagamento', { email, cpf, telefone, endereco, numero, complemento, destinatario, nrcartao, nmcliente, codeseguranca, cpftit })
-        return r.data
-    }
-
     // Login ADM
 
     async loginAdm (email, senha, codigo) {
@@ -105,4 +100,17 @@ export default class Api {
         return r.data;
     }
 
+    ///Area de Pagamento
+
+    async confirmarPagmento (email, cpf, telefone, endereco, numero, complemento, nmcliente ) {
+        let j = await api.post('/cliente/confi_pagamento', {
+            email, 
+            cpf, 
+            telefone, 
+            endereco, 
+            numero, 
+            complemento, 
+            nmcliente })
+        return j.data
+    }  
 }

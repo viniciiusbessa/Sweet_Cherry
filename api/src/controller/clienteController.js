@@ -148,19 +148,44 @@ app.post('/cadastro', async (req, resp) => {
     }
 })
 
+
+
+
+
 app.post('/confi_pagamento', async (req, resp ) => {
     try {
-        const credenciais = await db.infod_ssc_cliente.findOne({
+        
+        const { endereco, numero, complemento, cliente} = req.body;
+        const { cpf, nascimento, telefone } = cliente;
+
+        const user = await db.infod_ssc_cliente.findOne({
             where: {
                 ds_email: req.body.email
             }
-        });
+        }); 
+         const EnderecoCliente = await db.infod_ssc_endereco.update({
+              ds_endereco: endereco,
+              nr_endereco: numero,
+              ds_complemento: complemento 
+         },{
+            where: {
+                id_endereco: user.id_endereco
+            }
+         })
+                    
 
-        if (!credenciais) {
-            return resp.send({ erro: 'Preencha todos os campos'})
-        }
+         const confirmacao = await db.infod_ssc_cliente.update({
+            id_endereco: EnderecoCliente.id_endereco, 
+            ds_cpf: cpf,
+            dt_nascimento: nascimento,
+            nr_telefone:telefone
+         },{
+            where: {
+                id_cliente: user.id_cliente
+            }
+         });
 
-        resp.send(credenciais);
+        resp.send(confirmacao);
 
     } catch (b) {
         resp.send({ erro: b.toString() })
