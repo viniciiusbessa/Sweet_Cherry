@@ -29,9 +29,8 @@ const api = new Api();
 
 function lerUsuarioLogado (navigation) {
     let logado = Cookies.get('usuario-logado')
-    if (logado === null) {
-        navigation.push('/login')
-        return null
+    if (!logado) {
+        return false
     }
 
     let usuarioLogado = JSON.parse(logado);
