@@ -58,6 +58,64 @@ const ConteinerRodape = styled.div`
     margin: 1em;
 }
 
+@media(max-width: 1040px){
+    .rodape{
+    margin: 0px 0px;
+    display: flex;
+    flex-direction: column;
+    height: 350px;
+    margin-left: 70px;
+    }
+
+    .TrabelheConosco{
+        display: flex;
+        flex-direction: column;
+    }
+
+
+
+    .atendimento{
+        display: flex;
+        flex-direction: column;
+        font-size: 15px;
+        margin-right: 90px;
+    }
+
+    .Email{
+        display: flex;
+        flex-direction: row;
+    }
+
+    .titulo-Trabalhe{
+     font-size: 15px;
+    }
+
+    .redes{
+        font-size: 15px;
+        margin-bottom: 15px;
+
+    }
+
+    .titulo-redes{
+        margin-right: 135px;
+    }
+
+    .logo{
+        margin-right: 245px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .logo img{
+        width: 40px;
+    }
+
+    .icon img{
+        width: 35px;
+    }
+
+}
+
 `
 
 export {ConteinerRodape}
