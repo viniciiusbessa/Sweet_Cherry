@@ -19,13 +19,27 @@ import '@splidejs/splide/dist/css/splide.min.css';
 import Api from '../../service/api'
 const api = new Api();
 
+
+function lerUsuarioLogado (navigation) {
+    let logado = Cookies.get('usuario-logado')
+    if (!logado) {
+        return false
+    }
+
+    let usuarioLogado = JSON.parse(logado);
+    return usuarioLogado;
+}
+
 export default function Compra(props) {
     const navigation = useHistory();
 
+    let usuarioLogado = lerUsuarioLogado(navigation) || {};
+
     const loading = useRef(null);
 
+    const [usu] = useState(usuarioLogado.nm_cliente);
+
     const [product] = useState(props.location.state);
-    const [products, setProducts] = useState([]);
     const [diversos, setDiversos] = useState([]);
     
     const confPagamento = async () => {
@@ -63,7 +77,7 @@ export default function Compra(props) {
     <ContainerCompra>
          <LoadingBar color="#A4BCFF" ref={loading}/> 
         <div className="fundo-cabecalho">
-            <Cabecalho />
+            <Cabecalho value={usu} />
         </div>
 
         <div className="container-conteudo">

@@ -4,8 +4,26 @@ import { ContainerCompraFinalizada } from './styled'
 
 import { useHistory } from 'react-router-dom'
 
+import { useState } from 'react'
+
+import Cookies from 'js-cookie'
+
+function lerUsuarioLogado (navigation) {
+    let logado = Cookies.get('usuario-logado')
+    if (!logado) {
+        return false
+    }
+
+    let usuarioLogado = JSON.parse(logado);
+    return usuarioLogado;
+}
+
 export default function CompraFinalizada() {
     const navigation = useHistory();
+
+    let usuarioLogado = lerUsuarioLogado(navigation) || {};
+
+    const [usu] = useState(usuarioLogado.nm_cliente);
 
     const perfil = async () => {
         navigation.push('/perfil')
@@ -14,7 +32,7 @@ export default function CompraFinalizada() {
     return (
     <ContainerCompraFinalizada>
         <div className="fundo-cabecalho">
-            <Cabecalho />
+            <Cabecalho value={usu} />
         </div>
 
         <div className="conteudo-compra-finalizada">

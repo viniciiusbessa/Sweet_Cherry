@@ -1,14 +1,36 @@
 import Cabecalho from "../../components/commum/header";
 import Rodape from "../../components/commum/footer";
 // import TableProduct from "../../components/styled/tableCart";
+
 import Cookies from "js-cookie";
+
 import { CartProduct } from "./styled";
+
 import { Link, useHistory } from 'react-router-dom'
+
 import { useEffect, useState } from "react";
+
 import CartItem from "./cartItem";
+
+function lerUsuarioLogado (navigation) {
+    let logado = Cookies.get('usuario-logado')
+    if (!logado) {
+        return false
+    }
+
+    let usuarioLogado = JSON.parse(logado);
+    return usuarioLogado;
+}
+
 
 export default function CarrinhoProdutos(props) {
     const navigation = useHistory();
+
+    let usuarioLogado = lerUsuarioLogado(navigation) || {};
+
+    const [usu] = useState(usuarioLogado.nm_cliente);
+
+
     const [products, setProducts] = useState([]);
 
     const contComprar = async () => {
@@ -52,7 +74,7 @@ export default function CarrinhoProdutos(props) {
     return(
         <CartProduct>
             <div className="fundo-cabecalho">
-                <Cabecalho/>
+                <Cabecalho value={usu} />
             </div>
 
             <div className="box-carrinho">

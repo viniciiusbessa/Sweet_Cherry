@@ -3,11 +3,33 @@ import Rodape from "../../components/commum/footer";
 
 import {ContainerSobreNos} from './styled'
 
+import { useState } from 'react'
+
+import Cookies from 'js-cookie'
+
+import { useHistory } from "react-router";
+
+function lerUsuarioLogado (navigation) {
+    let logado = Cookies.get('usuario-logado')
+    if (!logado) {
+        return false
+    }
+
+    let usuarioLogado = JSON.parse(logado);
+    return usuarioLogado;
+}
+
 export default function SobreNos() {
+    const navigation = useHistory();
+
+    let usuarioLogado = lerUsuarioLogado(navigation) || {};
+
+    const [usu] = useState(usuarioLogado.nm_cliente);
+
     return (
         <ContainerSobreNos>
             <div className="fundo-cabecalho">
-            <Cabecalho/>
+            <Cabecalho value={usu} />
             </div>
                     <div className="Faixa1_sobreNos">
                         <div className="titulo">
