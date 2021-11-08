@@ -4,7 +4,6 @@ const ContainerAdmProduto = styled.div`
     display: flex;
     flex-direction: column;
 
-
     padding: 1.5em 2em 2em 2em;
 
     height: 100%;

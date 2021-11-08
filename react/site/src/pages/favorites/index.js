@@ -5,15 +5,34 @@ import { ContainerFavoritos } from "./styled";
 
 import { useState } from "react";
 
+import Cookies from 'js-cookie'
+
+import { useHistory } from "react-router";
+
+function lerUsuarioLogado (navigation) {
+    let logado = Cookies.get('usuario-logado')
+    if (!logado) {
+        return false
+    }
+
+    let usuarioLogado = JSON.parse(logado);
+    return usuarioLogado;
+}
+
 
 export default function Favorites() {
+    const navigation = useHistory();
+
+    let usuarioLogado = lerUsuarioLogado(navigation) || {};
+
+    const [usu] = useState(usuarioLogado.nm_cliente);
 
     const [produtos] = useState ([]);
 
     return (
         <ContainerFavoritos>
             <div className="cabecalho">
-                <Header/>
+                <Header value={usu} />
             </div>
             <div class="box-favoritos">
                 <div class="box-texto">

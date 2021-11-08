@@ -8,23 +8,27 @@ import LoadingBar from 'react-top-loading-bar'
 import React, { useEffect, useRef, useState } from 'react'
 
 import { useHistory } from 'react-router-dom'
-import Api from '../../service/api'
+
 import Cookies from 'js-cookie'
+
+import Api from '../../service/api'
 const api = new Api();
 
 function infoUsu(navigation){
-    let info = Cookies.get('usuario-logado')
-    if (info === null) {
+    let logado = Cookies.get('usuario-logado')
+    if (!logado) {
+        alert('Ei, você precisa estar logado para entrar no perfil')
         navigation.push('/login')
-        return null
+        return false
     }
 
-    let usuario = JSON.parse(info);
+    let usuario = JSON.parse(logado);
     return usuario;
 }
 
 export default function Perfil() {
     const navigation = useHistory();
+    
     let informacoes = infoUsu(navigation);
 
     const [usu, setUsu] = useState('')
@@ -33,11 +37,7 @@ export default function Perfil() {
     // const [endereco] = useState(informacoes.ds_endereco);
     // const [email] = useState(informacoes.ds_email);
     // const [email] = useState(informacoes.ds_email);
-    
-    const logoff = () => {
-        // Cookies.remove('usuario-logado')
-        // navigation.push('/login')
-    }
+
 
     // async function inserirDados() {
     //     let r = await api.inserirCliente( endereco, nome, cpf, nascimento, telefone, email, senha )
@@ -113,7 +113,7 @@ export default function Perfil() {
     return (
     <ContainerPerfil>
         <LoadingBar color='white' ref={loading}/>
-        <Cabecalho />
+        <Cabecalho value={nome} />
         <div className="conteudo-perfil">
 
             <div className="info-pessoal-perfil">
@@ -170,7 +170,7 @@ export default function Perfil() {
                 </div>
 
                 
-                <div className="box-logout" onClick={logoff}>
+                <div className="box-logout">
                     <div className="logout-conta-perfil">Sair da conta</div>
                     <img src="../../assets/images/log-out.svg" alt="" />
                 </div>

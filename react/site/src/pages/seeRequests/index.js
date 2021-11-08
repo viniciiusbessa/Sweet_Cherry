@@ -3,12 +3,30 @@ import Rodape from '../../components/commum/footer/index'
 
 import { ContainerVerPedido } from './styled'
 
+import { useState } from 'react'
+
 import BoxPedido from './cardProductRequests/index'
+
+import Cookies from 'js-cookie'
 
 import { useHistory } from 'react-router-dom'
 
+function lerUsuarioLogado (navigation) {
+    let logado = Cookies.get('usuario-logado')
+    if (!logado) {
+        return false
+    }
+
+    let usuarioLogado = JSON.parse(logado);
+    return usuarioLogado;
+}
+
 export default function VerPedido() {
     const navigation = useHistory();
+
+    let usuarioLogado = lerUsuarioLogado(navigation) || {};
+
+    const [usu] = useState(usuarioLogado.nm_cliente);
 
     const Perfil = async () => {
         navigation.push('/perfil')
@@ -17,7 +35,7 @@ export default function VerPedido() {
     return (
     <ContainerVerPedido>
         <div className="fundo-ver-pedido">
-            <Cabecalho />
+            <Cabecalho value={usu} />
         </div>
 
         <div className="conteudo-9">
@@ -27,15 +45,6 @@ export default function VerPedido() {
             </div>
             <div className="compra-9">Compra 10/10/2021</div>
             <div className="pedidos-9">
-                <BoxPedido />
-                <BoxPedido />
-                <BoxPedido />
-                <BoxPedido />
-                <BoxPedido />
-                <BoxPedido />
-                <BoxPedido />
-                <BoxPedido />
-                <BoxPedido />
                 <BoxPedido />
             </div>
         </div>

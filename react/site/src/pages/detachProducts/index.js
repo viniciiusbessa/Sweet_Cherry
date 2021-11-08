@@ -11,17 +11,38 @@ import { ContainerDestaque } from './styled'
 
 import PageChange from '../../components/product/pageChange/index'
 
+import { useHistory } from "react-router";
+
+import Cookies from 'js-cookie'
+
 import Api from '../../service/api'
 const api = new Api();
 
 
+function lerUsuarioLogado (navigation) {
+    let logado = Cookies.get('usuario-logado')
+    if (!logado) {
+        return false
+    }
+
+    let usuarioLogado = JSON.parse(logado);
+    return usuarioLogado;
+}
+
+
 export default function Destaque() {
+    const navigation = useHistory();
+
+    let usuarioLogado = lerUsuarioLogado(navigation) || {};
+
+    const [usu] = useState(usuarioLogado.nm_cliente);
+
     const [bolos, setBolos] = useState([]);
     const [diversos, setDiversos] = useState([]);
     const [trufas, setTrufas] = useState([]);
     const [cupcakes, setCupcakes] = useState([]);
+
     const [product, setProduct] = useState([]);
-    console.log(product);
 
     const [pagina, setPagina] = useState(1);
     const [totalPaginas] = useState(0);
@@ -31,7 +52,6 @@ export default function Destaque() {
     const loading = useRef(null);
     
     const [busca, setBusca] = useState('');
-    console.log(busca);
 
     // const produtosFiltrados = products.filter((products) => products.startsWith(busca))
 
@@ -64,7 +84,7 @@ export default function Destaque() {
     
     useEffect(() => {
        listarCategoria();
-    }, [pagina])
+    }, [])
     
 
     const buscarProduto = async (event) => {
@@ -88,7 +108,7 @@ export default function Destaque() {
     
     return (
     <ContainerDestaque>
-        <Cabecalho />
+        <Cabecalho value={usu} />
         <LoadingBar color="#A4BCFF" ref={loading}/>
         <div className="conteudo">
             <div className="buscar">
