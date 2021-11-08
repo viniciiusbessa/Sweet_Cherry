@@ -5,8 +5,28 @@ import { useHistory } from 'react-router-dom';
 
 import Cookies from 'js-cookie';
 
+// function lerUsuarioLogado () {
+//     let logado = Cookies.get('usuario-logado')
+//     if (!logado) {
+//         return false
+//     }
+
+//     let usuarioLogado = JSON.parse(logado);
+//     return usuarioLogado;
+// }
+
 export default function Cabecalho(props) {
     const navigation = useHistory();
+    // let usuarioLogado = lerUsuarioLogado();
+    // const [usu] = useState(usuarioLogado.nm_cliente);
+
+    // function usuario () {
+    // if(usuarioLogado === null){
+    //     return('');
+    // }else {
+    //     return(usu)
+    // }
+    // }
 
     let logado = Cookies.get('usuario-logado')
 
@@ -57,8 +77,10 @@ export default function Cabecalho(props) {
                 <div className="rota-perfil" onClick={sobreNos}>Sobre nós</div>
                 <div className="rota-perfil" onClick={logoff}> {!logado ? 'Login' : 'Sair'} </div>
             </div>
-
-            
+            <div className="box-nome-usuario">
+                <div className="ola">Olá  {props.value}</div>
+                <button className="btn-logoff" onClick={logoff}> Sair </button>
+            </div>
 
             <div className="box-imgs-perfil">
                 <div className="img-carrinho-perfil"><img src="../../assets/images/carrinho.svg" alt="" onClick={carrinho} /> </div>

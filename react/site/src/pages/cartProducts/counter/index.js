@@ -48,14 +48,25 @@ export{ContainerCounter}
 
 
 export default function Counter(props){
-    const [qtd, setQtd] = useState(props.value)
-    const [total, setTotal] = useState(props.preco)
+    const [qtd, setQtd] = useState(1)
 
-   const increment = (plus) => {
-       if (plus === "somar") {
-            setTotal(Number(total) + Number(props.preco));
-       }
-   }
+    
+
+    function increment() {
+        if (qtd >= 30)
+            return;
+
+        setQtd(qtd + 1)
+    }
+
+
+    function decrement() {
+        if (qtd === 1)
+            return;
+
+        setQtd(qtd - 1)
+    }
+    
 
     useEffect(() => {
         props.onChange(qtd);
@@ -66,7 +77,7 @@ export default function Counter(props){
     return(
         <ContainerCounter>
             <div className="box-qtd"> 
-                <div className="menos" >
+                <div className="menos" onClick={decrement} >
                     -
                 </div>
                 
@@ -74,7 +85,7 @@ export default function Counter(props){
                     {qtd}
                 </div>
 
-                <div className="mais" onClick={increment}>
+                <div className="mais" onClick={increment} >
                     +
                 </div>
             </div>
