@@ -33,10 +33,6 @@ export default function CarrinhoProdutos(props) {
 
     const [products, setProducts] = useState([]);
 
-    const confPagamento = async () => {
-        navigation.push('/conf_pagamento')
-    }
-
     const contComprar = async () => {
         navigation.push('/destaque')
     }

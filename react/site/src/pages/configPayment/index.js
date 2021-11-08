@@ -19,9 +19,10 @@ const api = new Api();
 
 function lerUsuarioLogado (navigation) {
     let logado = Cookies.get('usuario-logado')
-    if (logado === null) {
+    if (!logado) {
+        alert('Ei, você precisa estar logado para fazer o pagamento')
         navigation.push('/login')
-        return null
+        return false
     }
 
     let usuarioLogado = JSON.parse(logado);
@@ -33,9 +34,10 @@ export default function ConfirmarPagamento(props) {
 
     let usuarioLogado = lerUsuarioLogado(navigation) || {};
 
-    const [email] = useState(usuarioLogado.ds_email);
+    const [usu] = useState(usuarioLogado.ds_email);
     const [nmCliente] = useState(usuarioLogado.nm_cliente);
 
+    const [email, setEmail] = useState(props.location.state.email);
     const [cpf, setCpf] = useState('');
     const [telefone, setTelefone] = useState('');
     const [endereco, setEndereco] = useState('');
@@ -77,7 +79,7 @@ export default function ConfirmarPagamento(props) {
                             <div className="nm-box">Dados pessoais</div>
 
                             <div className="nm-input">E-mail:</div>
-                            <InputPayment value={email} readOnly={true} />
+                            <InputPayment value={usu} readOnly={true} />
 
                             <div className="nm-input">CPF:</div>
                             <InputPayment value={cpf} onChange={e => setCpf(e.target.value)} />
@@ -89,9 +91,6 @@ export default function ConfirmarPagamento(props) {
                         <div className="entrega">
                             <div className="fr-entrega">
                                 <div className="nm-box">Entrega</div>
-                                <select name="tipoentrega" id="" className="entrega">
-                                    <option>Domicílio</option>
-                                </select>
                             </div>
 
                             <div className="nm-input">Endereço:</div>

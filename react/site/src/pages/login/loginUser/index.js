@@ -27,7 +27,7 @@ export default function Login() {
 
         } else {
             Cookies.set('usuario-logado', JSON.stringify(r));
-            navigation.push('/')
+            navigation.push('/', {email: email} )
         }
     }
 
