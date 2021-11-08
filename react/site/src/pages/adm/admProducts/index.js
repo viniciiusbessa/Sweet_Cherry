@@ -2,11 +2,15 @@ import TableProduct from './tableProducts/index'
 import { ContainerAdmProduto } from './styled'
 
 import { useHistory } from 'react-router-dom'
-
+import { useState } from 'react';
+import Api from '../../../service/api';
+const api = new Api();
 
 export default function AdministrarProdutos() {
     const navigation = useHistory();
 
+    const [busca, setBusca] = useState('');
+    const [product, setProduct] = useState('');
 
     const InicioAdm = async () => {
         navigation.push('/inicio-adm')
@@ -14,6 +18,14 @@ export default function AdministrarProdutos() {
 
     const AddProduto = async () => {
         navigation.push('/add-produto')
+    }
+
+    const buscarProduto = async (event) => {
+        if(event.type === "keypress" && ( event.charCode !== 13))
+        return;
+
+        let r = await api.buscarProdutos(busca);
+        setProduct(r);
     }
 
     return (
@@ -32,8 +44,8 @@ export default function AdministrarProdutos() {
         <div className="box-conteudo-adm2">
             <div className="btn-add-adm2"><button onClick={AddProduto}>Adicionar Produto</button></div>
             <div className="barra-pesquisa-adm2">
-                <input placeholder="pesquisa" /> 
-                <div title="pesquisar" className="img-lupa"></div>
+                <input placeholder="pesquisa" onClick={buscarProduto}/> 
+                <div title="pesquisar" className="img-lupa" value={busca} onChange={e => setBusca(e.target.value)} onKeyPress={buscarProduto} maxlength="30"></div>
             </div>
         </div>
 

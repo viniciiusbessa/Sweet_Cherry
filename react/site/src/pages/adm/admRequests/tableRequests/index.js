@@ -1,11 +1,29 @@
+import Cookies from 'js-cookie';
+import { useEffect, useState } from 'react';
+import CartItem from '../../../cartProducts/cartItem';
 import { ContainerTableRequests } from './styled'
 
 export default function TableRequests() {
+    const [products, setProducts] = useState([]);
+
+
+    useEffect(uploadCart, []);
+
+    function uploadCart() {
+        let carrinho = Cookies.get('administrar-pedidos');
+        carrinho = carrinho !== undefined 
+                      ? JSON.parse(carrinho) 
+                      : [];
+
+
+        //Cookies.remove('carrinho');
+        setProducts(carrinho);
+    }
     return (
         <ContainerTableRequests>
 
             <div className="box-pedido-cliente"> 
-                <div className="nome-cliente">Número Pedido: 20 - Cliente: Fulado - Data: 30/12/2021 </div>
+                <div className="nome-cliente">Número Pedido: {products.id_pedido} - Cliente: {products.nm_cliente} - Data: {products.dt_pedido} </div>
 
                 <div className="estado-pedido"> 
                     <div className="acoes-titulo"> Ações/Estado</div>
@@ -33,12 +51,13 @@ export default function TableRequests() {
 
                 <tbody>
 
+                {products.map((item) =>
                     <tr>
-                        <td>1</td>
-                        <td>CupCake</td>
-                        <td>2</td>
-                        <td>R$ 19.90</td>
-                    </tr>
+                      <td>{item.nm_produto}</td>
+                      <td>{}</td>
+                      <td>R$ 19.90</td>
+                  </tr>
+                )}
 
                     <tr>
                         <td>2</td>
