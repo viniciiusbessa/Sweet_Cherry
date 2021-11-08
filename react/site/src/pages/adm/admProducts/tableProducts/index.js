@@ -25,6 +25,7 @@ export default function TableProduct() {
     const [/* avaliacao */, setAvaliacao] = useState('')
     const [/* imagem */, setImagem] = useState('')
     const [/* idAlterando */, setidAlterando] = useState(0);
+    const [product, setProduct] = useState([]);
     
     const loading = useRef(null);
 
@@ -111,7 +112,6 @@ export default function TableProduct() {
             </thead>
 
             <tbody>
-
                 {produtos.map((item) => 
 
                     <tr>

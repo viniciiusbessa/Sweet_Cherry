@@ -71,6 +71,20 @@ export default function CarrinhoProdutos(props) {
     return total + (item.preco * item.qtd);
     }
 
+    function cartItem(){
+        let carrinho = Cookies.get('carrinho');
+        carrinho = carrinho !== undefined 
+                    ? JSON.parse(carrinho) 
+                    : [];
+         
+         if (carrinho.some(item => item.id === products.id) === false)
+             carrinho.push({...products, qtd: 1 });
+
+         Cookies.set('carrinho', JSON.stringify(carrinho));
+         navigation.push('/carrinho');
+
+    }
+
     return(
         <CartProduct>
             <div className="fundo-cabecalho">
@@ -112,10 +126,10 @@ export default function CarrinhoProdutos(props) {
                 <div className="continuar"><button onClick={contComprar}>Continuar comprando</button></div>
 
                 <Link to={{
-                    pathname: '/conf_pagamento',
+                    pathname: '/administrar-pedidos',
                     state: total
                 }}>
-                <div className="confirmar"><button>Confirmar compra</button></div>
+                <div className="confirmar"><button onClick={cartItem}>Confirmar compra</button></div>
                 </Link>
             </div>
 

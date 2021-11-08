@@ -118,8 +118,6 @@ export default function Perfil() {
 
             <div className="info-pessoal-perfil">
 
-            <div className="nome-pessoa-perfil">Olá {usu.nm_cliente}</div>
-
                 <div className="box-dados-conta-perfil">
                     <div className="dados-conta-perfil">Dados da conta</div>
                     <div className="box-infos">

@@ -77,10 +77,6 @@ export default function Cabecalho(props) {
                 <div className="rota-perfil" onClick={sobreNos}>Sobre nós</div>
                 <div className="rota-perfil" onClick={logoff}> {!logado ? 'Login' : 'Sair'} </div>
             </div>
-            <div className="box-nome-usuario">
-                <div className="ola">Olá  {props.value}</div>
-                <button className="btn-logoff" onClick={logoff}> Sair </button>
-            </div>
 
             <div className="box-imgs-perfil">
                 <div className="img-carrinho-perfil"><img src="../../assets/images/carrinho.svg" alt="" onClick={carrinho} /> </div>

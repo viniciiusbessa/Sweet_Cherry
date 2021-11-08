@@ -89,13 +89,10 @@ export default function Destaque() {
 
     const buscarProduto = async (event) => {
         loading.current.continuousStart();
-
         if(event.type === "keypress" && ( event.charCode !== 13))
         return;
-
         let r = await api.buscarProdutos(busca);
         setProduct(r);
-
         loading.current.complete();
     }
 

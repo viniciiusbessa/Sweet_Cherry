@@ -64,13 +64,12 @@ const ContainerCabecalho = styled.div`
 
     .ola {
         font-family: Patua one;
-        font-size: 25px;
+        font-size: 18px;
         text-decoration: underline 4px solid #D1EAF5;
 
         width: auto;
 
-        margin-top: 0.1em;
-        margin-left: -1.5em;
+        margin: 0.5em .5em 0em;
     }
 
 

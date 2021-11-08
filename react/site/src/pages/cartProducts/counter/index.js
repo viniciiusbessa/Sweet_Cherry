@@ -49,7 +49,6 @@ export{ContainerCounter}
 
 export default function Counter(props){
     const [qtd, setQtd] = useState(1)
-
     
 
     function increment() {
