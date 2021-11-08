@@ -3,9 +3,30 @@ import { ContainerCabecalho } from './styled'
 
 import { useHistory } from 'react-router-dom';
 import Cookies from 'js-cookie';
+import { useState } from 'react';
+
+// function lerUsuarioLogado () {
+//     let logado = Cookies.get('usuario-logado')
+//     if (!logado) {
+//         return false
+//     }
+
+//     let usuarioLogado = JSON.parse(logado);
+//     return usuarioLogado;
+// }
 
 export default function Cabecalho(props) {
     const navigation = useHistory();
+    // let usuarioLogado = lerUsuarioLogado();
+    // const [usu] = useState(usuarioLogado.nm_cliente);
+
+    // function usuario () {
+    // if(usuarioLogado === null){
+    //     return('');
+    // }else {
+    //     return(usu)
+    // }
+    // }
 
     const logoff = () => {
         Cookies.remove('usuario-logado')
@@ -52,7 +73,7 @@ export default function Cabecalho(props) {
             </div>
 
             <div className="box-nome-usuario">
-                <div className="ola"> Olá {props.value}</div>
+                <div className="ola">Olá  {props.value}</div>
                 <button className="btn-logoff" onClick={logoff}> Sair </button>
             </div>
 

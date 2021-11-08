@@ -93,10 +93,7 @@ export default function Destaque() {
         <div className="conteudo">
             <div className="buscar">
             <input type="text" id="txtBusca" className="busca" value={busca} onChange={e => setBusca(e.target.value)} onKeyPress={buscarProduto} maxlength="30"/>
-                {/* value={product} onChange={(ev) => setProduct(ev.target.value)}*/}
-                {/*onChange={(event) => buscarProduto(event)}*/}
                 <img src="../../assets/images/ferramenta-lupa 7.png" alt="" onClick={buscarProduto}  />
-                
             </div>
 
 
