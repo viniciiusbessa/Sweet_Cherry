@@ -112,7 +112,7 @@ export default function Destaque() {
         <LoadingBar color="#A4BCFF" ref={loading}/>
         <div className="conteudo">
             <div className="buscar">
-            <input type="text" id="txtBusca" className="busca" value={busca} onChange={e => setBusca(e.target.value)} onKeyPress={buscarProduto} maxlength="30"/>
+            <input type="text" id="txtBusca" className="busca" value={busca} onChange={e => setBusca(e.target.value)} onKeyPress={buscarProduto} maxlength="60" />
                 <img src="../../assets/images/ferramenta-lupa 7.png" alt="" onClick={buscarProduto}  />
             </div>
 
