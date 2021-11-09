@@ -9,6 +9,9 @@ import { useHistory } from "react-router";
 
 import Cookies from 'js-cookie';
 
+import Api from "../../service/api";
+const api = new Api();
+
 function lerUsuarioLogado (navigation) {
     let logado = Cookies.get('usuario-logado')
     if (!logado) {
@@ -27,24 +30,27 @@ export default function Favorites() {
 
     let usuarioLogado = lerUsuarioLogado(navigation) || {};
 
-    const [usu] = useState(usuarioLogado.nm_cliente);
+    const [usu] = useState(usuarioLogado);
 
     const[produto, setProduto] = useState([]);
 
-    useEffect(carregarFavoritos,[]);
+    const [favoritos, setFavoritos] = useState([]);
 
-    function carregarFavoritos(){
-        let favorito = Cookies.get('favorito');
-        favorito = favorito !== undefined
-            ? JSON.parse(favorito)
-            :[];
-        setProduto(favorito);
-    }
+    async function mostrarFavoritos(){
+       
+        let v = await api.mostrarFavoritos(usu.id_cliente);
+            console.log(v)
+            setFavoritos(v);
+        }
+
+    useEffect(() => {
+        mostrarFavoritos();
+     }, [])
 
     return (
         <ContainerFavoritos>
             <div className="cabecalho">
-                <Header value={usu} />
+                <Header value={usu.nm_cliente} />
             </div>
             <div class="box-favoritos">
                 <div class="box-texto">
@@ -53,7 +59,7 @@ export default function Favorites() {
                 </div>
 
                 <div class="box-doces">
-                    {produto.map(item => 
+                    {favoritos.map(item => 
                         <BoxProduto 
                             key={item.id}
                             info={item} />

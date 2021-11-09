@@ -4,11 +4,19 @@ import { Link, useHistory } from 'react-router-dom'
 import Cookies from "js-cookie";
 import { useState } from "react";
 
+import Api from "../../../service/api";
+const api = new Api();
 
 export default function BoxProduto (props){
     const navigation = useHistory();
     
     const [product] = useState(props.info);
+    
+    const [cliente, setCliente] = useState(JSON.parse(Cookies.get('usuario-logado')).id_cliente);
+    const [produto, setProduto] = useState(product.id);
+    const [favoritos, setFavoritos] = useState([]);
+
+    console.log(product);
     
     const compra = async () => {
         navigation.push('/compra')
@@ -27,16 +35,10 @@ export default function BoxProduto (props){
          navigation.push('/carrinho');
     }
 
-    function favorito(){
-        let favorito = Cookies.get('favorito');
-        favorito = favorito !== undefined
-            ?JSON.parse(favorito)
-            :[];
-        if (favorito.some(item => item.id === product.id) === false)
-        favorito.push({...product, qtd: 1});
+    async function favorito(){
+        let v = await api.colocarFavoritos(cliente, produto);
 
-        Cookies.set('favorito', JSON.stringify(favorito));
-        navigation.push('/favoritos');
+        navigation.push('/favoritos/')
     }
 
 
