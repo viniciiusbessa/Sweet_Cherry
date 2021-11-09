@@ -112,5 +112,25 @@ export default class Api {
             complemento
         })
         return j.data
-    }  
+    } 
+
+    //favoritos
+    
+    async mostrarFavoritos (cliente){
+        let v = await api.get(`/favorito/?cliente=${cliente}`);
+        return v.data;
+    }
+
+    async colocarFavoritos(cliente, produto) {
+        let v = await api.post('/favorito', {
+            cliente,
+            produto
+        });
+        return v.data;
+}
+
+    async deletarFavorito(id) {
+        let v = await api.delete('/favorito/' + id)
+        return v.data;
+    }
 }
