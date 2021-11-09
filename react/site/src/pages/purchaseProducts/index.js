@@ -41,6 +41,8 @@ export default function Compra(props) {
 
     const [product] = useState(props.location.state);
     const [diversos, setDiversos] = useState([]);
+
+    const [produto, setProduto] = useState([]);
     
     const confPagamento = async () => {
         navigation.push('/conf_pagamento')
@@ -58,6 +60,18 @@ export default function Compra(props) {
          Cookies.set('carrinho', JSON.stringify(carrinho));
          navigation.push('/carrinho');
 
+    }
+
+    function favorito(){
+        let favorito = Cookies.get('favorito');
+        favorito = favorito !== undefined
+            ?JSON.parse(favorito)
+            :[];
+        if (favorito.some(item => item.id === product.id) === false)
+        favorito.push({...product, qtd: 1});
+
+        Cookies.set('favorito', JSON.stringify(favorito));
+        navigation.push('/favoritos');
     }
 
     async function listarCategoria() {
@@ -110,7 +124,7 @@ export default function Compra(props) {
                     <div className="botoesC-1">
                         <div className="botoes-box1">
                 
-                            <button className="Add-favoritos-bt"> <img src="../../assets/images/coracao-favoritos-compra.svg"  alt="" /> Add aos Favoritos</button>
+                            <button className="Add-favoritos-bt" onClick={favorito}> <img src="../../assets/images/coracao-favoritos-compra.svg"  alt="" /> Add aos Favoritos</button>
 
                             <button className="Add-carrinho-bt" onClick={cartItem}> 
                                 <img src="../../assets/images/carrinho.png" alt=""/> 

@@ -31,6 +31,18 @@ export default function BoxProduto (props){
          navigation.push('/carrinho');
     }
 
+    function favorito(){
+        let favorito = Cookies.get('favorito');
+        favorito = favorito !== undefined
+            ?JSON.parse(favorito)
+            :[];
+        if (favorito.some(item => item.id === product.id) === false)
+        favorito.push({...product, qtd: 1});
+
+        Cookies.set('favorito', JSON.stringify(favorito));
+        navigation.push('/favoritos');
+    }
+
 
     return(
         <div className='hoverProduto'>
@@ -45,7 +57,7 @@ export default function BoxProduto (props){
                         <div className="preco"> R$ {props.info.preco}</div>
                         <div className="icones">
                             <div className="icone-carrinho" onClick={cartItem}><img src="/assets/images/carrinho.svg" alt=""/></div>
-                            <div className="icone-coracao" onClick={favoritos}><img src="/assets/images/coracao-favoritos-compra.svg" alt=""/></div>
+                            <div className="icone-coracao" onClick={favorito}><img src="/assets/images/coracao-favoritos-compra.svg" alt=""/></div>
                         </div>
                         </div>
 
