@@ -14,10 +14,6 @@ export default function BoxProduto (props){
         navigation.push('/compra')
     }
 
-    const favoritos = async () => {
-        navigation.push('/favoritos')
-    }
-
     function cartItem(){
         let carrinho = Cookies.get('carrinho');
         carrinho = carrinho !== undefined 
