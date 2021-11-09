@@ -119,6 +119,7 @@ const BoxEmAlta = styled.div`
 
         height: 20em;
         width: 45em;
+        margin-bottom: 3em;
 
         background-color: #a4bcff;
         border-radius: 30px;

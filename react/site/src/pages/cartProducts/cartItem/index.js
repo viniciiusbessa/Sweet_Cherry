@@ -18,7 +18,7 @@ export default function CartItem(props) {
         <ContainerItem>
             <td><div className="nome-produto">{products.produto}</div></td> 
             <td>R$ {products.preco}</td>
-            <td> <div className="contador"> <Counter onChange={alterarQtd} value={products.qtd} />  </div></td>
+            <td> <div className="contador"> <Counter onChange={alterarQtd} value={products.qtd} info={products.preco} />  </div></td>
             <td className="acao"> <button onClick={remover}> <img src="../../assets/images/lixeira.svg" alt=""/> </button> </td>
         </ContainerItem>
     )
