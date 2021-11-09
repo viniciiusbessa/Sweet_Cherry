@@ -166,29 +166,16 @@ export default function Perfil() {
                     <input className="input-telefone" />
 
                 </div>
-
-                
-                <div className="box-logout">
-                    <div className="logout-conta-perfil">Sair da conta</div>
-                    <img src="../../assets/images/log-out.svg" alt="" />
-                </div>
                 
 
                 <div className="box-excluir" onClick={Inicio}>
                     <div className="excluir-conta-perfil">Excluir conta</div>
                     <img src="../../assets/images/Lixeira-perfil.svg" alt="" />
                 </div>
-
-                <div className="btn-salvar"><button>Salvar</button></div>
             </div>
 
             <div className="info-pedidos">
                 <div className="titulo-pedido">Pedidos</div>
-
-                <div className="barra-pesquisa-adm2">
-                    <input className="input-pesquisa-pedido" placeholder="pesquisa" /> 
-                    <img title="pesquisa" src="../../assets/images/ferramenta-lupa 7.png" alt="" />
-                </div>
 
                 <div className="subtitulo-pedido">Seus pedidos em</div>
                 <div className="subtitulo-pedido">andamento estão aqui :)</div>

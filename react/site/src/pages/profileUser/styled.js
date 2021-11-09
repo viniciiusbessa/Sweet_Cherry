@@ -14,6 +14,8 @@ const ContainerPerfil = styled.div `
         .conteudo-perfil {
             display: flex;
             flex-direction: row;
+            justify-content: space-between;
+            padding-bottom: 4em;
         }
 
         .info-pessoal-perfil {
@@ -155,41 +157,6 @@ const ContainerPerfil = styled.div `
             user-select: none;
         }
 
-        .box-logout {
-            display: flex;
-            flex-direction: row;
-
-            margin-left: 2em;
-            margin-top: 0.7em;
-
-            font-family: Patua One;
-            font-size: 22px;
-            color: #FBE8FF;
-
-            height: 2em;
-
-            cursor: pointer;
-            user-select: none;
-        }
-
-        .box-logout:hover {
-            color: #dbd6db;
-            cursor: pointer;
-        }
-
-        .logout-conta-perfil:hover {
-            cursor: pointer;
-        }
-
-        .box-logout img {
-            height: 36px;
-            width: 50px;
-
-            margin-top: -0.2em;
-
-            cursor: pointer;
-        }
-
         .box-excluir {
             display: flex;
             flex-direction: row;
@@ -197,7 +164,7 @@ const ContainerPerfil = styled.div `
             margin-left: 2em;
 
             font-family: Patua One;
-            font-size: 22px;
+            font-size: 23px;
             color: #FF1A1A;
 
             cursor: pointer;
@@ -206,7 +173,9 @@ const ContainerPerfil = styled.div `
 
         .box-excluir:hover {
             color: #b82121;
+
             cursor: pointer;
+            transition: 0.5s;
         }
 
         .excluir-conta-perfil:hover {
@@ -220,92 +189,20 @@ const ContainerPerfil = styled.div `
             cursor: pointer;
         }
 
-        .btn-salvar button {
-            background: #2F1747;
-            border-radius: 39px;
-            border: none;
-
-            font-family: Pacifico;
-            color: #FFF;
-            font-size: 20px;
-
-            padding: 0.2em 1.8em;
-            margin: 1.5em 0em 1em 13em;
-
-            cursor: pointer;
-            user-select: none;
-        }
-
-        .btn-salvar button:hover {
-            background: #472666;
-            cursor: pointer;
-
-            transition: 0.5s;
-        }
-
-
         .info-pedidos {
             display: flex;
             flex-direction: column;
             align-items: center;
 
-            width: 100%;
+            margin-right: 6em;
         }
 
         .titulo-pedido {
             font-size: 45px;
 
+            margin-bottom: 0.5em;
+
             text-decoration: underline 5px solid #F6AAC6;
-        }
-
-        .input-pesquisa-pedido {
-            width: 390px;
-            height: 55px;
-
-            background: #FFF;
-
-            border: 3px solid #D1EAF5;
-            border-radius: 24px;
-
-            margin-top: 1em;
-            padding: 0.2em 1em;
-
-            cursor: text;
-
-            font-family: Patua One;
-            font-size: 18px;
-            color: #140018;
-        }
-
-        .input-pesquisa-pedido:focus {
-            box-shadow: 0 0 0 0;
-            outline: 0;
-
-            border: 3px solid #78c4e4;
-            transition: 0.5s;
-        }
-
-        .input-pesquisa-pedido::placeholder {
-            font-family: Patua One;
-            color: #140018;
-            font-size: 20px;
-        }
-
-
-        .barra-pesquisa-adm2 {
-            cursor: pointer;
-            user-select: none;
-        }
-
-        .barra-pesquisa-adm2 img {
-            width: 1.8em;
-            height: 1.8em;
-
-            margin-bottom: -0.5em;
-            margin-left: -2.8em;
-
-            cursor: pointer;
-            user-select: none;
         }
 
         .subtitulo-pedido {
@@ -313,7 +210,6 @@ const ContainerPerfil = styled.div `
             font-family: Patua One;
             color: #808080;
 
-            cursor: pointer;
             user-select: none;
         }
 
@@ -374,7 +270,7 @@ const ContainerPerfil = styled.div `
             font-size: 25px;
 
             padding: 0.4em 1em;
-            margin: 8em 0em 0em 13em;
+            margin: 4em 0em 0em 10em;
 
             cursor: pointer;
             user-select: none;
