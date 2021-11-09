@@ -70,6 +70,7 @@ const ContainerCabecalho = styled.div`
         width: auto;
 
         margin: 0.5em .5em 0em;
+        cursor: pointer;
     }
 
 
