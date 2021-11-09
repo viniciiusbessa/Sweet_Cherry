@@ -60,6 +60,10 @@ export default function Cabecalho(props) {
         navigation.push('/favoritos')
     }
 
+    const perfil = async () => {
+        navigation.push('/perfil')
+    }
+
     return (
         <ContainerCabecalho>
             <div className="logo-perfil" onClick={inicio}>
@@ -68,7 +72,7 @@ export default function Cabecalho(props) {
             </div>
 
             <div className="box-nome-usuario">
-                <div className="ola"> {!logado ? '' : `Olá ${props.value}`} </div>
+                <div className="ola" onClick={perfil} > {!logado ? '' : `Olá ${props.value}`} </div>
             </div>          
  
             <div className="rotas-perfil">
