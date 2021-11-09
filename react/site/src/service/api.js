@@ -27,14 +27,15 @@ export default class Api {
     }
 
 
-    async listarProdutosCategoria(categoria) {
-        let r = await api.get('/produto/cate?categoria=' + categoria);
-        return [...r.data];
+    async listarProdutosCategoria(categoria, page) {
+        //let r = await api.get(`/produto/cate?categoria=${categoria}&page=${page}`);
+        let r = await api.get(`/produto/v3?categoria=${categoria}&page=${page}`);
+        return r.data;
     }
 
     async buscarProdutos(produto) {
         let r = await api.get('/produto/busca?search=' + produto);
-        return [...r.data];
+        return r.data;
     }
 
         // TESTANDO

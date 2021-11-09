@@ -37,10 +37,10 @@ export default function Destaque() {
 
     const [usu] = useState(usuarioLogado.nm_cliente);
 
-    const [bolos, setBolos] = useState([]);
-    const [diversos, setDiversos] = useState([]);
-    const [trufas, setTrufas] = useState([]);
-    const [cupcakes, setCupcakes] = useState([]);
+    const [bolos, setBolos] = useState({items:[], pagina: 1, totalPaginas: 1});
+    const [diversos, setDiversos] = useState({items:[], pagina: 1, totalPaginas: 1});
+    const [trufas, setTrufas] = useState({items:[], pagina: 1, totalPaginas: 1});
+    const [cupcakes, setCupcakes] = useState({items:[], pagina: 1, totalPaginas: 1});
 
     const [product, setProduct] = useState([]);
 
@@ -53,6 +53,11 @@ export default function Destaque() {
     
     const [busca, setBusca] = useState('');
 
+    // const [pageBolo, setPageBolo] = useState(1)
+    // const [pageDiversos, setPageDiversos] = useState(1)
+    // const [pageTruffas, setPageTruffas] = useState(1)
+    // const [pageCupcakes, setPageCupcakes] = useState(1)
+
     // const produtosFiltrados = products.filter((products) => products.startsWith(busca))
 
     async function listarCategoria() {
@@ -60,31 +65,29 @@ export default function Destaque() {
 
         setLoadingProducts(true);
 
-        let r1 = await api.listarProdutosCategoria('Bolos');
-        let r2 = await api.listarProdutosCategoria('Diversos');
-        let r3 = await api.listarProdutosCategoria('Trufas');
-        let r4 = await api.listarProdutosCategoria('Cupcakes');
+        let r1 = await api.listarProdutosCategoria('Bolos', bolos.pagina);
+        // let r2 = await api.listarProdutosCategoria('Diversos');
+        // let r3 = await api.listarProdutosCategoria('Trufas');
+        // let r4 = await api.listarProdutosCategoria('Cupcakes');
+
+        console.log(r1);
 
         setBolos(r1);
-        setDiversos(r2);
-        setTrufas(r3);
-        setCupcakes(r4);
+        // setDiversos(r2);
+        // setTrufas(r3);
+        // setCupcakes(r4);
 
         setLoadingProducts(false)
 
         loading.current.complete()
     }
 
-
-    function irPara(pagina) {
-        setPagina(pagina);
-    }
-
-
     
+
+
     useEffect(() => {
        listarCategoria();
-    }, [])
+    }, [bolos.pagina])
     
 
     const buscarProduto = async (event) => {
@@ -92,15 +95,21 @@ export default function Destaque() {
         if(event.type === "keypress" && ( event.charCode !== 13))
         return;
         let r = await api.buscarProdutos(busca);
-        setProduct(r);
+        if (r.erro) {
+            alert(r.erro);
+        } else {
+            setProduct(r);
+        }
         loading.current.complete();
     }
 
     
-    // const Minimodeletras = async (resp) => {
-    //     if (product.length <= 3)
-    //     return resp.send({erro: 'Coloque mais caracteres pf '})
-    // }
+     //const Minimodeletras = async (resp) => {
+        // if (product.length <= 3)
+        // return ('');
+     //}
+
+    //var input = document.querySelector('input', func)
 
     
     return (
@@ -109,8 +118,8 @@ export default function Destaque() {
         <LoadingBar color="#A4BCFF" ref={loading}/>
         <div className="conteudo">
             <div className="buscar">
-            <input type="text" id="txtBusca" className="busca" value={busca} onChange={e => setBusca(e.target.value)} onKeyPress={buscarProduto} maxlength="60" />
-                <img src="../../assets/images/ferramenta-lupa 7.png" alt="" onClick={buscarProduto}  />
+            <input type="text" id="txtBusca" className="busca" value={busca} onChange={e => setBusca(e.target.value)} onKeyPress={buscarProduto} maxlength="60" minLength="3" />
+                <img src="../../assets/images/ferramenta-lupa 7.png" alt="" onClick={buscarProduto }  />
             </div>
 
 
@@ -132,7 +141,7 @@ export default function Destaque() {
                 {loadingProducts && <Loader />}
 
                 {!loadingProducts && 
-                bolos.map(item => 
+                bolos.items.map(item => 
                     <BoxProduto 
                         key={item.id}
                         info={item} />
@@ -141,13 +150,13 @@ export default function Destaque() {
 
             <div className="paginacao">
                 <PageChange 
-                    totalPaginas={totalPaginas}
-                    pagina={pagina}   
-                    onPageChange={irPara}
+                    totalPaginas={bolos.totalPaginas}
+                    pagina={bolos.pagina}   
+                    onPageChange={pag => setBolos({...bolos, pagina: pag}) }
                 />
             </div>
             
-
+{/* 
 
             <div className="nm-box">Cupcakes</div>
             <div className="box-itens">
@@ -213,7 +222,7 @@ export default function Destaque() {
                     pagina={pagina}   
                     onPageChange={irPara}
                 />
-            </div>
+            </div> */}
         </div>
 
         <Rodape />
