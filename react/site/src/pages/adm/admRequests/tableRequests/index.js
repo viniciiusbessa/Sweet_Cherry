@@ -1,6 +1,8 @@
 import Cookies from 'js-cookie';
 import { useEffect, useState } from 'react';
-import CartItem from '../../../cartProducts/cartItem';
+
+// import CartItem from '../../../cartProducts/cartItem';
+
 import { ContainerTableRequests } from './styled'
 
 export default function TableRequests() {

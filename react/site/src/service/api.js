@@ -27,8 +27,13 @@ export default class Api {
     }
 
 
-    async listarProdutosCategoria(categoria, page) {
-        //let r = await api.get(`/produto/cate?categoria=${categoria}&page=${page}`);
+    async listarProdutosCategoria(categoria) {
+        let r = await api.get('/produto/cate?categoria=' + categoria);
+        return r.data;
+    }
+
+
+    async listarProdutosCategoriaPaginacao(categoria, page) {
         let r = await api.get(`/produto/v3?categoria=${categoria}&page=${page}`);
         return r.data;
     }
@@ -37,13 +42,6 @@ export default class Api {
         let r = await api.get('/produto/busca?search=' + produto);
         return r.data;
     }
-
-        // TESTANDO
-        //    async listarPaginacao(paginacao) {
-        //        let r = await api.get('/produto/v3?categoria=&page=' + paginacao);
-        //        return [...r.data.items], [r.data.totalPaginas];
-        //    }
-        // TESTANDO
 
 
     // Cliente
@@ -55,6 +53,11 @@ export default class Api {
 
     async inserirCliente( endereco, nome_cliente, cpf, dtnascimento, telefone, email, senha ) {
         let r = await api.post('/cliente', { endereco, nome_cliente, cpf, dtnascimento, telefone, email, senha })
+        return r.data;
+    }
+
+    async removerCliente(id) {
+        let r = await api.delete('/cliente' + id)
         return r.data;
     }
 

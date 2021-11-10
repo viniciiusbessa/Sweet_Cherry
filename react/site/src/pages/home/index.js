@@ -51,16 +51,7 @@ export default function Inicial () {
 
     const loading = useRef(null);
 
-    console.log(Cookies.get('usuario-logado'))
-
     
-
-
-    // let logado = Cookies.get('usuario-logado')
-    // if (logado === null) {
-    //     navigation.push('/login')
-        
-    // }
 
     /*const responsive = {
         desktop: {
@@ -86,7 +77,7 @@ export default function Inicial () {
         loading.current.continuousStart();
 
         let r1 = await api.listarProdutosCategoria('Novidades');
-        let r2 = await api.listarProdutosCategoria('diversos');
+        let r2 = await api.listarProdutosCategoria('Diversos');
         let r3 = await api.listarProdutosCategoria('Em alta');
 
         setNovidades(r1);
@@ -136,7 +127,8 @@ export default function Inicial () {
                     <button className="button2 animate__animated animate__bounceInRight" onClick={categorias}><img src="/assets/images/ferramenta-lupa 1.png" alt=""/></button>
                 </div>
             </div>
-            <BoxNews info={novidades}/>
+            <BoxNews info={novidades} />
+
             <BoxSlide>
                 <div className="Faixa3_inicio">
                     <div className="titulo">Diversos</div>

@@ -41,8 +41,6 @@ export default function Compra(props) {
 
     const [product] = useState(props.location.state);
     const [diversos, setDiversos] = useState([]);
-
-    const [produto, setProduto] = useState([]);
     
     const confPagamento = async () => {
         navigation.push('/conf_pagamento')

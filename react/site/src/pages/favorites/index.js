@@ -32,8 +32,6 @@ export default function Favorites() {
 
     const [usu] = useState(usuarioLogado);
 
-    const[produto, setProduto] = useState([]);
-
     const [favoritos, setFavoritos] = useState([]);
 
     async function mostrarFavoritos(){
@@ -45,6 +43,7 @@ export default function Favorites() {
 
     useEffect(() => {
         mostrarFavoritos();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
      }, [])
 
     return (

@@ -38,14 +38,11 @@ export default function Destaque() {
     const [usu] = useState(usuarioLogado.nm_cliente);
 
     const [bolos, setBolos] = useState({items:[], pagina: 1, totalPaginas: 1});
-    const [diversos, setDiversos] = useState({items:[], pagina: 1, totalPaginas: 1});
-    const [trufas, setTrufas] = useState({items:[], pagina: 1, totalPaginas: 1});
     const [cupcakes, setCupcakes] = useState({items:[], pagina: 1, totalPaginas: 1});
+    const [trufas, setTrufas] = useState({items:[], pagina: 1, totalPaginas: 1});
+    const [diversos, setDiversos] = useState({items:[], pagina: 1, totalPaginas: 1});
 
     const [product, setProduct] = useState([]);
-
-    const [pagina, setPagina] = useState(1);
-    const [totalPaginas] = useState(0);
 
     const [loadingProducts, setLoadingProducts] = useState(true)
     
@@ -53,29 +50,23 @@ export default function Destaque() {
     
     const [busca, setBusca] = useState('');
 
-    // const [pageBolo, setPageBolo] = useState(1)
-    // const [pageDiversos, setPageDiversos] = useState(1)
-    // const [pageTruffas, setPageTruffas] = useState(1)
-    // const [pageCupcakes, setPageCupcakes] = useState(1)
 
-    // const produtosFiltrados = products.filter((products) => products.startsWith(busca))
-
-    async function listarCategoria() {
+    async function listarCategoriaPaginacao() {
         loading.current.continuousStart();
 
         setLoadingProducts(true);
 
-        let r1 = await api.listarProdutosCategoria('Bolos', bolos.pagina);
-        // let r2 = await api.listarProdutosCategoria('Diversos');
-        // let r3 = await api.listarProdutosCategoria('Trufas');
-        // let r4 = await api.listarProdutosCategoria('Cupcakes');
-
-        console.log(r1);
+        let r1 = await api.listarProdutosCategoriaPaginacao('Bolos', bolos.pagina);
+        let r2 = await api.listarProdutosCategoriaPaginacao('Cupcakes', cupcakes.pagina);
+        let r3 = await api.listarProdutosCategoriaPaginacao('Trufas', trufas.pagina);
+        let r4 = await api.listarProdutosCategoriaPaginacao('Diversos', diversos.pagina);
+        
+        
 
         setBolos(r1);
-        // setDiversos(r2);
-        // setTrufas(r3);
-        // setCupcakes(r4);
+        setCupcakes(r2);
+        setTrufas(r3);
+        setDiversos(r4);
 
         setLoadingProducts(false)
 
@@ -86,8 +77,9 @@ export default function Destaque() {
 
 
     useEffect(() => {
-       listarCategoria();
-    }, [bolos.pagina])
+        listarCategoriaPaginacao();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [bolos.pagina, cupcakes.pagina, trufas.pagina, diversos.pagina])
     
 
     const buscarProduto = async (event) => {
@@ -156,14 +148,14 @@ export default function Destaque() {
                 />
             </div>
             
-{/* 
+
 
             <div className="nm-box">Cupcakes</div>
             <div className="box-itens">
                 {loadingProducts && <Loader />}
             
                 {!loadingProducts &&
-                cupcakes.map(item => 
+                cupcakes.items.map(item => 
                     <BoxProduto 
                         key={item.id}
                         info={item} />
@@ -172,9 +164,9 @@ export default function Destaque() {
 
             <div className="paginacao">
                 <PageChange 
-                    totalPaginas={totalPaginas}
-                    pagina={pagina}   
-                    onPageChange={irPara}
+                    totalPaginas={cupcakes.totalPaginas}
+                    pagina={cupcakes.pagina}   
+                    onPageChange={pag => setCupcakes({...cupcakes, pagina: pag}) }
                 />
             </div>
             
@@ -185,7 +177,7 @@ export default function Destaque() {
                 {loadingProducts && <Loader />}
 
                 {!loadingProducts &&
-                trufas.map(item => 
+                trufas.items.map(item => 
                     <BoxProduto 
                         key={item.id}
                         info={item} />
@@ -194,9 +186,9 @@ export default function Destaque() {
 
             <div className="paginacao">
                 <PageChange 
-                    totalPaginas={totalPaginas}
-                    pagina={pagina}   
-                    onPageChange={irPara}
+                    totalPaginas={trufas.totalPaginas}
+                    pagina={trufas.pagina}   
+                    onPageChange={pag => setTrufas({...trufas, pagina: pag}) }
                 />
             </div>
 
@@ -208,7 +200,7 @@ export default function Destaque() {
                 {loadingProducts && <Loader />}
 
                 {!loadingProducts && 
-                diversos.map(item => 
+                diversos.items.map(item => 
                     <BoxProduto 
                         key={item.id}
                         info={item} />
@@ -218,11 +210,11 @@ export default function Destaque() {
 
             <div className="paginacao">
                 <PageChange 
-                    totalPaginas={totalPaginas}
-                    pagina={pagina}   
-                    onPageChange={irPara}
+                    totalPaginas={diversos.totalPaginas}
+                    pagina={diversos.pagina}   
+                    onPageChange={pag => setDiversos({...diversos, pagina: pag}) }
                 />
-            </div> */}
+            </div>
         </div>
 
         <Rodape />

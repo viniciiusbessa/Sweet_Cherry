@@ -5,28 +5,8 @@ import { useHistory } from 'react-router-dom';
 
 import Cookies from 'js-cookie';
 
-// function lerUsuarioLogado () {
-//     let logado = Cookies.get('usuario-logado')
-//     if (!logado) {
-//         return false
-//     }
-
-//     let usuarioLogado = JSON.parse(logado);
-//     return usuarioLogado;
-// }
-
 export default function Cabecalho(props) {
     const navigation = useHistory();
-    // let usuarioLogado = lerUsuarioLogado();
-    // const [usu] = useState(usuarioLogado.nm_cliente);
-
-    // function usuario () {
-    // if(usuarioLogado === null){
-    //     return('');
-    // }else {
-    //     return(usu)
-    // }
-    // }
 
     let logado = Cookies.get('usuario-logado')
 

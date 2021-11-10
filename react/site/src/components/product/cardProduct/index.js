@@ -12,9 +12,8 @@ export default function BoxProduto (props){
     
     const [product] = useState(props.info);
     
-    const [cliente, setCliente] = useState(JSON.parse(Cookies.get('usuario-logado')).id_cliente);
-    const [produto, setProduto] = useState(product.id);
-    const [favoritos, setFavoritos] = useState([]);
+    const [cliente, /* setCliente */] = useState(JSON.parse(Cookies.get('usuario-logado')).id_cliente);
+    const [produto, /* setProduto */] = useState(product.id);
 
     console.log(product);
     
@@ -37,6 +36,8 @@ export default function BoxProduto (props){
 
     async function favorito(){
         let v = await api.colocarFavoritos(cliente, produto);
+
+        console.log(v)
 
         navigation.push('/favoritos/')
     }

@@ -11,6 +11,12 @@ import { useHistory } from 'react-router-dom'
 
 import Cookies from 'js-cookie'
 
+import { confirmAlert } from 'react-confirm-alert';
+import 'react-confirm-alert/src/react-confirm-alert.css';
+
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 import Api from '../../service/api'
 const api = new Api();
 
@@ -31,7 +37,7 @@ export default function Perfil() {
     
     let informacoes = infoUsu(navigation);
 
-    const [usu, setUsu] = useState('')
+    const [/* usu */, setUsu] = useState('')
     const [email] = useState(informacoes.ds_email);
     const [nome] = useState(informacoes.nm_cliente);
     // const [endereco] = useState(informacoes.ds_endereco);
@@ -39,33 +45,8 @@ export default function Perfil() {
     // const [email] = useState(informacoes.ds_email);
 
 
-    // async function inserirDados() {
-    //     let r = await api.inserirCliente( endereco, nome, cpf, nascimento, telefone, email, senha )
-    //     if (r.erro) {
-    //         toast.error(`❌ ${r.erro}`)
-    //     } else {
-    //         toast.dark('✔️ Cliente inserido com sucesso')
-    //     }
-    // }
-
-    // async function alterando(item) {
-    //     setEndereco(item.id_endereco);
-    //     setNome(item.nm_cliente);
-    //     setCpf(item.ds_cpf);
-    //     setNascimento(item.dt_nascimento);
-    //     setTelefone(item.nr_telefone);
-    //     setEmail(item.ds_email);
-    //     setSenha(item.ds_senha);
-    //     setidAlterando(item.id_cliente);
-    // }
-
-
     const verItens = async () => {
         navigation.push('/ver-pedido')
-    }
-
-    const Inicio = async () => {
-        navigation.push('/')
     }
 
     const loading = useRef(null)
@@ -74,44 +55,42 @@ export default function Perfil() {
         let r = await api.listarClientes;
         setUsu(r);
     }
+
+
+    async function remover(id) {
+        confirmAlert({
+            title: 'Excluir conta',
+            message: `Tem certeza que deseja excluir esta conta ?`,
+            buttons: [
+              {
+                label: 'Sim',
+                onClick: async () => {
+                    let r = await api.removerCliente(id);
+                    if (r.erro)
+                        toast.error(`${r.erro}`);
+
+                    else {
+                        toast.success('✔️ Conta excluída com sucesso')
+                        navigation.push('/login')
+                    }
+                }
+              },
+              {
+                label: 'Não'
+              }
+            ]
+        });
+    }
+
     
     useEffect(() => {
         listar();
     }, []);
 
-     // async function removerProduto(id) {
-      //    loading.current.complete();
-
-      //    confirmAlert({
-       //       title: 'Excluir conta',
-       //       message: `Tem certeza que deseja excluir esta conta?`, 
-       //       buttons: [
-       //           {
-          //            label: 'Sim',
-             //         onClick: async () => {
-                //          let r = await api.removerConta(id);
-                   //       if(r.erro)
-                      //        toast.error(`${r.erro}`);
-                         // else {
-                            //  toast.success('🗑️ Conta excluída com sucesso!');
-                            //  listarProdutos();
-                        //  }
-                    //  }
-                //  },
-                //  {
-               //       label: 'Não'
-               //   }
-            //  ]
-        //  });
-    //  }
-
-    //  useEffect(() => {
-     //     listarProdutos();
-    //  },[])
-
 
     return (
     <ContainerPerfil>
+        <ToastContainer />
         <LoadingBar color='white' ref={loading}/>
         <Cabecalho value={nome} />
         <div className="conteudo-perfil">
@@ -168,7 +147,7 @@ export default function Perfil() {
                 </div>
                 
 
-                <div className="box-excluir" onClick={Inicio}>
+                <div className="box-excluir" onClick={remover}>
                     <div className="excluir-conta-perfil">Excluir conta</div>
                     <img src="../../assets/images/Lixeira-perfil.svg" alt="" />
                 </div>

@@ -37,7 +37,7 @@ export default function ConfirmarPagamento(props) {
     const [usu] = useState(usuarioLogado.ds_email);
     const [nmCliente] = useState(usuarioLogado.nm_cliente);
 
-    const [email, setEmail] = useState(props.location.state.email);
+    const [email, /* setEmail */] = useState(props.location.state.email);
     const [cpf, setCpf] = useState('');
     const [telefone, setTelefone] = useState('');
     const [endereco, setEndereco] = useState('');
