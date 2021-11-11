@@ -12,7 +12,7 @@ import Cookies from 'js-cookie';
 import Api from "../../service/api";
 const api = new Api();
 
-function lerUsuarioLogado (navigation) {
+function lerUsuarioLogado(navigation) {
     let logado = Cookies.get('usuario-logado')
     if (!logado) {
         return false
@@ -34,17 +34,18 @@ export default function Favorites() {
 
     const [favoritos, setFavoritos] = useState([]);
 
-    async function mostrarFavoritos(){
-       
-        let v = await api.mostrarFavoritos(usu.id_cliente);
+    async function mostrarFavoritos() {
+        if (usu.id_cliente) {
+            let v = await api.mostrarFavoritos(usu.id_cliente);
             console.log(v)
             setFavoritos(v);
         }
+    }
 
     useEffect(() => {
         mostrarFavoritos();
         // eslint-disable-next-line react-hooks/exhaustive-deps
-     }, [])
+    }, [])
 
     return (
         <ContainerFavoritos>
@@ -58,17 +59,17 @@ export default function Favorites() {
                 </div>
 
                 <div class="box-doces">
-                    {favoritos.map(item => 
-                        <BoxProduto 
+                    {favoritos.map(item =>
+                        <BoxProduto
                             key={item.id}
                             info={item} />
-                    )}  
-                   
-                   
+                    )}
+
+
                 </div>
             </div>
 
-            <Footer/>
+            <Footer />
         </ContainerFavoritos>
     )
 }
