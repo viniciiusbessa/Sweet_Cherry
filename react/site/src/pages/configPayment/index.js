@@ -44,7 +44,9 @@ export default function ConfirmarPagamento(props) {
     const [numero, setNumero] = useState('');
     const [complemento, setComplemento] = useState('');
 
-    
+    const voltarCarrinho = async() => {
+        navigation.push('/carrinho')
+    }
 
     const finalizarCompra = async () => {
         let r = await api.confirmarPagmento(  cpf, telefone, endereco, numero, complemento )
@@ -132,7 +134,7 @@ export default function ConfirmarPagamento(props) {
                             <InputPayment value={nmCliente} readOnly={true} />
                         </div>
                         <div className="botoes-pgmt">
-                            <button onClick={pagAnterior} className="vlt-carrinho">Voltar</button>
+                            <button onClick={voltarCarrinho} className="vlt-carrinho">Voltar</button>
                             <button onClick={finalizarCompra} className="final-cmpra">Finalizar compra</button>
                         </div>
                         <div className="box-cartoes">

@@ -7,12 +7,25 @@ import { useState } from "react";
 import Api from "../../../service/api";
 const api = new Api();
 
+
+function lerUsuarioLogado (navigation) {
+    let logado = Cookies.get('usuario-logado')
+    if (!logado) {
+        return false
+    }
+
+    let usuarioLogado = JSON.parse(logado);
+    return usuarioLogado;
+}
+
+
 export default function BoxProduto (props){
     const navigation = useHistory();
     
+    let usuarioLogado = lerUsuarioLogado(navigation) || {};
+
     const [product] = useState(props.info);
-    
-    const [cliente, /* setCliente */] = useState(JSON.parse(Cookies.get('usuario-logado')).id_cliente);
+    const [cliente, /* setCliente */] = useState(usuarioLogado.id_cliente);
     const [produto, /* setProduto */] = useState(product.id);
 
     console.log(product);
@@ -35,6 +48,9 @@ export default function BoxProduto (props){
     }
 
     async function favorito(){
+        if (!cliente)
+            return alert('Precisa estar logado')
+
         let v = await api.colocarFavoritos(cliente, produto);
 
         console.log(v)

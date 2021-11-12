@@ -62,7 +62,7 @@ export default function BoxNews (props) {
                                 
                             </Carousel>
 
-                    <div class="vermais_novidades">
+                    <div className="vermais_novidades">
                         <button onClick={novidades}> Veja Todas as Novidades </button>
                     </div>   
                 </div>

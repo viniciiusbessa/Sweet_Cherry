@@ -29,11 +29,14 @@ export default function CarrinhoProdutos(props) {
     let usuarioLogado = lerUsuarioLogado(navigation) || {};
 
     const [usu] = useState(usuarioLogado.nm_cliente);
-
-
     const [products, setProducts] = useState([]);
+    const [product] = useState(props.info);
 
     const contComprar = async () => {
+        navigation.push('/destaque')
+    }
+
+    const finCompra = async () => {
         navigation.push('/destaque')
     }
 
@@ -126,10 +129,10 @@ export default function CarrinhoProdutos(props) {
                 <div className="continuar"><button onClick={contComprar}>Continuar comprando</button></div>
 
                 <Link to={{
-                    pathname: '/administrar-pedidos',
+                    pathname: '/conf_pagamento',
                     state: total
                 }}>
-                <div className="confirmar"><button onClick={cartItem}>Confirmar compra</button></div>
+                <div className="confirmar"><button onClick={finCompra}>Confirmar compra</button></div>
                 </Link>
             </div>
 

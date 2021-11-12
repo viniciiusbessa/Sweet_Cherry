@@ -1,6 +1,7 @@
 import { ContainerBoxPedido } from './styled'
 
 import { useHistory } from 'react-router-dom'
+import { ContainerBoxProduto } from '../../../components/product/cardProduct/styled';
 
 export default function BoxPedido() {
     const navigation = useHistory();

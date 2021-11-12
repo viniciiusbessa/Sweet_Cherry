@@ -9,8 +9,8 @@ const ContainerBoxProduto = styled.div`
      cursor: pointer;
      margin: 2em;
 
-    display: flex;
-    justify-content: center;
+        display: flex;
+        justify-content: center;
 
     .imagem-doce img{
         margin: 1em;

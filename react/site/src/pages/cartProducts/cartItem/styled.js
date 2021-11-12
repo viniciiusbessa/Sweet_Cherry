@@ -53,7 +53,7 @@ const ContainerItem = styled.tr`
 
     button {
         background-color: Transparent;
-        border 0px;
+        border: 0px;
     }
 `
 

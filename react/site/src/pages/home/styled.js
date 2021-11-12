@@ -79,22 +79,6 @@ const ContainerInicial = styled.div`
 
 `
 
-const BoxSlide = styled.div`
-
-    padding: 5em;
-
-    .titulo{
-        margin-left: .5em;
-        font-size: 3em;
-        color: #FF8AB5;
-    }
-
-    .boxSlide{
-        display: flex;
-        justify-content: center;
-    }
-
-`
 const BoxEmAlta = styled.div`
     display: flex;
     flex-direction: column;
@@ -240,4 +224,4 @@ const BoxEmAlta = styled.div`
     
 `
 
-export {ContainerInicial, BoxSlide, BoxEmAlta}
+export {ContainerInicial, BoxEmAlta}
