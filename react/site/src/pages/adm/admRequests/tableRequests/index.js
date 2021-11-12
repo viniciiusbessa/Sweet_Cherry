@@ -5,22 +5,11 @@ import { useEffect, useState } from 'react';
 
 import { ContainerTableRequests } from './styled'
 
-export default function TableRequests() {
+export default function TableRequests(props) {
     const [products, setProducts] = useState([]);
+    const [product] = useState(props.info)
 
 
-    useEffect(uploadCart, []);
-
-    function uploadCart() {
-        let carrinho = Cookies.get('administrar-pedidos');
-        carrinho = carrinho !== undefined 
-                      ? JSON.parse(carrinho) 
-                      : [];
-
-
-        //Cookies.remove('carrinho');
-        setProducts(carrinho);
-    }
     return (
         <ContainerTableRequests>
 
@@ -55,18 +44,18 @@ export default function TableRequests() {
 
                 {products.map((item) =>
                     <tr>
-                      <td>{item.nm_produto}</td>
-                      <td>{}</td>
-                      <td>R$ 19.90</td>
+                      <td>{item.id}</td>
+                      <td>{item.produto}</td>
+                      <td>{item.preco}</td>
                   </tr>
                 )}
 
-                    <tr>
+                    {/* <tr>
                         <td>2</td>
                         <td>CupCake</td>
                         <td>2</td>
                         <td>R$ 19.90</td>
-                    </tr>
+                    </tr> */}
 
                 </tbody>
 
