@@ -14,9 +14,10 @@ import Cabecalho from "../../components/commum/header";
 import BoxNews  from "./box-news/index";
 import BoxProduto from "../../components/product/cardProduct";
 
-import { BoxSlide } from "./styled";
 import { BoxEmAlta } from "./styled";
 import { ContainerInicial} from "./styled";
+
+import Mini from "./carousel/index.js";
 
 
 import { useState, useRef, useEffect } from 'react'
@@ -130,19 +131,7 @@ export default function Inicial () {
                 </div>
             </div>
             <BoxNews info={novidades} />
-
-            <BoxSlide>
-                <div className="Faixa3_inicio">
-                    <div className="titulo">Diversos</div>
-                    <div className="boxSlide">
-                            {diversos.map(item => 
-                                <BoxProduto 
-                                    key={item.id}
-                                    info={item} />
-                            )}
-                    </div>
-                </div>
-            </BoxSlide>
+            <Mini/> 
             <BoxEmAlta>  
                 <div className="Faixa4_inicio">
                     <div className="titulo">Em alta</div>

@@ -147,33 +147,6 @@ export default function Compra(props) {
                         </div>
                     </div>
                 </div>
-
-                <div className="compra1-box3">
-                    <BoxSlide>
-                        <div className="Faixa3_inicio">
-                            <div className="titulo-slide">Veja mais doces! :)</div>
-                            <div className="boxSlide">
-                                <Splide
-                                    options={ {
-                                        direction: 'ttb',
-                                        height   : '35rem',
-                                        wheel    : true,
-                                        type   : 'loop',
-                                        drag   : 'free',
-                                        } }
-                                    >
-                                    <SplideSlide>
-                                        {diversos.map(item => 
-                                            <BoxProduto 
-                                                key={item.id}
-                                                info={item} />
-                                        )}  
-                                    </SplideSlide>
-                                </Splide>
-                            </div>
-                        </div>
-                    </BoxSlide>
-                </div>
             </div>
 
             <div className="cartoes">
