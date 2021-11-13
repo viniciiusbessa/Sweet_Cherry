@@ -13,6 +13,11 @@ import PageChange from '../../components/product/pageChange/index'
 
 import { useHistory } from "react-router";
 
+
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+
 import Cookies from 'js-cookie'
 
 import Api from '../../service/api'
@@ -88,7 +93,7 @@ export default function Destaque() {
         return;
         let r = await api.buscarProdutos(busca);
         if (r.erro) {
-            alert(r.erro);
+            toast.error(r.erro);
         } else {
             setProduct(r);
         }
@@ -106,6 +111,7 @@ export default function Destaque() {
     
     return (
     <ContainerDestaque>
+        <ToastContainer />
         <Cabecalho value={usu} />
         <LoadingBar color="#A4BCFF" ref={loading}/>
         <div className="conteudo">

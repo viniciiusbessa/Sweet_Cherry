@@ -20,7 +20,7 @@ const api = new Api();
 function lerUsuarioLogado (navigation) {
     let logado = Cookies.get('usuario-logado')
     if (!logado) {
-        alert('Ei, você precisa estar logado para fazer o pagamento')
+        toast.error('Você precisa estar logado para fazer o pagamento')
         navigation.push('/login')
         return false
     }

@@ -3,7 +3,10 @@ import { ContainerAdmProduto } from './styled'
 
 import { Link, useHistory } from 'react-router-dom'
 import { useEffect, useState } from 'react';
-import { toast } from 'react-toastify';
+
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 import { confirmAlert } from 'react-confirm-alert';
 import 'react-confirm-alert/src/react-confirm-alert.css';
 
@@ -35,11 +38,16 @@ export default function AdministrarProdutos() {
     }
 
     const buscarProduto = async (event) => {
-        if(event.type === "keypress" && ( event.charCode !== 13))
-        return;
+        if (event.type === "keypress" && ( event.charCode !== 13))
+            return;
 
         let r = await api.buscarProdutos(busca);
-        setProducts(r);
+        if (r.erro) {
+            toast.error(r.erro);
+
+        } else {
+            setProducts(r);
+        }
     }
 
     async function alterando(item) {
@@ -92,6 +100,7 @@ export default function AdministrarProdutos() {
 
     return (
     <ContainerAdmProduto>
+        <ToastContainer />
 
         <div className="box-titulo">
             <div className="inicio-adm">
