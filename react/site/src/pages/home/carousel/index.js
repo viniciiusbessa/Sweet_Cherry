@@ -49,30 +49,21 @@ export default function Mini () {
                     >
                         
                         <div className="Minimalista"> 
-                            <div> <img src="/assets/images/bolo-vulcao.jpg" alt=""/> </div>
+                            <div> <img src="/assets/images/bolo-vulcao.jpg" alt="" onClick={categorias}/> </div>
                             <div className="nomes"> Bolos </div>
                         </div>  
                         <div className="Minimalista"> 
-                            <div> <img src="/assets/images/trufa1.jpg" alt=""/> </div>
+                            <div> <img src="/assets/images/trufa1.jpg" alt="" onClick={categorias}/> </div>
                             <div className="nomes"> Trufas </div>
                         </div>   
                         <div className="Minimalista"> 
-                            <div> <img src="/assets/images/cupcake.jpg" alt=""/> </div>
+                            <div> <img src="/assets/images/cupcake.jpg" alt="" onClick={categorias}/></div>
                             <div className="nomes"> Cupcakes </div>     
                         </div>  
                         <div className="Minimalista"> 
-                            <div> <img src="/assets/images/pudim.jpg" alt=""/> </div>
-                            <div className="nomes"> Pudins </div>     
-                        </div>  
-                        <div className="Minimalista"> 
-                            <div> <img src="/assets/images/macarrons.jpg" alt=""/> </div>
-                            <div className="nomes"> Macarrons </div>     
-
-                        </div>  
-                        <div className="Minimalista"> 
-                            <div> <img src="/assets/images/doces.jpg" alt=""/> </div>
-                            <div className="nomes"> E muito mais! </div>     
-                        </div>      
+                            <div> <img src="/assets/images/pudim.jpg" alt="" onClick={categorias}/></div>
+                            <div className="nomes"> Diversos </div>     
+                        </div>    
 
                     </Carousel>
                         <div className="Botao"> 

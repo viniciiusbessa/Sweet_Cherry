@@ -26,7 +26,17 @@ const Carrosel = styled.div`
         height: 13em;
         border-radius: 5em;
         background-color: white;
+        cursor: pointer;
     }
+
+    img
+    {
+            opacity:1;
+    }
+    img:hover
+    {
+        opacity: .4;
+}
 
     .Botao button {
         background-color: #2F1747;
