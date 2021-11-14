@@ -4,17 +4,12 @@ import { useHistory } from 'react-router-dom'
 import Cabecalho from '../../components/commum/header/index'
 import Rodape from '../../components/commum/footer/index'
 import Estrelas from './stars-avaliation/index'
-import { BoxSlide } from "../home/styled";
-import BoxProduto from '../../components/product/cardProduct'
 
 import LoadingBar from 'react-top-loading-bar';
 
 import { ContainerCompra } from './styled'
 
 import Cookies from 'js-cookie'
-
-import { Splide, SplideSlide } from '@splidejs/react-splide';
-import '@splidejs/splide/dist/css/splide.min.css';
 
 import Api from '../../service/api'
 const api = new Api();
@@ -40,7 +35,7 @@ export default function Compra(props) {
     const [usu] = useState(usuarioLogado.nm_cliente);
 
     const [product] = useState(props.location.state);
-    const [diversos, setDiversos] = useState([]);
+    const [/* diversos */, setDiversos] = useState([]);
     
     const confPagamento = async () => {
         navigation.push('/conf_pagamento')

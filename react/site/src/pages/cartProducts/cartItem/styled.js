@@ -34,11 +34,11 @@ const ContainerItem = styled.tr`
 
     .contador {
         width: 1em;
-        heigth: auto;
+        height: auto;
     }
 
     .acao img {
-        backgound-color: #ffff;
+        background-color: #fff;
         cursor: pointer;
     }
 
@@ -48,13 +48,14 @@ const ContainerItem = styled.tr`
 
     &:hover {
         .acao > button {
-        visibility: visible;
-    }
+            visibility: visible;
+        }
 
-    button {
-        background-color: Transparent;
-        border: 0px;
+        button {
+            background-color: Transparent;
+            border: 0px;
+        }
     }
 `
 
-export{ContainerItem}
+export { ContainerItem }

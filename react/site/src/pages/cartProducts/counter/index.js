@@ -49,16 +49,12 @@ export{ContainerCounter}
 
 export default function Counter(props){
     const [qtd, setQtd] = useState(1)
-    const [preco, setPreco] = useState(props.info)
     
     function increment() {
         if (qtd >= 30)
             return;
 
-        if (setQtd(qtd + 1)){
-            setPreco(preco)
-            return;
-        }
+        setQtd(qtd + 1)
     }
 
 

@@ -45,7 +45,7 @@ export default function Inicial () {
     let usuarioLogado = lerUsuarioLogado(navigation) || {};
 
     const [novidades, setNovidades] = useState([]);
-    const [diversos, setDiversos] = useState([]);
+    const [/* diversos */, setDiversos] = useState([]);
     const [emAlta, setEmAlta] = useState([]);
 
     const [usu] = useState(usuarioLogado.nm_cliente);

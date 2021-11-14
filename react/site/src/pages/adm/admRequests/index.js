@@ -29,7 +29,9 @@ export default function AdministrarPedidos() {
             </div>
         </div>
 
+        
         <TableRequests />
+        
         
     </ContainerAdmPedidos>
     )

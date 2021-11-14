@@ -30,13 +30,8 @@ export default function CarrinhoProdutos(props) {
 
     const [usu] = useState(usuarioLogado.nm_cliente);
     const [products, setProducts] = useState([]);
-    const [product] = useState(props.info);
 
     const contComprar = async () => {
-        navigation.push('/destaque')
-    }
-
-    const finCompra = async () => {
         navigation.push('/destaque')
     }
 
@@ -66,26 +61,13 @@ export default function CarrinhoProdutos(props) {
         
         produtoAlterado.qtd = qtd
         Cookies.set('carrinho', JSON.stringify(products));
+        setProducts([produtoAlterado])
     }
 
     
     const total = products.reduce(getTotal, 0);
     function getTotal(total, item) {
-    return total + (item.preco * item.qtd);
-    }
-
-    function cartItem(){
-        let carrinho = Cookies.get('carrinho');
-        carrinho = carrinho !== undefined 
-                    ? JSON.parse(carrinho) 
-                    : [];
-         
-         if (carrinho.some(item => item.id === products.id) === false)
-             carrinho.push({...products, qtd: 1 });
-
-         Cookies.set('carrinho', JSON.stringify(carrinho));
-         navigation.push('/carrinho');
-
+        return total + (item.preco * item.qtd);
     }
 
     return(
@@ -132,7 +114,7 @@ export default function CarrinhoProdutos(props) {
                     pathname: '/conf_pagamento',
                     state: total
                 }}>
-                <div className="confirmar"><button onClick={finCompra}>Confirmar compra</button></div>
+                <div className="confirmar"><button>Confirmar compra</button></div>
                 </Link>
             </div>
 
