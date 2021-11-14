@@ -1,3 +1,4 @@
+import Cookies from "js-cookie";
 import { useState } from "react"
 import Counter from "../counter";
 import { ContainerItem } from "./styled"

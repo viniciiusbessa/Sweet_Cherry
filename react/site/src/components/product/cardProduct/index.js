@@ -49,7 +49,7 @@ export default function BoxProduto (props){
 
     async function favorito(){
         if (!cliente)
-            return alert('Precisa estar logado')
+            return navigation.push('/login')
 
         let v = await api.colocarFavoritos(cliente, produto);
 

@@ -14,7 +14,7 @@ import PageChange from '../../components/product/pageChange/index'
 import { useHistory } from "react-router";
 
 
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer, toast, Zoom } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 
@@ -93,7 +93,7 @@ export default function Destaque() {
         return;
         let r = await api.buscarProdutos(busca);
         if (r.erro) {
-            toast.error(r.erro);
+            toast.warning(r.erro);
         } else {
             setProduct(r);
         }
@@ -111,7 +111,16 @@ export default function Destaque() {
     
     return (
     <ContainerDestaque>
-        <ToastContainer />
+        <ToastContainer position="top-center"
+            autoClose={5000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            transition={Zoom}/>
         <Cabecalho value={usu} />
         <LoadingBar color="#A4BCFF" ref={loading}/>
         <div className="conteudo">
@@ -137,7 +146,8 @@ export default function Destaque() {
             <div className="nm-box">Bolos</div>
             <div className="box-itens">
                 {loadingProducts && <Loader />}
-
+                {loadingProducts && <Loader />}
+                {loadingProducts && <Loader />}
                 {!loadingProducts && 
                 bolos.items.map(item => 
                     <BoxProduto 
@@ -158,6 +168,8 @@ export default function Destaque() {
 
             <div className="nm-box">Cupcakes</div>
             <div className="box-itens">
+                {loadingProducts && <Loader />}
+                {loadingProducts && <Loader />}
                 {loadingProducts && <Loader />}
             
                 {!loadingProducts &&
@@ -181,6 +193,8 @@ export default function Destaque() {
             <div className="nm-box">Trufas</div>
             <div className="box-itens">
                 {loadingProducts && <Loader />}
+                {loadingProducts && <Loader />}
+                {loadingProducts && <Loader />}
 
                 {!loadingProducts &&
                 trufas.items.map(item => 
@@ -203,6 +217,8 @@ export default function Destaque() {
 
             <div className="box-itens">
 
+                {loadingProducts && <Loader />}
+                {loadingProducts && <Loader />}
                 {loadingProducts && <Loader />}
 
                 {!loadingProducts && 
