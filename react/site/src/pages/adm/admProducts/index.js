@@ -10,13 +10,29 @@ import 'react-toastify/dist/ReactToastify.css';
 import { confirmAlert } from 'react-confirm-alert';
 import 'react-confirm-alert/src/react-confirm-alert.css';
 
+import Cookies from 'js-cookie'
+
 import Api from '../../../service/api';
 const api = new Api();
 
+function lerAdmLogado (navigation) {
+    let logado = Cookies.get('logado-adm')
+    if (!logado) {
+        navigation.push('login-adm')
+        return false
+    }
+
+    let usuarioLogado = JSON.parse(logado);
+    return usuarioLogado;
+}
 
 
 export default function AdministrarProdutos() {
     const navigation = useHistory();
+
+    let admLogado = lerAdmLogado(navigation) || {};
+
+    console.log(admLogado)
 
     const [busca, setBusca] = useState('');
     const [products, setProducts] = useState([]);

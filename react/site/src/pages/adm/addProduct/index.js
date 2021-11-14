@@ -9,12 +9,29 @@ import { InputAdm, TextAreaAdm } from '../../../components/styled/inputsAdm'
 
 import { useHistory } from 'react-router-dom'
 
+import Cookies from 'js-cookie'
 
 import Api from '../../../service/api'
 const api = new Api();
 
+function lerAdmLogado (navigation) {
+    let logado = Cookies.get('logado-adm')
+    if (!logado) {
+        navigation.push('login-adm')
+        return false
+    }
+
+    let usuarioLogado = JSON.parse(logado);
+    return usuarioLogado;
+}
+
 export default function AdicionarProduto(props) {
+    const navigation = useHistory();
+
+    let admLogado = lerAdmLogado(navigation) || {};
     
+    console.log(admLogado)
+
     const [produto, setProduto] = useState('')
     const [preco, setPreco] = useState('')
     const [categoria, setCategoria] = useState('')
@@ -23,8 +40,6 @@ export default function AdicionarProduto(props) {
     const [estoque, setEstoque] = useState('')
     const [imagem, setImagem] = useState('')
     const [idAlterando, setidAlterando] = useState(0);
-
-    const navigation = useHistory();
 
     useEffect(() => {
         const produtoInfo = props.location.state;

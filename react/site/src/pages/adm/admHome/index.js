@@ -2,8 +2,27 @@ import { ContainerAdm } from './styled'
 
 import { useHistory } from 'react-router-dom'
 
+import Cookies from 'js-cookie'
+
+
+function lerAdmLogado (navigation) {
+    let logado = Cookies.get('logado-adm')
+    if (!logado) {
+        navigation.push('login-adm')
+        return false
+    }
+
+    let usuarioLogado = JSON.parse(logado);
+    return usuarioLogado;
+}
+
+
 export default function InicioAdm() {
     const navigation = useHistory();
+
+    let admLogado = lerAdmLogado(navigation) || {};
+
+    console.log(admLogado)
 
     const AdmProduto = async () => {
         navigation.push('/administrar-produtos')
