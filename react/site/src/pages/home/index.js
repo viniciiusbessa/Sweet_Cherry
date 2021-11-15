@@ -133,16 +133,10 @@ export default function Inicial () {
                 <div className="Faixa4_inicio">
                     <div className="titulo">Em alta</div>
                     <div className="box">
-                    <div className="box_em_alta">
-                        <div className="imagem_emAlta">
-                            <img src="../../assets/images/macarrons.jpg" alt=""/>
+                       <div className="video"> <video  autoplay loop controls> 
+                            <source src="/assets/video/video_bolo_vulcão.mp4" type="video/mp4"/>
+                        </video>
                         </div>
-                        <div className="box_texto">
-                            <p>Os Deliciosos Macarons chegaram!</p>
-                            <p>Delicie-se na sua cor favorita com esses biscoitos</p>
-                            <button onClick={categorias}> Garanta já o seu!  </button>
-                        </div>
-                    </div>
                         <div className="container_doces">
                             {emAlta.map(item => 
                                 <BoxProduto 
