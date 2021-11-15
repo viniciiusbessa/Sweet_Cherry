@@ -81,7 +81,7 @@ export default function Inicial () {
         let r2 = await api.listarProdutosCategoria('Diversos');
         let r3 = await api.listarProdutosCategoria('Em alta');
 
-        console.log(r2);
+        //console.log(r2);
 
         setNovidades(r1);
         setDiversos(r2);
