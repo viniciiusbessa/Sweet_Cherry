@@ -17,8 +17,6 @@ import BoxProduto from "../../components/product/cardProduct";
 import { BoxEmAlta } from "./styled";
 import { ContainerInicial} from "./styled";
 
-import Mini from "./carousel/index.js";
-
 
 import { useState, useRef, useEffect } from 'react'
 
@@ -131,7 +129,6 @@ export default function Inicial () {
                 </div>
             </div>
             <BoxNews info={novidades} />
-            <Mini/> 
             <BoxEmAlta>  
                 <div className="Faixa4_inicio">
                     <div className="titulo">Em alta</div>

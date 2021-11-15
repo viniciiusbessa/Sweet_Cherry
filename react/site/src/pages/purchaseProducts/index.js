@@ -56,14 +56,7 @@ export default function Compra(props) {
     }
 
     function favorito(){
-        let favorito = Cookies.get('favorito');
-        favorito = favorito !== undefined
-            ?JSON.parse(favorito)
-            :[];
-        if (favorito.some(item => item.id === product.id) === false)
-        favorito.push({...product, qtd: 1});
 
-        Cookies.set('favorito', JSON.stringify(favorito));
         navigation.push('/favoritos');
     }
 
