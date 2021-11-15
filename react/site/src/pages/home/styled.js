@@ -77,6 +77,18 @@ const ContainerInicial = styled.div`
     transform: scale(1.05);
 }
 
+@media(max-width: 375px){
+    .button1, .button2 {
+        width: 10em;
+        height: 3em;
+    }
+    .perfil img, .busca img {
+       width: 1.5em;
+    }
+    .F1_home {
+        margin: 7em 0em 5em 0em;
+    }
+}
 `
 
 const BoxEmAlta = styled.div`
@@ -221,7 +233,6 @@ const BoxEmAlta = styled.div`
       }
       
     }
-    
 `
 
 export {ContainerInicial, BoxEmAlta}

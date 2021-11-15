@@ -23,6 +23,7 @@ const BoxNovidades = styled.div`
    display: flex;
    flex-direction: column;
    justify-content: center;
+   margin: 0em 7em 0em  7em;
 }
 
 .titulo_novidades{
@@ -98,6 +99,17 @@ const BoxNovidades = styled.div`
         margin: 20px 40px;
         border-radius: 40px;
         font-size: 15px;
+    }
+}
+
+@media(max-width: 375px){
+    .titulo{
+        font-size: 30px;
+        margin-left: 1em;
+        color: #F6AAC6;
+    }
+    .vermais_novidades button{
+        font-size: 12px;
     }
 }
 `

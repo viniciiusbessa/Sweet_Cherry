@@ -61,7 +61,32 @@ const Carrosel = styled.div`
         transition: all 0.5s ease-in;
     }
 
-    
+    @media(max-width: 375px) {
+        padding: 0;
+        .titulo{
+            margin-left: .7em;
+            padding-bottom: .6em;
+            font-size: 1.5em;
+            color: #FF8AB5;
+        }
+        .Minimalista img{
+            width: 7em;
+            height: 6em;
+            border-radius: 2em;
+        }
+        .Botao button {
+            border-radius: 50px;
+            width:  13em;
+            height: 2.5em;
+            margin-top: 1.5em;
+
+            cursor: pointer;
+            user-select: none;
+
+            font-family:  Pacifico;
+            font-size: 15px;
+        }
+    }
 `
 
 export { Carrosel } 
