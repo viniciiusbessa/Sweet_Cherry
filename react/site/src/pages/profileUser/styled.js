@@ -14,15 +14,13 @@ const ContainerPerfil = styled.div `
         .conteudo-perfil {
             display: flex;
             flex-direction: row;
-            justify-content: space-between;
+            justify-content: space-around;
             padding-bottom: 4em;
         }
 
         .info-pessoal-perfil {
             display: flex;
             flex-direction: column;
-
-            margin-left: 5em;
         }
 
         .box-titulo-pedido {
@@ -193,8 +191,6 @@ const ContainerPerfil = styled.div `
             display: flex;
             flex-direction: column;
             align-items: center;
-
-            margin-right: 6em;
         }
 
         .titulo-pedido {
