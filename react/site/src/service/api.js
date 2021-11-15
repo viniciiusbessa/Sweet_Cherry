@@ -132,7 +132,7 @@ export default class Api {
             produto
         });
         return v.data;
-}
+    }
 
     async deletarFavorito(id) {
         let v = await api.delete('/favorito/' + id)
