@@ -31,7 +31,6 @@ const ContainerFavoritos = styled.div `
     .ds {
     font-size: 18px;
     color: #C4C4C4;
-
     }
 
     .box-doces {

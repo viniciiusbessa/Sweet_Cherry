@@ -5,7 +5,6 @@ export default function Rodape (){
 
     return(
         <ConteinerRodape>
-            <footer>
             <div class="rodape">
                 <div className="TrabelheConosco">
                     <div className="titulo-Trabalhe">Trabalhe Conosco</div>
@@ -35,6 +34,5 @@ export default function Rodape (){
                 </div>
                 
             </div>
-            </footer>
         </ConteinerRodape>
     )}

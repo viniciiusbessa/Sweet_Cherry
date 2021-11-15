@@ -4,7 +4,6 @@ const ContainerCadastro = styled.div`
     display: flex;
     flex-direction: column;
     background-color: #F6AAC6;
-
     cursor: pointer;
     user-select: none;
 
@@ -16,7 +15,7 @@ const ContainerCadastro = styled.div`
         font-family: Pattaya;
         background-image: url(/assets/images/cabecalhoBranco.png);
         background-size: 100% 200px;
-
+        background-repeat: no-repeat;
         height: 200px;
     }
 
@@ -29,9 +28,8 @@ const ContainerCadastro = styled.div`
         display: flex;
         flex-direction: column;
         align-items: center;
-
         padding-bottom: 3em;
-        height: 50vw;
+        height: 40vw;
     }
 
     .img-login img {
@@ -197,6 +195,66 @@ const ContainerCadastro = styled.div`
     .eye img {
         width: 2.5em;
         cursor: pointer;
+    }
+
+    @media(max-width: 430px) {
+        .cabecalho-entrar-bem-vindo {
+            background-size: 100% 108px;
+
+            height: 110px;
+        }
+        .bv-titulo {
+            font-size: 30px;
+            padding-top: 1em;
+        }
+        .conteudo-entrar-bv {
+            height: 84vh;
+        }
+        .img-login img {
+            width: 60px;
+            margin-top: -1.5em;
+        }
+        .box-input-nome img {
+            width: 15px;
+            margin: 0em -1.3em -0.3em 0em;
+        }
+
+        .box-input-email img {
+            width: 20px;
+            margin: 0em -1.5em -0.3em 0em;
+        }
+        .box-input-senha img {
+            width: 21px;
+            margin: 0em -1.5em -0.3em 0em;
+        }
+
+        .inputs-entrarbv {
+            margin-top: .5em;
+        }
+        .input-cadastro {
+            font-size: 15px;
+            border-bottom: 1.7px solid #ffffff;
+            padding: 1.5em 0.3em .3em 1em;
+        }
+        .botoes-entrarbv button{
+            border-radius: 15px;
+            margin-top: 2em;
+        }
+
+        .bt-voltar, .bt-criar {
+            font-size: 15px;
+            padding: .5em 1.5em;
+            width: 8em;
+        }
+        .eye {
+            position: absolute;
+            top: 1.3em;
+            left: 15.5em;
+        }
+    
+        .eye img {
+            width: 2em;
+        }
     }
 `
 
