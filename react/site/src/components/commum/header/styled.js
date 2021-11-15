@@ -28,8 +28,6 @@ const ContainerCabecalho = styled.div`
 
     .logo2-perfil {
         margin-left: 30px;
-
-        margin-top: -0.5em;
     }
 
     .rotas-perfil {
@@ -53,7 +51,6 @@ const ContainerCabecalho = styled.div`
 
     .rota-perfil{
         margin-right: 0px;
-
     }
 
     .box-nome-usuario {
@@ -172,6 +169,41 @@ const ContainerCabecalho = styled.div`
         font-size: 18px;
         font-weight: 500;
         margin: .5em 1em 0em 0em;
+    }
+
+    @media(max-width: 375px){
+        .logo-perfil{
+            margin-top: 0em;
+        }
+        .box-nome-usuario {
+            margin: 0;
+        }
+        .rotas-perfil {
+            margin-left: 0;
+            font-size: 15px;
+            width: 80%;
+        }
+        .box-imgs-perfil {
+            position: absolute;
+            right: 2em;
+            top: 1.5em;
+        }
+        .img-carrinho-perfil img, .img-favoritos-perfil img {
+            margin: 5px;
+        }
+        .img-carrinho-perfil img{
+            width: 1.5em;
+        }
+        .img-favoritos-perfil img {
+            width: 1.2em;
+        }
+        .ola {
+            position: absolute;
+            top: 5em;
+            left: 1em;
+            font-size: 10px;
+            text-decoration: underline 2px solid #D1EAF5;
+        }
     }
     
 `

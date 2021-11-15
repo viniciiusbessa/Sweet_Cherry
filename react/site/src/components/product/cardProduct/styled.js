@@ -3,12 +3,11 @@ import styled from "styled-components"
 const ContainerBoxProduto = styled.div`
 
     background-color: #D1EAF5;
-     width: 18em;
-     height: 28em;
-     border-radius: 20px;
-     cursor: pointer;
-     margin: 2em;
-
+    width: 18em;
+    height: 28em;
+    border-radius: 20px;
+    cursor: pointer;
+    margin: 2em;
     display: flex;
     justify-content: center;
 
@@ -118,8 +117,46 @@ const ContainerBoxProduto = styled.div`
         .nm-doce{
             font-size: 20px;
         }
+    }
 
+    @media(max-width: 375px) {
+        width: 9em;
+        height: 17em;
         
+        .produto {
+            justify-content: space-around;
+            width: 10em;
+        }
+
+        .imagem-doce img{
+            width: 8em;
+            height: 6em;
+        }
+        .nm-doce {
+            font-size: 1em;
+        }
+        .preco {
+            font-size: 15px;
+            text-align: center;
+            margin: .7em 0em .7em .5em;
+        }
+        .icones {
+            display: flex;
+            flex-direction: row;
+            margin-top: .5em
+        }
+        .icone-carrinho img{
+            width: 25px;
+            margin-right: 5px;
+        }
+        .icone-coracao img{
+            width: 20px;
+        }
+        button {
+            width:  60px;
+            height: 30px;
+            font-size: 10px;
+        }
     }
 `
 
