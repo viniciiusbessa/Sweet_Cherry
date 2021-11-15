@@ -61,7 +61,7 @@ export default function CarrinhoProdutos(props) {
         
         produtoAlterado.qtd = qtd
         Cookies.set('carrinho', JSON.stringify(products));
-        setProducts([produtoAlterado])
+        // setProducts([produtoAlterado])
     }
 
     

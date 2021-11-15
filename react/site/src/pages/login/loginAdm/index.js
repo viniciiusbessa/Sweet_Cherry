@@ -4,6 +4,8 @@ import { useHistory } from 'react-router-dom'
 
 import { useState } from 'react'
 
+import Cookies from 'js-cookie';
+
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -23,7 +25,7 @@ export default function LoginAdm() {
             toast.error(`${r.erro}`)
 
         } else {
-            // Cookies.set('usuario-logado', JSON.stringify(r));
+            Cookies.set('logado-adm', JSON.stringify(r));
             navigation.push('/inicio-adm')
         }
     }

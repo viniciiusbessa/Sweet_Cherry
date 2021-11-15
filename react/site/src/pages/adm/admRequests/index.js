@@ -4,8 +4,26 @@ import TableRequests from './tableRequests/index'
 
 import { useHistory } from 'react-router-dom'
 
+import Cookies from 'js-cookie'
+
+
+function lerAdmLogado (navigation) {
+    let logado = Cookies.get('logado-adm')
+    if (!logado) {
+        navigation.push('login-adm')
+        return false
+    }
+
+    let usuarioLogado = JSON.parse(logado);
+    return usuarioLogado;
+}
+
 export default function AdministrarPedidos() {
     const navigation = useHistory();
+
+    let admLogado = lerAdmLogado(navigation) || {};
+
+    console.log(admLogado)
 
     const InicioAdm = async () => {
         navigation.push('/inicio-adm')
