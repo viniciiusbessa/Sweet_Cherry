@@ -7,7 +7,7 @@ const ContainerSobreNos = styled.div`
         .fundo-cabecalho {
             background-image: url(../../assets/images/fundo2.png);
             background-size: 100% 180px;
-
+            background-repeat: no-repeat;
             height: 180px;
         }
 
@@ -41,7 +41,7 @@ const ContainerSobreNos = styled.div`
         .imagens{
             display: flex;
             justify-content: center;
-            margin: 2em
+            margin: 2em;
 
             cursor: pointer;
             user-select: none;
@@ -54,6 +54,34 @@ const ContainerSobreNos = styled.div`
 
             margin: 1em;
             border: 5px solid #FF8AB5;
+        }
+
+        @media(max-width: 400px ) {
+            .fundo-cabecalho {
+                background-size: 100% 50%;
+            }
+            .titulo{
+                font-size: 1.5em;
+                margin-top: .5em;
+            }
+            .texto p {
+                font-size: .8em;
+                padding: 0em 0em;
+
+                line-height: 1.3em;
+            }
+            .texto {
+                margin: 0em 2em 0em 2em;
+            }
+            .imagens{
+                margin: .5em;
+            }
+            .imagens img{
+                width: 45vw;
+                height: 25vh;
+                margin: .5em;
+                border: 4px solid #FF8AB5;
+            }
         }
 `
 

@@ -26,8 +26,9 @@ export default function BoxNews (props) {
           items: 2
         },
         mobile: {
-          breakpoint: { max: 375, min: 0 },
-          items: 1
+          breakpoint: { max: 465, min: 0 },
+          items: 1,
+          slidesToSlide: 2
         }
       };
 
@@ -58,7 +59,7 @@ export default function BoxNews (props) {
                             </Carousel>
 
                     <div className="vermais_novidades">
-                        <button onClick={novidades}> Veja Todas as Novidades </button>
+                        <button onClick={novidades}> Ver Todas as Novidades </button>
                     </div>   
                 </div>
             </div>

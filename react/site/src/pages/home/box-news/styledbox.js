@@ -102,14 +102,20 @@ const BoxNovidades = styled.div`
     }
 }
 
-@media(max-width: 375px){
+@media(max-width: 400px){
     .titulo{
         font-size: 30px;
         margin-left: 1em;
         color: #F6AAC6;
     }
     .vermais_novidades button{
-        font-size: 12px;
+        min-width: 12em;
+        height: 4em;
+        font-size: 10px;
+        padding: .5em;
+    }
+    .box{
+    margin: 0em 0em 0em  0em;
     }
 }
 `

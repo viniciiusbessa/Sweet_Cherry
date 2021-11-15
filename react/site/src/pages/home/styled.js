@@ -77,7 +77,8 @@ const ContainerInicial = styled.div`
     transform: scale(1.05);
 }
 
-@media(max-width: 375px){
+@media(max-width: 400px){
+    background-size: 105% auto;
     .button1, .button2 {
         width: 10em;
         height: 3em;
@@ -99,8 +100,7 @@ const BoxEmAlta = styled.div`
     .titulo{
         font-size: 3em;
         margin-left: 2em;
-        color: #FF8AB5;
-        
+        color: #FF8AB5; 
     }
 
     .box{
@@ -187,7 +187,7 @@ const BoxEmAlta = styled.div`
         background-color: red;
         padding-right: 1.5em;
 
-    }
+        }
 
       .titulo{
           color: #A4BCFF;
@@ -232,6 +232,40 @@ const BoxEmAlta = styled.div`
           flex-direction: column;
       }
       
+    }
+
+    @media(max-width: 400px) {
+        margin-top: 2em;
+
+        .titulo{
+            font-size: 1.5em;
+            margin-left: 0em;
+            color: #FF8AB5;
+        }
+        .box_em_alta{
+            height: 23em;
+            width: 20em;
+            margin-bottom: 1em;
+            background-color: #a4bcff;
+            border-radius: 20px;
+            border-width: 4px;
+        }
+        .imagem_emAlta img{
+            height: 10em;
+            width: 15em;
+            border-radius: 10px;
+            margin-left: -1em;
+        }
+        .box_texto{
+            padding: .5em;
+            font-size: 15px;
+        }
+        .box_texto button {
+            border-radius: 40px;
+            width:  9em;
+            height: 3em;
+            font-size: 12px;
+        }
     }
 `
 

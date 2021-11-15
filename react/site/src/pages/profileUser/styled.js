@@ -15,14 +15,14 @@ const ContainerPerfil = styled.div `
             display: flex;
             flex-direction: row;
             justify-content: space-between;
-            padding-bottom: 4em;
+            margin-top: .5em;
         }
 
         .info-pessoal-perfil {
             display: flex;
-            flex-direction: column;
+            flex-direction: row;
 
-            margin-left: 5em;
+            margin-left: 2em;
         }
 
         .box-titulo-pedido {
@@ -34,20 +34,10 @@ const ContainerPerfil = styled.div `
             user-select: none;
         }
 
-        .nome-pessoa-perfil {
-            font-size: 35px;
-
-            text-decoration: underline 5px solid #D1EAF5;
-            text-align: center;
-            margin-bottom: 1em;
-        }
-
         .dados-conta-perfil, .dados-pessoais-perfil {
-            font-size: 25px;
-
+            font-size: 20px;
             margin-left: 1.5em;
             margin-bottom: 0.5em;
-
             cursor: pointer;
             user-select: none;
         }
@@ -57,10 +47,8 @@ const ContainerPerfil = styled.div `
             flex-direction: row;
 
             font-family: Patua One;
-            font-size: 17px;
-
+            font-size: 15px;
             margin-left: 1em;
-
             cursor: pointer;
             user-select: none;
         }
@@ -71,8 +59,8 @@ const ContainerPerfil = styled.div `
         }
 
         .box-infos img {
-            width: 15px;
-            height: 15px;
+            width: 10px;
+            height: 10px;
         }
 
         input {
@@ -82,7 +70,6 @@ const ContainerPerfil = styled.div `
             background: #FFFFFF;
             border-radius: 11px;
             border: none;
-
             padding: 0.5em 0.5em;
             margin: 0.4em 0em 1.5em 3em;
 
@@ -118,7 +105,7 @@ const ContainerPerfil = styled.div `
         }
 
         .info-obrigatorio-data, .info-obrigatorio-cpf, .info-obrigatorio-telefone {
-            font-size: 14px;
+            font-size: 13px;
             color: #FBE8FF;
             font-family: Patua One;
 
@@ -147,11 +134,11 @@ const ContainerPerfil = styled.div `
         }
 
         .formato {
-            font-size: 15px;
+            font-size: 13px;
             color: #FBE8FF;
             font-family: Patua One;
 
-            margin: 0.3em 0em 0.5em 2.8em;
+            margin: 0.3em 0em 0.5em 3em;
 
             cursor: pointer;
             user-select: none;
@@ -161,14 +148,18 @@ const ContainerPerfil = styled.div `
             display: flex;
             flex-direction: row;
 
-            margin-left: 2em;
+            margin: 1.5em 0em 0em 3em;
 
             font-family: Patua One;
-            font-size: 23px;
+            font-size: 18px;
             color: #FF1A1A;
 
             cursor: pointer;
             user-select: none;
+        }
+
+        .lado2 {
+            margin: 3em 0em 0em -13em;
         }
 
         .box-excluir:hover {
@@ -198,18 +189,15 @@ const ContainerPerfil = styled.div `
         }
 
         .titulo-pedido {
-            font-size: 45px;
-
+            font-size: 35px;
             margin-bottom: 0.5em;
-
-            text-decoration: underline 5px solid #F6AAC6;
+            text-decoration: underline 4px solid #F6AAC6;
         }
 
         .subtitulo-pedido {
-            font-size: 23px;
+            font-size: 18px;
             font-family: Patua One;
             color: #808080;
-
             user-select: none;
         }
 
@@ -217,10 +205,8 @@ const ContainerPerfil = styled.div `
             display: flex;
             flex-direction: column;
             align-items: center;
-
-            margin-top: 4em;
+            margin-top: 1em;
             padding: 1em 0.8em 0.5em 1em;
-
             background-color: #D1EAF5;
             box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
             border-radius: 7px;
@@ -233,8 +219,8 @@ const ContainerPerfil = styled.div `
         }
 
         .img-pedidos {
-            width: 58px;
-            height: 54px;
+            width: 80px;
+            height: 70px;
         }
 
         .btn-ver-itens button {
@@ -244,11 +230,9 @@ const ContainerPerfil = styled.div `
 
             font-family: Pacifico;
             color: #FFF;
-            font-size: 20px;
-
+            font-size: 15px;
             padding: 0.2em 1.8em;
             margin-top: 0.5em;
-
             cursor: pointer;
             user-select: none;
         }
@@ -256,7 +240,6 @@ const ContainerPerfil = styled.div `
         .btn-ver-itens button:hover {
             background: #472666;
             cursor: pointer;
-
             transition: 0.5s;
         }
 
@@ -267,10 +250,10 @@ const ContainerPerfil = styled.div `
 
             font-family: Pacifico;
             color: #FFF;
-            font-size: 25px;
+            font-size: 15px;
 
             padding: 0.4em 1em;
-            margin: 4em 0em 0em 10em;
+            margin: 1em 0em 1em 10em;
 
             cursor: pointer;
             user-select: none;

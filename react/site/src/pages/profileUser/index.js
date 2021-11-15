@@ -97,8 +97,9 @@ export default function Perfil() {
 
             <div className="info-pessoal-perfil">
 
+                <div className="lado1">
                 <div className="box-dados-conta-perfil">
-                    <div className="dados-conta-perfil">Dados da conta</div>
+                    <div className="dados-conta-perfil">Dados Pessoais</div>
                     <div className="box-infos">
                         <img src="../../assets/images/asterisco-perfil.png" alt="" />
                         <div className="email">E-mail:</div>
@@ -107,8 +108,6 @@ export default function Perfil() {
                 </div>
 
                 <div className="box-dados-pessoais-perfil">
-
-                    <div className="dados-pessoais-perfil">Dados Pessoais</div>
                     <div className="box-infos">
                         <img src="../../assets/images/asterisco-perfil.png" alt="" />
                         <div className="nome">Nome:</div>
@@ -124,6 +123,17 @@ export default function Perfil() {
 
                     <div className="box-infos">
                         <img src="../../assets/images/asterisco-perfil.png" alt="" />
+                        <div className="telefone">Telefone</div>
+                    </div>
+                    <div className="info-obrigatorio-telefone">Caso a gente precise entrar em contato sobre seus pedidos</div>
+                    <input className="input-telefone" />
+                </div>
+                </div>
+                </div>
+
+                <div className="lado2">
+                    <div className="box-infos">
+                        <img src="../../assets/images/asterisco-perfil.png" alt="" />
                         <div className="data">Data de Nascimento</div>
                     </div>
                     <div className="info-obrigatorio-data">Necessário ter maioridade para comprar em nosso site com cartão de crédito</div>
@@ -137,21 +147,11 @@ export default function Perfil() {
                     <div className="info-obrigatorio-cpf">Necessário para emissão de notas fiscais</div>
                     <input className="input-cpf" />
 
-                    <div className="box-infos">
-                        <img src="../../assets/images/asterisco-perfil.png" alt="" />
-                        <div className="telefone">Telefone</div>
-                    </div>
-                    <div className="info-obrigatorio-telefone">Caso a gente precise entrar em contato sobre seus pedidos</div>
-                    <input className="input-telefone" />
-
-                </div>
-                
-
-                <div className="box-excluir" onClick={remover}>
+                    <div className="box-excluir" onClick={remover}>
                     <div className="excluir-conta-perfil">Excluir conta</div>
                     <img src="../../assets/images/Lixeira-perfil.svg" alt="" />
                 </div>
-            </div>
+                </div>
 
             <div className="info-pedidos">
                 <div className="titulo-pedido">Pedidos</div>

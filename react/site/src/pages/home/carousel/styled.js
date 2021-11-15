@@ -35,7 +35,8 @@ const Carrosel = styled.div`
     }
     img:hover
     {
-        opacity: .4;
+        opacity: .6;
+        transition: all 0.5s ease-out;
     }
 
     .Botao button {
@@ -61,7 +62,7 @@ const Carrosel = styled.div`
         transition: all 0.5s ease-in;
     }
 
-    @media(max-width: 375px) {
+    @media(max-width: 400px) {
         padding: 0;
         .titulo{
             margin-left: .7em;

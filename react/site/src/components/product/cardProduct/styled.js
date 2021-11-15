@@ -120,34 +120,35 @@ const ContainerBoxProduto = styled.div`
     }
 
     @media(max-width: 375px) {
-        width: 9em;
+        width: 10.5em;
         height: 17em;
         
         .produto {
             justify-content: space-around;
-            width: 10em;
+            width: 12em;
         }
 
         .imagem-doce img{
-            width: 8em;
-            height: 6em;
+            width: 9.5em;
+            height: 7em;
+            margin: .4em;
         }
         .nm-doce {
-            font-size: 1em;
+            font-size: .9em;
         }
         .preco {
-            font-size: 15px;
+            font-size: .9em;
             text-align: center;
-            margin: .7em 0em .7em .5em;
+            margin: .5em 0em .7em .5em;
         }
         .icones {
             display: flex;
             flex-direction: row;
-            margin-top: .5em
+            margin: .5em;
         }
         .icone-carrinho img{
             width: 25px;
-            margin-right: 5px;
+            margin-right: 7px;
         }
         .icone-coracao img{
             width: 20px;

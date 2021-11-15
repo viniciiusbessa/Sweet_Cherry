@@ -171,12 +171,13 @@ const ContainerCabecalho = styled.div`
         margin: .5em 1em 0em 0em;
     }
 
-    @media(max-width: 375px){
+    @media(max-width: 400px){
+        height: 145px;
         .logo-perfil{
             margin-top: 0em;
         }
         .box-nome-usuario {
-            margin: 0;
+            margin-top: 0;
         }
         .rotas-perfil {
             margin-left: 0;
@@ -186,7 +187,7 @@ const ContainerCabecalho = styled.div`
         .box-imgs-perfil {
             position: absolute;
             right: 2em;
-            top: 1.5em;
+            top: .5em;
         }
         .img-carrinho-perfil img, .img-favoritos-perfil img {
             margin: 5px;
@@ -199,10 +200,13 @@ const ContainerCabecalho = styled.div`
         }
         .ola {
             position: absolute;
-            top: 5em;
+            top: 3.5em;
             left: 1em;
             font-size: 10px;
             text-decoration: underline 2px solid #D1EAF5;
+        }
+        .logo1-perfil, .logo2-perfil {
+            font-size: 20px;
         }
     }
     

@@ -1,62 +1,38 @@
 import styled from 'styled-components'
 
-const ConteinerRodape = styled.div`
+const ConteinerRodape = styled.footer`
 
     background-color: #FF8AB5;
     color: white;
-
     display: flex;
     flex-direction: row;
-
     justify-content: center;
-
     font-size: 18px;
-
     cursor: pointer;
     user-select: none;
 
 .rodape {
     display: flex;
     flex-direction: row;
-
     align-items: center;
-
     margin: 30px 0px 20px 0px;
 }
 
 .TrabelheConosco, .atendimento, .redes{
     margin-top: 1em;
     margin-right: 4em;
-
 }
 
 .sociais {
     display: flex;
     flex-direction: row;
-
     cursor: pointer;
 }
 
 .icon img {
     padding-right: 12px;
-   
-}
-.linha {
-    margin-top: 15px;
 }
 
-.imagens{
-    display: flex;
-    justify-content: center;
-}
-
-.imagens img{
-    border-radius: 1em;
-    width: 40em;
-    height: 40em;
-
-    margin: 1em;
-}
 
 @media(max-width: 1040px){
     .rodape{
@@ -114,6 +90,45 @@ const ConteinerRodape = styled.div`
         width: 35px;
     }
 
+}
+
+@media(max-width: 400px) {
+    font-size: .8em;
+
+    .rodape {
+        margin: 10px 0px 0px 0px;
+        align-items: flex-start;
+        position: relative;
+    }
+    .atendimento {
+        font-size: .8em;
+        position: absolute;
+        right: .3em;
+    }
+    .titulo-Trabalhe {
+        font-size: .9em;
+    }
+    .TrabelheConosco, .atendimento, .redes{
+        margin: 0em 0em 0em 0em;
+        font-size: .9em;
+    }
+    .redes {
+        display: flex;
+        flex-direction: column;
+        margin-top: 2em;
+        align-items: center;
+    }
+    .titulo-redes {
+        margin-left: 9em;
+    }
+    .logo {
+        position: absolute;
+        top: 5.5rem;
+        left: 16rem;
+    }
+    .sociais {
+        margin-top: .5em;
+    }
 }
 
 `
