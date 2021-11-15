@@ -27,8 +27,10 @@ export default function BoxProduto (props){
     const [product] = useState(props.info);
     const [cliente, /* setCliente */] = useState(usuarioLogado.id_cliente);
     const [produto, /* setProduto */] = useState(product.id);
+    const [fav, setFav] = useState([])
 
-    console.log(product);
+   // console.log(product);
+
     
     const compra = async () => {
         navigation.push('/compra')
@@ -58,6 +60,11 @@ export default function BoxProduto (props){
         navigation.push('/favoritos/')
     }
 
+    async function deletar(id){
+        let l = await api.deletarFavorito(id);
+        console.log(l)
+    }
+
 
     return(
         <div className='hoverProduto'>
@@ -72,7 +79,14 @@ export default function BoxProduto (props){
                         <div className="preco"> R$ {props.info.preco}</div>
                         <div className="icones">
                             <div className="icone-carrinho" onClick={cartItem}><img src="/assets/images/carrinho.svg" alt=""/></div>
-                            <div className="icone-coracao" onClick={favorito}><img src="/assets/images/coracao-favoritos-compra.svg" alt=""/></div>
+                            <div className="icone-coracao"> 
+                            {product.id_favorito >= 1   
+                                        ? <img onClick={() => deletar(product.id_favorito)} src="/assets/images/lixeira.svg"/>
+                                        : <img onClick={favorito} src="/assets/images/coracao-favoritos-compra.svg"/> 
+                                        
+                                    
+                             }
+                            </div>
                         </div>
                         </div>
 
