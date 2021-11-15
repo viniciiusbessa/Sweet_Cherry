@@ -23,7 +23,7 @@ const api = new Api();
 function infoUsu(navigation){
     let logado = Cookies.get('usuario-logado')
     if (!logado) {
-        toast.error('Você precisa estar logado para entrar no perfil!')
+        toast.warning('Você precisa estar logado para entrar no perfil!')
         navigation.push('/login')
         return false
     }
