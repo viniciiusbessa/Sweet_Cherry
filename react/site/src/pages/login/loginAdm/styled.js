@@ -178,6 +178,42 @@ const ContainerLoginAdm = styled.div`
         cursor: pointer;
         transition: 0.5s;
     }
+
+    @media(max-width: 430px) {
+        .cabecalho-entrar-bem-vindo {
+            background-size: 100% 110px;
+
+            height: 120px;
+        }
+        .bemvindo-titulo, .bemvindo-titulo1{
+            font-size: 25px;
+        }
+        .img-login img {
+            width: 60px;
+        }
+        .box-input-email img, .box-input-senha img, .box-input-usuario img {
+            width: 20px;
+            margin: 0em -1.7em 0em 0em;
+        }
+        .eye img {
+            width: 2.5em;
+        }
+        .input-email, .input-senha {
+            font-size: 15px;
+            border-bottom: 2px solid #C4C4C4;
+        }
+        .botoes-um {
+            margin: 2em 0em 1em 0em;
+        }
+
+        .bt-voltar, .bt-entrar {
+            font-size: 15px;
+            border-radius: 10px;
+
+            padding: .5em 1.5em;
+            width: 8em;
+        }
+    }
 `
 
 export { ContainerLoginAdm }
