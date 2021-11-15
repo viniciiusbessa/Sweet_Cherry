@@ -102,7 +102,7 @@ const BoxNovidades = styled.div`
     }
 }
 
-@media(max-width: 400px){
+@media(max-width: 430px){
     .titulo{
         font-size: 30px;
         margin-left: 1em;

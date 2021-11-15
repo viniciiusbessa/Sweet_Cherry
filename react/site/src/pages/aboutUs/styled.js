@@ -56,7 +56,7 @@ const ContainerSobreNos = styled.div`
             border: 5px solid #FF8AB5;
         }
 
-        @media(max-width: 400px ) {
+        @media(max-width: 430px ) {
             .fundo-cabecalho {
                 background-size: 100% 50%;
             }

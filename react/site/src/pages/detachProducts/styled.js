@@ -107,6 +107,44 @@ const ContainerDestaque = styled.div `
         justify-content: center;
         margin-top: 3em;
     }
+
+    @media(max-width: 430px) {
+        background-size: 105% auto;
+
+        .conteudo {
+            padding: 2em;
+        }
+        .buscar {
+            margin-bottom: 1.5em;
+        }
+        .buscar img {
+            width: 1.5em;
+            height: 1.5em;
+
+            margin-top: 1.1em;
+            margin-left: -2.4em;
+
+            cursor: pointer;
+            user-select: none;
+        }
+        input {
+            width: 20em;
+            height: 2.7em;
+            border-radius: 20px;
+            margin-top: .5em;
+            font-size: 16px;
+        }
+        .nm-box {
+            font-size: 1.5em;
+            text-decoration: underline 3.5px solid #D1EAF5;
+        }
+        .box-itens {
+            margin-top: .3em;
+        }
+        .paginacao {
+            margin: 1em 0em 1em 0em;
+        }
+    }
 `
 
 export { ContainerDestaque }

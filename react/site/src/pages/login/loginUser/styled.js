@@ -3,7 +3,6 @@ import styled from 'styled-components'
 const ContainerLogin = styled.div`
     display: flex;
     flex-direction: column;
-
     cursor: pointer;
     user-select: none;
 
@@ -15,6 +14,7 @@ const ContainerLogin = styled.div`
         font-family: Pattaya;
 
         background-image: url('/assets/images/fundo2.png');
+        background-repeat: no-repeat;
         background-size: 100% 220px;
         height: 220px;
     }
@@ -185,6 +185,80 @@ const ContainerLogin = styled.div`
         left: 3em;
         top: 3em;
         cursor: pointer;
+    }
+
+    @media(max-width: 430px) {
+        .cabecalho-entrar-bem-vindo {
+            background-size: 100% 50%;
+        }
+        .bemvindo-titulo{
+            font-size: 30px;
+            padding-top: 1.5em;
+        }
+        .seta-sair {
+            position: absolute;
+            left: 1.5em;
+            top: 1.5em;
+        }
+        .seta-sair svg {
+            width: 0em;
+        }
+        .img-login img {
+            width: 60px;
+            position: absolute;
+            top: 7.5em;
+            left: 12em ;
+        }
+        .box-input-senha, .box-input-email {
+            position: relative;
+        }
+        .box-input-email img {
+            width: 20px;
+            margin: 0em 0em 0em 0em;
+            position: absolute;
+            top: 1em;
+            left: .5em;
+        }
+        .box-input-senha img {
+            width: 23px;
+            margin: 0em 0em 0em 0em;
+            position: absolute;
+            top: 1em;
+            left: .5em;
+        }
+        .inputs-entrarbv {
+            margin-top: 0em;
+        }
+        .input-email, .input-senha {
+            font-size: 15px;
+            border-bottom: 2px solid #C4C4C4;
+            padding: 1.5em 0em 0em 1em;
+            width: 20em;
+        }
+        .eye {
+            top: -.3em;
+            left: 15.5em;
+        }
+        .eye img {
+            width: 2.7em;
+        }
+        .esqueceu-senha {
+            font-size: 12px;
+            margin-top: 1.5em;
+        }
+        .botoes-um {
+            margin: 2em 0em 1em 0em;
+        }
+        .bt-entrar, .bt-criar {
+            font-size: 15px;
+            border-radius: 9px;
+            padding: 0.4em 1.6em;
+        }
+        .conta-adm {
+            font-family: Patua One;
+            font-size: 15px;
+            border-radius: 10px;
+        }
     }
 `
 

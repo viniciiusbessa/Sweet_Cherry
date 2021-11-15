@@ -62,7 +62,7 @@ const Carrosel = styled.div`
         transition: all 0.5s ease-in;
     }
 
-    @media(max-width: 400px) {
+    @media(max-width: 430px) {
         padding: 0;
         .titulo{
             margin-left: .7em;

@@ -119,7 +119,7 @@ const ContainerBoxProduto = styled.div`
         }
     }
 
-    @media(max-width: 375px) {
+    @media(max-width: 430px) {
         width: 10.5em;
         height: 17em;
         

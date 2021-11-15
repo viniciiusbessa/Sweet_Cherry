@@ -171,7 +171,7 @@ const ContainerCabecalho = styled.div`
         margin: .5em 1em 0em 0em;
     }
 
-    @media(max-width: 400px){
+    @media(max-width: 430px){
         height: 145px;
         .logo-perfil{
             margin-top: 0em;

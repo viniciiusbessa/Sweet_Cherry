@@ -77,7 +77,7 @@ const ContainerInicial = styled.div`
     transform: scale(1.05);
 }
 
-@media(max-width: 400px){
+@media(max-width: 430px){
     background-size: 105% auto;
     .button1, .button2 {
         width: 10em;
@@ -234,7 +234,7 @@ const BoxEmAlta = styled.div`
       
     }
 
-    @media(max-width: 400px) {
+    @media(max-width: 430px) {
         margin-top: 2em;
 
         .titulo{

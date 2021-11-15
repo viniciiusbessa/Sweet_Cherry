@@ -92,9 +92,8 @@ const ConteinerRodape = styled.footer`
 
 }
 
-@media(max-width: 400px) {
+@media(max-width: 430px) {
     font-size: .8em;
-
     .rodape {
         margin: 10px 0px 0px 0px;
         align-items: flex-start;
