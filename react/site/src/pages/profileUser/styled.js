@@ -263,6 +263,47 @@ const ContainerPerfil = styled.div `
 
             transition: 0.5s;
         }
+
+        @media(max-width: 1040px){
+
+            background-image: none;
+            background-color: #F6AAC6;
+            
+            .conteudo-perfil{
+                display: flex;
+                flex-direction: column;
+            }
+
+            .lado1{
+                margin: 0px;
+                margin-top: 35px;
+            }
+
+            .lado2{
+                margin: 0px;
+                margin-left: 35px;
+                margin-bottom: 35px;
+            }
+
+            .dados-conta-perfil{
+                font-size: 25px;
+                margin-bottom: 35px;
+                margin-left: 60px;
+            }
+
+            .box-excluir{
+                margin-left: 80px;
+            }
+
+            .box-pedido{
+                margin-bottom: 25px;
+            }
+
+            btn-cancelar-pedido{
+                margin-bottom: 25px;
+            }
+
+        }
 `
 
 export { ContainerPerfil }

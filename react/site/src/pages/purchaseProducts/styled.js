@@ -300,6 +300,7 @@ const ContainerCompra = styled.div`
         color: #c4c4c4;
         margin: 0em 0em .5em 1em;
     }
+
 `
 
 export { ContainerCompra }
