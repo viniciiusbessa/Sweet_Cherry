@@ -31,10 +31,6 @@ export default function BoxProduto (props){
 
    // console.log(product);
 
-    
-    const compra = async () => {
-        navigation.push('/compra')
-    }
 
     function cartItem(){
         let carrinho = Cookies.get('carrinho');
@@ -93,7 +89,7 @@ export default function BoxProduto (props){
                             pathname: '/compra',
                             state: props.info
                         }}>
-                            <div className="button"> <button onClick={compra}>Ver mais</button> </div>
+                            <div className="button"> <button> Ver mais</button> </div>
                         </Link>
                     </div>
             </ContainerBoxProduto>
