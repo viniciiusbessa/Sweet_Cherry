@@ -30,12 +30,19 @@ export default function CarrinhoProdutos(props) {
 
     const [usu] = useState(usuarioLogado.nm_cliente);
     const [products, setProducts] = useState([]);
+    const [qtd] = useState(Cookies.get("carrinho").qtd)
+
+    console.log(qtd);
+
+    const quant = products.map (l => {
+        return l.qtd 
+    });
 
     const contComprar = async () => {
         navigation.push('/destaque')
     }
 
-    useEffect(uploadCart, []);
+    useEffect(uploadCart, [quant]);
 
     function uploadCart() {
         let carrinho = Cookies.get('carrinho');
@@ -61,10 +68,12 @@ export default function CarrinhoProdutos(props) {
         
         produtoAlterado.qtd = qtd
         Cookies.set('carrinho', JSON.stringify(products));
+        
         // setProducts([produtoAlterado])
     }
 
-    
+    console.log(Cookies.get("carrinho"));
+
     const total = products.reduce(getTotal, 0);
     function getTotal(total, item) {
         return total + (item.preco * item.qtd);

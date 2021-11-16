@@ -14,15 +14,13 @@ const ContainerPerfil = styled.div `
         .conteudo-perfil {
             display: flex;
             flex-direction: row;
-            justify-content: space-between;
+            justify-content: space-around;
             margin-top: .5em;
         }
 
         .info-pessoal-perfil {
             display: flex;
             flex-direction: row;
-
-            margin-left: 2em;
         }
 
         .box-titulo-pedido {
@@ -133,6 +131,11 @@ const ContainerPerfil = styled.div `
             user-select: none;
         }
 
+        .lado2 {
+            margin-left: 8em;
+            margin-top: 2.5em;
+        }
+
         .formato {
             font-size: 13px;
             color: #FBE8FF;
@@ -148,18 +151,14 @@ const ContainerPerfil = styled.div `
             display: flex;
             flex-direction: row;
 
-            margin: 1.5em 0em 0em 3em;
+            margin: 0.3em 0em 0em 3em;
 
             font-family: Patua One;
-            font-size: 18px;
+            font-size: 20px;
             color: #FF1A1A;
 
             cursor: pointer;
             user-select: none;
-        }
-
-        .lado2 {
-            margin: 3em 0em 0em -13em;
         }
 
         .box-excluir:hover {
@@ -203,13 +202,16 @@ const ContainerPerfil = styled.div `
             display: flex;
             flex-direction: column;
             align-items: center;
+
             margin-top: 1em;
             padding: 1em 0.8em 0.5em 1em;
+
             background-color: #D1EAF5;
             box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
             border-radius: 7px;
 
-            font-size: 25px;
+            font-size: 23px;
             color: #140018;
 
             cursor: pointer;
@@ -248,10 +250,10 @@ const ContainerPerfil = styled.div `
 
             font-family: Pacifico;
             color: #FFF;
-            font-size: 15px;
+            font-size: 18px;
 
             padding: 0.4em 1em;
-            margin: 1em 0em 1em 10em;
+            margin: 1.5em 0em 2em 6em;
 
             cursor: pointer;
             user-select: none;

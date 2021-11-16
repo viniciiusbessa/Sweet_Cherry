@@ -193,7 +193,7 @@ const ContainerLogin = styled.div`
         }
         .bemvindo-titulo{
             font-size: 30px;
-            padding-top: 1.5em;
+            padding-top: 1em;
         }
         .seta-sair {
             position: absolute;
@@ -207,7 +207,7 @@ const ContainerLogin = styled.div`
             width: 60px;
             position: absolute;
             top: 7.5em;
-            left: 12em ;
+            left: 11em ;
         }
         .box-input-senha, .box-input-email {
             position: relative;

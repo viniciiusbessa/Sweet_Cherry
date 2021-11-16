@@ -38,19 +38,22 @@ export default function ConfirmarPagamento(props) {
     const [nmCliente] = useState(usuarioLogado.nm_cliente);
 
 
-    // const [email, /* setEmail */] = useState(props.location.state.email);
-    const [cpf, setCpf] = useState('');
-    const [telefone, setTelefone] = useState('');
     const [endereco, setEndereco] = useState('');
     const [numero, setNumero] = useState('');
     const [complemento, setComplemento] = useState('');
+    const [cpf, setCpf] = useState('');
+    const [nascimento, setNascimento] = useState('');
+    const [telefone, setTelefone] = useState('');
+    const [forma_pagamento] = useState('');
+    const [numero_do_cartao, setNumero_do_cartao] = useState('');
+    const [parcelas, setParcelas] = useState('');
 
     const voltarCarrinho = async() => {
         navigation.push('/carrinho')
     }
 
     const finalizarCompra = async () => {
-        let r = await api.confirmarPagmento(  cpf, telefone, endereco, numero, complemento )
+        let r = await api.confirmarPagmento( usu, endereco, numero, complemento, cpf, nascimento, telefone, forma_pagamento, numero_do_cartao, parcelas )
         if (r.erro) {
             toast.error(`${r.erro}`)
 
@@ -84,7 +87,10 @@ export default function ConfirmarPagamento(props) {
                             <InputPayment value={cpf} onChange={e => setCpf(e.target.value)} />
 
                             <div className="nm-input">Telefone:</div>
-                            <InputPayment value={telefone} onChange={e => setTelefone(e.target.value)}/>
+                            <InputPayment value={telefone} onChange={e => setTelefone(e.target.value)} />
+
+                            <div className="nm-input">Nascimento:</div>
+                            <InputPayment value={nascimento} onChange={e => setNascimento(e.target.value)} />
 
                         </div>
                         <div className="entrega">
@@ -116,15 +122,15 @@ export default function ConfirmarPagamento(props) {
                             <div className="nm-box">Pagamento</div>
 
                             <div className="nm-input">Número do cartão:</div>
-                            <InputPayment  />
+                            <InputPayment value={numero_do_cartao} onChange={e => setNumero_do_cartao(e.target.value)} />
 
                             <div className="nm-input">Parcelas:</div>
-                            <select name="listaparcelas" id="" className="parcelas">
-                                <option>1x</option>
-                                <option>2x</option>
-                                <option>3x</option>
-                                <option>4x</option>
-                                <option>5x</option>
+                            <select name="listaparcelas" id="" className="parcelas" value={parcelas} onChange={e => setParcelas(e.target.value)}>
+                                <option value={1}>1x</option>
+                                <option value={2}>2x</option>
+                                <option value={3}>3x</option>
+                                <option value={4}>4x</option>
+                                <option value={5}>5x</option>
                             </select>
                             <div className="nm-input">Nome:</div>
                             <InputPayment value={nmCliente} readOnly={true} />

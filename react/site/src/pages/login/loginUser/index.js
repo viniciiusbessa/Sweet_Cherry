@@ -72,12 +72,12 @@ export default function Login() {
                 <div className="inputs-entrarbv">
                     <div className="box-input-email">
                         <img src="../../assets/images/img-email-login.svg" alt="" />
-                        <input className="input-email" type="text" placeholder="E-mail" value={email} onChange={e => setEmail(e.target.value)} />
+                        <input className="input-email" type="text" placeholder="E-mail" style={{textAlign: 'center'}} value={email} onChange={e => setEmail(e.target.value)} />
                     </div>
 
                     <div className="box-input-senha">
                         <img src="../../assets/images/img-senha-login.svg" alt="" />
-                        <input className="input-senha" type="password" placeholder="Senha" id="senha" value={senha} onChange={e => setSenha(e.target.value)} />
+                        <input className="input-senha" type="password" placeholder="Senha" id="senha" style={{textAlign: 'center'}}  value={senha} onChange={e => setSenha(e.target.value)} />
                         <div className="eye" onClick={mostrarOcultarSenha}><img src="/assets/images/eyeIcon.svg" alt="" /></div>
                     </div>
                     

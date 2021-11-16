@@ -40,9 +40,13 @@ export default function Perfil() {
     const [/* usu */, setUsu] = useState('')
     const [email] = useState(informacoes.ds_email);
     const [nome] = useState(informacoes.nm_cliente);
-    // const [endereco] = useState(informacoes.ds_endereco);
-    // const [email] = useState(informacoes.ds_email);
-    // const [email] = useState(informacoes.ds_email);
+    const [endereco] = useState(informacoes.ds_endereco);
+    const [cpf] = useState(informacoes.ds_cpf);
+    const [nascimento] = useState(informacoes.dt_nascimento);
+    const [telefone] = useState(informacoes.nr_telefone);
+
+    console.log(endereco)
+    
 
 
     const verItens = async () => {
@@ -98,38 +102,37 @@ export default function Perfil() {
             <div className="info-pessoal-perfil">
 
                 <div className="lado1">
-                <div className="box-dados-conta-perfil">
-                    <div className="dados-conta-perfil">Dados Pessoais</div>
-                    <div className="box-infos">
-                        <img src="../../assets/images/asterisco-perfil.png" alt="" />
-                        <div className="email">E-mail:</div>
-                    </div>
-                    <input className="input-email" value={email} readOnly={true} />
-                </div>
-
-                <div className="box-dados-pessoais-perfil">
-                    <div className="box-infos">
-                        <img src="../../assets/images/asterisco-perfil.png" alt="" />
-                        <div className="nome">Nome:</div>
+                    <div className="box-dados-conta-perfil">
+                        <div className="dados-conta-perfil">Dados Pessoais</div>
+                        <div className="box-infos">
+                            <img src="../../assets/images/asterisco-perfil.png" alt="" />
+                            <div className="email">E-mail:</div>
+                        </div>
+                        <input className="input-email" value={email} readOnly={true} />
                     </div>
 
-                    <input className="input-nome" value={nome} readOnly={true} />
+                    <div className="box-dados-pessoais-perfil">
+                        <div className="box-infos">
+                            <img src="../../assets/images/asterisco-perfil.png" alt="" />
+                            <div className="nome">Nome:</div>
+                        </div>
+                        <input className="input-nome" value={nome} readOnly={true} />
 
-                    <div className="box-infos">
-                        <img src="../../assets/images/asterisco-perfil.png" alt="" />
-                        <div className="endereco">Endereco:</div>
-                    </div>
-                    <input className="input-endereco"  />
+                        <div className="box-infos">
+                            <img src="../../assets/images/asterisco-perfil.png" alt="" />
+                            <div className="endereco">Endereco:</div>
+                        </div>
+                        <input className="input-endereco" value={endereco} readOnly={true} />
 
-                    <div className="box-infos">
-                        <img src="../../assets/images/asterisco-perfil.png" alt="" />
-                        <div className="telefone">Telefone</div>
+                        <div className="box-infos">
+                            <img src="../../assets/images/asterisco-perfil.png" alt="" />
+                            <div className="telefone">Telefone</div>
+                        </div>
+                        <div className="info-obrigatorio-telefone">Caso a gente precise entrar em contato sobre seus pedidos</div>
+                        <input className="input-telefone" value={telefone} readOnly={true} />
                     </div>
-                    <div className="info-obrigatorio-telefone">Caso a gente precise entrar em contato sobre seus pedidos</div>
-                    <input className="input-telefone" />
                 </div>
-                </div>
-                </div>
+            
 
                 <div className="lado2">
                     <div className="box-infos">
@@ -138,20 +141,21 @@ export default function Perfil() {
                     </div>
                     <div className="info-obrigatorio-data">Necessário ter maioridade para comprar em nosso site com cartão de crédito</div>
                     <div className="formato">Formato DD/MM/AAAA</div>
-                    <input className="input-data" type="date"/>
+                    <input className="input-data" type="date" value={nascimento} readOnly={true} />
 
                     <div className="box-infos">
                         <img src="../../assets/images/asterisco-perfil.png" alt="" />
                         <div className="cpf">CPF</div>
                     </div>
                     <div className="info-obrigatorio-cpf">Necessário para emissão de notas fiscais</div>
-                    <input className="input-cpf" />
+                    <input className="input-cpf" value={cpf} readOnly={true} />
 
                     <div className="box-excluir" onClick={remover}>
-                    <div className="excluir-conta-perfil">Excluir conta</div>
-                    <img src="../../assets/images/Lixeira-perfil.svg" alt="" />
+                        <div className="excluir-conta-perfil">Excluir conta</div>
+                        <img src="../../assets/images/Lixeira-perfil.svg" alt="" />
+                    </div>
                 </div>
-                </div>
+            </div>
 
             <div className="info-pedidos">
                 <div className="titulo-pedido">Pedidos</div>
@@ -161,8 +165,6 @@ export default function Perfil() {
 
                 <div className="box-pedido">
                     <img className="img-pedidos" src="../../assets/images/bolinho-box-pedidos.png" alt="" />
-                    
-
                     <div className="info-pedido">Compra: 30/09/2021</div>
                     <div className="info-pedido">Quantidade de itens: 7</div>
                     <div className="info-pedido">Estado: á caminho</div>

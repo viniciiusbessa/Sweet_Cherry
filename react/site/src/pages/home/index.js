@@ -17,8 +17,6 @@ import BoxProduto from "../../components/product/cardProduct";
 import { BoxEmAlta } from "./styled";
 import { ContainerInicial} from "./styled";
 
-import Mini from "./carousel/index.js";
-
 
 import { useState, useRef, useEffect } from 'react'
 
@@ -81,7 +79,7 @@ export default function Inicial () {
         let r2 = await api.listarProdutosCategoria('Diversos');
         let r3 = await api.listarProdutosCategoria('Em alta');
 
-        console.log(r2);
+        //console.log(r2);
 
         setNovidades(r1);
         setDiversos(r2);
@@ -131,21 +129,14 @@ export default function Inicial () {
                 </div>
             </div>
             <BoxNews info={novidades} />
-            <Mini/> 
             <BoxEmAlta>  
                 <div className="Faixa4_inicio">
                     <div className="titulo">Em alta</div>
                     <div className="box">
-                    <div className="box_em_alta">
-                        <div className="imagem_emAlta">
-                            <img src="../../assets/images/macarrons.jpg" alt=""/>
+                       <div className="video"> <video  autoplay loop controls> 
+                            <source src="/assets/video/video_bolo_vulcão.mp4" type="video/mp4"/>
+                        </video>
                         </div>
-                        <div className="box_texto">
-                            <p>Os Deliciosos Macarons chegaram!</p>
-                            <p>Delicie-se na sua cor favorita com esses biscoitos</p>
-                            <button onClick={categorias}> Garanta já o seu!  </button>
-                        </div>
-                    </div>
                         <div className="container_doces">
                             {emAlta.map(item => 
                                 <BoxProduto 

@@ -6,13 +6,6 @@ const ContainerPagamento = styled.div`
 
     background-color: #F6AAC6;
 
-    .fundo-cabecalho {
-        background-image: url(../../assets/images/fundo1.png);
-        background-size: 100% 200px;
-
-        height: 200px;
-    }
-
     .conteudo {
         display: flex;
         flex-direction: column;
@@ -133,7 +126,7 @@ const ContainerPagamento = styled.div`
         border: 3px solid #D1EAF5;
         border-radius: 4px;
         box-shadow: 0px 4px 4px 0px #00000040;
-
+        font-family: Patua One;
         width: 100%;
         height: 3em;
     }
@@ -232,6 +225,133 @@ const ContainerPagamento = styled.div`
         padding: 0.4px 49.9%;
     }
 
+    @media(max-width: 430px) {
+        .conteudo {
+            display: flex;
+            flex-direction: column;
+            margin: 2em 0em;
+        }
+        .nome-conteudo {
+            font-size: 1em;
+            margin-left: 1em;
+        }
+        .conteiner-geral {
+            margin-top: 1em;
+            font-size: 1em;
+        }
+        .nm-input {
+            margin-top: .5em;
+        }
+
+        .nm-box {
+            font-size: 1em;
+        }
+        .dados {
+            width: 15em;
+            border-radius: 5px;
+            box-shadow: 0px 3px 3px 0px #00000040;
+            padding: .5em 1em 1em 1em;
+        }
+        .dados input {
+            border: 2px solid #D1EAF5;
+            border-radius: 3px;
+            box-shadow: 0px 3px 3px 0px #00000040;
+            width: 15em;
+            height: 2em;
+        }
+        .entrega {
+            width: 15em;
+            border-radius: 5px;
+            box-shadow: 0px 3px 3px 0px #00000040;
+            padding: .5em 1em 1em 1em;
+            margin-top: 1.5em;
+        }
+
+        .entrega input {
+            border: 2px solid #D1EAF5;
+            border-radius: 3px;
+            box-shadow: 0px 3px 3px 0px #00000040;
+            width: 15em;
+            height: 2em;
+        }
+        .fr-entrega select {
+            margin-top: -0.5em;
+            margin-left: 15.2em;
+            border: 2px solid #D1EAF5;
+            border-radius: 3px;
+            box-shadow: 0px 3px 3px 0px #00000040;
+
+            width: 20%;
+            height: 1em;
+        }
+
+        .box-pg {
+            width: 15em;
+            border-radius: 5px;
+            box-shadow: 0px 3px 3px 0px #00000040;
+            padding: .5em 1em 1em 1em;
+        }
+
+        .box-pg input {
+            border: 2px solid #D1EAF5;
+            border-radius: 3px;
+            box-shadow: 0px 3px 3px 0px #00000040;
+            width: 15em;
+            height: 2em;
+        }
+        .box-pg select {
+            border: 2px solid #D1EAF5;
+            border-radius: 3px;
+            box-shadow: 0px 3px 3px 0px #00000040;
+            width: 15em;
+            height: 2em;
+        }
+
+        .botoes-pgmt {
+            display: flex;
+            justify-content: space-between;
+            width: 12em;
+        }
+    
+        .vlt-carrinho {
+            border-radius: 15px;
+            font-family: Pacifico;
+            font-size: 0.7em;
+            width: 7em;
+            height: 2.5em;
+        }
+        .vlt-carrinho:hover {
+            border: 1px solid #D1EAF5;
+        }
+
+        .final-cmpra {
+            border-radius: 15px;
+            font-size: 0.7em;
+            color: #140018;
+            width: 10em;
+            height: 2.5em;
+        }
+        .box-cartoes {
+            margin: 7em 0em 0em 2em;
+        }
+        .box-icones {
+            border: 2px solid #ffff;
+            border-radius: 25px;
+            width: 10em;
+            height: 7em;
+            margin-top: 8px;
+            padding: .5em 0.3em 0em 0.3em;
+        }
+        .icons1 {
+            margin-bottom: .5em;
+        }
+        .icon-pagseguro, .icon-mastercard {
+            margin-right: 1em;
+        }
+        .icons1 img, .icons2 img {
+            width: 3em;
+        }
+    }
 `
 
 export { ContainerPagamento }

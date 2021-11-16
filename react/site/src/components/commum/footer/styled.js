@@ -16,6 +16,7 @@ const ConteinerRodape = styled.footer`
     flex-direction: row;
     align-items: center;
     margin: 30px 0px 20px 0px;
+    height: 7em;
 }
 
 .TrabelheConosco, .atendimento, .redes{
@@ -98,6 +99,7 @@ const ConteinerRodape = styled.footer`
         margin: 10px 0px 0px 0px;
         align-items: flex-start;
         position: relative;
+        height: 12em;
     }
     .atendimento {
         font-size: .8em;
