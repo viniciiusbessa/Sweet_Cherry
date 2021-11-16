@@ -39,8 +39,6 @@ const CartProduct = styled.div`
         user-select: none;
     }
 
-
-
     th {
         padding-left: 20px;
         font-weight: 500;
