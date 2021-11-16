@@ -68,7 +68,6 @@ const ContainerPagamento = styled.div`
         height: auto;
         border-radius: 7px;
         box-shadow: 0px 4px 4px 0px #00000040;
-
         padding: 1em 2em 2em 2em;
         margin-top: 3em;
 
@@ -245,12 +244,15 @@ const ContainerPagamento = styled.div`
 
         .nm-box {
             font-size: 1em;
+            text-decoration: underline 2px #B5DAEB;
         }
         .dados {
             width: 15em;
             border-radius: 5px;
-            box-shadow: 0px 3px 3px 0px #00000040;
+            box-shadow: 0px 0px 0px 0px #00000040;
             padding: .5em 1em 1em 1em;
+            margin-left: 2em;
+            background: transparent;
         }
         .dados input {
             border: 2px solid #D1EAF5;
@@ -262,9 +264,10 @@ const ContainerPagamento = styled.div`
         .entrega {
             width: 15em;
             border-radius: 5px;
-            box-shadow: 0px 3px 3px 0px #00000040;
+            box-shadow: 0px 0px 0px 0px #00000040;
             padding: .5em 1em 1em 1em;
-            margin-top: 1.5em;
+            margin: 15em 0em 0em 2em;
+            background: transparent;
         }
 
         .entrega input {
@@ -285,11 +288,19 @@ const ContainerPagamento = styled.div`
             height: 1em;
         }
 
+        .container-pagamento {
+            position: relative;
+        }
+
         .box-pg {
             width: 15em;
             border-radius: 5px;
-            box-shadow: 0px 3px 3px 0px #00000040;
+            box-shadow: 0px 0px 0px 0px #00000040;
             padding: .5em 1em 1em 1em;
+            background: transparent;
+            position: absolute;
+            top: 32em;
+            left: .7em;
         }
 
         .box-pg input {
@@ -311,6 +322,11 @@ const ContainerPagamento = styled.div`
             display: flex;
             justify-content: space-between;
             width: 12em;
+            position: absolute;
+            top: 53em;
+            left: 18em;
+            display: flex;
+            flex-direction: column-reverse;
         }
     
         .vlt-carrinho {
@@ -332,7 +348,7 @@ const ContainerPagamento = styled.div`
             height: 2.5em;
         }
         .box-cartoes {
-            margin: 7em 0em 0em 2em;
+            margin: 22em 1em 0em 0em;
         }
         .box-icones {
             border: 2px solid #ffff;
