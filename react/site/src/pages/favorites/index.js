@@ -62,10 +62,9 @@ export default function Favorites() {
                     {favoritos.map(item =>
                         <BoxProduto
                             key={item.id}
-                            info={item} />
+                            info={item} 
+                            fav={mostrarFavoritos} />
                     )}
-
-
                 </div>
             </div>
 

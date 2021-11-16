@@ -245,7 +245,7 @@ const ContainerAdmProduto = styled.div`
 
         font-size: 16px;
 
-        border-radius: 5px;
+        border-radius: 5px;    
     }
 `
 

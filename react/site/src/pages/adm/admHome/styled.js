@@ -144,6 +144,84 @@ const ContainerAdm = styled.div`
         background-color: #89a4ee;
         transition: 1s;
     }
+
+    @media(max-width: 1040px) {
+
+        .cabecalho-adm{
+            display: flex;
+            flex-direction: column;
+
+        }
+
+        .logo-img-adm img{
+            width: 60px;
+        }
+
+        .logo-img-adm{
+            margin-left: 145px;
+        }
+
+        .box-cabecalho{
+            display: flex;
+            flex-direction: column;
+            margin-left: 115px;
+        }
+
+        
+
+        .logo1-adm{
+            font-size: 35px;
+        }
+
+        .logo2-adm{
+            font-size: 35px;
+        }
+
+        .btn-logout button{
+            width: 50px;
+            padding-right: 65px;
+            padding-left: 30px;
+        }
+
+        .btn-logout{
+            font-size: 25px;
+            margin-left: 15px;
+        }
+
+
+        .conteudo-adm{
+            display: flex;
+            flex-direction: column;
+        }
+
+        .texto-escolha-adm{
+            font-size: 25px;
+        }
+
+        .btns-adm{
+            display: flex;
+            flex-direction: row;
+            margin-right: 0px;
+        }
+
+        .btn-add-adm button{
+            width: 120px;
+            height: 120px;
+            font-size: 20px;
+            padding-left: 10px;
+        }
+
+        .btn-add-adm{
+            margin-left: 0px;
+        }
+
+        .btn-alt-adm button{
+            width: 120px;
+            height: 120px;
+            font-size: 20px;
+            padding-left: 10px;
+        }
+    }
 `
 
 export { ContainerAdm }

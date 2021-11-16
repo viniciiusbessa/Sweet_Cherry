@@ -62,6 +62,7 @@ export default function BoxProduto (props){
 
     async function deletar(id){
         let l = await api.deletarFavorito(id);
+        props.fav();
         console.log(l)
     }
 
@@ -80,12 +81,10 @@ export default function BoxProduto (props){
                         <div className="icones">
                             <div className="icone-carrinho" onClick={cartItem}><img src="/assets/images/carrinho.svg" alt=""/></div>
                             <div className="icone-coracao"> 
-                            {product.id_favorito >= 1   
-                                        ? <img onClick={() => deletar(product.id_favorito)} src="/assets/images/lixeira.svg"/>
-                                        : <img onClick={favorito} src="/assets/images/coracao-favoritos-compra.svg"/> 
-                                        
-                                    
-                             }
+                                {product.id_favorito >= 1   
+                                    ? <img onClick={() => deletar(product.id_favorito)} src="/assets/images/lixeira.svg" alt="" />
+                                    : <img onClick={favorito} src="/assets/images/coracao-favoritos-compra.svg" alt="" />   
+                                }
                             </div>
                         </div>
                         </div>

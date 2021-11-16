@@ -30,13 +30,13 @@ export default function CarrinhoProdutos(props) {
 
     const [usu] = useState(usuarioLogado.nm_cliente);
     const [products, setProducts] = useState([]);
-    const [qtd, setQtd] = useState(Cookies.get("carrinho").qtd)
+    const [qtd] = useState(Cookies.get("carrinho").qtd)
 
     console.log(qtd);
 
     const quant = products.map (l => {
         return l.qtd 
-    }); 
+    });
 
     const contComprar = async () => {
         navigation.push('/destaque')
