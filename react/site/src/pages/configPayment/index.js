@@ -77,6 +77,31 @@ export default function ConfirmarPagamento(props) {
                 <div className="nome-conteudo">Confirmar pagamento: R$ {props.location.state} </div>
                 <div className="conteiner-geral">
                     <div className="conteiner-pes-etrg">
+                        <div className="box-itens">
+                            <div className="titulo-itens">Itens do seu carrinho:</div>
+                            
+                            <table className="tabela-produtos">
+                                <thead className="cabecalho-tabela">
+                                    <tr>
+                                    <th className="nm_item">Item</th>
+                                    <th>Preço</th>
+                                    <th>Quantidade</th>
+                                    <th></th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    <tr>
+                                        <td>Bolo Red Velvet</td>
+                                        <td>25,00</td>
+                                        <td>2</td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+
                         <div className="dados">
                             <div className="nm-box">Dados pessoais</div>
 
@@ -91,30 +116,7 @@ export default function ConfirmarPagamento(props) {
 
                             <div className="nm-input">Nascimento:</div>
                             <InputPayment  id="date" type="date" value={nascimento} onChange={e => setNascimento(e.target.value)} />
-
-                        </div>
-                        <div className="entrega">
-                            <div className="fr-entrega">
-                                <div className="nm-box">Entrega</div>
-                            </div>
-
-                            <div className="nm-input">Endereço:</div>
-                            <InputPayment value={endereco} onChange={e => setEndereco(e.target.value)}/>
-
-                            <div className="box-nurm-comple">
-
-                                <div className="box-numero">
-                                    <div className="nm-input">Número:</div>
-                                    <InputPayment value={numero} onChange={e => setNumero(e.target.value)}/>
-                                </div>
-
-                                <div className="box-complemento">
-                                    <div className="nm-input">Complemento:</div>
-                                    <InputPayment value={complemento} onChange={e => setComplemento(e.target.value)}/>
-                                </div>
-
-                            </div>
-                        </div>                          
+                        </div>                 
                     </div>
 
                     <div className="conteiner-pagamento">
@@ -135,23 +137,33 @@ export default function ConfirmarPagamento(props) {
                             <div className="nm-input">Nome:</div>
                             <InputPayment value={nmCliente} readOnly={true} />
                         </div>
+
+                        <div className="entrega">
+                            <div className="fr-entrega">
+                                <div className="nm-box">Entrega</div>
+                            </div>
+
+                            <div className="nm-input">Endereço:</div>
+                            <InputPayment value={endereco} onChange={e => setEndereco(e.target.value)}/>
+
+                            <div className="box-nurm-comple">
+
+                                <div className="box-numero">
+                                    <div className="nm-input">Número:</div>
+                                    <InputPayment value={numero} onChange={e => setNumero(e.target.value)}/>
+                                </div>
+
+                                <div className="box-complemento">
+                                    <div className="nm-input">Complemento:</div>
+                                    <InputPayment value={complemento} onChange={e => setComplemento(e.target.value)}/>
+                                </div>
+                            </div>
+                        </div>
                         <div className="botoes-pgmt">
                             <button onClick={voltarCarrinho} className="vlt-carrinho">Voltar</button>
                             <button onClick={finalizarCompra} className="final-cmpra">Finalizar compra</button>
                         </div>
-                        <div className="box-cartoes">
-                            <div className="titulo-box">Pague com:</div>
-                            <div className="box-icones">
-                                <div className="icons1">
-                                    <img src="../../assets/images/pagseguro.svg" alt="" className="icon-pagseguro" />
-                                    <img src="../../assets/images/visa.svg" alt="" className="icon-visa" />
-                                </div>
-                                <div className="icons2">
-                                    <img src="../../assets/images/mastercard.svg" alt="" className="icon-mastercard" />
-                                    <img src="../../assets/images/elo.svg" alt="" className="icon-elo" />
-                                </div>
-                            </div>
-                        </div>
+                       
                     </div>
                 </div>
             </div>

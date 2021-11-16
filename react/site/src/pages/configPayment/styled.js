@@ -41,6 +41,42 @@ const ContainerPagamento = styled.div`
         font-size: 1.4em;
     }
 
+    .box-itens {
+        width: 21em;
+        height: auto;
+        border-radius: 7px;
+        box-shadow: 0px 4px 4px 0px #00000040;
+
+        padding: 1em 2em 2em 2em;
+        margin-bottom: 1.5em;
+        background: #FFFFFF;
+    }
+
+    
+    table {
+        width: 100%;
+        margin: 1em 0em 0em 0em;
+        background-color: transparent;
+        border-collapse: collapse;
+        font-size: 16px;
+    }
+
+    th {
+        padding-left: 10px;
+        font-weight: 500;
+        text-align: left;
+        background-color: #D1EAF5;
+    }
+
+    .cabecalho-tabela {
+        height: 45px;
+    }
+
+    td {
+        margin: .5em 0em .5em 0em;
+        padding: .5em 0em .5em .8em;
+    } 
+
     .dados {
         width: 21em;
         height: auto;
