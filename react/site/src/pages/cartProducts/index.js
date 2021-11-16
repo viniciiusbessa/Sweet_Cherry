@@ -93,7 +93,7 @@ export default function CarrinhoProdutos(props) {
 
                     <thead className="cabecalho-tabela">
                         <tr>
-                        <th>Item</th>
+                        <th className="nm_item">Item</th>
                         <th>Preço</th>
                         <th>Quantidade</th>
                         <th></th>

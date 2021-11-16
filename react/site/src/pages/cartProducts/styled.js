@@ -10,7 +10,7 @@ const CartProduct = styled.div`
     .fundo-cabecalho {
         background-image: url(/assets/images/cabecalhoBranco.png);
         background-size: 100% 200px;
-
+        background-repeat: no-repeat;
         height: 200px;
     }
     
@@ -279,6 +279,105 @@ const CartProduct = styled.div`
 
         th{
             
+        }
+    }
+
+    @media(max-width: 430px) {
+        .fundo-cabecalho {
+            background-size: 100% 50%;
+            height: 180px;
+        }
+        .box-carrinho {
+            margin: 0em 1em;
+        }
+
+        .titulo-carrinho {
+            font-size: 20px;
+        }
+
+        table {
+            width: 100%;
+            margin: .5em 0em 0em 0em;
+            box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.25);
+            font-size: 12px;
+        }
+        th {
+            padding-left: 15px;
+        }
+        .cabecalho-tabela {
+            height: 45px;
+        }
+        td {
+            margin: .5em 0em .5em 0em;
+            padding: .5em 1em;
+        }
+        .nome-produto {
+            margin-left: .5em;
+        }
+
+        .lixeira-carrinho  img {
+            width: 30px;
+            margin-right: 1em;
+        }
+        .total button{
+            width: 8em;
+            height: 3em;
+            font-size: 16px;
+            border-radius: 15px;
+        }
+        .total {
+            margin-right: 1em;
+        }
+        .continuar button {
+            width: 10em;
+            height: 3em;
+            font-size: 16px;
+            border-radius: 15px;
+        }
+        .confirmar button {
+            width: 9em;
+            height: 3em;
+            font-size: 16px;
+            border-radius: 15px;
+            background-color: #D1EAF5;
+        }
+        .botoes {
+            margin: 1em 0em 0em 0em;
+        }
+        .continuar button {
+            margin-right: 5em;
+        }
+        .box-cartoes {
+            margin: 2em 0em 2em 1em;
+        }
+        .titulo-box {
+            font-size: 18px;
+        }
+        .box-icones {
+            border: 2px solid #ffff;
+            border-radius: 15px;
+            width: 12em;
+            height: 8em;
+            margin-top: 5px;
+            padding: .5em;
+        }
+        .icons1 {
+            margin-bottom: .5em;
+        }
+        .icon-pagseguro{
+            width: 5.5em;
+        }
+        .icon-visa {
+            width: 4em;
+            margin-left: 1em;
+        }
+        .icon-mastercard {
+            width: 4em;
+            margin-left: 1em;
+        }
+        .icon-elo {
+            width: 4em;
+            margin-left: 1em;
         }
     }
 `
