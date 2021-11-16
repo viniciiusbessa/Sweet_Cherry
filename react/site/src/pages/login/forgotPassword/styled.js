@@ -12,6 +12,7 @@ const ContainerForgotPass = styled.div`
         font-family: Pattaya;
 
         background-image: url('/assets/images/fundo2.png');
+        background-repeat: no-repeat;
         background-size: 100% 220px;
         height: 220px;
     }
@@ -93,6 +94,48 @@ const ContainerForgotPass = styled.div`
         height: 2em;
         cursor: pointer;
         border: 1px solid #D1EAF5;
+    }
+
+    @media(max-width: 430px) {
+        .cabecalho-esqueceu-senha {
+            background-size: 100% 110px;
+            height: 120px;
+        }
+        .titulo{
+            font-size: 30px;
+        }
+        .conteudo {
+            margin-top: 1em;
+        }
+
+        .box-input-email img {
+            width: 15px;
+            margin: 0em -1.3em -0.2em 0em;
+
+            position: relative;
+        }
+        .input-email {
+            font-size: 15px;
+            border-bottom: 2px solid #C4C4C4;
+            padding: 1em 0em 0.3em 2em;
+            width: 250px;
+        }
+        .bt-redefinir {
+            font-size: 14px;
+            border-radius: 13px;
+            margin-top: 1em;
+            padding: 0em 0em;
+            width: 9em;
+            height: 2em;
+        }
+        .bt-voltar {
+            font-size: 14px;
+            border-radius: 13px;
+            margin-top: .7em;
+            padding: 0em 0em;
+            width: 6em;
+            height: 2em;
+        }
     }
 
 `

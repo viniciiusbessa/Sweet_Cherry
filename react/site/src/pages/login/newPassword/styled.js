@@ -10,11 +10,10 @@ min-height: calc(124vh - 220px);
     display: flex;
     flex-direction: row;
     justify-content: center;
-
     font-family: Pattaya;
-
     background-image: url('/assets/images/cabecalhoBranco.png');
     background-size: 100% 220px;
+    background-repeat: no-repeat;
     height: 220px;
 }
 
@@ -94,6 +93,14 @@ button:hover {
 .eye img {
     width: 2.5em;
     cursor: pointer;
+}
+
+@media(max-width: 430px) {
+    .cabecalho {
+        background-size: 50% 110px;
+        height: 110px;
+    }
+
 }
 `
 export {ContainerNewPassword}
