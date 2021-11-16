@@ -27,7 +27,7 @@ export default function BoxProduto (props){
     const [product] = useState(props.info);
     const [cliente, /* setCliente */] = useState(usuarioLogado.id_cliente);
     const [produto, /* setProduto */] = useState(product.id);
-    const [fav, setFav] = useState([])
+   // const [fav, setFav] = useState([])
 
    // console.log(product);
 
@@ -80,12 +80,10 @@ export default function BoxProduto (props){
                         <div className="icones">
                             <div className="icone-carrinho" onClick={cartItem}><img src="/assets/images/carrinho.svg" alt=""/></div>
                             <div className="icone-coracao"> 
-                            {product.id_favorito >= 1   
-                                        ? <img onClick={() => deletar(product.id_favorito)} src="/assets/images/lixeira.svg"/>
-                                        : <img onClick={favorito} src="/assets/images/coracao-favoritos-compra.svg"/> 
-                                        
-                                    
-                             }
+                                {product.id_favorito >= 1   
+                                    ? <img onClick={() => deletar(product.id_favorito)} src="/assets/images/lixeira.svg" alt="" />
+                                    : <img onClick={favorito} src="/assets/images/coracao-favoritos-compra.svg" alt="" />   
+                                }
                             </div>
                         </div>
                         </div>
