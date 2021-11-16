@@ -62,6 +62,7 @@ export default function BoxProduto (props){
 
     async function deletar(id){
         let l = await api.deletarFavorito(id);
+        props.fav();
         console.log(l)
     }
 
