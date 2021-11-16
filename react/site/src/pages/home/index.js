@@ -133,7 +133,7 @@ export default function Inicial () {
                 <div className="Faixa4_inicio">
                     <div className="titulo">Em alta</div>
                     <div className="box">
-                       <div className="video"> <video  autoplay loop controls> 
+                       <div className="video" autoplay="autoplay"> <video  autoplay loop controls> 
                             <source src="/assets/video/video_bolo_vulcão.mp4" type="video/mp4"/>
                         </video>
                         </div>

@@ -174,6 +174,7 @@ const BoxEmAlta = styled.div`
         .video video{
         border-radius: 1em;
         margin-bottom: 2em;
+        width: 20em;
     } 
     }
 `

@@ -304,7 +304,102 @@ const ContainerPerfil = styled.div `
             btn-cancelar-pedido{
                 margin-bottom: 25px;
             }
+        }
 
+        @media(max-width: 430px) {
+            .conteudo-perfil {
+                position: relative;
+            }
+            .info-pessoal-perfil {
+                display: flex;
+                flex-direction: column;
+            }
+            .dados-conta-perfil, .dados-pessoais-perfil {
+                font-size: 15px;
+                margin-bottom: 0.7em;
+            }
+            .box-infos {
+                font-size: 12px;
+            }
+            .box-infos img {
+                width: 7px;
+                height: 7px;
+            }
+            input {
+                border-radius: 7px;
+                padding: 0em 0.5em;
+                margin: 0.4em 0em 1em 2em;
+            }
+            .input-email, .input-senha, .input-nome, .input-endereco, .input-cpf, .input-telefone {
+                height: 26px;
+                width: 170px;
+            }
+            .input-endereco, .input-data, .input-cpf {
+                margin-bottom: 1em;
+            }
+            .input-cpf, .input-telefone {
+                margin-top: .5em;
+            }
+            .input-data {
+                height: 26px;
+                width: 140px;
+            }
+            .info-obrigatorio-data, .info-obrigatorio-cpf, .info-obrigatorio-telefone {
+                font-size: 10px;
+                margin: 0em 0em 0em 2em;
+            }
+            .lado2 {
+                margin-left: 0em;
+                margin-top: 0em;
+                }
+
+            .formato {
+                font-size: 10px;
+                margin: .5em 0em 0em 3em;
+            }
+            .box-excluir {
+                display: flex;
+                flex-direction: row;
+
+                margin: 2em 0em 0em 3em;
+                font-size: 14px;
+            }
+            .box-excluir img {
+                height: 18px;
+                width: 25px;
+            }
+            .titulo-pedido {
+                font-size: 16px;
+                margin-bottom: 0em;
+            }
+            .subtitulo-pedido {
+                font-size: 12px;
+            }
+            .box-pedido {
+                margin-top: .8em;
+                padding: .5em;
+                box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.25);
+                border-radius: 6px;
+                font-size: 14px;
+            }
+            .img-pedidos {
+                width: 60px;
+                height: 50px;
+            }
+            .btn-ver-itens button {
+                border-radius: 14px;
+                font-size: 10px;
+                padding: 0.5em 1.4em;
+            }
+            .btn-cancelar-pedido button {
+                font-size: 14px;
+                margin: 1em 0em 2em 6em;
+            }
+            .info-pedidos {
+                position: absolute;
+                top: 2.5em;
+                left: 13.5em;
+            }
         }
 `
 
