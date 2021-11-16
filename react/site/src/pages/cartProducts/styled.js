@@ -213,5 +213,73 @@ const CartProduct = styled.div`
 
         margin-left: 2em;
     }
+
+    @media(max-width: 1040px){
+        
+        .box-carrinho{
+            margin: 0px;
+            margin-top: 15px;
+        }
+
+        .titulo-carrinho{
+            margin-left: 15px;
+        }
+
+        .tabela-produtos{
+            margin-bottom: 50px;
+        }
+
+        .botoes{
+            margin: 0px;
+            margin-top: 25px;   
+        }
+
+        .total{
+            margin-right: 50px;
+        }
+
+        .botao-total button{
+            
+        }
+
+        .continuar button{
+            width: 150px;
+            height: 70px;
+            font-size: 15px;
+            margin-left: 15px;
+        }
+
+        .confirmar button{
+            width: 150px;
+            height: 70px;
+            font-size: 15px;
+            margin-right: 15px;
+        }
+
+        .box-cartoes{
+            margin-left: 15px;
+            margin-right: 0px;
+        }
+
+        .box-icones{
+            margin-left: 25px;
+        }
+
+        thead{
+            font-size: 15px;
+        }
+
+        tbody{
+            font-size: 15px;
+        }
+
+        tbody img{
+            width: 25px;
+        }
+
+        th{
+            
+        }
+    }
 `
 export {CartProduct}
