@@ -52,7 +52,7 @@ export default function ConfirmarPagamento(props) {
         navigation.push('/carrinho')
     }
 
-    const finalizarCompra = async () => {
+    async function finalizarCompra() {
         let r = await api.confirmarPagmento( usu, endereco, numero, complemento, cpf, nascimento, telefone, forma_pagamento, numero_do_cartao, parcelas )
         if (r.erro) {
             toast.error(`${r.erro}`)
@@ -61,11 +61,8 @@ export default function ConfirmarPagamento(props) {
             navigation.push('/compra-finalizada')
         }
     }
-
-    console.log(finalizarCompra)
     
-
-    return(
+    return (
         <ContainerPagamento>
             <ToastContainer />
             <div classNameName="fundo-cabecalho">

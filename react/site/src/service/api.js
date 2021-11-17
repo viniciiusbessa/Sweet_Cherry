@@ -1,7 +1,7 @@
 import axios from 'axios'
 const api = axios.create({
      baseURL: 'https://swapiv1.herokuapp.com/'
-    // baseURL: 'http://localhost:3030/'
+    // baseURL: 'http://localhost:3030'
 })
 
 export default class Api {

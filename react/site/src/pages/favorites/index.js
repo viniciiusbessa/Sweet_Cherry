@@ -23,8 +23,6 @@ function lerUsuarioLogado(navigation) {
 }
 
 
-
-
 export default function Favorites() {
     const navigation = useHistory();
 

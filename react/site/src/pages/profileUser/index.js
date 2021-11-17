@@ -32,7 +32,7 @@ function infoUsu(navigation){
     return usuario;
 }
 
-export default function Perfil() {
+export default function Perfil(props) {
     const navigation = useHistory();
     
     let informacoes = infoUsu(navigation);
@@ -40,7 +40,7 @@ export default function Perfil() {
     const [/* usu */, setUsu] = useState('')
     const [email] = useState(informacoes.ds_email);
     const [nome] = useState(informacoes.nm_cliente);
-    const [endereco] = useState(informacoes.ds_endereco);
+    const [endereco] = useState(informacoes.id_endereco);
     const [cpf] = useState(informacoes.ds_cpf);
     const [nascimento] = useState(informacoes.dt_nascimento);
     const [telefone] = useState(informacoes.nr_telefone);
@@ -123,7 +123,7 @@ export default function Perfil() {
                             <div className="endereco">Endereco:</div>
                         </div>
                         <input className="input-endereco" value={endereco} readOnly={true} />
-
+                    
                         <div className="box-infos">
                             <img src="../../assets/images/asterisco-perfil.png" alt="" />
                             <div className="telefone">Telefone</div>
