@@ -124,7 +124,8 @@ export default function ConfirmarPagamento(props) {
                             <InputPayment value={numero_do_cartao} onChange={e => setNumero_do_cartao(e.target.value)} />
 
                             <div className="nm-input">Parcelas:</div>
-                            <select name="listaparcelas" id="" className="parcelas" value={parcelas} onChange={e => setParcelas(e.target.value)}>
+                            <select name="listaparcelas" className="parcelas" value={parcelas} onChange={e => setParcelas(e.target.value)}>
+                                <option>Escolha as parcelas</option>
                                 <option value={1}>1x</option>
                                 <option value={2}>2x</option>
                                 <option value={3}>3x</option>
