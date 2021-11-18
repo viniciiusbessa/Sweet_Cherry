@@ -5,7 +5,7 @@ const ContainerPerfil = styled.div `
     flex-direction: column;
 
     background-image: url(../../assets/images/fundo2.svg);
-    background-size: 110% auto;
+    background-size: 105% auto;
     background-repeat: repeat-y;
     background-position: left;
 
@@ -132,8 +132,12 @@ const ContainerPerfil = styled.div `
         }
 
         .lado2 {
-            margin-left: 8em;
+            margin-left: 2em;
             margin-top: 2.5em;
+        }
+
+        .lado1 {
+            margin-left: -7em
         }
 
         .formato {
@@ -264,6 +268,38 @@ const ContainerPerfil = styled.div `
             cursor: pointer;
 
             transition: 0.5s;
+        }
+
+        table {
+            width: 180%;
+            margin: 1em 0em 0em 0em;
+            background-color: transparent;
+            border-collapse: collapse;
+            font-size: 16px;
+            border-left: 2px solid #D1EAF5;
+            border-bottom: 2px solid #D1EAF5;
+            border-right: 2px solid #D1EAF5;
+        }
+        th {
+            padding-left: 10px;
+            font-weight: 500;
+            text-align: left;
+            background-color: #D1EAF5;
+        }
+
+        .cabecalho-tabela {
+            height: 45px;
+        }
+
+        td {
+            margin: .5em 0em .5em 0em;
+            padding: .5em 0em .5em .8em;
+        }
+        .pedido {
+            display: flex;
+            flex-direction: row;
+            margin-left: -9em;
+            font-size: 20px;
         }
 
         @media(max-width: 1040px){

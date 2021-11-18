@@ -163,15 +163,29 @@ export default function Perfil(props) {
                 <div className="subtitulo-pedido">Seus pedidos em</div>
                 <div className="subtitulo-pedido">andamento estão aqui :)</div>
 
-                <div className="box-pedido">
-                    <img className="img-pedidos" src="../../assets/images/bolinho-box-pedidos.png" alt="" />
-                    <div className="info-pedido">Compra: 30/09/2021</div>
-                    <div className="info-pedido">Quantidade de itens: 7</div>
-                    <div className="info-pedido">Estado: á caminho</div>
-                    <div className="info-pedido">Total: R$51,00</div>
-
-                    <div className="btn-ver-itens"><button onClick={verItens}>Ver itens</button></div>
+                <div className="pedido">
+                    <div className="dataPedido">Data: 12/08/21</div>
+                    <div className="estadoPedido">Estado do pedido: A caminho</div>
                 </div>
+                <table className="tabela-produtos">
+                                <thead className="cabecalho-tabela">
+                                    <tr>
+                                    <th className="nm_item">Item</th>
+                                    <th>Preço</th>
+                                    <th>Quantidade</th>
+                                    <th></th>
+                                    </tr>
+                                </thead>
+
+                                <tbody> 
+                                         <tr>
+                                            <td>bolo</td>
+                                            <td>10</td>
+                                            <td>3</td>
+                                            <td></td>
+                                        </tr>
+                                </tbody>
+                            </table>
 
                 <div className="btn-cancelar-pedido"><button>Cancelar pedido</button></div>
             </div>

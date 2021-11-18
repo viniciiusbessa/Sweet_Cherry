@@ -9,7 +9,7 @@ import { useHistory } from 'react-router-dom'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 import Cookies from 'js-cookie'
 
@@ -47,6 +47,7 @@ export default function ConfirmarPagamento(props) {
     const [forma_pagamento] = useState('');
     const [numero_do_cartao, setNumero_do_cartao] = useState('');
     const [parcelas, setParcelas] = useState('');
+    const [products, setProducts] = useState([]);
 
     const voltarCarrinho = async() => {
         navigation.push('/carrinho')
@@ -61,6 +62,16 @@ export default function ConfirmarPagamento(props) {
             navigation.push('/compra-finalizada')
         }
     }
+
+    function itensComp() {
+        let itens = Cookies.get('carrinho')
+        itens = itens !== undefined 
+                    ? JSON.parse(itens) 
+                    : [];
+        setProducts(itens);
+    }
+
+    useEffect(itensComp, []);
     
     return (
         <ContainerPagamento>
@@ -88,12 +99,14 @@ export default function ConfirmarPagamento(props) {
                                 </thead>
 
                                 <tbody>
-                                    <tr>
-                                        <td>Bolo Red Velvet</td>
-                                        <td>25,00</td>
-                                        <td>2</td>
-                                        <td></td>
-                                    </tr>
+                                    {products.map((item) => 
+                                         <tr>
+                                            <td>{item.produto}</td>
+                                            <td>{item.preco}</td>
+                                            <td>{item.qtd}</td>
+                                            <td></td>
+                                        </tr>
+                                    )}
                                 </tbody>
                             </table>
                         </div>
