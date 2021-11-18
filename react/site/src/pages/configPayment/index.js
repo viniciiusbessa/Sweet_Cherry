@@ -119,10 +119,10 @@ export default function ConfirmarPagamento(props) {
                             <InputPayment value={usu} readOnly={true} />
 
                             <div className="nm-input">CPF:</div>
-                            <InputPayment pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" value={cpf} onChange={e => setCpf(e.target.value)} />
+                            <InputPayment  placeholder="xxx.xxx.xxx-xx"  value={cpf} onChange={e => setCpf(e.target.value)} />
 
                             <div className="nm-input">Telefone:</div>
-                            <InputPayment value={telefone} onChange={e => setTelefone(e.target.value)} />
+                            <InputPayment  placeholder="(__) _____-____" value={telefone} onChange={e => setTelefone(e.target.value)} />
 
                             <div className="nm-input">Nascimento:</div>
                             <InputPayment  id="date" type="date" value={nascimento} onChange={e => setNascimento(e.target.value)} />
