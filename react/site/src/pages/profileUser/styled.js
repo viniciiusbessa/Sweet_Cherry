@@ -16,6 +16,7 @@ const ContainerPerfil = styled.div `
             flex-direction: row;
             justify-content: space-around;
             margin-top: .5em;
+            margin-bottom: 2.5em;
         }
 
         .info-pessoal-perfil {

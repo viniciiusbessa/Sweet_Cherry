@@ -48,11 +48,6 @@ export default function Perfil(props) {
     console.log(endereco)
     
 
-
-    const verItens = async () => {
-        navigation.push('/ver-pedido')
-    }
-
     const loading = useRef(null)
 
     async function listar() {
