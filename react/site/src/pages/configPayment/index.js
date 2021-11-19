@@ -41,10 +41,8 @@ export default function ConfirmarPagamento(props) {
     const [endereco, setEndereco] = useState('');
     const [numero, setNumero] = useState('');
     const [complemento, setComplemento] = useState('');
-    const [cpf, setCpf] = useState('');
-    const [nascimento, setNascimento] = useState('');
     const [telefone, setTelefone] = useState('');
-    const [forma_pagamento] = useState('');
+    const [forma_pagamento, setForma_pagamento] = useState('');
     const [numero_do_cartao, setNumero_do_cartao] = useState('');
     const [parcelas, setParcelas] = useState('');
     const [products, setProducts] = useState([]);
@@ -54,7 +52,7 @@ export default function ConfirmarPagamento(props) {
     }
 
     async function finalizarCompra() {
-        let r = await api.confirmarPagmento( usu, endereco, numero, complemento, cpf, nascimento, telefone, forma_pagamento, numero_do_cartao, parcelas )
+        let r = await api.confirmarPagmento( usu, endereco, numero, complemento, telefone, forma_pagamento, numero_do_cartao, parcelas )
         if (r.erro) {
             toast.error(`${r.erro}`)
 
@@ -115,17 +113,14 @@ export default function ConfirmarPagamento(props) {
                         <div className="dados">
                             <div className="nm-box">Dados pessoais</div>
 
+                            <div className="nm-input">Nome:</div>
+                            <InputPayment value={nmCliente} readOnly={true} />
+
                             <div className="nm-input">E-mail:</div>
                             <InputPayment value={usu} readOnly={true} />
 
-                            <div className="nm-input">CPF:</div>
-                            <InputPayment  placeholder="xxx.xxx.xxx-xx"  value={cpf} onChange={e => setCpf(e.target.value)} />
-
                             <div className="nm-input">Telefone:</div>
                             <InputPayment  placeholder="(__) _____-____" value={telefone} onChange={e => setTelefone(e.target.value)} />
-
-                            <div className="nm-input">Nascimento:</div>
-                            <InputPayment  id="date" type="date" value={nascimento} onChange={e => setNascimento(e.target.value)} />
                         </div>                 
                     </div>
 
@@ -138,15 +133,21 @@ export default function ConfirmarPagamento(props) {
 
                             <div className="nm-input">Parcelas:</div>
                             <select name="listaparcelas" className="parcelas" value={parcelas} onChange={e => setParcelas(e.target.value)}>
-                                <option>Escolha as parcelas</option>
+                                <option value={''}>Escolha as parcelas</option>
                                 <option value={1}>1x</option>
                                 <option value={2}>2x</option>
                                 <option value={3}>3x</option>
                                 <option value={4}>4x</option>
                                 <option value={5}>5x</option>
                             </select>
-                            <div className="nm-input">Nome:</div>
-                            <InputPayment value={nmCliente} readOnly={true} />
+
+                            <div className="nm-input">Forma de pagamento:</div>
+                            <select name="listaparcelas" className="parcelas" value={forma_pagamento} onChange={e => setForma_pagamento(e.target.value)}>
+                                <option value={''}>Escolha a forma de pagamento</option>
+                                <option value={'Dinheiro'}>Dinheiro</option>
+                                <option value={'Débito'}>Cartão de Débito</option>
+                                <option value={'Crédito'}>Cartão de Crédito</option>
+                            </select>
                         </div>
 
                         <div className="entrega">

@@ -11,12 +11,14 @@ const api = new Api();
 
 export default function Cadastro() {
     const [nome, setNome] = useState('');
+    const [cpf, setCpf] = useState('');
+    const [nascimento, setNascimento] = useState('');
     const [email, setEmail] = useState('');
     const [senha, setSenha] = useState('');
 
     const logar = async () => {
 
-        let r = await api.cadastrar(nome, email, senha)
+        let r = await api.cadastrar(nome, cpf, nascimento, email, senha)
         if (r.erro) {
             toast.error(`${r.erro}`)
 
@@ -57,6 +59,20 @@ export default function Cadastro() {
                         <input className="input-cadastro" type="text" placeholder="Nome completo" 
                         value={nome} 
                         onChange={e => setNome(e.target.value)} />
+                    </div>
+
+                    <div className="box-input-email">
+                        <img src="../../assets/images/nomecompleto-cadastro.svg" alt="" />
+                        <input className="input-cadastro" type="text" placeholder="CPF"
+                        value={cpf} 
+                        onChange={e => setCpf(e.target.value)} />
+                    </div>
+
+                    <div className="box-input-email">
+                        <img src="../../assets/images/nomecompleto-cadastro.svg" alt="" />
+                        <input className="input-cadastro" type="date" placeholder="Data de nascimento"
+                        value={nascimento} 
+                        onChange={e => setNascimento(e.target.value)} />
                     </div>
 
                     <div className="box-input-email">
