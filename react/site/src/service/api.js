@@ -106,7 +106,12 @@ export default class Api {
 
     ///Area de Pagamento
 
-    async confirmarPagmento ( email, endereco, numero, complemento, telefone, forma_pagamento, numero_do_cartao, parcelas ) {
+    async confirmarPagmento ( email, endereco, numero, complemento, telefone, forma_pagamento, numero_do_cartao, parcelas, nm_produto, qtd_produto ) {
+        let produtos = {};
+        for (let i = 0; i < nm_produto.length; i++) {
+            produtos[nm_produto[i]] = Number(qtd_produto[i]);
+        }
+        
         let j = await api.post('/cliente/confi_pagamento', {
             email, 
             endereco, 
