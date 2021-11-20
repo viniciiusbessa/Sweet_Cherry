@@ -34,12 +34,18 @@ export default function Compra(props) {
 
     const [usu] = useState(usuarioLogado.nm_cliente);
 
-    const [product] = useState(props.location.state);
+    const [products] = useState(props.location.state);
     const [/* diversos */, setDiversos] = useState([]);
+
+    const [produto] = useState(products.id);
+    const [cliente] = useState(usuarioLogado.id_cliente);
     
     const confPagamento = async () => {
         navigation.push('/conf_pagamento')
     }
+
+
+
 
     function cartItem(){
         let carrinho = Cookies.get('carrinho');
@@ -47,24 +53,23 @@ export default function Compra(props) {
                     ? JSON.parse(carrinho) 
                     : [];
          
-         if (carrinho.some(item => item.id === product.id) === false)
-             carrinho.push({...product, qtd: 1 });
+         if (carrinho.some(item => item.id === products.id) === false)
+             carrinho.push({...products, qtd: 1 });
 
          Cookies.set('carrinho', JSON.stringify(carrinho));
          navigation.push('/carrinho');
 
     }
 
-    function favorito(){
-        let favorito = Cookies.get('favorito');
-        favorito = favorito !== undefined
-            ?JSON.parse(favorito)
-            :[];
-        if (favorito.some(item => item.id === product.id) === false)
-        favorito.push({...product, qtd: 1});
+    async function favorito(){
+        if (!cliente)
+        return navigation.push('/login')
 
-        Cookies.set('favorito', JSON.stringify(favorito));
-        navigation.push('/favoritos');
+        let v = await api.colocarFavoritos(cliente, produto);
+
+        console.log(v)
+
+        navigation.push('/favoritos/')
     }
 
     async function listarCategoria() {
@@ -93,12 +98,12 @@ export default function Compra(props) {
 
                 <div className="compra1-box1">
                     <div className="img-compra">
-                        <div className="imagemC-box1"> <img src={product.imagem} alt="" /> </div>
+                        <div className="imagemC-box1"> <img src={products.imagem} alt="" /> </div>
                     </div>
                 
                     <div className="descricaoC-box1">
                         <div className="desc-titulo1">Descrição</div> 
-                        <div className="desc-descricao1">{product.descricao}</div>
+                        <div className="desc-descricao1">{products.descricao}</div>
                     </div>
 
                     <div className="box-estrelinhas">
@@ -109,10 +114,10 @@ export default function Compra(props) {
 
                 <div className="compra1-box2">
                     <div className="tituloC-box2">
-                        {product.produto}
+                        {products.produto}
                     </div>
 
-                    <div className="preco-produto"> R$ {product.preco} </div>
+                    <div className="preco-produto"> R$ {products.preco} </div>
 
                     <div className="botoesC-1">
                         <div className="botoes-box1">

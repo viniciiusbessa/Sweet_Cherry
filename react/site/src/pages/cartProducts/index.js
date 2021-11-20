@@ -30,13 +30,13 @@ export default function CarrinhoProdutos(props) {
 
     const [usu] = useState(usuarioLogado.nm_cliente);
     const [products, setProducts] = useState([]);
-    const [qtd, setQtd] = useState(Cookies.get("carrinho").qtd)
+    const [qtd] = useState(Cookies.get("carrinho").qtd)
 
     console.log(qtd);
 
     const quant = products.map (l => {
         return l.qtd 
-    }); 
+    });
 
     const contComprar = async () => {
         navigation.push('/destaque')
@@ -93,7 +93,7 @@ export default function CarrinhoProdutos(props) {
 
                     <thead className="cabecalho-tabela">
                         <tr>
-                        <th>Item</th>
+                        <th className="nm_item">Item</th>
                         <th>Preço</th>
                         <th>Quantidade</th>
                         <th></th>

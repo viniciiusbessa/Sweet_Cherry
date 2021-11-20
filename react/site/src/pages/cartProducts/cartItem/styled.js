@@ -56,6 +56,24 @@ const ContainerItem = styled.tr`
             border: 0px;
         }
     }
+
+    @media(max-width: 430px) {
+        .acao > button {
+            visibility: visible
+        }
+        &:hover {
+            .acao > button {
+                visibility: visible;
+            }
+        }
+        button {
+            background-color: Transparent;
+            border: 0px;
+        }
+        td {
+            font-size: 12px;
+        }
+    }
 `
 
 export { ContainerItem }

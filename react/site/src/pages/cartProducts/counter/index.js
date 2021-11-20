@@ -41,6 +41,25 @@ const ContainerCounter = styled.div`
         box-shadow: 0 0 0 0;
         outline: 0;
     }
+
+    @media(max-width: 430px) {
+        .menos {
+        cursor: pointer;
+        border-radius: 25px;
+        font-size: 1.3em;
+        padding-left: 0.4em;
+    }
+
+    .quantidade {
+        font-size:18px;
+        padding: 0em 0.5em;
+    }
+
+    .mais {
+        font-size: 18px;
+    }
+
+    }
 `
 
 export{ContainerCounter}

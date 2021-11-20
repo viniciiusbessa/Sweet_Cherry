@@ -1,7 +1,6 @@
 import axios from 'axios'
 const api = axios.create({
-    // baseURL: 'https://sweetcherryv9.herokuapp.com/'
-    baseURL: 'http://localhost:3030/'
+    baseURL: 'http://localhost:3030'
 })
 
 export default class Api {
@@ -69,8 +68,8 @@ export default class Api {
         return r.data;
     }
 
-    async cadastrar (nome, email, senha) {
-        let r = await api.post('/cliente/cadastro', { nome, email, senha })
+    async cadastrar (nome, cpf, nascimento, email, senha) {
+        let r = await api.post('/cliente/cadastro', { nome, email, cpf, nascimento, senha })
         return r.data;
     }
 
@@ -107,14 +106,12 @@ export default class Api {
 
     ///Area de Pagamento
 
-    async confirmarPagmento ( email, endereco, numero, complemento, cpf, nascimento, telefone, forma_pagamento, numero_do_cartao, parcelas ) {
+    async confirmarPagmento ( email, endereco, numero, complemento, telefone, forma_pagamento, numero_do_cartao, parcelas ) {
         let j = await api.post('/cliente/confi_pagamento', {
             email, 
             endereco, 
             numero, 
-            complemento, 
-            cpf, 
-            nascimento, 
+            complemento,
             telefone, 
             forma_pagamento, 
             numero_do_cartao, 

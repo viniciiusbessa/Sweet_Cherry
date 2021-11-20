@@ -19,6 +19,7 @@ export default function ForgotPass(){
 
     const resetPass = async () => {
         let r = await api.esqueciASenha(email)
+        
         if (r.erro) {
             toast.error(`${r.erro}`)
 
@@ -31,7 +32,7 @@ export default function ForgotPass(){
         navigation.push('/login')
     }
 
-    return(
+    return (
         <ContainerForgotPass>
             <ToastContainer />
             <div className="cabecalho-esqueceu-senha">

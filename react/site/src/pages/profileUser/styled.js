@@ -5,7 +5,7 @@ const ContainerPerfil = styled.div `
     flex-direction: column;
 
     background-image: url(../../assets/images/fundo2.svg);
-    background-size: 110% auto;
+    background-size: 105% auto;
     background-repeat: repeat-y;
     background-position: left;
 
@@ -14,15 +14,14 @@ const ContainerPerfil = styled.div `
         .conteudo-perfil {
             display: flex;
             flex-direction: row;
-            justify-content: space-between;
+            justify-content: space-around;
             margin-top: .5em;
+            margin-bottom: 2.5em;
         }
 
         .info-pessoal-perfil {
             display: flex;
             flex-direction: row;
-
-            margin-left: 2em;
         }
 
         .box-titulo-pedido {
@@ -133,6 +132,15 @@ const ContainerPerfil = styled.div `
             user-select: none;
         }
 
+        .lado2 {
+            margin-left: 2em;
+            margin-top: 2.5em;
+        }
+
+        .lado1 {
+            margin-left: -7em
+        }
+
         .formato {
             font-size: 13px;
             color: #FBE8FF;
@@ -148,18 +156,14 @@ const ContainerPerfil = styled.div `
             display: flex;
             flex-direction: row;
 
-            margin: 1.5em 0em 0em 3em;
+            margin: 0.3em 0em 0em 3em;
 
             font-family: Patua One;
-            font-size: 18px;
+            font-size: 20px;
             color: #FF1A1A;
 
             cursor: pointer;
             user-select: none;
-        }
-
-        .lado2 {
-            margin: 3em 0em 0em -13em;
         }
 
         .box-excluir:hover {
@@ -203,13 +207,16 @@ const ContainerPerfil = styled.div `
             display: flex;
             flex-direction: column;
             align-items: center;
+
             margin-top: 1em;
             padding: 1em 0.8em 0.5em 1em;
+
             background-color: #D1EAF5;
             box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
             border-radius: 7px;
 
-            font-size: 25px;
+            font-size: 23px;
             color: #140018;
 
             cursor: pointer;
@@ -248,10 +255,10 @@ const ContainerPerfil = styled.div `
 
             font-family: Pacifico;
             color: #FFF;
-            font-size: 15px;
+            font-size: 18px;
 
             padding: 0.4em 1em;
-            margin: 1em 0em 1em 10em;
+            margin: 1.5em 0em 2em 6em;
 
             cursor: pointer;
             user-select: none;
@@ -262,6 +269,174 @@ const ContainerPerfil = styled.div `
             cursor: pointer;
 
             transition: 0.5s;
+        }
+
+        table {
+            width: 180%;
+            margin: 1em 0em 0em 0em;
+            background-color: transparent;
+            border-collapse: collapse;
+            font-size: 16px;
+            border-left: 2px solid #D1EAF5;
+            border-bottom: 2px solid #D1EAF5;
+            border-right: 2px solid #D1EAF5;
+        }
+        th {
+            padding-left: 10px;
+            font-weight: 500;
+            text-align: left;
+            background-color: #D1EAF5;
+        }
+
+        .cabecalho-tabela {
+            height: 45px;
+        }
+
+        td {
+            margin: .5em 0em .5em 0em;
+            padding: .5em 0em .5em .8em;
+        }
+        .pedido {
+            display: flex;
+            flex-direction: row;
+            margin-left: -9em;
+            font-size: 20px;
+        }
+
+        @media(max-width: 1040px){
+
+            background-image: none;
+            background-color: #F6AAC6;
+            
+            .conteudo-perfil{
+                display: flex;
+                flex-direction: column;
+            }
+
+            .lado1{
+                margin: 0px;
+                margin-top: 35px;
+            }
+
+            .lado2{
+                margin: 0px;
+                margin-left: 35px;
+                margin-bottom: 35px;
+            }
+
+            .dados-conta-perfil{
+                font-size: 25px;
+                margin-bottom: 35px;
+                margin-left: 60px;
+            }
+
+            .box-excluir{
+                margin-left: 80px;
+            }
+
+            .box-pedido{
+                margin-bottom: 25px;
+            }
+
+            btn-cancelar-pedido{
+                margin-bottom: 25px;
+            }
+        }
+
+        @media(max-width: 430px) {
+            .conteudo-perfil {
+                position: relative;
+            }
+            .info-pessoal-perfil {
+                display: flex;
+                flex-direction: column;
+            }
+            .dados-conta-perfil, .dados-pessoais-perfil {
+                font-size: 15px;
+                margin-bottom: 0.7em;
+            }
+            .box-infos {
+                font-size: 12px;
+            }
+            .box-infos img {
+                width: 7px;
+                height: 7px;
+            }
+            input {
+                border-radius: 7px;
+                padding: 0em 0.5em;
+                margin: 0.4em 0em 1em 2em;
+            }
+            .input-email, .input-senha, .input-nome, .input-endereco, .input-cpf, .input-telefone {
+                height: 26px;
+                width: 170px;
+            }
+            .input-endereco, .input-data, .input-cpf {
+                margin-bottom: 1em;
+            }
+            .input-cpf, .input-telefone {
+                margin-top: .5em;
+            }
+            .input-data {
+                height: 26px;
+                width: 140px;
+            }
+            .info-obrigatorio-data, .info-obrigatorio-cpf, .info-obrigatorio-telefone {
+                font-size: 10px;
+                margin: 0em 0em 0em 2em;
+            }
+            .lado2 {
+                margin-left: 0em;
+                margin-top: 0em;
+                }
+
+            .formato {
+                font-size: 10px;
+                margin: .5em 0em 0em 3em;
+            }
+            .box-excluir {
+                display: flex;
+                flex-direction: row;
+
+                margin: 2em 0em 0em 3em;
+                font-size: 14px;
+            }
+            .box-excluir img {
+                height: 18px;
+                width: 25px;
+            }
+            .titulo-pedido {
+                font-size: 16px;
+                margin-bottom: 0em;
+            }
+            .subtitulo-pedido {
+                font-size: 12px;
+            }
+            .box-pedido {
+                margin-top: .8em;
+                padding: .5em;
+                box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.25);
+                border-radius: 6px;
+                font-size: 14px;
+            }
+            .img-pedidos {
+                width: 60px;
+                height: 50px;
+            }
+            .btn-ver-itens button {
+                border-radius: 14px;
+                font-size: 10px;
+                padding: 0.5em 1.4em;
+            }
+            .btn-cancelar-pedido button {
+                font-size: 14px;
+                margin: 1em 0em 2em 6em;
+            }
+            .info-pedidos {
+                position: absolute;
+                top: 2.5em;
+                left: 13.5em;
+            }
         }
 `
 

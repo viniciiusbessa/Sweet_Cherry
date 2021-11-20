@@ -9,7 +9,7 @@ import { useHistory } from 'react-router-dom'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 import Cookies from 'js-cookie'
 
@@ -41,19 +41,18 @@ export default function ConfirmarPagamento(props) {
     const [endereco, setEndereco] = useState('');
     const [numero, setNumero] = useState('');
     const [complemento, setComplemento] = useState('');
-    const [cpf, setCpf] = useState('');
-    const [nascimento, setNascimento] = useState('');
     const [telefone, setTelefone] = useState('');
-    const [forma_pagamento] = useState('');
+    const [forma_pagamento, setForma_pagamento] = useState('');
     const [numero_do_cartao, setNumero_do_cartao] = useState('');
     const [parcelas, setParcelas] = useState('');
+    const [products, setProducts] = useState([]);
 
     const voltarCarrinho = async() => {
         navigation.push('/carrinho')
     }
 
-    const finalizarCompra = async () => {
-        let r = await api.confirmarPagmento( usu, endereco, numero, complemento, cpf, nascimento, telefone, forma_pagamento, numero_do_cartao, parcelas )
+    async function finalizarCompra() {
+        let r = await api.confirmarPagmento( usu, endereco, numero, complemento, telefone, forma_pagamento, numero_do_cartao, parcelas )
         if (r.erro) {
             toast.error(`${r.erro}`)
 
@@ -62,10 +61,17 @@ export default function ConfirmarPagamento(props) {
         }
     }
 
-    console.log(finalizarCompra)
-    
+    function itensComp() {
+        let itens = Cookies.get('carrinho')
+        itens = itens !== undefined 
+                    ? JSON.parse(itens) 
+                    : [];
+        setProducts(itens);
+    }
 
-    return(
+    useEffect(itensComp, []);
+    
+    return (
         <ContainerPagamento>
             <ToastContainer />
             <div classNameName="fundo-cabecalho">
@@ -77,22 +83,73 @@ export default function ConfirmarPagamento(props) {
                 <div className="nome-conteudo">Confirmar pagamento: R$ {props.location.state} </div>
                 <div className="conteiner-geral">
                     <div className="conteiner-pes-etrg">
+                        <div className="box-itens">
+                            <div className="titulo-itens">Itens do seu carrinho:</div>
+                            
+                            <table className="tabela-produtos">
+                                <thead className="cabecalho-tabela">
+                                    <tr>
+                                    <th className="nm_item">Item</th>
+                                    <th>Preço</th>
+                                    <th>Quantidade</th>
+                                    <th></th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    {products.map((item) => 
+                                         <tr>
+                                            <td>{item.produto}</td>
+                                            <td>{item.preco}</td>
+                                            <td>{item.qtd}</td>
+                                            <td></td>
+                                        </tr>
+                                    )}
+                                </tbody>
+                            </table>
+                        </div>
+
+
                         <div className="dados">
                             <div className="nm-box">Dados pessoais</div>
+
+                            <div className="nm-input">Nome:</div>
+                            <InputPayment value={nmCliente} readOnly={true} />
 
                             <div className="nm-input">E-mail:</div>
                             <InputPayment value={usu} readOnly={true} />
 
-                            <div className="nm-input">CPF:</div>
-                            <InputPayment value={cpf} onChange={e => setCpf(e.target.value)} />
-
                             <div className="nm-input">Telefone:</div>
-                            <InputPayment value={telefone} onChange={e => setTelefone(e.target.value)} />
+                            <InputPayment  placeholder="(__) _____-____" value={telefone} onChange={e => setTelefone(e.target.value)} />
+                        </div>                 
+                    </div>
 
-                            <div className="nm-input">Nascimento:</div>
-                            <InputPayment value={nascimento} onChange={e => setNascimento(e.target.value)} />
+                    <div className="conteiner-pagamento">
+                        <div className="box-pg">
+                            <div className="nm-box">Pagamento</div>
 
+                            <div className="nm-input">Número do cartão:</div>
+                            <InputPayment value={numero_do_cartao} onChange={e => setNumero_do_cartao(e.target.value)} />
+
+                            <div className="nm-input">Parcelas:</div>
+                            <select name="listaparcelas" className="parcelas" value={parcelas} onChange={e => setParcelas(e.target.value)}>
+                                <option value={''}>Escolha as parcelas</option>
+                                <option value={1}>1x</option>
+                                <option value={2}>2x</option>
+                                <option value={3}>3x</option>
+                                <option value={4}>4x</option>
+                                <option value={5}>5x</option>
+                            </select>
+
+                            <div className="nm-input">Forma de pagamento:</div>
+                            <select name="listaparcelas" className="parcelas" value={forma_pagamento} onChange={e => setForma_pagamento(e.target.value)}>
+                                <option value={''}>Escolha a forma de pagamento</option>
+                                <option value={'Dinheiro'}>Dinheiro</option>
+                                <option value={'Débito'}>Cartão de Débito</option>
+                                <option value={'Crédito'}>Cartão de Crédito</option>
+                            </select>
                         </div>
+
                         <div className="entrega">
                             <div className="fr-entrega">
                                 <div className="nm-box">Entrega</div>
@@ -112,46 +169,13 @@ export default function ConfirmarPagamento(props) {
                                     <div className="nm-input">Complemento:</div>
                                     <InputPayment value={complemento} onChange={e => setComplemento(e.target.value)}/>
                                 </div>
-
                             </div>
-                        </div>                          
-                    </div>
-
-                    <div className="conteiner-pagamento">
-                        <div className="box-pg">
-                            <div className="nm-box">Pagamento</div>
-
-                            <div className="nm-input">Número do cartão:</div>
-                            <InputPayment value={numero_do_cartao} onChange={e => setNumero_do_cartao(e.target.value)} />
-
-                            <div className="nm-input">Parcelas:</div>
-                            <select name="listaparcelas" id="" className="parcelas" value={parcelas} onChange={e => setParcelas(e.target.value)}>
-                                <option value={1}>1x</option>
-                                <option value={2}>2x</option>
-                                <option value={3}>3x</option>
-                                <option value={4}>4x</option>
-                                <option value={5}>5x</option>
-                            </select>
-                            <div className="nm-input">Nome:</div>
-                            <InputPayment value={nmCliente} readOnly={true} />
                         </div>
                         <div className="botoes-pgmt">
                             <button onClick={voltarCarrinho} className="vlt-carrinho">Voltar</button>
                             <button onClick={finalizarCompra} className="final-cmpra">Finalizar compra</button>
                         </div>
-                        <div className="box-cartoes">
-                            <div className="titulo-box">Pague com:</div>
-                            <div className="box-icones">
-                                <div className="icons1">
-                                    <img src="../../assets/images/pagseguro.svg" alt="" className="icon-pagseguro" />
-                                    <img src="../../assets/images/visa.svg" alt="" className="icon-visa" />
-                                </div>
-                                <div className="icons2">
-                                    <img src="../../assets/images/mastercard.svg" alt="" className="icon-mastercard" />
-                                    <img src="../../assets/images/elo.svg" alt="" className="icon-elo" />
-                                </div>
-                            </div>
-                        </div>
+                       
                     </div>
                 </div>
             </div>

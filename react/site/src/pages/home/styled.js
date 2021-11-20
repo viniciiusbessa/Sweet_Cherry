@@ -109,61 +109,9 @@ const BoxEmAlta = styled.div`
         align-items: center;
     }
 
-    .box_em_alta{
-        display: flex;
-        flex-direction: row;
-
-        height: 20em;
-        width: 45em;
-        margin-bottom: 3em;
-
-        background-color: #a4bcff;
-        border-radius: 30px;
-        border-style: solid;
-        border-color: #FF8AB5;
-        border-width: 5px;
-    }
-
-    .imagem_emAlta img{
-        height: 19.5em;
-        width: 18em;
-
-        border: solid;
-        border-color: #FF8AB5;
-        border-radius: 20px;
-
-        cursor: pointer;
-        user-select: none;
-    }
-
-    .box_texto{
-        text-align: center;
-        padding: 2em;
-
-        color: white;
-        font-size: 20px;
-    }
-
-    .box_texto button {
-        background-color: #2F1747;
-
-        color: #ffffff;
-        border: none;
-        border-radius: 50px;
-
-        width:  190px;
-        height: 40px;
-
-        cursor: pointer;
-        user-select: none;
-
-        font-family:  Pacifico;
-        font-size: 15px;
-    }
-
-    .box_texto button:hover {
-        background-color: #52277D;
-        transition: all 0.5s ease-in;
+    .video video{
+        border-radius: 1em;
+        margin-bottom: 2em;
     }
 
     .container_doces{
@@ -202,30 +150,10 @@ const BoxEmAlta = styled.div`
           flex-direction: column;
       }
 
-        .imagem_emAlta img{
-         width: 120px;
-         height: 120px;
-        }
-
-        .imagem_emAlta{
-            margin-left: 60px;
-            margin-top: 10px;
-            padding-bottom: 0px;
-        }
-
-      .box_em_alta{
-          width: 250px;
-          height: 360px;
-          display: flex;
-          flex-direction: column;
-          margin-bottom: 20px;
-      }
-
-      .box_texto{
-          font-size: 15px;
-          padding-top: 0px;
-          margin-top: 0px;
-      }
+      .video video{
+        border-radius: 1em;
+        margin-bottom: 2em;
+    } 
 
       .container_doces{
           display: flex;
@@ -242,30 +170,12 @@ const BoxEmAlta = styled.div`
             margin-left: 0em;
             color: #FF8AB5;
         }
-        .box_em_alta{
-            height: 23em;
-            width: 20em;
-            margin-bottom: 1em;
-            background-color: #a4bcff;
-            border-radius: 20px;
-            border-width: 4px;
-        }
-        .imagem_emAlta img{
-            height: 10em;
-            width: 15em;
-            border-radius: 10px;
-            margin-left: -1em;
-        }
-        .box_texto{
-            padding: .5em;
-            font-size: 15px;
-        }
-        .box_texto button {
-            border-radius: 40px;
-            width:  9em;
-            height: 3em;
-            font-size: 12px;
-        }
+        
+        .video video{
+        border-radius: 1em;
+        margin-bottom: 2em;
+        width: 20em;
+    } 
     }
 `
 
