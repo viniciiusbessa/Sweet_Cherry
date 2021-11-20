@@ -21,7 +21,7 @@ export default function Cadastro() {
             toast.error(`${r.erro}`)
 
         } else {
-            navigation.push('/login')
+            navigation.push('/login');
         }
     }
 
