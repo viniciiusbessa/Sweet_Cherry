@@ -61,6 +61,7 @@ export default class Api {
         return r.data;
     }
 
+
     // Cliente Login
 
     async login (email, senha) {
@@ -142,6 +143,13 @@ export default class Api {
 
     async deletarFavorito(id) {
         let v = await api.delete('/favorito/' + id)
+        return v.data;
+    }
+
+    //pedido
+
+    async listarPedidos() {
+        let v = await api.get(`/cliente/confi_pagamento`);
         return v.data;
     }
 }
