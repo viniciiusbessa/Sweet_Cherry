@@ -1,6 +1,6 @@
 import axios from 'axios'
 const api = axios.create({
-    baseURL: 'https://swapiv1.herokuapp.com/'
+    baseURL: 'https://scdefinitiveedition.herokuapp.com/'
 })
 
 export default class Api {
