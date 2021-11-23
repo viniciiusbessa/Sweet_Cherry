@@ -52,7 +52,7 @@ export default function CarrinhoProdutos(props) {
 
         console.log(carrinho);
 
-        //Cookies.remove('carrinho');
+        // Cookies.remove('carrinho');
         setProducts(carrinho);
     }
 

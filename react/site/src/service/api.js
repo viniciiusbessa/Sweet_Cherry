@@ -107,12 +107,7 @@ export default class Api {
 
     ///Area de Pagamento
 
-    async confirmarPagmento ( email, endereco, numero, complemento, telefone, forma_pagamento, numero_do_cartao, parcelas, nm_produto, qtd_produto ) {
-        let produtos = {};
-        for (let i = 0; i < nm_produto.length; i++) {
-            produtos[nm_produto[i]] = Number(qtd_produto[i]);
-        }
-        
+    async confirmarPagmento ( email, endereco, numero, complemento, telefone, forma_pagamento, numero_do_cartao, parcelas ) {
         let j = await api.post('/cliente/confi_pagamento', {
             email, 
             endereco, 
@@ -143,13 +138,6 @@ export default class Api {
 
     async deletarFavorito(id) {
         let v = await api.delete('/favorito/' + id)
-        return v.data;
-    }
-
-    //pedido
-
-    async listarPedidos() {
-        let v = await api.get(`/cliente/confi_pagamento`);
         return v.data;
     }
 }

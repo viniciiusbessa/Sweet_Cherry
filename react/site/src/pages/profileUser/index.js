@@ -55,7 +55,7 @@ export default function Perfil(props) {
         setUsu(r);
     }
 
-
+    
     async function remover(id) {
         confirmAlert({
             title: 'Excluir conta',

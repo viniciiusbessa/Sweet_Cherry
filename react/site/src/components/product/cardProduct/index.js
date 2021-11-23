@@ -53,7 +53,7 @@ export default function BoxProduto (props){
 
         console.log(v)
 
-        navigation.push('/favoritos/')
+        navigation.push('/favoritos')
     }
 
     async function deletar(id){

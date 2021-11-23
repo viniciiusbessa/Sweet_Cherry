@@ -5,9 +5,6 @@ import TableRequests from './tableRequests/index'
 import { useHistory } from 'react-router-dom'
 
 import Cookies from 'js-cookie'
-import { useEffect, useRef, useState } from 'react'
-import Api from '../../../service/api'
-const api = new Api();
 
 
 function lerAdmLogado (navigation) {
@@ -24,9 +21,6 @@ function lerAdmLogado (navigation) {
 export default function AdministrarPedidos() {
     const navigation = useHistory();
 
-    const [tabela, setTabela] = useState([]);
-    const loading = useRef(null);
-
 
     let admLogado = lerAdmLogado(navigation) || {};
 
@@ -35,19 +29,6 @@ export default function AdministrarPedidos() {
     const InicioAdm = async () => {
         navigation.push('/inicio-adm')
     }
-
-    async function listarPedido() {
-        loading.current.continuousStart();
-
-        let v1 = await api.listarPedidos('cliente');
-        setTabela(v1);
-
-        loading.current.complete()
-    }
-
-    useEffect(() => {
-        listarPedido();
-    }, [])
 
     return (
     <ContainerAdmPedidos>
@@ -67,14 +48,8 @@ export default function AdministrarPedidos() {
             </div>
         </div>
 
-        {tabela.map(item =>
-
-        <TableRequests 
-
-            key={item.id}
-            info={item} />
-
-        )}
+        <TableRequests />
+        
         
         
     </ContainerAdmPedidos>

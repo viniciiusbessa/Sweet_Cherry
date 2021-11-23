@@ -45,7 +45,9 @@ export default function ConfirmarPagamento(props) {
     const [forma_pagamento, setForma_pagamento] = useState('');
     const [numero_do_cartao, setNumero_do_cartao] = useState('');
     const [parcelas, setParcelas] = useState('');
+
     const [products, setProducts] = useState([]);
+
 
     const voltarCarrinho = async() => {
         navigation.push('/carrinho')
@@ -61,15 +63,35 @@ export default function ConfirmarPagamento(props) {
         }
     }
 
+    const nmProduto = products.map(x => {
+        return x.produto
+    });
+
+    const qtd = products.map(x => {
+        return x.qtd
+    });
+
     function itensComp() {
         let itens = Cookies.get('carrinho')
         itens = itens !== undefined 
                     ? JSON.parse(itens) 
                     : [];
         setProducts(itens);
+
+        let produtos = {};
+        for (let i = 0; i < nmProduto.length; i++) {
+            produtos[nmProduto[i]] = qtd[i];
+        }
     }
 
-    useEffect(itensComp, []);
+    if (props.location.state === 0) {
+        navigation.push('/carrinho')
+        toast.error('Seu carrinho está vazio!')
+    }
+
+    useEffect(itensComp, 
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+        []);
     
     return (
         <ContainerPagamento>
